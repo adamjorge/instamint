@@ -3,7 +3,7 @@ import { Inter } from "next/font/google"
 import React from "react"
 import "./globals.css"
 
-/* eslint-disable new-cap */
+// eslint-disable-next-line new-cap
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
