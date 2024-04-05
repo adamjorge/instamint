@@ -3,4 +3,4 @@
 
 npx npm-check-updates \
   && npx --no-install git-precommit-checks \
-  && npx lint-staged
+  && npm run lint
