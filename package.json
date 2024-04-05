@@ -2,17 +2,28 @@
   "name": "instamint",
   "version": "0.1.0",
   "private": true,
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+        "@commitlint/config-conventional"
+      ]
+    },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "husky": "^9.0.11",
     "lucide-react": "^0.364.0",
     "next": "14.1.4",
     "next-auth": "^4.24.7",
@@ -23,18 +34,28 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cz-commitlint": "^19.2.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "autoprefixer": "^10.0.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "git-precommit-checks": "^3.1.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jest": "^27.9.0",
+    "lint-staged": "^15.2.2",
+    "husky": "^9.0.11",
     "postcss": "^8",
     "prettier": "3.2.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": "20.12.1"
   }
 }
