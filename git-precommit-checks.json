@@ -1,0 +1,21 @@
+{
+  "display": {
+    "notifications": true,
+    "offendingContent": true,
+    "rulesSummary": false,
+    "shortStats": true,
+    "verbose": false
+  },
+  "rules": [
+    {
+      "filter": "^CHANGELOG\\.md$",
+      "message": "Did you forget some taslk ?",
+      "nonBlocking": true,
+      "regex": "/(?:FIXME|TODO)/"
+    },
+    {
+      "message": "You’ve got leftover conflict markers",
+      "regex": "/^[<>|=]{4,}/m"
+    }
+  ]
+}
