@@ -1,8 +1,8 @@
 {
   "git": {
-    "deploymentEnabled": {
-      "*": false,
-      "feature/IN-67-setup-ci-cd": false
+    "deploymentEnabled": {  
+      "main": false,
+      "develop": false
     }
   }
 }
