@@ -1,17 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "vercel-build-command",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [],
   "functions": {
-    "ignore": [
-      "develop",
-      "feature/*",
-      "hotfix/*"
-    ]
+    "ignore": {
+      "develop": true,
+      "feature/*": true,
+      "hotfix/*": true
+    }
   }
 }
