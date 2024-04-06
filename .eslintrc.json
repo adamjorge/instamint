@@ -49,11 +49,7 @@
         "ignoreGlobals": true
       }
     ],
-    "capitalized-comments": [
-      "error",
-      "always",
-      { "ignoreConsecutiveComments": true }
-    ],
+    "capitalized-comments": ["error", "always", { "ignoreConsecutiveComments": true }],
     "class-methods-use-this": ["error", { "enforceForClassFields": true }],
     "complexity": ["error", 7],
     "consistent-return": "error",
@@ -67,21 +63,11 @@
     "grouped-accessor-pairs": ["error", "getBeforeSet"],
     "guard-for-in": "error",
     "init-declarations": ["error", "always"],
-    "logical-assignment-operators": [
-      "error",
-      "always",
-      { "enforceForIfStatements": true }
-    ],
+    "logical-assignment-operators": ["error", "always", { "enforceForIfStatements": true }],
     "max-classes-per-file": ["error", { "ignoreExpressions": true }],
     "max-depth": ["error", 3],
-    "max-lines": [
-      "error",
-      { "max": 150, "skipBlankLines": true, "skipComments": true }
-    ],
-    "max-lines-per-function": [
-      "warn",
-      { "max": 50, "skipBlankLines": true, "skipComments": true }
-    ],
+    "max-lines": ["error", { "max": 150, "skipBlankLines": true, "skipComments": true }],
+    "max-lines-per-function": ["warn", { "max": 50, "skipBlankLines": true, "skipComments": true }],
     "max-nested-callbacks": ["error", 3],
     "max-params": ["error", 3],
     "multiline-comment-style": ["error", "separate-lines"],
