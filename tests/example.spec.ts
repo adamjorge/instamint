@@ -5,5 +5,5 @@ function sum(a: number, b: number): number {
 }
 
 test("adds 1 + 2 to equal 3", (): void => {
-  expect(sum(1, 2)).toBe(5)
+  expect(sum(1, 2)).toBe(10)
 })
