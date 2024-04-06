@@ -1,4 +1,4 @@
-name: Main workflow
+name: Build and test
 
 on:
   push:
