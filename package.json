@@ -21,8 +21,10 @@
     "format": "prettier --write .",
     "prepare": "husky install",
     "test:unit": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:report": "playwright show-report"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
@@ -38,6 +40,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "jest-cli": "git://github.com/hankhsiao/jest.git",
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
     "@commitlint/cz-commitlint": "^19.2.0",

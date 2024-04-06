@@ -12,7 +12,7 @@
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-swc/
+/swc/
 
 # next.js
 /.next/
