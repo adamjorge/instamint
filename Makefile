@@ -1,6 +1,7 @@
 # Variables
 DOCKER = docker
 DOCKER_COMPOSE = docker compose
+NPM = npm
 PRISMA = prisma
 
 # Colors
@@ -9,9 +10,24 @@ RED = echo "\x1b[31m\#\# $1\x1b[0m"
 
 ## ———— 🔥 App ————
 init:
-	npm install
+	$(MAKE) install
 	$(MAKE) docker-start
 	$(MAKE) db-init
+	@$(call GREEN,"The app is now initialized.")
+	$(MAKE) start
+
+## ———— 🎻 NPM ————
+npm-install: ## Install dependencies
+	$(NPM) install
+
+install: ## Alias for npm-install
+	$(MAKE) npm-install
+
+npm-start: ## Start the app
+	$(NPM) run dev
+
+start: ## Alias for npm-start
+	$(MAKE) npm-start
 
 
 ## ———— 🐳 Docker ————
@@ -19,11 +35,16 @@ docker-start:
 	$(DOCKER_COMPOSE) up -d
 	@$(call GREEN,"The containers are now running.")
 
+docker-stop:
+	$(DOCKER_COMPOSE) down
+	@$(call RED,"The containers are now stopped.")
+
 
 ## ———— 📊 Database ————
 db-init: ## Init database
 	$(PRISMA) generate
 	$(MAKE) db-seed
+	@$(call GREEN, "Database is now initialized.")
 
 db-studio: ## Open Prisma Studio
 	$(PRISMA) studio
