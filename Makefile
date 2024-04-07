@@ -2,7 +2,7 @@
 DOCKER = docker
 DOCKER_COMPOSE = docker compose
 NPM = npm
-PRISMA = prisma
+PRISMA = npx prisma
 
 # Colors
 GREEN = echo "\x1b[32m\#\# $1\x1b[0m"

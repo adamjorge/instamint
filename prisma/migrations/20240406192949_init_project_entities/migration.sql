@@ -46,7 +46,7 @@ CREATE TABLE "OriginalContent" (
 );
 
 -- CreateTable
-CREATE TABLE "NFT" (
+CREATE TABLE "Nft" (
     "id" SERIAL NOT NULL,
     "description" TEXT NOT NULL,
     "imageUrl" TEXT NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE "NFT" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "originalContentId" INTEGER NOT NULL,
 
-    CONSTRAINT "NFT_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Nft_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -82,7 +82,7 @@ CREATE TABLE "Comment" (
 );
 
 -- CreateTable
-CREATE TABLE "_HashtagToNFT" (
+CREATE TABLE "_HashtagToNft" (
     "A" INTEGER NOT NULL,
     "B" INTEGER NOT NULL
 );
@@ -94,28 +94,28 @@ CREATE UNIQUE INDEX "Minter_username_key" ON "Minter"("username");
 CREATE UNIQUE INDEX "Minter_email_key" ON "Minter"("email");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "NFT_originalContentId_key" ON "NFT"("originalContentId");
+CREATE UNIQUE INDEX "Nft_originalContentId_key" ON "Nft"("originalContentId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Hashtag_name_key" ON "Hashtag"("name");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "_HashtagToNFT_AB_unique" ON "_HashtagToNFT"("A", "B");
+CREATE UNIQUE INDEX "_HashtagToNft_AB_unique" ON "_HashtagToNft"("A", "B");
 
 -- CreateIndex
-CREATE INDEX "_HashtagToNFT_B_index" ON "_HashtagToNFT"("B");
+CREATE INDEX "_HashtagToNft_B_index" ON "_HashtagToNft"("B");
 
 -- AddForeignKey
-ALTER TABLE "NFT" ADD CONSTRAINT "NFT_originalContentId_fkey" FOREIGN KEY ("originalContentId") REFERENCES "OriginalContent"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Nft" ADD CONSTRAINT "Nft_originalContentId_fkey" FOREIGN KEY ("originalContentId") REFERENCES "OriginalContent"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Comment" ADD CONSTRAINT "Comment_nftId_fkey" FOREIGN KEY ("nftId") REFERENCES "NFT"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Comment" ADD CONSTRAINT "Comment_nftId_fkey" FOREIGN KEY ("nftId") REFERENCES "Nft"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Comment" ADD CONSTRAINT "Comment_minterId_fkey" FOREIGN KEY ("minterId") REFERENCES "Minter"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_HashtagToNFT" ADD CONSTRAINT "_HashtagToNFT_A_fkey" FOREIGN KEY ("A") REFERENCES "Hashtag"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "_HashtagToNft" ADD CONSTRAINT "_HashtagToNft_A_fkey" FOREIGN KEY ("A") REFERENCES "Hashtag"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_HashtagToNFT" ADD CONSTRAINT "_HashtagToNFT_B_fkey" FOREIGN KEY ("B") REFERENCES "NFT"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "_HashtagToNft" ADD CONSTRAINT "_HashtagToNft_B_fkey" FOREIGN KEY ("B") REFERENCES "Nft"("id") ON DELETE CASCADE ON UPDATE CASCADE;
