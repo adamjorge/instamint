@@ -10,11 +10,16 @@ RED = echo "\x1b[31m\#\# $1\x1b[0m"
 
 ## ———— 🔥 App ————
 init:
+	$(MAKE) init-env
 	$(MAKE) install
 	$(MAKE) docker-start
 	$(MAKE) db-init
 	@$(call GREEN,"The app is now initialized.")
 	$(MAKE) start
+
+init-env:
+	cp .env.example .env
+	@$(call GREEN,"The .env file is now created. Please fill in the necessary information.")
 
 ## ———— 🎻 NPM ————
 npm-install: ## Install dependencies
