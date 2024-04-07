@@ -33,7 +33,8 @@ model Minter {
   updatedAt           DateTime  @updatedAt
   deletedAt           DateTime?
 
-  comments Comment[]
+  originalContent OriginalContent[]
+  comments        Comment[]
 }
 
 model TeaBag {
@@ -53,6 +54,9 @@ model OriginalContent {
   updatedAt DateTime @updatedAt
 
   nft Nft?
+
+  minterId Int
+  minter   Minter @relation(fields: [minterId], references: [id])
 }
 
 model Nft {
