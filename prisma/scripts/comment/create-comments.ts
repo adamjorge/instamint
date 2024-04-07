@@ -4,11 +4,9 @@ export async function createComments(prisma: PrismaClient) {
   const firstMinter = await prisma.minter.findFirstOrThrow({
     where: { isAdmin: false }
   })
-
   const secondMinterId = firstMinter.id + 1
   const thirdMinterId = secondMinterId + 1
   const fourthMinterId = thirdMinterId + 1
-
   const comments = [
     {
       content: "I really like this NFT",
