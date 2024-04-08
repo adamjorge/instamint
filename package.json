@@ -27,6 +27,7 @@
     "test:report": "playwright show-report"
   },
   "dependencies": {
+    "@ducanh2912/next-pwa": "^10.2.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.364.0",
@@ -68,7 +69,8 @@
     "tailwindcss": "^3.3.0",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack": "^5.91.0"
   },
   "engines": {
     "node": "20.12.1"
