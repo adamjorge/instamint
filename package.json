@@ -19,7 +19,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier --write .",
-    "prepare": "husky install",
+    "prepare": "husky",
     "test:unit": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
