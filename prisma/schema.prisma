@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Minter {
+  id                  Int       @id @default(autoincrement())
+  username            String    @unique
+  email               String    @unique
+  password            String
+  phoneNumber         String?
+  defaultLanguage     String    @default("fr")
+  profileUrl          String
+  avatarUrl           String
+  bio                 String    @db.Text
+  authorName          String?
+  isVisible           Boolean   @default(true)
+  isSearchableByEmail Boolean   @default(true)
+  is2FAEnabled        Boolean   @default(false)
+  isAdmin             Boolean   @default(false)
+  isReported          Boolean   @default(false)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  deletedAt           DateTime?
+
+  originalContent OriginalContent[]
+  comments        Comment[]
+}
+
+model TeaBag {
+  id         Int      @id @default(autoincrement())
+  username   String
+  bio        String   @db.Text
+  profileurl String
+  isReported Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model OriginalContent {
+  id        Int      @id @default(autoincrement())
+  imageUrl  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  nft Nft?
+
+  minterId Int
+  minter   Minter @relation(fields: [minterId], references: [id])
+}
+
+model Nft {
+  id          Int      @id @default(autoincrement())
+  description String   @db.Text
+  imageUrl    String
+  price       Float
+  location    String
+  isDraft     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  originalContent   OriginalContent @relation(fields: [originalContentId], references: [id])
+  originalContentId Int             @unique
+
+  hashtags Hashtag[]
+  comments Comment[]
+}
+
+model Hashtag {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  createdAt DateTime @default(now())
+
+  nfts Nft[]
+}
+
+model Comment {
+  id         Int      @id @default(autoincrement())
+  content    String   @db.Text
+  isReported Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  nft   Nft @relation(fields: [nftId], references: [id])
+  nftId Int
+
+  minter   Minter @relation(fields: [minterId], references: [id])
+  minterId Int
+}
