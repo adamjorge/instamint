@@ -1,3 +1,4 @@
+import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import React from "react"
@@ -5,11 +6,6 @@ import "./globals.css"
 
 // eslint-disable-next-line new-cap
 const inter = Inter({ subsets: ["latin"] })
-const APP_NAME = "Instamint"
-const APP_DEFAULT_TITLE = "Instamint, your social network for minting NFTs"
-const APP_TITLE_TEMPLATE = "%s | Instamint"
-const APP_DESCRIPTION =
-  "Instamint is a social network for minting NFTs. Mint your own NFTs and share them with the world."
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
@@ -20,9 +16,10 @@ export const metadata: Metadata = {
   description: APP_DESCRIPTION,
   manifest: "/manifest.json",
   appleWebApp: {
+    title: `Apple ${APP_DEFAULT_TITLE}`,
     capable: true,
-    statusBarStyle: "default",
-    title: APP_DEFAULT_TITLE
+    statusBarStyle: "black-translucent",
+    startupImage: "/ios/1024.png"
   },
   formatDetection: {
     telephone: false
