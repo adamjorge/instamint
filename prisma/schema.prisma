@@ -22,13 +22,13 @@ model Minter {
   isSearchableByEmail Boolean   @default(true)
   is2FAEnabled        Boolean   @default(false)
   isAdmin             Boolean   @default(false)
-  isReported          Boolean   @default(false)
   createdAt           DateTime  @default(now())
   updatedAt           DateTime  @updatedAt
   deletedAt           DateTime?
 
   originalContent OriginalContent[]
   comments        Comment[]
+  Report          Report[]
 }
 
 model TeaBag {
@@ -36,9 +36,9 @@ model TeaBag {
   username   String
   bio        String   @db.Text
   profileurl String
-  isReported Boolean  @default(false)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+  Report     Report[]
 }
 
 model OriginalContent {
@@ -80,13 +80,29 @@ model Hashtag {
 model Comment {
   id         Int      @id @default(autoincrement())
   content    String   @db.Text
-  isReported Boolean  @default(false)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
   nft   Nft @relation(fields: [nftId], references: [id])
   nftId Int
 
-  minter   Minter @relation(fields: [minterId], references: [id])
+  minter   Minter   @relation(fields: [minterId], references: [id])
   minterId Int
+  Report   Report[]
+}
+
+model Report {
+  id        Int      @id @default(autoincrement())
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  comment   Comment? @relation(fields: [commentId], references: [id])
+  commentId Int
+
+  minter   Minter? @relation(fields: [minterId], references: [id])
+  minterId Int
+
+  teaBag   TeaBag? @relation(fields: [teaBagId], references: [id])
+  teaBagId Int?
 }

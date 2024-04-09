@@ -13,7 +13,8 @@
     "password": "minter2",
     "profileUrl": "",
     "avatarUrl": "",
-    "bio": ""
+    "bio": "",
+    "isReported": true
   },
   {
     "username": "minter3",
@@ -37,7 +38,8 @@
     "password": "minter5",
     "profileUrl": "",
     "avatarUrl": "",
-    "bio": ""
+    "bio": "",
+    "isReported": true
   },
   {
     "username": "minter6",

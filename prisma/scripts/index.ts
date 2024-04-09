@@ -9,3 +9,5 @@ export * from "./minter/create-minters"
 export * from "./nft/create-nfts"
 
 export * from "./original-content/create-original-contents"
+
+export * from "./report/create-reports"

@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-const MinterSchema = z.object({
+export const MinterSchema = z.object({
   id: z.number(),
   username: z.string(),
   email: z.string().email(),
@@ -23,5 +23,3 @@ const MinterSchema = z.object({
     .nullable()
     .transform((val) => (val ? new Date(val) : null))
 })
-
-export const ReportsSchema = z.array(MinterSchema)

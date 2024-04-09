@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <main className="flex flex-col items-center min-h-screen">
+    <main className="flex flex-col items-center min-h-screen w-full">
       <Menubar className="fixed top-0 w-full">
         <MenubarMenu>
           <MenubarTrigger>Home</MenubarTrigger>
@@ -37,7 +37,7 @@ export default function RootLayout({
         </MenubarMenu>
       </Menubar>
 
-      <div className="flex flex-col items-center justify-center flex-grow">{children}</div>
+      <div className="flex flex-col items-center justify-center flex-grow w-full">{children}</div>
     </main>
   )
 }
