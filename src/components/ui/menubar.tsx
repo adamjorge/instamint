@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client"
 
 import * as MenubarPrimitive from "@radix-ui/react-menubar"
