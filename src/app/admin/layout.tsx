@@ -1,13 +1,10 @@
 "use client"
 
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarSeparator,
-  MenubarTrigger
-} from "@/components/ui/menubar"
+import { Menubar, MenubarMenu } from "@/components/ui/menubar/menubar"
+import { MenubarContent } from "@/components/ui/menubar/menubar-content"
+import { MenubarItem } from "@/components/ui/menubar/menubar-item"
+import { MenubarSeparator } from "@/components/ui/menubar/menubar-separator"
+import { MenubarTrigger } from "@/components/ui/menubar/menubar-trigger"
 import Link from "next/link"
 import React from "react"
 
