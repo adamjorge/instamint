@@ -1,5 +1,5 @@
 import prisma from "@/lib/db"
-import type { Report } from "@/validators/types/reports"
+import type { Report } from "@/validators/types/report"
 import { NextRequest, NextResponse } from "next/server"
 
 async function getReports(type: Report) {

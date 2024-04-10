@@ -2,9 +2,9 @@
 
 import { useParams } from "next/navigation"
 
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import ReportCard from "@/components/custom/report-card"
 import { ReportsSchema } from "@/validators/schemas/reportSchema"
-import type { Report } from "@/validators/types/reports"
+import type { Report } from "@/validators/types/report"
 import { useQuery } from "@tanstack/react-query"
 import axios, { isAxiosError } from "axios"
 
@@ -37,19 +37,9 @@ export default function Reports() {
   return (
     <div className="w-3/4">
       {!data.length ? (
-        <span>No reports found on minters</span>
+        <span>No reports found on {type}</span>
       ) : (
-        data.map((report) => (
-          <Card key={report.id} className="mt-3">
-            <CardHeader>
-              <CardTitle>{report.id}</CardTitle>
-              <CardDescription>{report.content}</CardDescription>
-            </CardHeader>
-            <CardFooter>
-              <p>Created at : {report.createdAt.substring(0, 10)}</p>
-            </CardFooter>
-          </Card>
-        ))
+        data.map((report) => <ReportCard key={report.id} report={report} type={type} />)
       )}
     </div>
   )

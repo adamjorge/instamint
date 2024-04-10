@@ -2,7 +2,7 @@ import { z } from "zod"
 
 export const TeaBagSchema = z.object({
   id: z.number(),
-  content: z.string(),
+  name: z.string(),
   createdAt: z.date(),
   updatedAt: z.date().nullable(),
   deletedAt: z.date().nullable()
