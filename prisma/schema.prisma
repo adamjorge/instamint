@@ -16,7 +16,7 @@ model Comment {
   minterId  Int
   Minter    Minter   @relation(fields: [minterId], references: [id])
   Nft       Nft      @relation(fields: [nftId], references: [id])
-  Report    Report?
+  Report    Report[]
 }
 
 model Hashtag {
@@ -46,7 +46,7 @@ model Minter {
   deletedAt           DateTime?
   Comment             Comment[]
   OriginalContent     OriginalContent[]
-  Report              Report?
+  Report              Report[]
 }
 
 model Nft {
@@ -77,9 +77,9 @@ model Report {
   id        Int      @id @default(autoincrement())
   content   String
   createdAt DateTime @default(now())
-  commentId Int? @unique
-  minterId  Int? @unique
-  teaBagId  Int? @unique
+  commentId Int?
+  minterId  Int?
+  teaBagId  Int?
   Comment   Comment? @relation(fields: [commentId], references: [id])
   Minter    Minter?  @relation(fields: [minterId], references: [id])
   TeaBag    TeaBag?  @relation(fields: [teaBagId], references: [id])
@@ -92,5 +92,5 @@ model TeaBag {
   profileUrl String
   createdAt  DateTime @default(now())
   updatedAt  DateTime?
-  Report     Report?
+  Report     Report[]
 }

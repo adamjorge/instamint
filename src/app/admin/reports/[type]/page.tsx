@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation"
 
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ReportsSchema } from "@/validators/schemas/reportsSchema"
+import { ReportsSchema } from "@/validators/schemas/reportSchema"
 import type { Report } from "@/validators/types/reports"
 import { useQuery } from "@tanstack/react-query"
 import axios, { isAxiosError } from "axios"
@@ -37,16 +37,16 @@ export default function Reports() {
   return (
     <div className="w-3/4">
       {!data.length ? (
-        <div>No reports found on minters</div>
+        <span>No reports found on minters</span>
       ) : (
-        data.map((minter) => (
-          <Card key={minter.id} className="mt-3">
+        data.map((report) => (
+          <Card key={report.id} className="mt-3">
             <CardHeader>
-              <CardTitle>{minter.username}</CardTitle>
-              <CardDescription>{minter.email}</CardDescription>
+              <CardTitle>{report.id}</CardTitle>
+              <CardDescription>{report.content}</CardDescription>
             </CardHeader>
             <CardFooter>
-              <p>ID : {minter.id}</p>
+              <p>Created at : {report.createdAt.substring(0, 10)}</p>
             </CardFooter>
           </Card>
         ))

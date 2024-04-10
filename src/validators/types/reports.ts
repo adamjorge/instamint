@@ -1,1 +1,1 @@
-export type Report = "minter" | "comment" | "tea-bag"
+export type Report = "minters" | "comments" | "teabags"

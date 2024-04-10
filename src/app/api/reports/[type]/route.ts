@@ -4,24 +4,30 @@ import { NextRequest, NextResponse } from "next/server"
 
 async function getReports(type: Report) {
   switch (type) {
-    case "minter":
-      return await prisma.minter.findMany({
+    case "minters":
+      return await prisma.report.findMany({
         where: {
-          isReported: true
+          minterId: {
+            not: null
+          }
         }
       })
 
-    case "comment":
-      return await prisma.comment.findMany({
+    case "comments":
+      return await prisma.report.findMany({
         where: {
-          isReported: true
+          commentId: {
+            not: null
+          }
         }
       })
 
-    case "tea-bag":
-      return await prisma.teaBag.findMany({
+    case "teabags":
+      return await prisma.report.findMany({
         where: {
-          isReported: true
+          commentId: {
+            not: null
+          }
         }
       })
 

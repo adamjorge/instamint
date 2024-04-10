@@ -7,6 +7,7 @@ import { MenubarSeparator } from "@/components/ui/menubar/menubar-separator"
 import { MenubarTrigger } from "@/components/ui/menubar/menubar-trigger"
 import Link from "next/link"
 import React from "react"
+import { FaHome } from "react-icons/fa"
 
 export default function RootLayout({
   children
@@ -17,7 +18,9 @@ export default function RootLayout({
     <main className="flex flex-col items-center min-h-screen w-full">
       <Menubar className="fixed top-0 w-full">
         <MenubarMenu>
-          <MenubarTrigger>Home</MenubarTrigger>
+          <MenubarTrigger>
+            <FaHome />
+          </MenubarTrigger>
           <MenubarContent>
             <Link href="/admin">
               <MenubarItem>Home</MenubarItem>
@@ -28,11 +31,15 @@ export default function RootLayout({
         <MenubarMenu>
           <MenubarTrigger>Reports</MenubarTrigger>
           <MenubarContent>
-            <Link href="/admin/reports/minter">
+            <Link href="/admin/reports/minters">
               <MenubarItem>Minters</MenubarItem>
             </Link>
-            <MenubarItem>Tea-bags</MenubarItem>
-            <MenubarItem>Comments</MenubarItem>
+            <Link href="/admin/reports/teabags">
+              <MenubarItem>Tea-bags</MenubarItem>
+            </Link>
+            <Link href="/admin/reports/comments">
+              <MenubarItem>Comments</MenubarItem>
+            </Link>
           </MenubarContent>
         </MenubarMenu>
       </Menubar>

@@ -16,10 +16,7 @@ export const MinterSchema = z.object({
   is2FAEnabled: z.boolean(),
   isAdmin: z.boolean(),
   isReported: z.boolean(),
-  createdAt: z.string().nullable(),
-  updatedAt: z.string().nullable(),
-  deletedAt: z
-    .string()
-    .nullable()
-    .transform((val) => (val ? new Date(val) : null))
+  createdAt: z.date().nullable(),
+  updatedAt: z.date().nullable(),
+  deletedAt: z.date().nullable()
 })
