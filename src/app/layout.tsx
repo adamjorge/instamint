@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import React from "react"
 import "./globals.css"
+import Footer from "@/components/footer"
 
 // eslint-disable-next-line new-cap
 const inter = Inter({ subsets: ["latin"] })
@@ -56,7 +57,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>{children}
+        <Footer />
+      </Providers>
       </body>
     </html>
   )
