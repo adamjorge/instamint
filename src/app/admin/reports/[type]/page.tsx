@@ -3,27 +3,15 @@
 import { useParams } from "next/navigation"
 
 import ReportCard from "@/components/custom/reports/report-card"
-import { ReportsSchema } from "@/validators/schemas/reportSchema"
-import type { Report } from "@/validators/types/report"
+import { fetchReports } from "@/lib/query/reports/fetchReports"
+import type { ReportType } from "@/validators/types/reportType"
 import { useQuery } from "@tanstack/react-query"
-import axios, { isAxiosError } from "axios"
 
 export default function Reports() {
-  const { type } = useParams<{ type: Report }>()
-  const fetchReports = () =>
-    axios
-      .get(`/api/reports/${type}`)
-      .then((res) => ReportsSchema.parse(res.data))
-      .catch((err: unknown) => {
-        if (isAxiosError(err)) {
-          throw new Error(err.message)
-        }
-
-        throw new Error(err as string)
-      })
+  const { type } = useParams<{ type: ReportType }>()
   const { isPending, error, data } = useQuery({
-    queryKey: ["reports"],
-    queryFn: fetchReports
+    queryKey: ["reports", type],
+    queryFn: () => fetchReports(type)
   })
 
   if (isPending) {
@@ -31,7 +19,7 @@ export default function Reports() {
   }
 
   if (error) {
-    return <div>Error : {error.message}</div>
+    return <div>Error: {error.message}</div>
   }
 
   return (

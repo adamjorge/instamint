@@ -7,16 +7,16 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card"
-import { ReportSchema } from "@/validators/schemas/reportSchema"
-import type { Report } from "@/validators/types/report"
+import { ReportValidationSchema } from "@/validators/schemas/reportSchema"
+import type { ReportType } from "@/validators/types/reportType"
 import { z } from "zod"
 
 export default function ReportCard({
   report,
   type
 }: {
-  report: z.infer<typeof ReportSchema>
-  type: Report
+  report: z.infer<typeof ReportValidationSchema>
+  type: ReportType
 }) {
   const title = type.charAt(0).toUpperCase() + type.slice(1, -1)
 

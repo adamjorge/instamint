@@ -1,43 +1,12 @@
-import prisma from "@/lib/db"
-import type { Report } from "@/validators/types/report"
+import { getReports } from "@/lib/query/reports/getReports"
 import { NextRequest, NextResponse } from "next/server"
 
-async function getReports(type: Report) {
-  switch (type) {
-    case "minters":
-      return await prisma.report.findMany({
-        where: {
-          minterId: {
-            not: null
-          }
-        }
-      })
-
-    case "comments":
-      return await prisma.report.findMany({
-        where: {
-          commentId: {
-            not: null
-          }
-        }
-      })
-
-    case "teabags":
-      return await prisma.report.findMany({
-        where: {
-          commentId: {
-            not: null
-          }
-        }
-      })
-
-    default:
-      throw new Error("Invalid type")
-  }
-}
-
 export async function GET(req: NextRequest, res: NextResponse) {
-  const type = req.nextUrl.pathname.split("/").pop() as Report
+  const type = req.nextUrl.pathname.split("/").pop()
+
+  if (type !== "minters" && type !== "comments" && type !== "teabags") {
+    return NextResponse.json({ error: "Invalid Data Type" }, { status: 400 })
+  }
 
   try {
     const reports = await getReports(type)
