@@ -1,7 +1,7 @@
 import prisma from "../db"
 
 export async function searchNfts(search: string) {
-  const nfts = await prisma.nft.findMany({
+  return await prisma.nft.findMany({
     where: {
       OR: [
         {
@@ -33,6 +33,4 @@ export async function searchNfts(search: string) {
       ]
     }
   })
-
-  return nfts
 }
