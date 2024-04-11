@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation"
 
-import ReportCard from "@/components/custom/report-card"
+import ReportCard from "@/components/custom/reports/report-card"
 import { ReportsSchema } from "@/validators/schemas/reportSchema"
 import type { Report } from "@/validators/types/report"
 import { useQuery } from "@tanstack/react-query"
@@ -31,11 +31,11 @@ export default function Reports() {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <div>Error : {error.message}</div>
   }
 
   return (
-    <div className="w-3/4">
+    <div className="mt-10 w-3/4 pb-5">
       {!data.length ? (
         <span>No reports found on {type}</span>
       ) : (

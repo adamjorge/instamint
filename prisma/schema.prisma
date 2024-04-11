@@ -77,12 +77,12 @@ model Report {
   id        Int      @id @default(autoincrement())
   content   String
   createdAt DateTime @default(now())
-  commentId Int?
   minterId  Int?
   teaBagId  Int?
-  Comment   Comment? @relation(fields: [commentId], references: [id])
+  commentId Int?
   Minter    Minter?  @relation(fields: [minterId], references: [id])
   TeaBag    TeaBag?  @relation(fields: [teaBagId], references: [id])
+  Comment   Comment? @relation(fields: [commentId], references: [id])
 }
 
 model TeaBag {
