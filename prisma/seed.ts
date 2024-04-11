@@ -5,7 +5,9 @@ import {
   createHashtags,
   createMinters,
   createNfts,
-  createOriginalContents
+  createOriginalContents,
+  createReports,
+  createTeaBags
 } from "./scripts"
 
 const prisma = new PrismaClient()
@@ -17,13 +19,15 @@ async function main() {
   await createOriginalContents(prisma)
   await createNfts(prisma)
   await createComments(prisma)
+  await createTeaBags(prisma)
+  await createReports(prisma)
 }
 
 main()
   .then(async () => {
     await prisma.$disconnect()
   })
-  .catch(async () => {
+  .catch(async (error: unknown) => {
     await prisma.$disconnect()
-    process.exit(1)
+    throw new Error(error as string)
   })

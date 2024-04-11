@@ -1,4 +1,5 @@
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
+import Providers from "@/providers/providers"
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import React from "react"
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     title: `Apple ${APP_DEFAULT_TITLE}`,
     capable: true,
     statusBarStyle: "black-translucent",
-    startupImage: "/ios/1024.png"
+    startupImage: "/splash_screens/splash_screen.png"
   },
   formatDetection: {
     telephone: false
@@ -54,7 +55,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }

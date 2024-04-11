@@ -18,8 +18,10 @@ init:
 	$(MAKE) start
 
 init-env:
-	cp .env.example .env
-	@$(call GREEN,"The .env file is now created. Please fill in the necessary information.")
+    if [ ! -f .env ]; then \
+        cp .env.example .env; \
+        @$(call GREEN,"The .env file is now created. Please fill in the necessary information."); \
+    fi
 
 ## ———— 🎻 NPM ————
 npm-install: ## Install dependencies
@@ -48,7 +50,6 @@ docker-stop:
 ## ———— 📊 Database ————
 db-init: ## Init database
 	$(PRISMA) generate
-	$(MAKE) db-seed
 	@$(call GREEN, "Database is now initialized.")
 
 db-studio: ## Open Prisma Studio

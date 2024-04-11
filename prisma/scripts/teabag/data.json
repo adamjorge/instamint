@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "first teabag",
+    "bio": "",
+    "profileUrl": ""
+  },
+  {
+    "id": 2,
+    "name": "stamina",
+    "bio": "",
+    "profileUrl": ""
+  },
+  { 
+    "id": 3,
+    "name": "sugar",
+    "bio": "",
+    "profileUrl": ""
+  },
+  { 
+    "id": 4,
+    "name": "milk",
+    "bio": "",
+    "profileUrl": ""
+  },
+  {
+    "id": 5,
+    "name": "honey",
+    "bio": "",
+    "profileUrl": ""
+  }
+]
