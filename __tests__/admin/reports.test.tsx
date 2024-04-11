@@ -1,5 +1,5 @@
 import ReportCard from "@/components/custom/reports/report-card"
-import { ReportSchema } from "@/validators/schemas/reportSchema"
+import { ReportValidationSchema } from "@/validators/schemas/reportSchema"
 import { describe, expect, it } from "@jest/globals"
 import { render, screen } from "@testing-library/react"
 
@@ -14,7 +14,7 @@ describe("Reports", () => {
       teaBagId: null,
       commentId: null
     }
-    const reportObject = ReportSchema.parse(report)
+    const reportObject = ReportValidationSchema.parse(report)
     const secondReport = {
       id: 2,
       content: "Inappropriate content 2",
@@ -24,7 +24,7 @@ describe("Reports", () => {
       teaBagId: 1,
       commentId: null
     }
-    const secondReportObject = ReportSchema.parse(secondReport)
+    const secondReportObject = ReportValidationSchema.parse(secondReport)
     const thirdReport = {
       id: 3,
       content: "Inappropriate content 3",
@@ -34,7 +34,7 @@ describe("Reports", () => {
       teaBagId: null,
       commentId: 1
     }
-    const thirdReportObject = ReportSchema.parse(thirdReport)
+    const thirdReportObject = ReportValidationSchema.parse(thirdReport)
 
     render(<ReportCard report={reportObject} type="minters" />)
     expect(screen.getByText("Report ID: 1")).toBeDefined()
