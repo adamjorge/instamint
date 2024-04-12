@@ -18,10 +18,10 @@ init:
 	$(MAKE) start
 
 init-env:
-    if [ ! -f .env ]; then \
-        cp .env.example .env; \
-        @$(call GREEN,"The .env file is now created. Please fill in the necessary information."); \
-    fi
+	if [ ! -f .env ]; then \
+	    cp .env.example .env \
+	    @$(call GREEN,"The .env file is now created. Please fill in the necessary information.") \
+	fi
 
 ## ———— 🎻 NPM ————
 npm-install: ## Install dependencies
