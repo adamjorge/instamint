@@ -8,14 +8,14 @@ datasource db {
 }
 
 model Comment {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   content   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
   nftId     Int
   minterId  Int
-  Minter    Minter   @relation(fields: [minterId], references: [id])
-  Nft       Nft      @relation(fields: [nftId], references: [id])
+  Minter    Minter    @relation(fields: [minterId], references: [id])
+  Nft       Nft       @relation(fields: [nftId], references: [id])
   Report    Report[]
 }
 
@@ -23,7 +23,7 @@ model Hashtag {
   id        Int      @id @default(autoincrement())
   name      String   @unique
   createdAt DateTime @default(now())
-  Nft       Nft[]
+  nfts      Nft[]
 }
 
 model Minter {
@@ -42,7 +42,7 @@ model Minter {
   is2FAEnabled        Boolean           @default(false)
   isAdmin             Boolean           @default(false)
   createdAt           DateTime          @default(now())
-  updatedAt           DateTime?
+  updatedAt           DateTime?         @updatedAt
   deletedAt           DateTime?
   Comment             Comment[]
   OriginalContent     OriginalContent[]
@@ -57,20 +57,20 @@ model Nft {
   location          String
   isDraft           Boolean         @default(true)
   createdAt         DateTime        @default(now())
+  originalContent   OriginalContent @relation(fields: [originalContentId], references: [id])
   originalContentId Int             @unique
-  Comment           Comment[]
-  OriginalContent   OriginalContent @relation(fields: [originalContentId], references: [id])
-  Hashtag           Hashtag[]
+  comments          Comment[]
+  hashtags          Hashtag[]
 }
 
 model OriginalContent {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   imageUrl  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+  nft       Nft?
+  minter    Minter    @relation(fields: [minterId], references: [id])
   minterId  Int
-  Nft       Nft?
-  Minter    Minter   @relation(fields: [minterId], references: [id])
 }
 
 model Report {
@@ -86,11 +86,11 @@ model Report {
 }
 
 model TeaBag {
-  id         Int      @id @default(autoincrement())
+  id         Int       @id @default(autoincrement())
   name       String
   bio        String
   profileUrl String
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime? @updatedAt
   Report     Report[]
 }
