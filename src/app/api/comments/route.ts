@@ -1,7 +1,7 @@
 import { getComments } from "@/lib/query/comments/getComments"
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 
-export async function GET(res: NextResponse) {
+export async function GET(req: NextRequest, res: NextResponse) {
   try {
     const comments = await getComments()
 

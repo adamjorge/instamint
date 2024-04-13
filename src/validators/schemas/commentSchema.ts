@@ -5,8 +5,8 @@ export const CommentValidationSchema = z.object({
   content: z.string(),
   createdAt: z.string(),
   updatedAt: z.string().nullable(),
-  userId: z.number(),
-  teaBagId: z.number()
+  nftId: z.number(),
+  minterId: z.number()
 })
 
 export const CommentsValidationSchema = z.array(CommentValidationSchema)

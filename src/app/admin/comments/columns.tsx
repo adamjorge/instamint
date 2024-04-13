@@ -1,25 +1,34 @@
 "use client"
 
+import { CommentValidationSchema } from "@/validators/schemas/commentSchema"
 import { ColumnDef } from "@tanstack/react-table"
+import { z } from "zod"
 
-export type Payment = {
-  id: string
-  amount: number
-  status: "pending" | "processing" | "success" | "failed"
-  email: string
-}
+type Comment = z.infer<typeof CommentValidationSchema>
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<Comment>[] = [
   {
-    accessorKey: "status",
-    header: "Status"
+    accessorKey: "id",
+    header: "ID"
   },
   {
-    accessorKey: "email",
-    header: "Email"
+    accessorKey: "content",
+    header: "Content"
   },
   {
-    accessorKey: "amount",
-    header: "Amount"
+    accessorKey: "createdAt",
+    header: "Creation date of the comment"
+  },
+  {
+    accessorKey: "updatedAt",
+    header: "Last update of the comment"
+  },
+  {
+    accessorKey: "nftId",
+    header: "Commented NFT ID"
+  },
+  {
+    accessorKey: "minterId",
+    header: "Minter ID"
   }
 ]
