@@ -12,7 +12,8 @@ export async function createNfts(prisma: PrismaClient) {
     imageUrl: nft.imageUrl,
     location: "",
     price: faker.number.float({ min: 0, max: 100, fractionDigits: 2 }),
-    description: faker.lorem.paragraph()
+    description: faker.lorem.paragraph(),
+    isDraft: false
   }))
 
   return prisma.nft.createMany({ data })
