@@ -1,0 +1,24 @@
+import { z } from "zod"
+
+export const minterSchema = z.object({
+  id: z.number(),
+  username: z.string(),
+  email: z.string().email(),
+  password: z.string(),
+  phoneNumber: z.string().nullable(),
+  defaultLanguage: z.string(),
+  profileUrl: z.string(),
+  avatarUrl: z.string(),
+  bio: z.string(),
+  authorName: z.string().nullable(),
+  isVisible: z.boolean(),
+  isSearchableByEmail: z.boolean(),
+  is2FAEnabled: z.boolean(),
+  isAdmin: z.boolean(),
+  isReported: z.boolean().optional(),
+  createdAt: z.string().datetime({ precision: 3 }).optional(),
+  updatedAt: z.string().datetime({ precision: 3 }).optional(),
+  deletedAt: z.string().datetime({ precision: 3 }).nullable().optional()
+})
+
+export type MinterSchemaType = z.infer<typeof minterSchema>
