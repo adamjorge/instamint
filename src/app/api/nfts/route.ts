@@ -1,4 +1,4 @@
-import { searchNfts } from "@/lib/query/search"
+import { searchNfts } from "@/lib/query/nfts/search"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request) {

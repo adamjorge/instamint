@@ -1,20 +1,26 @@
+"use client"
+
 import { FiHome, FiSearch, FiHeart, FiUser } from "react-icons/fi"
 import { PiFlower } from "react-icons/pi"
 import { Drawer, DrawerTrigger } from "../ui/drawer"
 import Search from "../search"
+import { useState } from "react"
+import Link from "next/link"
 
 export default function Footer() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <footer className="fixed bottom-0 left-0 right-0 p-4 bg-gray-800 text-white">
       <nav className="flex justify-around">
-        <button>
+        <Link href="/">
           <FiHome className="w-6 h-6 text-gray-400 hover:text-green-500" />
-        </button>
-        <Drawer>
+        </Link>
+        <Drawer open={isOpen} onOpenChange={setIsOpen}>
           <DrawerTrigger>
             <FiSearch className="w-6 h-6 text-gray-400 hover:text-green-500" />
           </DrawerTrigger>
-          <Search />
+          <Search setIsOpen={setIsOpen} />
         </Drawer>
         <button>
           <PiFlower className="w-6 h-6 text-gray-400 hover:text-green-500" />
