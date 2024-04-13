@@ -37,6 +37,7 @@ export default function Search({ setIsOpen }: SearchProps) {
         </DrawerHeader>
         <div className="flex justify-center">
           <Input
+            autoFocus
             type="search"
             placeholder="Search ..."
             className="mx-5 w-3/4"
