@@ -34,6 +34,15 @@ export default function MenubarLayout() {
           </Link>
         </MenubarContent>
       </MenubarMenu>
+      <MenubarSeparator />
+      <MenubarMenu>
+        <MenubarTrigger>Application activity</MenubarTrigger>
+        <MenubarContent>
+          <Link href="/admin/comments">
+            <MenubarItem>Comments</MenubarItem>
+          </Link>
+        </MenubarContent>
+      </MenubarMenu>
     </Menubar>
   )
 }

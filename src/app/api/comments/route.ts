@@ -1,0 +1,12 @@
+import { getComments } from "@/lib/query/comments/getComments"
+import { NextResponse } from "next/server"
+
+export async function GET(res: NextResponse) {
+  try {
+    const comments = await getComments()
+
+    return NextResponse.json(comments, res)
+  } catch (error) {
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 })
+  }
+}

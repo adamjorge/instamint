@@ -32,6 +32,16 @@ export async function createComments(prisma: PrismaClient) {
       content: "I'm not sure how I feel about this NFT",
       minterId: fourthMinterId,
       nftId: 1
+    },
+    {
+      content: "This NFT speaks to my soul, it's like it was made for me",
+      minterId: firstMinter.id,
+      nftId: 1
+    },
+    {
+      content: "I've seen a lot of NFTs, but this one stands out from the crowd",
+      minterId: secondMinterId,
+      nftId: 1
     }
   ]
 
