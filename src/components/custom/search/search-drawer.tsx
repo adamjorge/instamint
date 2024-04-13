@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button } from "../ui/button"
+import { Button } from "../../ui/button"
 import {
   DrawerContent,
   DrawerHeader,
@@ -7,15 +7,15 @@ import {
   DrawerDescription,
   DrawerFooter,
   DrawerClose
-} from "../ui/drawer"
-import { Input } from "../ui/input"
+} from "../../ui/drawer"
+import { Input } from "../../ui/input"
 import { useRouter } from "next/navigation"
 
-type SearchProps = {
+type SearchDrawerProps = {
   setIsOpen: (isOpen: boolean) => void
 }
 
-export default function Search({ setIsOpen }: SearchProps) {
+export default function SearchDrawer({ setIsOpen }: SearchDrawerProps) {
   const [searchTerm, setSearchTerm] = useState("")
   const router = useRouter()
   const handleSearchSubmit = () => {

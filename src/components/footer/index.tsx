@@ -3,7 +3,7 @@
 import { FiHome, FiSearch, FiHeart, FiUser } from "react-icons/fi"
 import { PiFlower } from "react-icons/pi"
 import { Drawer, DrawerTrigger } from "../ui/drawer"
-import Search from "../search"
+import SearchDrawer from "../custom/search/search-drawer"
 import { useState } from "react"
 import Link from "next/link"
 
@@ -20,7 +20,7 @@ export default function Footer() {
           <DrawerTrigger>
             <FiSearch className="w-6 h-6 text-gray-400 hover:text-green-500" />
           </DrawerTrigger>
-          <Search setIsOpen={setIsOpen} />
+          <SearchDrawer setIsOpen={setIsOpen} />
         </Drawer>
         <button>
           <PiFlower className="w-6 h-6 text-gray-400 hover:text-green-500" />
