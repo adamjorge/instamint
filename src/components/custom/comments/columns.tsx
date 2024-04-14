@@ -1,10 +1,7 @@
 "use client"
 
-import { CommentValidationSchema } from "@/validators/schemas/commentSchema"
+import type { Comment } from "@/validators/types/commentType"
 import { ColumnDef } from "@tanstack/react-table"
-import { z } from "zod"
-
-type Comment = z.infer<typeof CommentValidationSchema>
 
 export const columns: ColumnDef<Comment>[] = [
   {
