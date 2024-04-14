@@ -9,7 +9,7 @@ export default function NftCard(nft: NftSchemaType) {
         <Image
           className="self-center"
           src={nft.imageUrl}
-          alt={nft.id.toString()}
+          alt={`NFT ${nft.id.toString()}`}
           width={400}
           height={400}
         />
