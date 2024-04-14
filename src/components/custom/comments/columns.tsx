@@ -1,5 +1,6 @@
 "use client"
 
+import { CommentActions } from "@/components/custom/comments/comment-actions"
 import type { Comment } from "@/validators/types/commentType"
 import { ColumnDef } from "@tanstack/react-table"
 
@@ -27,5 +28,9 @@ export const columns: ColumnDef<Comment>[] = [
   {
     accessorKey: "minterId",
     header: "Minter ID"
+  },
+  {
+    id: "actions",
+    cell: ({ row }) => <CommentActions row={row} />
   }
 ]

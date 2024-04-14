@@ -8,7 +8,7 @@ import { FaHome } from "react-icons/fa"
 
 export default function MenubarLayout() {
   return (
-    <Menubar className="fixed top-0 w-full bg-white">
+    <Menubar className="fixed top-0 w-full bg-white z-10">
       <MenubarMenu>
         <MenubarTrigger>
           <FaHome />

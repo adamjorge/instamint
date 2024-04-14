@@ -42,51 +42,6 @@ export async function createComments(prisma: PrismaClient) {
       content: "I've seen a lot of NFTs, but this one stands out from the crowd",
       minterId: secondMinterId,
       nftId: 1
-    },
-    {
-      content: "I'm not a fan of this NFT",
-      minterId: secondMinterId,
-      nftId: 1
-    },
-    {
-      content: "I'm not a fan of this NFT",
-      minterId: secondMinterId,
-      nftId: 1
-    },
-    {
-      content: "I'm not a fan of this NFT",
-      minterId: secondMinterId,
-      nftId: 1
-    },
-    {
-      content: "I'm not a fan of this NFT",
-      minterId: secondMinterId,
-      nftId: 1
-    },
-    {
-      content: "I'm not a fan of this NFT",
-      minterId: secondMinterId,
-      nftId: 1
-    },
-    {
-      content: "I'm not a fan of this NFT",
-      minterId: secondMinterId,
-      nftId: 1
-    },
-    {
-      content: "I'm not a fan of this NFT",
-      minterId: secondMinterId,
-      nftId: 1
-    },
-    {
-      content: "I'm not a fan of this NFT",
-      minterId: secondMinterId,
-      nftId: 1
-    },
-    {
-      content: "I'm not a fan of this NFT",
-      minterId: secondMinterId,
-      nftId: 1
     }
   ]
 
