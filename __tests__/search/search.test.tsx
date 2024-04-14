@@ -12,7 +12,6 @@ describe("Search", () => {
       expect(getByText(`@${nft.originalContent?.minter?.username}`)).toBeDefined()
       expect(getByText(nft.description)).toBeDefined()
 
-      // Images are lazy loaded, so we need to wait for the image to load
       await waitFor(() => {
         const image = getByAltText(`NFT ${nft.id.toString()}`) as HTMLImageElement
         expect(image).toBeDefined()
