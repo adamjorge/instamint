@@ -1,8 +1,9 @@
 import prisma from "@/lib/db"
 
-export const deleteComment = (id: number) =>
-  prisma.comment.delete({
+export async function deleteComment(id: number) {
+  await prisma.comment.delete({
     where: {
       id
     }
   })
+}
