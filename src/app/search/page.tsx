@@ -15,22 +15,22 @@ export default function SearchPage() {
 
   if (!search) {
     return (
-      <div>
+      <div className="text-center">
         <p>Welcome to your search page. This is where you can search for NFTs or minters.</p>
       </div>
     )
   }
 
   if (isPending) {
-    return <div>Loading...</div>
+    return <div className="text-center">Loading...</div>
   }
 
   if (error) {
-    return <div>An error occurred, please try again later.</div>
+    return <div className="text-center">An error occurred, please try again later.</div>
   }
 
   if (data.length === 0) {
-    return <div>No results found for: {search}</div>
+    return <div className="text-center">No results found for: {search}</div>
   }
 
   return (
