@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: `Apple ${APP_DEFAULT_TITLE}`,
     capable: true,
     statusBarStyle: "black-translucent",
-    startupImage: "/splash_screens/iPhone_15_Pro__iPhone_15__iPhone_14_Pro_portrait.png"
+    startupImage: "/splash_screens/main_splash_screen.png"
   },
   formatDetection: {
     telephone: false
