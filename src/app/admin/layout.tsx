@@ -15,7 +15,7 @@ export default function AdminLayout({
       <MenubarLayout />
       <main className="flex flex-col items-center min-h-screen justify-center w-full">
         <Providers>{children}</Providers>
-        <Toaster position="bottom-right" richColors />
+        <Toaster position="bottom-right" richColors closeButton />
       </main>
     </>
   )

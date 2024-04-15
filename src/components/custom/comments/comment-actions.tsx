@@ -20,7 +20,10 @@ export function CommentActions({
   const queryClient = useQueryClient()
   const mutation = useMutation({
     mutationFn: (commentId: string) => handleDeleteComment(commentId),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["comments"] })
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: ["comments"] })
+      toast.info("Comment deleted successfully")
+    }
   })
   const handleClickOnDelete = useCallback(
     (commentId: string) => {

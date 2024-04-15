@@ -6,22 +6,7 @@ import { DropdownMenuLabel } from "@/components/ui/dropdown/dropdown-menu-label"
 import type { Row } from "@tanstack/react-table"
 import { MoreHorizontal } from "lucide-react"
 
-export default function Actions({
-  handleClickOnDelete,
-  handleClickOnWIP,
-  row
-}: {
-  handleClickOnDelete: (commentId: string) => void
-  handleClickOnWIP: () => void
-  row: Row<{
-    id: number
-    content: string
-    createdAt: string
-    updatedAt: string | null
-    nftId: number
-    minterId: number
-  }>
-}) {
+export default function Actions({ handleClickOnDelete, handleClickOnWIP, row }: ActionsProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -46,4 +31,17 @@ export default function Actions({
       </DropdownMenuContent>
     </DropdownMenu>
   )
+}
+
+type ActionsProps = {
+  handleClickOnDelete: (commentId: string) => void
+  handleClickOnWIP: () => void
+  row: Row<{
+    id: number
+    content: string
+    createdAt: string
+    updatedAt: string | null
+    nftId: number
+    minterId: number
+  }>
 }

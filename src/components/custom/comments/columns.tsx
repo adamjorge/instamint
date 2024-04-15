@@ -1,7 +1,7 @@
 "use client"
 
 import { CommentActions } from "@/components/custom/comments/comment-actions"
-import type { Comment } from "@/validators/types/commentType"
+import type { Comment } from "@/validators/schemas/commentSchema"
 import { ColumnDef } from "@tanstack/react-table"
 
 export const columns: ColumnDef<Comment>[] = [
