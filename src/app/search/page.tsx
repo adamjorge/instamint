@@ -25,16 +25,16 @@ export default function SearchPage() {
     return <div>Loading...</div>
   }
 
-  if (!data) {
-    return <div>No results found for: {search}</div>
-  }
-
   if (error) {
     return <div>An error occurred, please try again later.</div>
   }
 
+  if (data.length === 0) {
+    return <div>No results found for: {search}</div>
+  }
+
   return (
-    <div>
+    <div className="text-center my-4">
       <p>Search results for: {search}</p>
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         {data.map((nft) => (

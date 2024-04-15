@@ -50,7 +50,7 @@ export default function SearchDrawer({ setIsOpen }: SearchDrawerProps) {
           <div className="flex flex-col items-center">
             <Button onClick={handleSearchSubmit}>Submit</Button>
             <DrawerClose asChild>
-              <Button size="sm" variant="outline" className="w-fit">
+              <Button size="sm" variant="outline" className="w-fit mt-3">
                 Cancel
               </Button>
             </DrawerClose>
