@@ -1,9 +1,9 @@
-import prisma from "../../db"
 import axios from "axios"
 import { SearchSchemaType } from "@/validators/schemas/search/searchSchema"
 import { searchNftsSchema } from "@/validators/schemas/search/nfts/searchNftSchema"
 import { Prisma } from "@prisma/client"
 import NftSelect = Prisma.NftSelect
+import prisma from "@/lib/db"
 
 const nftSearchSelect: NftSelect = {
   id: true,

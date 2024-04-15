@@ -1,32 +1,30 @@
-import React, { useState } from "react"
-import { Button } from "../../ui/button"
+import React, { useCallback, useState } from "react"
+import { useRouter } from "next/navigation"
+import { Button } from "@/components/ui/button"
 import {
+  DrawerClose,
   DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
   DrawerDescription,
   DrawerFooter,
-  DrawerClose
-} from "../../ui/drawer"
-import { Input } from "../../ui/input"
-import { useRouter } from "next/navigation"
-
-type SearchDrawerProps = {
-  setIsOpen: (isOpen: boolean) => void
-}
+  DrawerHeader,
+  DrawerTitle
+} from "@/components/ui/drawer"
+import { Input } from "@/components/ui/input"
 
 export default function SearchDrawer({ setIsOpen }: SearchDrawerProps) {
   const [searchTerm, setSearchTerm] = useState("")
   const router = useRouter()
-  const handleSearchSubmit = () => {
-    setIsOpen(false)
-    router.push(`/search?search=${encodeURIComponent(searchTerm)}`)
-  }
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      handleSearchSubmit()
+  const handleSearchSubmit = useCallback(() => {
+      setIsOpen(false)
+      router.push(`/search?search=${encodeURIComponent(searchTerm)}`)
     }
-  }
+    , [searchTerm, setIsOpen, router])
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+      if (e.key === "Enter") {
+        handleSearchSubmit()
+      }
+    }
+    , [handleSearchSubmit])
 
   return (
     <DrawerContent className="bg-light dark:bg-gray-200 dark:text-gray-800">
@@ -61,4 +59,8 @@ export default function SearchDrawer({ setIsOpen }: SearchDrawerProps) {
       </div>
     </DrawerContent>
   )
+}
+
+type SearchDrawerProps = {
+  setIsOpen: (isOpen: boolean) => void
 }

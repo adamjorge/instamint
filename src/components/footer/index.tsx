@@ -2,10 +2,10 @@
 
 import { FiHome, FiSearch, FiHeart, FiUser } from "react-icons/fi"
 import { PiFlower } from "react-icons/pi"
-import { Drawer, DrawerTrigger } from "../ui/drawer"
-import SearchDrawer from "../custom/search/search-drawer"
 import { useState } from "react"
 import Link from "next/link"
+import { Drawer, DrawerTrigger } from "@/components/ui/drawer"
+import SearchDrawer from "@/components/custom/search/search-drawer"
 
 export default function Footer() {
   const [isOpen, setIsOpen] = useState(false)
