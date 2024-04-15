@@ -1,8 +1,8 @@
-import { NftSchemaType } from "@/validators/schemas/nftSchema"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
+import { SearchNftSchemaType } from "@/validators/schemas/search/nfts/searchNftSchema"
 
-export default function NftCard(nft: NftSchemaType) {
+export default function NftCard(nft: SearchNftSchemaType) {
   return (
     <Card className="bg-muted m-4">
       <CardHeader>

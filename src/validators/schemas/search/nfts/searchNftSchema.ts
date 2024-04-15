@@ -12,3 +12,5 @@ export const searchNftSchema = z.object({
 })
 
 export const searchNftsSchema = z.array(searchNftSchema)
+
+export type SearchNftSchemaType = z.infer<typeof searchNftSchema>
