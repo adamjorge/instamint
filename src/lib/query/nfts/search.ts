@@ -1,10 +1,34 @@
 import prisma from "../../db"
 import axios from "axios"
-import { nftsSearchValidationSchema } from "@/validators/schemas/nftSchema"
-import { SearchSchemaType } from "@/validators/schemas/searchSchema"
+import { SearchSchemaType } from "@/validators/schemas/search/searchSchema"
+import { searchNftsSchema } from "@/validators/schemas/search/nfts/searchNftSchema"
+import { Prisma } from "@prisma/client"
+import NftSelect = Prisma.NftSelect
+
+const nftSearchSelect: NftSelect = {
+  id: true,
+  description: true,
+  imageUrl: true,
+  createdAt: true,
+  originalContentId: true,
+  originalContent: {
+    select: {
+      id: true,
+      minterId: true,
+      minter: {
+        select: {
+          id: true,
+          username: true
+        }
+      }
+    }
+  },
+  hashtags: true
+}
 
 export async function searchNfts(search: string) {
   return await prisma.nft.findMany({
+    select: nftSearchSelect,
     where: {
       isDraft: false,
       OR: [
@@ -35,14 +59,6 @@ export async function searchNfts(search: string) {
           }
         }
       ]
-    },
-    include: {
-      originalContent: {
-        include: {
-          minter: true
-        }
-      },
-      hashtags: true
     }
   })
 }
@@ -51,7 +67,7 @@ export async function fetchNfts(searchTerm: string) {
   try {
     const res = await axios.get<SearchSchemaType>(`/api/nfts?search=${searchTerm}`)
 
-    return nftsSearchValidationSchema.parse(res.data.nfts)
+    return searchNftsSchema.parse(res.data.nfts)
   } catch (err) {
     if (axios.isAxiosError(err)) {
       throw new Error(err.message)

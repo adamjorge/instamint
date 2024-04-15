@@ -1,7 +1,7 @@
 import mockedSearchResult from "./search-mock-response.json"
 import { render, waitFor } from "@testing-library/react"
 import NftCard from "@/components/custom/nfts/nft-card"
-import { searchSchema } from "@/validators/schemas/searchSchema"
+import { searchSchema } from "@/validators/schemas/search/searchSchema"
 
 describe("Search", () => {
   it("should render nft cards", async () => {

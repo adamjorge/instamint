@@ -8,7 +8,7 @@ import NftCard from "@/components/custom/nfts/nft-card"
 export default function SearchPage() {
   const queryString = useSearchParams()
   const search = queryString.get("search")
-  const { isPending, data } = useQuery({
+  const { error, isPending, data } = useQuery({
     queryKey: ["search", search],
     queryFn: () => fetchNfts(search as string)
   })
@@ -25,8 +25,12 @@ export default function SearchPage() {
     return <div>Loading...</div>
   }
 
-  if (!data || data.length === 0) {
+  if (!data) {
     return <div>No results found for: {search}</div>
+  }
+
+  if (error) {
+    return <div>An error occurred, please try again later.</div>
   }
 
   return (
