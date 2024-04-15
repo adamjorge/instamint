@@ -10,7 +10,7 @@ export default function SearchPage() {
   const search = queryString.get("search")
   const { error, isPending, data } = useQuery({
     queryKey: ["search", search],
-    queryFn: () => fetchNfts(search as string)
+    queryFn: () => fetchNfts(search)
   })
 
   if (!search) {

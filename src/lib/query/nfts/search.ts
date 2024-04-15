@@ -63,7 +63,11 @@ export async function searchNfts(search: string) {
   })
 }
 
-export async function fetchNfts(searchTerm: string) {
+export async function fetchNfts(searchTerm: string|null) {
+  if (!searchTerm) {
+    return []
+  }
+
   try {
     const res = await axios.get<SearchSchemaType>(`/api/nfts?search=${searchTerm}`)
 
