@@ -13,7 +13,7 @@ export default function NftCard(nft: SearchNftSchemaType) {
           width={400}
           height={400}
         />
-        <CardTitle className="text-xl">@{nft.originalContent?.minter?.username}</CardTitle>
+        <CardTitle className="text-xl">@{nft.originalContent.minter.username}</CardTitle>
         <CardDescription>{nft.description}</CardDescription>
       </CardHeader>
     </Card>

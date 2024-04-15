@@ -15,16 +15,17 @@ export default function SearchDrawer({ setIsOpen }: SearchDrawerProps) {
   const [searchTerm, setSearchTerm] = useState("")
   const router = useRouter()
   const handleSearchSubmit = useCallback(() => {
-      setIsOpen(false)
-      router.push(`/search?search=${encodeURIComponent(searchTerm)}`)
-    }
-    , [searchTerm, setIsOpen, router])
-  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    setIsOpen(false)
+    router.push(`/search?search=${encodeURIComponent(searchTerm)}`)
+  }, [searchTerm, setIsOpen, router])
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
       if (e.key === "Enter") {
         handleSearchSubmit()
       }
-    }
-    , [handleSearchSubmit])
+    },
+    [handleSearchSubmit]
+  )
 
   return (
     <DrawerContent className="bg-light dark:bg-gray-200 dark:text-gray-800">

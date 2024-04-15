@@ -63,7 +63,7 @@ export async function searchNfts(search: string) {
   })
 }
 
-export async function fetchNfts(searchTerm: string|null) {
+export async function fetchNfts(searchTerm: string | null) {
   if (!searchTerm) {
     return []
   }
