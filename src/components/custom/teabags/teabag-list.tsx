@@ -1,4 +1,4 @@
-import { TeabagsSearchTeabags } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
+import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
 import TeaBagCard from "@/components/custom/teabags/teabag-card"
 
 export default function TeaBagList({ teabags }: TeaBagListProps) {
@@ -19,5 +19,5 @@ export default function TeaBagList({ teabags }: TeaBagListProps) {
 }
 
 type TeaBagListProps = {
-  teabags: TeabagsSearchTeabags
+  teabags: TeabagsSearchTeabagsSchemaType
 }

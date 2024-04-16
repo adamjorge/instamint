@@ -7,8 +7,8 @@ export const teabagSearchTeabagSchema = z.object({
   bio: z.string()
 })
 
-export type TeabagSearchTeabag = z.infer<typeof teabagSearchTeabagSchema>
+export type TeabagSearchTeabagSchemaType = z.infer<typeof teabagSearchTeabagSchema>
 
 export const teabagsSearchTeabagsSchema = z.array(teabagSearchTeabagSchema)
 
-export type TeabagsSearchTeabags = z.infer<typeof teabagsSearchTeabagsSchema>
+export type TeabagsSearchTeabagsSchemaType = z.infer<typeof teabagsSearchTeabagsSchema>

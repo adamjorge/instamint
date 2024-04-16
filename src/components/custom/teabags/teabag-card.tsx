@@ -1,7 +1,7 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { TeabagSearchTeabag } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
+import { TeabagSearchTeabagSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
 
-export default function TeaBagCard(teabag: TeabagSearchTeabag) {
+export default function TeaBagCard(teabag: TeabagSearchTeabagSchemaType) {
   return (
     <Card className="bg-muted m-4">
       <CardHeader>

@@ -8,7 +8,7 @@ import {
   NftSearchNftsSchemaType
 } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
-import { TeabagsSearchTeabags } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
+import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
 
 export async function fetchSearch(searchTerm: string | null) {
   if (!searchTerm) {
@@ -22,7 +22,9 @@ export async function fetchSearch(searchTerm: string | null) {
       `/api/minters?search=${searchTerm}`
     )
     const validatedMinters = minterSearchMintersSchema.parse(minters.data)
-    const teabags = await axios.get<TeabagsSearchTeabags>(`/api/teabags?search=${searchTerm}`)
+    const teabags = await axios.get<TeabagsSearchTeabagsSchemaType>(
+      `/api/teabags?search=${searchTerm}`
+    )
     const validatedTeabags = nftSearchNftsSchema.parse(teabags.data)
 
     return searchSchema.parse({
