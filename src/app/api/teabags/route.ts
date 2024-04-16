@@ -1,0 +1,25 @@
+import { searchTeaBags } from "@/lib/query/teabags/search"
+import { ReasonPhrases, StatusCodes } from "http-status-codes"
+
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url)
+  const search = searchParams.get("search")
+
+  if (!search) {
+    return Response.json(
+      { message: "Missing search parameter" },
+      { status: StatusCodes.BAD_REQUEST }
+    )
+  }
+
+  try {
+    const minters = await searchTeaBags(search)
+
+    return Response.json(minters)
+  } catch (error) {
+    return Response.json(
+      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
+      { status: StatusCodes.INTERNAL_SERVER_ERROR }
+    )
+  }
+}

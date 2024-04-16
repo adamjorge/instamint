@@ -10,7 +10,9 @@ export const nftSearchNftSchema = z.object({
   originalContent: nftSearchOriginalContentSchema,
   hashtags: nftsSearchHashtagsSchema
 })
+
 export type NftSearchNftSchemaType = z.infer<typeof nftSearchNftSchema>
 
 export const nftSearchNftsSchema = z.array(nftSearchNftSchema)
+
 export type NftSearchNftsSchemaType = z.infer<typeof nftSearchNftsSchema>
