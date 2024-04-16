@@ -7,7 +7,7 @@ import SearchResults from "@/components/custom/search/search-results"
 
 export default function SearchPage() {
   const queryString = useSearchParams()
-  const search = queryString.get("search")
+  const search = queryString.get("search") || ""
   const { error, isPending, data } = useQuery({
     queryKey: ["search", search],
     queryFn: () => fetchSearch(search)
