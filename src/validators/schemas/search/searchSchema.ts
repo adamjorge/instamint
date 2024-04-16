@@ -1,8 +1,7 @@
 import { z } from "zod"
-import { searchNftsSchema } from "@/validators/schemas/search/nfts/searchNftSchema"
+import { nftSearchNftsSchema } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 
 export const searchSchema = z.object({
-  nfts: searchNftsSchema
+  nfts: nftSearchNftsSchema
 })
-
 export type SearchSchemaType = z.infer<typeof searchSchema>

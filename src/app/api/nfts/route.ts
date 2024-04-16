@@ -15,7 +15,7 @@ export async function GET(req: Request) {
   try {
     const nfts = await searchNfts(search)
 
-    return Response.json({ nfts })
+    return Response.json(nfts)
   } catch (error) {
     return Response.json(
       { message: ReasonPhrases.INTERNAL_SERVER_ERROR },

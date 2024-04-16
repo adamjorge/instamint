@@ -1,6 +1,8 @@
 import axios from "axios"
-import { SearchSchemaType } from "@/validators/schemas/search/searchSchema"
-import { searchNftsSchema } from "@/validators/schemas/search/nfts/searchNftSchema"
+import {
+  nftSearchNftsSchema,
+  NftSearchNftsSchemaType
+} from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { Prisma } from "@prisma/client"
 import NftSelect = Prisma.NftSelect
 import prisma from "@/lib/db"
@@ -69,9 +71,9 @@ export async function fetchNfts(searchTerm: string | null) {
   }
 
   try {
-    const res = await axios.get<SearchSchemaType>(`/api/nfts?search=${searchTerm}`)
+    const res = await axios.get<NftSearchNftsSchemaType>(`/api/nfts?search=${searchTerm}`)
 
-    return searchNftsSchema.parse(res.data.nfts)
+    return nftSearchNftsSchema.parse(res.data)
   } catch (err) {
     if (axios.isAxiosError(err)) {
       throw new Error(err.message)
