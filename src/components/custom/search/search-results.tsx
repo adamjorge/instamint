@@ -1,7 +1,7 @@
 import { SearchSchemaType } from "@/validators/schemas/search/searchSchema"
-import MinterList from "../minters/minter-list"
-import NftList from "../nfts/nft-list"
-import TeaBagList from "../teabags/teabag-list"
+import NftList from "@/components/custom/nfts/nft-list"
+import MinterList from "@/components/custom/minters/minter-list"
+import TeaBagList from "@/components/custom/teabags/teabag-list"
 
 export default function SearchResults({ search, results }: SearchResultsProps) {
   return (

@@ -1,5 +1,5 @@
-import TeaBagCard from "./teabag-card"
 import { TeabagsSearchTeabags } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
+import TeaBagCard from "@/components/custom/teabags/teabag-card"
 
 export default function TeaBagList({ teabags }: TeaBagListProps) {
   return (

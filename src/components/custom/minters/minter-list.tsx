@@ -1,5 +1,5 @@
 import { MinterSearchMintersSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
-import MinterCard from "./minter-card"
+import MinterCard from "@/components/custom/minters/minter-card"
 
 export default function MinterList({ minters }: MinterListProps) {
   return (

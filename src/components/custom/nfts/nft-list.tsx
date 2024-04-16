@@ -1,5 +1,5 @@
 import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
-import NftCard from "./nft-card"
+import NftCard from "@/components/custom/nfts/nft-card"
 
 export default function NftList({ nfts }: NftListProps) {
   return (
