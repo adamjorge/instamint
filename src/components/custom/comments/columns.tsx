@@ -1,6 +1,6 @@
 "use client"
 
-import { CommentActions } from "@/components/custom/comments/comment-actions"
+import { CommentActions } from "@/components/custom/comments/actions-wrapper"
 import type { Comment } from "@/validators/schemas/commentSchema"
 import { ColumnDef } from "@tanstack/react-table"
 
