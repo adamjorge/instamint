@@ -1,0 +1,11 @@
+{
+  "search": "Search",
+  "searchSentence": "Search an NFT or a minter.",
+  "searchPlaceholder": "Search...",
+  "submit": "Submit",
+  "cancel": "Cancel",
+  "loading": "Loading...",
+  "noResults": "No results found.",
+  "noResultsSentence": "No results found for the search term.",
+  "error": "Error"
+}

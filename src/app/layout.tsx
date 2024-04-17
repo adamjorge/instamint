@@ -1,10 +1,9 @@
+import "@/app/portal/[lang]/styles.css"
+import React from "react"
+
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
-import Providers from "@/providers/providers"
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
-import React from "react"
-import "./globals.css"
-import Footer from "@/components/footer"
 
 // eslint-disable-next-line new-cap
 const inter = Inter({ subsets: ["latin"] })
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
     title: `Apple ${APP_DEFAULT_TITLE}`,
     capable: true,
     statusBarStyle: "black-translucent",
-    startupImage: "/splash_screens/splash_screen.png"
+    startupImage: "/splash_screens/main_splash_screen.png"
   },
   formatDetection: {
     telephone: false
@@ -50,18 +49,15 @@ export const viewport: Viewport = {
 }
 
 export default function RootLayout({
-  children
-}: Readonly<{
+  children,
+  params: { lang }
+}: {
   children: React.ReactNode
-}>) {
+  params: { lang: string }
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Providers>
-          {children}
-          <Footer />
-        </Providers>
-      </body>
+    <html lang={lang}>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

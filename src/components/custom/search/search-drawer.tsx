@@ -1,5 +1,3 @@
-import React, { useCallback, useState } from "react"
-import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
   DrawerClose,
@@ -10,6 +8,8 @@ import {
   DrawerTitle
 } from "@/components/ui/drawer"
 import { Input } from "@/components/ui/input"
+import { useRouter } from "next/navigation"
+import React, { useCallback, useState } from "react"
 
 export default function SearchDrawer({ setIsOpen }: SearchDrawerProps) {
   const [searchTerm, setSearchTerm] = useState("")

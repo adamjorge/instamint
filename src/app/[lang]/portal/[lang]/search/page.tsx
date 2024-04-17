@@ -1,9 +1,9 @@
 "use client"
 
-import { useSearchParams } from "next/navigation"
-import { useQuery } from "@tanstack/react-query"
-import { fetchNfts } from "@/lib/query/nfts/search"
 import NftCard from "@/components/custom/nfts/nft-card"
+import { fetchNfts } from "@/lib/query/nfts/search"
+import { useQuery } from "@tanstack/react-query"
+import { useSearchParams } from "next/navigation"
 
 export default function SearchPage() {
   const queryString = useSearchParams()

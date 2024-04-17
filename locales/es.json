@@ -1,0 +1,11 @@
+{
+  "search": "Buscar",
+  "searchSentence": "Buscar un NFT o un minter.",
+  "searchPlaceholder": "Buscar...",
+  "submit": "Enviar",
+  "cancel": "Cancelar",
+  "loading": "Cargando...",
+  "noResults": "No se encontraron resultados.",
+  "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
+  "error": "Error"
+}
