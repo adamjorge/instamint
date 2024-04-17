@@ -3,6 +3,10 @@ import { MinterSearchMintersSchemaType } from "@/validators/schemas/search/minte
 import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
 import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
+import { SearchType } from "@/validators/types/searchType"
+import { searchMinters } from "../minters/search"
+import { searchNfts } from "../nfts/search"
+import { searchTeaBags } from "../teabags/search"
 
 export async function fetchSearch(searchTerm: string) {
   if (searchTerm === "") {
@@ -10,12 +14,12 @@ export async function fetchSearch(searchTerm: string) {
   }
 
   try {
-    const nfts = await axios.get<NftSearchNftsSchemaType>(`/api/nfts?search=${searchTerm}`)
+    const nfts = await axios.get<NftSearchNftsSchemaType>(`/api/search/nfts?search=${searchTerm}`)
     const minters = await axios.get<MinterSearchMintersSchemaType>(
-      `/api/minters?search=${searchTerm}`
+      `/api/search/minters?search=${searchTerm}`
     )
     const teabags = await axios.get<TeabagsSearchTeabagsSchemaType>(
-      `/api/teabags?search=${searchTerm}`
+      `/api/search/teabags?search=${searchTerm}`
     )
 
     return searchSchema.parse({
@@ -29,5 +33,21 @@ export async function fetchSearch(searchTerm: string) {
     }
 
     throw new Error(err as string)
+  }
+}
+
+export async function searchByType(type: SearchType, searchTerm: string) {
+  switch (type) {
+    case "nfts":
+      return await searchNfts(searchTerm)
+
+    case "minters":
+      return await searchMinters(searchTerm)
+
+    case "teabags":
+      return await searchTeaBags(searchTerm)
+
+    default:
+      throw new Error("Invalid type")
   }
 }
