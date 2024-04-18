@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input"
 import { useTranslations } from "next-intl"
 import React from "react"
 
-export default function SearchDrawer({...props}: SearchDrawerProps) {
+export default function SearchDrawer({ ...props }: SearchDrawerProps) {
   const { searchTerm, setSearchTerm, handleKeyDown, handleSearchSubmit } = props
   const t = useTranslations("search")
 

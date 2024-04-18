@@ -7,12 +7,13 @@ import { redirect } from "next/navigation"
 
 export default getRequestConfig(async ({ locale }: { locale: Locale }) => {
   if (!locales.includes(locale)) {
-    redirect("/404")
+    redirect("/not-found")
   }
 
   const messages = MessageSchema.parse(await import(`../locales/${locale}.json`))
 
   return {
+    timeZone: "UTC",
     messages
   }
 })

@@ -1,6 +1,6 @@
 import Footer from "@/components/custom/footer"
-import Providers from "@/providers/providers"
-import { NextIntlClientProvider, useLocale, useMessages } from "next-intl"
+import Providers from "@/providers/portalProviders"
+import { useLocale, useMessages, useTimeZone } from "next-intl"
 import React from "react"
 
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
@@ -54,18 +54,23 @@ export default function PortalLayout({
 }>) {
   const locale = useLocale()
   const messages = useMessages()
+  const timeZone = useTimeZone()
+  const timeZoneCode = timeZone ? timeZone.toString() : "UTC"
+  const i18nProps = {
+    locale,
+    messages,
+    timeZone: timeZoneCode
+  }
 
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <NextIntlClientProvider messages={messages}>
-          <main>
-            <Providers>
-              {children}
-              <Footer />
-            </Providers>
-          </main>
-        </NextIntlClientProvider>
+        <main>
+          <Providers {...i18nProps}>
+            {children}
+            <Footer />
+          </Providers>
+        </main>
       </body>
     </html>
   )

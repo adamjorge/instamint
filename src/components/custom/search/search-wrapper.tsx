@@ -25,10 +25,10 @@ export default function SearchWrapper({ setIsOpen }: SearchWrapperProps) {
     searchTerm,
     setSearchTerm,
     handleSearchSubmit,
-    handleKeyDown,
+    handleKeyDown
   }
 
-  return (<SearchDrawer {...SearchDrawerProps} />)
+  return <SearchDrawer {...SearchDrawerProps} />
 }
 
 type SearchWrapperProps = {

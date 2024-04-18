@@ -1,7 +1,7 @@
 "use client"
 
 import MenubarLayout from "@/components/custom/admin/menubar-layout"
-import Providers from "@/providers/providers"
+import Providers from "@/providers/adminProviders"
 import { Inter } from "next/font/google"
 import React from "react"
 import { Toaster } from "sonner"
