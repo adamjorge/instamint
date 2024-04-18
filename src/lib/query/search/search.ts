@@ -4,9 +4,9 @@ import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSea
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
 import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
 import { SearchType } from "@/validators/types/searchType"
-import { searchMinters } from "../minters/search"
-import { searchNfts } from "../nfts/search"
-import { searchTeaBags } from "../teabags/search"
+import { searchNfts } from "@/lib/query/nfts/search"
+import { searchMinters } from "@/lib/query/minters/search"
+import { searchTeaBags } from "@/lib/query/teabags/search"
 
 export async function fetchSearch(searchTerm: string) {
   if (searchTerm === "") {
