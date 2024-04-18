@@ -1,0 +1,17 @@
+{
+  "search": {
+    "search": "さがす",
+    "searchWelcome": "さがしのページへようこそ。ここではNFTやミンターをさがすことができます。",
+    "searchSentence": "NFTやミンターをさがしてください。",
+    "searchPlaceholder": "さがす...",
+    "submit": "送信",
+    "cancel": "キャンセル"
+  },
+  "check": "チェック",
+  "loading": "読み込み中...",
+  "noResults": "結果が見つかりません。",
+  "resultsFor": "検索結果：",
+  "noResultsFor": "検索結果なし：",
+  "noResultsSentence": "検索語句に一致する結果が見つかりませんでした。",
+  "error": "エラーが発生しました。後でもう一度お試しください。"
+}

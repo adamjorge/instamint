@@ -1,11 +1,17 @@
 {
-  "search": "Buscar",
-  "searchSentence": "Buscar un NFT o un minter.",
-  "searchPlaceholder": "Buscar...",
-  "submit": "Enviar",
-  "cancel": "Cancelar",
+  "search": {
+    "search": "Buscar",
+    "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí es donde puedes buscar NFTs o creadores.",
+    "searchSentence": "Buscar un NFT o un creador.",
+    "searchPlaceholder": "Buscar...",
+    "submit": "Enviar",
+    "cancel": "Cancelar"
+  },
+  "check": "Verificar",
   "loading": "Cargando...",
   "noResults": "No se encontraron resultados.",
+  "resultsFor": "Resultados de búsqueda para:",
+  "noResultsFor": "No se encontraron resultados para:",
   "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
-  "error": "Error"
+  "error": "Se produjo un error, por favor inténtalo de nuevo más tarde."
 }

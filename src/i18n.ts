@@ -1,0 +1,18 @@
+import { getRequestConfig } from "next-intl/server"
+
+import { locales, type Locale } from "@/config/i18n/locales"
+import { MessageSchema } from "@/validators/schemas/translation/messageSchema"
+
+import { redirect } from "next/navigation"
+
+export default getRequestConfig(async ({ locale }: { locale: Locale }) => {
+  if (!locales.includes(locale)) {
+    redirect("/404")
+  }
+
+  const messages = MessageSchema.parse(await import(`../locales/${locale}.json`))
+
+  return {
+    messages
+  }
+})

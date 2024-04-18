@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="fixed bottom-0 left-0 right-0 p-4 bg-gray-800 text-white">
       <nav className="flex justify-around">
-        <Link href="/portal">
+        <Link href="/">
           <FiHome className="w-6 h-6 text-gray-400 hover:text-green-500" />
         </Link>
         <Drawer open={isOpen} onOpenChange={setIsOpen}>

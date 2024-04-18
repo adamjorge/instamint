@@ -1,0 +1,17 @@
+{
+  "search": {
+    "search": "Buscar",
+    "searchWelcome": "Bem-vindo à sua página de busca. Aqui é onde você pode procurar por NFTs ou criadores.",
+    "searchSentence": "Buscar um NFT ou um criador.",
+    "searchPlaceholder": "Buscar...",
+    "submit": "Enviar",
+    "cancel": "Cancelar"
+  },
+  "check": "Verificar",
+  "loading": "Carregando...",
+  "noResults": "Nenhum resultado encontrado.",
+  "resultsFor": "Resultados da busca para:",
+  "noResultsFor": "Nenhum resultado encontrado para:",
+  "noResultsSentence": "Nenhum resultado encontrado para o termo de busca.",
+  "error": "Ocorreu um erro, por favor, tente novamente mais tarde."
+}

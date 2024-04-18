@@ -1,9 +1,12 @@
-import Footer from "@/components/footer"
+import Footer from "@/components/custom/footer"
 import Providers from "@/providers/providers"
+import { NextIntlClientProvider, useLocale, useMessages } from "next-intl"
 import React from "react"
 
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
-import type { Metadata, Viewport } from "next"
+import "@/styles/globals.css"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
@@ -41,21 +44,29 @@ export const metadata: Metadata = {
   }
 }
 
-export const viewport: Viewport = {
-  themeColor: "#ffffff"
-}
+// eslint-disable-next-line new-cap
+const inter = Inter({ subsets: ["latin"] })
 
 export default function PortalLayout({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const locale = useLocale()
+  const messages = useMessages()
+
   return (
-    <main>
-      <Providers>
-        {children}
-        <Footer />
-      </Providers>
-    </main>
+    <html lang={locale}>
+      <body className={inter.className}>
+        <NextIntlClientProvider messages={messages}>
+          <main>
+            <Providers>
+              {children}
+              <Footer />
+            </Providers>
+          </main>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   )
 }
