@@ -9,7 +9,7 @@ export async function DELETE(req: Request, { params }: { params: { id: string } 
   }
 
   try {
-    await deleteComment(parseInt(id, 10))
+    await deleteComment(id)
 
     return Response.json({ message: `Comment ${id} deleted` })
   } catch (error) {
