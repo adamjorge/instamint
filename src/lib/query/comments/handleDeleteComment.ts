@@ -2,7 +2,7 @@ import axios, { isAxiosError } from "axios"
 
 export async function handleDeleteComment(commentId: string) {
   await axios
-    .delete(`/api/comments/delete/${commentId}`)
+    .delete(`/api/comments/${commentId}`)
     .then((res) => res)
     .catch((err: unknown) => {
       if (isAxiosError(err)) {
