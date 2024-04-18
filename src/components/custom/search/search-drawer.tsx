@@ -10,27 +10,12 @@ import {
   DrawerTitle
 } from "@/components/ui/drawer"
 import { Input } from "@/components/ui/input"
-import { useLocale, useTranslations } from "next-intl"
-import { useRouter } from "next/navigation"
-import React, { useCallback, useState } from "react"
+import { useTranslations } from "next-intl"
+import React from "react"
 
-export default function SearchDrawer({ setIsOpen }: SearchDrawerProps) {
-  const [searchTerm, setSearchTerm] = useState("")
-  const router = useRouter()
+export default function SearchDrawer({...props}: SearchDrawerProps) {
+  const { searchTerm, setSearchTerm, handleKeyDown, handleSearchSubmit } = props
   const t = useTranslations("search")
-  const locale = useLocale()
-  const handleSearchSubmit = useCallback(() => {
-    setIsOpen(false)
-    router.push(`${locale}/search?search=${encodeURIComponent(searchTerm)}`)
-  }, [searchTerm, setIsOpen, router, locale])
-  const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent) => {
-      if (e.key === "Enter") {
-        handleSearchSubmit()
-      }
-    },
-    [handleSearchSubmit]
-  )
 
   return (
     <DrawerContent className="bg-light dark:bg-gray-200 dark:text-gray-800">
@@ -68,5 +53,8 @@ export default function SearchDrawer({ setIsOpen }: SearchDrawerProps) {
 }
 
 type SearchDrawerProps = {
-  setIsOpen: (isOpen: boolean) => void
+  searchTerm: string
+  setSearchTerm: (searchTerm: string) => void
+  handleSearchSubmit: () => void
+  handleKeyDown: (e: React.KeyboardEvent) => void
 }
