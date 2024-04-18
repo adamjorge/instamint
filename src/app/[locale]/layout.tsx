@@ -1,4 +1,5 @@
 import Footer from "@/components/custom/footer"
+import LanguageSelector from "@/components/custom/language-selector"
 import Providers from "@/providers/portalProviders"
 import { useLocale, useMessages, useTimeZone } from "next-intl"
 import React from "react"
@@ -67,6 +68,7 @@ export default function PortalLayout({
       <body className={inter.className}>
         <main>
           <Providers {...i18nProps}>
+            <LanguageSelector />
             {children}
             <Footer />
           </Providers>
