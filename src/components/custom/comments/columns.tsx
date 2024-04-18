@@ -15,11 +15,29 @@ export const columns: ColumnDef<Comment>[] = [
   },
   {
     accessorKey: "createdAt",
-    header: "Creation date of the comment"
+    header: "Creation date of the comment",
+    cell: ({ row }): string => {
+      const createdAtValue = row.getValue("createdAt")
+
+      if (typeof createdAtValue === "string") {
+        return createdAtValue.slice(0, 10)
+      }
+
+      return "Unknown"
+    }
   },
   {
     accessorKey: "updatedAt",
-    header: "Last update of the comment"
+    header: "Last update of the comment",
+    cell: ({ row }): string => {
+      const updatedAt = row.getValue("updatedAt")
+
+      if (typeof updatedAt === "string") {
+        return updatedAt.slice(0, 10)
+      }
+
+      return "Never updated"
+    }
   },
   {
     accessorKey: "nftId",
