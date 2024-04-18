@@ -11,39 +11,43 @@ export default function VerifyEmail() {
   const email = searchParams.get("email")
   const token = searchParams.get("token")
   const [isLoading, setIsLoading] = useState(true)
-  const [result, setResult] = useState("Error verifying your email")
+  const [result, setResult] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
 
   useEffect(() => {
-    const emailVerification = async () => {
-      try {
-        if (!email || !token) {
-          throw new Error("Missing required fields")
-        }
-
-        const user = await findUserByEmail(email)
-        if (!user) {
-          throw new Error("Invalid verification token")
-        }
-
-        if (token !== user.emailVerifToken) {
-          throw new Error("Invalid verification token")
-        }
-        await verifyEmail(user.email)
-        setResult("Email verified successfully. Please relogin.")
-        setIsLoading(false)
-      } catch (error) {
-        console.error("Error verifying email:", error)
-      }
-    }
     emailVerification()
+      .then(() => {
+        setResult("Email verified successfully. Please relogin.")
+      })
+      .catch(() => {
+        setErrorMessage("A verification link has been sent to your email, please verify your email")
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }, [email, token])
+
+  const emailVerification = async (): Promise<void> => {
+    if (!email || !token) {
+      throw new Error("Missing required fields")
+    }
+
+    const user = await findUserByEmail(email)
+
+    if (!user) {
+      throw new Error("Invalid verification token")
+    }
+
+    if (token !== user.emailVerifToken) {
+      throw new Error("Invalid verification token")
+    }
+
+    await verifyEmail(user.email)
+  }
 
   return (
     <>
-      <div className="mb-4">
-        {isLoading ? <Form /> : "Please wait..."}
-        {!isLoading && result}
-      </div>
+      <div className="mb-4">{isLoading ? <Form /> : errorMessage || result}</div>
       <div className="my-3">
         <Link href="/login" className="bg-white py-3 px-2 rounded">
           Back to Login

@@ -7,9 +7,9 @@ export default function ResendButton() {
     <button
       type="submit"
       className="bg-white py-2 px-4 rounded disabled:bg-slate-50 disabled:text-slate-500"
-      disabled={pending ? true : false}
+      disabled={pending}
     >
-      Resend verification link {pending ? "..." : ""}
+      Resend verification link {pending && "..."}
     </button>
   )
 }

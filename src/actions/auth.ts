@@ -1,7 +1,6 @@
 "use server"
 
 import prisma from "@/lib/db"
-import type { User } from "@prisma/client"
 import { AuthError } from "next-auth"
 import { z } from "zod"
 import bcryptjs from "bcryptjs"
@@ -11,6 +10,7 @@ import { redirect } from "next/navigation"
 import { EmailNotVerifiedError } from "@/errors"
 
 const db = prisma
+
 export async function authenticate(prevState: string | undefined, formData: FormData) {
   try {
     await isUsersEmailVerified(formData.get("email") as string)
@@ -19,17 +19,20 @@ export async function authenticate(prevState: string | undefined, formData: Form
       switch (error.type) {
         case "CredentialsSignin":
           return "Invalid credentials."
+
         default:
           return "Something went wrong."
       }
     }
 
     if (error instanceof EmailNotVerifiedError) {
-      return error?.message
+      return error.message
     }
 
     throw error
   }
+
+  return "Something went wrong."
 }
 
 const signUpSchema = z.object({
@@ -74,12 +77,10 @@ export async function signUp(
   }
 
   const hashed = await generatePasswordHash(result.data.password)
-
   const verificationToken = generateEmailVerificationToken()
 
-  let user: User
   try {
-    user = await db.user.create({
+    await db.user.create({
       data: {
         name: result.data.name,
         email: result.data.email,
@@ -94,38 +95,29 @@ export async function signUp(
           _form: [error.message]
         }
       }
-    } else {
-      return {
-        errors: {
-          _form: ["Something went wrong"]
-        }
-      }
     }
   }
 
   await sendVerificationEmail(result.data.email, verificationToken)
 
   redirect(`/email/verify/send?email=${result.data.email}&verification_sent=1`)
+
+  return formState
 }
 
-
-export const findUserByEmail = async (email: string) => {
-  return await db.user.findFirst({
+export const findUserByEmail = async (email: string) =>
+  await db.user.findFirst({
     where: {
       email
     }
   })
-}
 
 const generatePasswordHash = async (password: string) => {
   const salt = await bcryptjs.genSalt(10)
+
   return bcryptjs.hash(password, salt)
 }
-
-const generateEmailVerificationToken = () => {
-  return randomBytes(32).toString("hex")
-}
-
+const generateEmailVerificationToken = () => randomBytes(32).toString("hex")
 const sendVerificationEmail = async (email: string, token: string) => {
   const transporter: nodemailer.Transporter = nodemailer.createTransport({
     host: process.env.MAIL_HOST,
@@ -135,7 +127,6 @@ const sendVerificationEmail = async (email: string, token: string) => {
       pass: process.env.MAIL_PASSWORD
     }
   })
-
   const emailData = {
     from: '"Blog Nextjs Auth" <verification@test.com>',
     to: email,
@@ -146,12 +137,7 @@ const sendVerificationEmail = async (email: string, token: string) => {
     `
   }
 
-  try {
-    await transporter.sendMail(emailData)
-  } catch (error) {
-    console.error("Failed to send email:", error)
-    throw error
-  }
+  await transporter.sendMail(emailData)
 }
 
 export const resendVerificationEmail = async (email: string) => {
@@ -171,24 +157,21 @@ export const resendVerificationEmail = async (email: string) => {
   return "Email verification sent."
 }
 
-export const verifyEmail = (email: string) => {
-  return db.user.update({
+export const verifyEmail = (email: string) =>
+  db.user.update({
     where: { email },
     data: {
       emailVerifiedAt: new Date(),
       emailVerifToken: null
     }
   })
-}
 
 export const isUsersEmailVerified = async (email: string) => {
-  const user = await db.user.findFirst({
-    where: { email }
-  })
+  const user = await db.user.findFirst({ where: { email } })
 
-  if (!user) return true
-
-  if (!user?.emailVerifiedAt) throw new EmailNotVerifiedError(`EMAIL_NOT_VERIFIED:${email}`)
+  if (!user || !user.emailVerifiedAt) {
+    throw new EmailNotVerifiedError(`EMAIL_NOT_VERIFIED:${email}`)
+  }
 
   return true
 }
