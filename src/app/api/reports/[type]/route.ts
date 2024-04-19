@@ -1,18 +1,24 @@
 import { getReports } from "@/lib/query/reports/getReports"
-import { NextRequest, NextResponse } from "next/server"
+import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
-export async function GET(req: NextRequest, res: NextResponse) {
-  const type = req.nextUrl.pathname.split("/").pop()
+export async function GET(req: Request, { params }: { params: { type: string } }) {
+  const { type } = params
 
   if (type !== "minters" && type !== "comments" && type !== "teabags") {
-    return NextResponse.json({ error: "Invalid Data Type" }, { status: 400 })
+    return Response.json(
+      { message: `Invalid data type: ${type || "not provided"}` },
+      { status: StatusCodes.BAD_REQUEST }
+    )
   }
 
   try {
     const reports = await getReports(type)
 
-    return NextResponse.json(reports, res)
+    return Response.json(reports)
   } catch (error) {
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 })
+    return Response.json(
+      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
+      { status: StatusCodes.INTERNAL_SERVER_ERROR }
+    )
   }
 }

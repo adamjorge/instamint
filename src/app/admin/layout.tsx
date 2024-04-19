@@ -1,9 +1,11 @@
 "use client"
 
 import MenubarLayout from "@/components/custom/menubar-layout"
+import Providers from "@/providers/providers"
 import React from "react"
+import { Toaster } from "sonner"
 
-export default function RootLayout({
+export default function AdminLayout({
   children
 }: Readonly<{
   children: React.ReactNode
@@ -11,8 +13,9 @@ export default function RootLayout({
   return (
     <>
       <MenubarLayout />
-      <main className="flex flex-col items-center min-h-screen w-full">
-        <div className="flex flex-col items-center justify-center flex-grow w-full">{children}</div>
+      <main className="flex flex-col items-center min-h-screen justify-center w-full">
+        <Providers>{children}</Providers>
+        <Toaster position="bottom-right" richColors closeButton />
       </main>
     </>
   )

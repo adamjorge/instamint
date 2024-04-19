@@ -9,4 +9,6 @@ export const ReportValidationSchema = z.object({
   teaBagId: z.number().nullable()
 })
 
+export type Report = z.infer<typeof ReportValidationSchema>
+
 export const ReportsValidationSchema = z.array(ReportValidationSchema)

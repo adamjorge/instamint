@@ -23,7 +23,7 @@ export default function Reports() {
   }
 
   return (
-    <div className="mt-10 w-3/4 pb-5">
+    <div className="mt-16 w-1/2 pb-5">
       {!data.length ? (
         <span>No reports found on {type}</span>
       ) : (
