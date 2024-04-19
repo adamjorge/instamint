@@ -2,7 +2,7 @@
 
 ## Optimize development environment
 
-In order to reduce environment impact, it is important to optimize the development environment.
+In order to reduce environment impact, it is important to optimize the development environment.  
 
 Here are some of the choices we've decided to apply to help us reduce our carbon footprint while coding:
 
