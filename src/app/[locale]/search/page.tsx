@@ -8,7 +8,7 @@ import { useTranslations } from "use-intl"
 
 export default function SearchPage() {
   const queryString = useSearchParams()
-  const t = useTranslations()
+  const t = useTranslations("global")
   const search = queryString.get("search")
   const { error, isPending, data } = useQuery({
     queryKey: ["search", search],

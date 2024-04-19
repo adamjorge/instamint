@@ -1,4 +1,13 @@
 {
+  "global": {
+    "check": "检查",
+    "loading": "加载中...",
+    "noResults": "未找到结果。",
+    "resultsFor": "搜索结果：",
+    "noResultsFor": "未找到结果：",
+    "noResultsSentence": "未找到与搜索词匹配的结果。",
+    "error": "发生错误，请稍后重试。"
+  },
   "search": {
     "search": "搜索",
     "searchWelcome": "欢迎来到您的搜索页面。这是您可以搜索 NFT 或创建者的地方。",
@@ -6,12 +15,5 @@
     "searchPlaceholder": "搜索...",
     "submit": "提交",
     "cancel": "取消"
-  },
-  "check": "检查",
-  "loading": "加载中...",
-  "noResults": "未找到结果。",
-  "resultsFor": "搜索结果：",
-  "noResultsFor": "未找到结果：",
-  "noResultsSentence": "未找到与搜索词匹配的结果。",
-  "error": "发生错误，请稍后重试。"
+  }
 }

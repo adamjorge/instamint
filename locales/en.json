@@ -1,4 +1,13 @@
 {
+  "global": {
+    "check": "Check",
+    "loading": "Loading...",
+    "noResults": "No results found.",
+    "resultsFor": "Search results for:",
+    "noResultsFor": "No results found for:",
+    "noResultsSentence": "No results found for the search term.",
+    "error": "An error occurred, please try again later."
+  },
   "search": {
     "search": "Search",
     "searchWelcome": "Welcome to your search page. This is where you can search for NFTs or minters.",
@@ -6,12 +15,5 @@
     "searchPlaceholder": "Search...",
     "submit": "Submit",
     "cancel": "Cancel"
-  },
-  "check": "Check",
-  "loading": "Loading...",
-  "noResults": "No results found.",
-  "resultsFor": "Search results for:",
-  "noResultsFor": "No results found for:",
-  "noResultsSentence": "No results found for the search term.",
-  "error": "An error occurred, please try again later."
+  }
 }

@@ -1,4 +1,13 @@
 {
+  "global": {
+    "check": "Verificar",
+    "loading": "Cargando...",
+    "noResults": "No se encontraron resultados.",
+    "resultsFor": "Resultados de búsqueda para:",
+    "noResultsFor": "No se encontraron resultados para:",
+    "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
+    "error": "Se produjo un error, por favor inténtalo de nuevo más tarde."
+  },
   "search": {
     "search": "Buscar",
     "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí es donde puedes buscar NFTs o creadores.",
@@ -6,12 +15,5 @@
     "searchPlaceholder": "Buscar...",
     "submit": "Enviar",
     "cancel": "Cancelar"
-  },
-  "check": "Verificar",
-  "loading": "Cargando...",
-  "noResults": "No se encontraron resultados.",
-  "resultsFor": "Resultados de búsqueda para:",
-  "noResultsFor": "No se encontraron resultados para:",
-  "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
-  "error": "Se produjo un error, por favor inténtalo de nuevo más tarde."
+  }
 }
