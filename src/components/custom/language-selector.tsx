@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Select,
   SelectContent,
@@ -5,27 +7,40 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/components/ui/select"
-import { locales } from "@/config/i18n/locales"
-import { localesToISO } from "@/utils/localesToISO"
+import { locales, type Locale } from "@/config/i18n/locales"
+import { useLocale } from "next-intl"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 export default function LanguageSelector() {
+  const locale = useLocale()
+  const router = useRouter()
+
+  function handleLocaleChange(loc: Locale) {
+    router.push(`/${loc}`)
+  }
+
   return (
-    <Select>
+    <Select
+      defaultValue={locale}
+      onValueChange={(value) => {
+        handleLocaleChange(value)
+      }}
+    >
       <SelectTrigger className="w-32 mt-3 ml-3">
         <SelectValue placeholder="Language" />
       </SelectTrigger>
       <SelectContent className="w-32">
-        {locales.map((locale) => (
-          <SelectItem key={locale} value={locale}>
+        {locales.map((loc) => (
+          <SelectItem key={loc} value={loc}>
             <div className="flex">
-              <p>{localesToISO(locale).toUpperCase()}</p>
+              <p>{loc.toUpperCase()}</p>
               <Image
-                src={`https://flagsapi.com/${localesToISO(locale)}/flat/64.png`}
-                alt={locale}
+                src={`/flags/${loc}.svg`}
+                alt={loc}
                 width={24}
-                height={24}
-                className="ml-4 -mt-1"
+                height={10}
+                className="ml-4 border"
               />
             </div>
           </SelectItem>
