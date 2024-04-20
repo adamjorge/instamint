@@ -1,4 +1,4 @@
-import ReportCard from "@/components/custom/reports/report-card"
+import ReportCard from "@/components/custom/admin/reports/report-card"
 import { ReportValidationSchema } from "@/validators/schemas/reportSchema"
 import { describe, expect, it } from "@jest/globals"
 import { render, screen } from "@testing-library/react"

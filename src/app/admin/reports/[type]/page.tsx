@@ -1,14 +1,16 @@
 "use client"
 
-import { useParams } from "next/navigation"
-
-import ReportCard from "@/components/custom/reports/report-card"
+import ReportCard from "@/components/custom/admin/reports/report-card"
 import { fetchReports } from "@/lib/query/reports/fetchReports"
 import type { ReportType } from "@/validators/types/reportType"
 import { useQuery } from "@tanstack/react-query"
 
-export default function Reports() {
-  const { type } = useParams<{ type: ReportType }>()
+export default function Reports({
+  params
+}: Readonly<{
+  params: { type: ReportType }
+}>) {
+  const { type } = params
   const { isPending, error, data } = useQuery({
     queryKey: ["reports", type],
     queryFn: () => fetchReports(type)

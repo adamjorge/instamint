@@ -1,13 +1,12 @@
-import mockedSearchResult from "./search-mock-response.json"
-import { render, waitFor } from "@testing-library/react"
+import MinterCard from "@/components/custom/minters/minter-card"
 import NftCard from "@/components/custom/nfts/nft-card"
+import TeaBagCard from "@/components/custom/teabags/teabag-card"
+import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
+import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
 import { describe, expect, it } from "@jest/globals"
-import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
-import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
-import MinterCard from "@/components/custom/minters/minter-card"
-import { TeabagSearchTeabagSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
-import TeaBagCard from "@/components/custom/teabags/teabag-card"
+import { render, waitFor } from "@testing-library/react"
+import mockedSearchResult from "./search-mock-response.json"
 
 describe("Search", () => {
   it("should render nft cards", async () => {

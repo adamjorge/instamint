@@ -1,11 +1,11 @@
 "use client"
 
-import { FiHome, FiSearch, FiHeart, FiUser } from "react-icons/fi"
-import { PiFlower } from "react-icons/pi"
-import { useState } from "react"
-import Link from "next/link"
+import SearchWrapper from "@/components/custom/search/search-wrapper"
 import { Drawer, DrawerTrigger } from "@/components/ui/drawer"
-import SearchDrawer from "@/components/custom/search/search-drawer"
+import Link from "next/link"
+import { useState } from "react"
+import { FiHeart, FiHome, FiSearch, FiUser } from "react-icons/fi"
+import { PiFlower } from "react-icons/pi"
 
 export default function Footer() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,7 +20,7 @@ export default function Footer() {
           <DrawerTrigger>
             <FiSearch className="w-6 h-6 text-gray-400 hover:text-green-500" />
           </DrawerTrigger>
-          <SearchDrawer setIsOpen={setIsOpen} />
+          <SearchWrapper setIsOpen={setIsOpen} />
         </Drawer>
         <button>
           <PiFlower className="w-6 h-6 text-gray-400 hover:text-green-500" />

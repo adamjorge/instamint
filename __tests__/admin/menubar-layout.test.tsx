@@ -1,4 +1,4 @@
-import MenubarLayout from "@/components/custom/menubar-layout"
+import MenubarLayout from "@/components/custom/admin/menubar-layout"
 import { describe, expect, it } from "@jest/globals"
 import { render, screen } from "@testing-library/react"
 

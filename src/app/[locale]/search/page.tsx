@@ -1,12 +1,14 @@
 "use client"
 
-import { useSearchParams } from "next/navigation"
-import { useQuery } from "@tanstack/react-query"
-import { fetchSearch } from "@/lib/query/search/search"
 import SearchResults from "@/components/custom/search/search-results"
+import { fetchSearch } from "@/lib/query/search/search"
+import { useQuery } from "@tanstack/react-query"
+import { useSearchParams } from "next/navigation"
+import { useTranslations } from "use-intl"
 
 export default function SearchPage() {
   const queryString = useSearchParams()
+  const t = useTranslations("global")
   const search = queryString.get("search") || ""
   const { error, isPending, data } = useQuery({
     queryKey: ["search", search],
@@ -16,17 +18,17 @@ export default function SearchPage() {
   if (!search) {
     return (
       <div className="text-center">
-        <p>Welcome to your search page. This is where you can search for NFTs or minters.</p>
+        <p>{t("searchWelcome")}</p>
       </div>
     )
   }
 
   if (isPending) {
-    return <div className="text-center">Loading...</div>
+    return <div className="text-center">{t("loading")}</div>
   }
 
   if (error) {
-    return <div className="text-center">An error occurred, please try again later.</div>
+    return <div className="text-center">{t("error")}</div>
   }
 
   return (

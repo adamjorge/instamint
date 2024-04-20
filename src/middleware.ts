@@ -1,11 +1,11 @@
-import { NextRequest, NextResponse } from "next/server"
+import { locales } from "@/config/i18n/locales"
+import createMiddleware from "next-intl/middleware"
 
-export function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl
+export default createMiddleware({
+  locales,
+  defaultLocale: "en"
+})
 
-  if (pathname === "/") {
-    return NextResponse.redirect(new URL("/portal", req.url))
-  }
-
-  return NextResponse.next()
+export const config = {
+  matcher: ["/", "/(en|es|fr|ja|pt|zh)/:path*"]
 }

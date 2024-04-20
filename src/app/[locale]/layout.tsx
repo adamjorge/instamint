@@ -1,13 +1,13 @@
+import Footer from "@/components/custom/footer"
+import LanguageSelector from "@/components/custom/language-selector"
+import Providers from "@/providers/portalProviders"
+import { useLocale, useMessages, useTimeZone } from "next-intl"
 import React from "react"
 
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
-import Providers from "@/providers/providers"
-import type { Metadata, Viewport } from "next"
+import "@/styles/globals.css"
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
-
-// eslint-disable-next-line new-cap
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
@@ -45,19 +45,34 @@ export const metadata: Metadata = {
   }
 }
 
-export const viewport: Viewport = {
-  themeColor: "#ffffff"
-}
+// eslint-disable-next-line new-cap
+const inter = Inter({ subsets: ["latin"] })
 
-export default function RootLayout({
+export default function PortalLayout({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const locale = useLocale()
+  const messages = useMessages()
+  const timeZone = useTimeZone()
+  const timeZoneCode = timeZone ? timeZone.toString() : "UTC"
+  const i18nProps = {
+    locale,
+    messages,
+    timeZone: timeZoneCode
+  }
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <main>
+          <Providers {...i18nProps}>
+            <LanguageSelector />
+            {children}
+            <Footer />
+          </Providers>
+        </main>
       </body>
     </html>
   )
