@@ -8,11 +8,11 @@ export const MessageSchema = z.object({
     resultsFor: z.string(),
     noResultsFor: z.string(),
     noResultsSentence: z.string(),
-    error: z.string()
+    error: z.string(),
+    searchWelcome: z.string()
   }),
   search: z.object({
     search: z.string(),
-    searchWelcome: z.string(),
     searchSentence: z.string(),
     searchPlaceholder: z.string(),
     submit: z.string(),

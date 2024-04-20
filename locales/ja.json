@@ -6,11 +6,11 @@
     "resultsFor": "検索結果：",
     "noResultsFor": "検索結果なし：",
     "noResultsSentence": "検索語句に一致する結果が見つかりませんでした。",
-    "error": "エラーが発生しました。後でもう一度お試しください。"
+    "error": "エラーが発生しました。後でもう一度お試しください。",
+    "searchWelcome": "さがしのページへようこそ。ここではNFTやミンターをさがすことができます。"
   },
   "search": {
     "search": "さがす",
-    "searchWelcome": "さがしのページへようこそ。ここではNFTやミンターをさがすことができます。",
     "searchSentence": "NFTやミンターをさがしてください。",
     "searchPlaceholder": "さがす...",
     "submit": "送信",

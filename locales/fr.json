@@ -6,11 +6,11 @@
     "resultsFor": "Résultats de recherche pour :",
     "noResultsFor": "Aucun résultat trouvé pour :",
     "noResultsSentence": "Aucun résultat trouvé pour le terme de recherche.",
-    "error": "Une erreur s'est produite, veuillez réessayer plus tard."
+    "error": "Une erreur s'est produite, veuillez réessayer plus tard.",
+    "searchWelcome": "Bienvenue sur votre page de recherche. C'est ici que vous pouvez rechercher des NFT ou des créateurs."
   },
   "search": {
     "search": "Rechercher",
-    "searchWelcome": "Bienvenue sur votre page de recherche. C'est ici que vous pouvez rechercher des NFT ou des créateurs.",
     "searchSentence": "Rechercher un NFT ou un créateur.",
     "searchPlaceholder": "Rechercher...",
     "submit": "Soumettre",

@@ -6,11 +6,11 @@
     "resultsFor": "Search results for:",
     "noResultsFor": "No results found for:",
     "noResultsSentence": "No results found for the search term.",
-    "error": "An error occurred, please try again later."
+    "error": "An error occurred, please try again later.",
+    "searchWelcome": "Welcome to your search page. This is where you can search for NFTs or minters."
   },
   "search": {
     "search": "Search",
-    "searchWelcome": "Welcome to your search page. This is where you can search for NFTs or minters.",
     "searchSentence": "Search an NFT or a minter.",
     "searchPlaceholder": "Search...",
     "submit": "Submit",

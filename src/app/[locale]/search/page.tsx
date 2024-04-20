@@ -18,7 +18,7 @@ export default function SearchPage() {
   if (!search) {
     return (
       <div className="text-center">
-        <p>Search</p>
+        <p>{t("searchWelcome")}</p>
       </div>
     )
   }
