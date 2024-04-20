@@ -1,18 +1,19 @@
 {
   "global": {
-    "check": "チェック",
+    "check": "しらべる",
     "loading": "読み込み中...",
-    "noResults": "結果が見つかりません。",
+    "noResults": "結果が見つかりませんでした。",
     "resultsFor": "検索結果：",
-    "noResultsFor": "検索結果なし：",
-    "noResultsSentence": "検索語句に一致する結果が見つかりませんでした。",
+    "noResultsFor": "結果が見つかりませんでした：",
+    "noResultsSentence": "検索キーワードに一致する結果が見つかりませんでした。",
     "error": "エラーが発生しました。後でもう一度お試しください。",
-    "searchWelcome": "さがしのページへようこそ。ここではNFTやミンターをさがすことができます。"
+    "searchWelcome": "検索ページへようこそ。ここではNFTやミンターを検索できます。"
   },
   "search": {
-    "search": "さがす",
-    "searchSentence": "NFTやミンターをさがしてください。",
-    "searchPlaceholder": "さがす...",
+    "search": "検索",
+    "searchSentence": "NFTまたはミンターを検索します。",
+    "searchPlaceholder": "検索...",
+    "noSearchResultsFor": "{type} が見つかりません",
     "submit": "送信",
     "cancel": "キャンセル"
   }

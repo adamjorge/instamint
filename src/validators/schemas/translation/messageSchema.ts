@@ -15,6 +15,7 @@ export const MessageSchema = z.object({
     search: z.string(),
     searchSentence: z.string(),
     searchPlaceholder: z.string(),
+    noSearchResultsFor: z.string(),
     submit: z.string(),
     cancel: z.string()
   })

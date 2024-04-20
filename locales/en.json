@@ -13,6 +13,7 @@
     "search": "Search",
     "searchSentence": "Search an NFT or a minter.",
     "searchPlaceholder": "Search...",
+    "noSearchResultsFor": "No {type} found",
     "submit": "Submit",
     "cancel": "Cancel"
   }
