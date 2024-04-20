@@ -10,11 +10,13 @@
     "searchWelcome": "欢迎来到您的搜索页面。在这里，您可以搜索NFT或铸造者。"
   },
   "search": {
+    "cancel": "取消",
+    "minPrice": "最低价",
+    "maxPrice": "最高价",
+    "noSearchResultsFor": "未找到{type}",
     "search": "搜索",
     "searchSentence": "搜索NFT或铸造者。",
     "searchPlaceholder": "搜索...",
-    "noSearchResultsFor": "未找到{type}",
-    "submit": "提交",
-    "cancel": "取消"
+    "submit": "提交"
   }
 }

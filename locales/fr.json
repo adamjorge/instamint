@@ -10,11 +10,13 @@
     "searchWelcome": "Bienvenue sur votre page de recherche. C'est ici que vous pouvez rechercher des NFTs ou des créateurs."
   },
   "search": {
+    "cancel": "Annuler",
+    "minPrice": "Prix min.",
+    "maxPrice": "Prix max.",
+    "noSearchResultsFor": "Aucun {type} trouvé",
     "search": "Rechercher",
     "searchSentence": "Rechercher un NFT ou un créateur.",
     "searchPlaceholder": "Rechercher...",
-    "noSearchResultsFor": "Aucun {type} trouvé",
-    "submit": "Soumettre",
-    "cancel": "Annuler"
+    "submit": "Soumettre"
   }
 }
