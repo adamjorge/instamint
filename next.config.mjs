@@ -2,7 +2,8 @@ import withPWAInit from "@ducanh2912/next-pwa"
 import createNextIntlPlugin from "next-intl/plugin"
 
 const withPWA = withPWAInit({
-  dest: "public"
+  dest: "public",
+  register: true
 })
 
 const withNextIntl = createNextIntlPlugin()
@@ -14,10 +15,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "loremflickr.com"
-      },
-      {
-        protocol: "https",
-        hostname: "flagsapi.com"
       }
     ]
   }

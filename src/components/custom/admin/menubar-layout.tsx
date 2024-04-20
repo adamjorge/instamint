@@ -8,7 +8,7 @@ import { FaHome } from "react-icons/fa"
 
 export default function MenubarLayout() {
   return (
-    <Menubar className="fixed top-0 w-full bg-white">
+    <Menubar className="fixed top-0 w-full bg-white z-10">
       <MenubarMenu>
         <MenubarTrigger>
           <FaHome />
@@ -30,6 +30,15 @@ export default function MenubarLayout() {
             <MenubarItem>Tea-bags</MenubarItem>
           </Link>
           <Link href="/admin/reports/comments">
+            <MenubarItem>Comments</MenubarItem>
+          </Link>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarSeparator />
+      <MenubarMenu>
+        <MenubarTrigger>Application activity</MenubarTrigger>
+        <MenubarContent>
+          <Link href="/admin/comments">
             <MenubarItem>Comments</MenubarItem>
           </Link>
         </MenubarContent>

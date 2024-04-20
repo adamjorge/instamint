@@ -148,5 +148,91 @@
       },
       "hashtags": []
     }
+  ],
+  "minters": [
+    {
+      "id": 1,
+      "username": "oneEleven",
+      "email": "oneeleven@me.com",
+      "password": "minter1",
+      "phoneNumber": null,
+      "defaultLanguage": "fr",
+      "profileUrl": "",
+      "avatarUrl": "https://loremflickr.com/320/240?lock=1&random=1",
+      "bio": "first bio",
+      "authorName": null,
+      "isVisible": true,
+      "isSearchableByEmail": true,
+      "is2FAEnabled": false,
+      "isAdmin": false,
+      "createdAt": "2024-04-12T20:12:42.579Z",
+      "updatedAt": "2024-04-12T20:12:42.579Z",
+      "deletedAt": null
+    },
+    {
+      "id": 2,
+      "username": "twoEleven",
+      "email": "twoeleven@me.com",
+      "password": "minter1",
+      "phoneNumber": null,
+      "defaultLanguage": "fr",
+      "profileUrl": "",
+      "avatarUrl": "https://loremflickr.com/320/240?lock=2&random=2",
+      "bio": "second bio",
+      "authorName": null,
+      "isVisible": true,
+      "isSearchableByEmail": true,
+      "is2FAEnabled": false,
+      "isAdmin": false,
+      "createdAt": "2024-04-12T20:12:42.579Z",
+      "updatedAt": "2024-04-12T20:12:42.579Z",
+      "deletedAt": null
+    },
+    {
+      "id": 4,
+      "username": "fourEleven",
+      "email": "foureleven@me.com",
+      "password": "minter1",
+      "phoneNumber": null,
+      "defaultLanguage": "fr",
+      "profileUrl": "",
+      "avatarUrl": "https://loremflickr.com/320/240?lock=4&random=4",
+      "bio": "third bio",
+      "authorName": null,
+      "isVisible": true,
+      "isSearchableByEmail": true,
+      "is2FAEnabled": false,
+      "isAdmin": false,
+      "createdAt": "2024-04-12T20:12:42.579Z",
+      "updatedAt": "2024-04-12T20:12:42.579Z",
+      "deletedAt": null
+    },
+    {
+      "id": 5,
+      "username": "nineEleven",
+      "email": "nineeleven@me.com",
+      "password": "minter1",
+      "phoneNumber": null,
+      "defaultLanguage": "fr",
+      "profileUrl": "",
+      "avatarUrl": "https://loremflickr.com/320/240?lock=5&random=5",
+      "bio": "fourth bio",
+      "authorName": null,
+      "isVisible": true,
+      "isSearchableByEmail": true,
+      "is2FAEnabled": false,
+      "isAdmin": false,
+      "createdAt": "2024-04-12T20:12:42.579Z",
+      "updatedAt": "2024-04-12T20:12:42.579Z",
+      "deletedAt": null
+    }
+  ],
+  "teabags": [
+    {
+      "id": 3,
+      "name": "sugar",
+      "profileUrl": "",
+      "bio": "first teabag bio"
+    }
   ]
 }

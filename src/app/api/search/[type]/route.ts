@@ -1,9 +1,15 @@
-import { searchNfts } from "@/lib/query/nfts/search"
+import { searchByType } from "@/lib/query/search/search"
+import { SearchType } from "@/validators/types/searchType"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
-export async function GET(req: Request) {
+export async function GET(req: Request, { params }: { params: { type: SearchType } }) {
+  const { type } = params
   const { searchParams } = new URL(req.url)
   const search = searchParams.get("search")
+
+  if (!["minters", "nfts", "teabags"].includes(type)) {
+    return Response.json({ message: "Invalid type" }, { status: StatusCodes.BAD_REQUEST })
+  }
 
   if (!search) {
     return Response.json(
@@ -13,9 +19,9 @@ export async function GET(req: Request) {
   }
 
   try {
-    const nfts = await searchNfts(search)
+    const results = await searchByType(type, search)
 
-    return Response.json({ nfts })
+    return Response.json(results)
   } catch (error) {
     return Response.json(
       { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
