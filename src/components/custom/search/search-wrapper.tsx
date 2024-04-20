@@ -11,7 +11,7 @@ export default function SearchWrapper({ setIsOpen }: SearchWrapperProps) {
   const locale = useLocale()
   const handleSearchSubmit = useCallback(() => {
     setIsOpen(false)
-    router.push(`${locale}/search?search=${encodeURIComponent(searchTerm)}`)
+    router.push(`/${locale}/search?search=${encodeURIComponent(searchTerm)}`)
   }, [searchTerm, setIsOpen, router, locale])
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
