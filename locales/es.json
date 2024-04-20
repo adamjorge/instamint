@@ -7,7 +7,8 @@
     "noResultsFor": "No se encontraron resultados para:",
     "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
     "error": "Se produjo un error, por favor inténtalo de nuevo más tarde.",
-    "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí puedes buscar NFTs o minters."
+    "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí puedes buscar NFTs o minters.",
+    "nftPrice": "Precio: ${price}"
   },
   "search": {
     "cancel": "Cancelar",
