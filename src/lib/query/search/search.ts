@@ -7,20 +7,27 @@ import { SearchType } from "@/validators/types/searchType"
 import { searchNfts } from "@/lib/query/nfts/search"
 import { searchMinters } from "@/lib/query/minters/search"
 import { searchTeaBags } from "@/lib/query/teabags/search"
+import SearchUrlBuilder from "@/lib/query/search/search-url-builder"
 
-export async function fetchSearch(searchTerm: string) {
+export async function fetchSearch(searchTerm: string, minPrice: string, maxPrice: string) {
   if (searchTerm === "") {
     return { nfts: [], minters: [], teabags: [] }
   }
 
   try {
-    const nfts = await axios.get<NftSearchNftsSchemaType>(`/api/search/nfts?search=${searchTerm}`)
-    const minters = await axios.get<MinterSearchMintersSchemaType>(
-      `/api/search/minters?search=${searchTerm}`
-    )
-    const teabags = await axios.get<TeabagsSearchTeabagsSchemaType>(
-      `/api/search/teabags?search=${searchTerm}`
-    )
+    const builder = new SearchUrlBuilder("/api/search/nfts").setSearchTerm(searchTerm)
+    const nftUrlBuilder = builder.setMaxPrice(maxPrice).setMinPrice(minPrice)
+    const nfts = await axios.get<NftSearchNftsSchemaType>(nftUrlBuilder.build())
+    const minterUrlBuilder = builder
+      .setBaseUrl("/api/search/minters")
+      .setMinPrice("")
+      .setMaxPrice("")
+    const minters = await axios.get<MinterSearchMintersSchemaType>(minterUrlBuilder.build())
+    const teabagUrlBuilder = builder
+      .setBaseUrl("/api/search/teabags")
+      .setMinPrice("")
+      .setMaxPrice("")
+    const teabags = await axios.get<TeabagsSearchTeabagsSchemaType>(teabagUrlBuilder.build())
 
     return searchSchema.parse({
       nfts: nfts.data,
@@ -36,10 +43,12 @@ export async function fetchSearch(searchTerm: string) {
   }
 }
 
-export async function searchByType(type: SearchType, searchTerm: string) {
+export async function searchByType(options: SearchOptions) {
+  const { type, searchTerm, minPrice, maxPrice } = options
+
   switch (type) {
     case "nfts":
-      return await searchNfts(searchTerm)
+      return await searchNfts({ search: searchTerm, minPrice, maxPrice })
 
     case "minters":
       return await searchMinters(searchTerm)
@@ -50,4 +59,11 @@ export async function searchByType(type: SearchType, searchTerm: string) {
     default:
       throw new Error("Invalid type")
   }
+}
+
+type SearchOptions = {
+  type: SearchType
+  searchTerm: string
+  minPrice: string
+  maxPrice: string
 }

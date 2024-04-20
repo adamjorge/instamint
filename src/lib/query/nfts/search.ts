@@ -24,7 +24,11 @@ const nftSearchSelect: NftSelect = {
   hashtags: true
 }
 
-export async function searchNfts(search: string) {
+export async function searchNfts(params: Params) {
+  const { search, minPrice, maxPrice } = params
+  const min = minPrice !== "" ? parseInt(minPrice, 10) : 0
+  const max = maxPrice !== "" ? parseInt(maxPrice, 10) : Number.MAX_SAFE_INTEGER
+
   return await prisma.nft.findMany({
     select: nftSearchSelect,
     where: {
@@ -56,7 +60,17 @@ export async function searchNfts(search: string) {
             }
           }
         }
-      ]
+      ],
+      price: {
+        gte: min,
+        lte: max
+      }
     }
   })
+}
+
+type Params = {
+  search: string
+  minPrice: string
+  maxPrice: string
 }

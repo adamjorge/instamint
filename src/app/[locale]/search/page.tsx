@@ -10,9 +10,11 @@ export default function SearchPage() {
   const queryString = useSearchParams()
   const t = useTranslations("global")
   const search = queryString.get("search") || ""
+  const minPrice = queryString.get("min") || ""
+  const maxPrice = queryString.get("max") || ""
   const { error, isPending, data } = useQuery({
-    queryKey: ["search", search],
-    queryFn: () => fetchSearch(search)
+    queryKey: ["search", search, minPrice, maxPrice],
+    queryFn: () => fetchSearch(search, minPrice, maxPrice)
   })
 
   if (!search) {
