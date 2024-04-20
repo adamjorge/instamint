@@ -9,7 +9,8 @@ export const MessageSchema = z.object({
     noResultsFor: z.string(),
     noResultsSentence: z.string(),
     error: z.string(),
-    searchWelcome: z.string()
+    searchWelcome: z.string(),
+    nftPrice: z.string()
   }),
   search: z.object({
     search: z.string(),

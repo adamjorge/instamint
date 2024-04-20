@@ -6,6 +6,7 @@ export const nftSearchNftSchema = z.object({
   id: z.number(),
   description: z.string(),
   imageUrl: z.string(),
+  price: z.number(),
   createdAt: z.string(),
   originalContent: nftSearchOriginalContentSchema,
   hashtags: nftsSearchHashtagsSchema

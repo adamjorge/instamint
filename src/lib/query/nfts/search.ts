@@ -6,6 +6,7 @@ const nftSearchSelect: NftSelect = {
   id: true,
   description: true,
   imageUrl: true,
+  price: true,
   createdAt: true,
   originalContentId: true,
   originalContent: {
