@@ -10,6 +10,12 @@ export default class SearchUrlBuilder {
     return `${this.baseUrl}?${this.params.toString()}`
   }
 
+  setBaseUrl(baseUrl: string) {
+    this.baseUrl = baseUrl
+
+    return this
+  }
+
   setSearchTerm(searchTerm: string) {
     this.params.set("search", searchTerm)
 
@@ -18,6 +24,8 @@ export default class SearchUrlBuilder {
 
   setMinPrice(minPrice: string) {
     if (minPrice === "") {
+      this.params.delete("min")
+
       return this
     }
 
@@ -28,6 +36,8 @@ export default class SearchUrlBuilder {
 
   setMaxPrice(maxPrice: string) {
     if (maxPrice === "") {
+      this.params.delete("max")
+
       return this
     }
 
