@@ -7,14 +7,17 @@
     "noResultsFor": "Nenhum resultado encontrado para:",
     "noResultsSentence": "Nenhum resultado encontrado para o termo de pesquisa.",
     "error": "Ocorreu um erro. Por favor, tente novamente mais tarde.",
-    "searchWelcome": "Bem-vindo à sua página de pesquisa. Aqui você pode pesquisar NFTs ou criadores."
+    "searchWelcome": "Bem-vindo à sua página de pesquisa. Aqui você pode pesquisar NFTs ou criadores.",
+    "nftPrice": "Preço: ${price}"
   },
   "search": {
+    "cancel": "Cancelar",
+    "minPrice": "Preço mín.",
+    "maxPrice": "Preço máx.",
+    "noSearchResultsFor": "Nenhum {type} encontrado",
     "search": "Pesquisar",
     "searchSentence": "Pesquisar um NFT ou um criador.",
     "searchPlaceholder": "Pesquisar...",
-    "noSearchResultsFor": "Nenhum {type} encontrado",
-    "submit": "Enviar",
-    "cancel": "Cancelar"
+    "submit": "Enviar"
   }
 }

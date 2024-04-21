@@ -7,14 +7,17 @@
     "noResultsFor": "結果が見つかりませんでした：",
     "noResultsSentence": "検索キーワードに一致する結果が見つかりませんでした。",
     "error": "エラーが発生しました。後でもう一度お試しください。",
-    "searchWelcome": "検索ページへようこそ。ここではNFTやミンターを検索できます。"
+    "searchWelcome": "検索ページへようこそ。ここではNFTやミンターを検索できます。",
+    "nftPrice": "価格: ${price}"
   },
   "search": {
+    "cancel": "キャンセル",
+    "minPrice": "最低価格",
+    "maxPrice": "最高価格",
+    "noSearchResultsFor": "{type} が見つかりません",
     "search": "検索",
     "searchSentence": "NFTまたはミンターを検索します。",
     "searchPlaceholder": "検索...",
-    "noSearchResultsFor": "{type} が見つかりません",
-    "submit": "送信",
-    "cancel": "キャンセル"
+    "submit": "送信"
   }
 }

@@ -9,14 +9,17 @@ export const MessageSchema = z.object({
     noResultsFor: z.string(),
     noResultsSentence: z.string(),
     error: z.string(),
-    searchWelcome: z.string()
+    searchWelcome: z.string(),
+    nftPrice: z.string()
   }),
   search: z.object({
+    cancel: z.string(),
+    minPrice: z.string(),
+    maxPrice: z.string(),
+    noSearchResultsFor: z.string(),
     search: z.string(),
     searchSentence: z.string(),
     searchPlaceholder: z.string(),
-    noSearchResultsFor: z.string(),
-    submit: z.string(),
-    cancel: z.string()
+    submit: z.string()
   })
 })

@@ -20,7 +20,7 @@ export default function Footer() {
           <DrawerTrigger>
             <FiSearch className="w-6 h-6 text-gray-400 hover:text-green-500" />
           </DrawerTrigger>
-          <SearchWrapper setIsOpen={setIsOpen} />
+          <SearchWrapper isOpen={isOpen} setIsOpen={setIsOpen} />
         </Drawer>
         <button>
           <PiFlower className="w-6 h-6 text-gray-400 hover:text-green-500" />

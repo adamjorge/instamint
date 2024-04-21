@@ -6,6 +6,8 @@ export async function GET(req: Request, { params }: { params: { type: SearchType
   const { type } = params
   const { searchParams } = new URL(req.url)
   const search = searchParams.get("search")
+  const minPrice = searchParams.get("min") || ""
+  const maxPrice = searchParams.get("max") || ""
 
   if (!["minters", "nfts", "teabags"].includes(type)) {
     return Response.json({ message: "Invalid type" }, { status: StatusCodes.BAD_REQUEST })
@@ -19,7 +21,7 @@ export async function GET(req: Request, { params }: { params: { type: SearchType
   }
 
   try {
-    const results = await searchByType(type, search)
+    const results = await searchByType({ type, searchTerm: search, minPrice, maxPrice })
 
     return Response.json(results)
   } catch (error) {

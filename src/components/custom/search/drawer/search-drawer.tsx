@@ -9,12 +9,14 @@ import {
   DrawerHeader,
   DrawerTitle
 } from "@/components/ui/drawer"
-import { Input } from "@/components/ui/input"
 import { useTranslations } from "next-intl"
 import React from "react"
+import SearchDrawerInputList, {
+  SearchDrawerInputListProps
+} from "@/components/custom/search/drawer/search-drawer-input-list"
 
 export default function SearchDrawer({ ...props }: SearchDrawerProps) {
-  const { searchTerm, setSearchTerm, handleKeyDown, handleSearchSubmit } = props
+  const searchDrawerInputListProps: Omit<SearchDrawerInputListProps, "handleSearchSubmit"> = props
   const t = useTranslations("search")
 
   return (
@@ -24,22 +26,10 @@ export default function SearchDrawer({ ...props }: SearchDrawerProps) {
           <DrawerTitle>{t("search")}</DrawerTitle>
           <DrawerDescription>{t("searchPlaceholder")}</DrawerDescription>
         </DrawerHeader>
-        <div className="flex justify-center">
-          <Input
-            autoFocus
-            type="search"
-            placeholder={t("searchPlaceholder")}
-            className="mx-5 w-3/4"
-            value={searchTerm}
-            onChange={(e) => {
-              setSearchTerm(e.target.value)
-            }}
-            onKeyDown={handleKeyDown}
-          />
-        </div>
+        <SearchDrawerInputList {...searchDrawerInputListProps} />
         <DrawerFooter>
           <div className="flex flex-col items-center">
-            <Button onClick={handleSearchSubmit}>{t("submit")}</Button>
+            <Button onClick={props.handleSearchSubmit}>{t("submit")}</Button>
             <DrawerClose asChild>
               <Button size="sm" variant="outline" className="w-fit mt-3">
                 {t("cancel")}
@@ -52,9 +42,13 @@ export default function SearchDrawer({ ...props }: SearchDrawerProps) {
   )
 }
 
-type SearchDrawerProps = {
+export type SearchDrawerProps = {
   searchTerm: string
   setSearchTerm: (searchTerm: string) => void
   handleSearchSubmit: () => void
   handleKeyDown: (e: React.KeyboardEvent) => void
+  minPrice: string
+  setMinPrice: (minPrice: string) => void
+  maxPrice: string
+  setMaxPrice: (maxPrice: string) => void
 }
