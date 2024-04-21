@@ -1,11 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
-import { useTranslations } from "use-intl"
 
 export default function NftCard(nft: NftSearchNftSchemaType) {
-  const t = useTranslations("global")
-
   return (
     <Card className="bg-muted m-4">
       <CardHeader>
@@ -20,7 +17,9 @@ export default function NftCard(nft: NftSearchNftSchemaType) {
         <CardDescription>{nft.description}</CardDescription>
       </CardHeader>
       <CardContent className="w-full">
-        <p>{t("nftPrice", { price: nft.price.toString() })}</p>
+        <p>
+          Price: <span className="font-bold text-lg">${nft.price.toString()}</span>
+        </p>
       </CardContent>
     </Card>
   )
