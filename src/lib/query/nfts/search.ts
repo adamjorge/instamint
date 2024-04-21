@@ -7,6 +7,7 @@ const nftSearchSelect: NftSelect = {
   description: true,
   imageUrl: true,
   price: true,
+  location: true,
   createdAt: true,
   originalContentId: true,
   originalContent: {
@@ -58,6 +59,12 @@ export async function searchNfts(params: Params) {
                 mode: "insensitive"
               }
             }
+          }
+        },
+        {
+          location: {
+            contains: search,
+            mode: "insensitive"
           }
         }
       ],

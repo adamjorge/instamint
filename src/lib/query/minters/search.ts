@@ -7,14 +7,22 @@ export async function searchMinters(search: string) {
       username: true,
       profileUrl: true,
       avatarUrl: true,
-      bio: true
+      bio: true,
+      location: true
     },
     where: {
       isAdmin: false,
-      username: {
-        contains: search,
-        mode: "insensitive"
-      }
+      OR: [
+        {
+          username: { contains: search, mode: "insensitive" }
+        },
+        {
+          location: {
+            contains: search,
+            mode: "insensitive"
+          }
+        }
+      ]
     }
   })
 }

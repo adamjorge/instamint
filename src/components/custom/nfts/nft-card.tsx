@@ -17,6 +17,7 @@ export default function NftCard(nft: NftSearchNftSchemaType) {
         <CardDescription>{nft.description}</CardDescription>
       </CardHeader>
       <CardContent className="w-full">
+        {nft.location && <p className="text-sm text-muted-foreground">Location: {nft.location}</p>}
         <p>
           Price: <span className="font-bold text-lg">${nft.price.toString()}</span>
         </p>

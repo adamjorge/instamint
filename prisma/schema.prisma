@@ -36,6 +36,7 @@ model Minter {
   profileUrl          String
   avatarUrl           String
   bio                 String
+  location            String?
   authorName          String?
   isVisible           Boolean           @default(true)
   isSearchableByEmail Boolean           @default(true)
@@ -54,7 +55,7 @@ model Nft {
   description       String
   imageUrl          String
   price             Float
-  location          String
+  location          String?
   isDraft           Boolean         @default(true)
   createdAt         DateTime        @default(now())
   originalContent   OriginalContent @relation(fields: [originalContentId], references: [id])
