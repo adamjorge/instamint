@@ -1,13 +1,12 @@
 import Footer from "@/components/custom/footer"
 import LanguageSelector from "@/components/custom/language-selector"
-import Providers from "@/providers/portalProviders"
-import { useLocale, useMessages, useTimeZone } from "next-intl"
-import React from "react"
-
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
+import Providers from "@/providers/portalProviders"
 import "@/styles/globals.css"
 import type { Metadata } from "next"
+import { useLocale, useMessages, useTimeZone } from "next-intl"
 import { Inter } from "next/font/google"
+import React from "react"
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,

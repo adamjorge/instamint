@@ -1,5 +1,5 @@
 import SearchUrlBuilder from "@/lib/query/search/search-url-builder"
-import { useState, useCallback } from "react"
+import { useCallback, useState } from "react"
 
 export default function useSearchUrlBuilder(baseUrl: string) {
   const [searchTerm, setSearchTerm] = useState("")

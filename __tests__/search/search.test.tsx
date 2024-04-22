@@ -6,6 +6,7 @@ import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSear
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
 import { describe, expect, it } from "@jest/globals"
 import { render, waitFor } from "@testing-library/react"
+
 import mockedSearchResult from "./search-mock-response.json"
 
 describe("Search", () => {

@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/components/ui/select"
-import { locales, type Locale } from "@/config/i18n/locales"
+import { type Locale, locales } from "@/config/i18n/locales"
 import { useLocale } from "next-intl"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
