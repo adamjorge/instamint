@@ -10,16 +10,20 @@ export default async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/login", request.url))
   }
 
-  const defaultLocale = "en"
-  const handleI18nRouting = createIntlMiddleware({
-    locales,
-    defaultLocale
-  })
-  const res = handleI18nRouting(request)
+  if (!request.nextUrl.pathname.startsWith("/admin")) {
+    const defaultLocale = "en"
+    const handleI18nRouting = createIntlMiddleware({
+      locales,
+      defaultLocale
+    })
+    const res = handleI18nRouting(request)
 
-  return res
+    return res
+  }
+
+  return null
 }
 
 export const config = {
-  matcher: ["/", "/(en|es|fr|ja|pt|zh)/:path*"]
+  matcher: ["/", "/(en|es|fr|ja|pt|zh)/:path*", "/admin/:path*"]
 }
