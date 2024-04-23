@@ -11,14 +11,17 @@ import { locales, type Locale } from "@/config/i18n/locales"
 import { useLocale } from "next-intl"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import { useCallback } from "react"
 
 export default function LanguageSelector() {
   const locale = useLocale()
   const router = useRouter()
-
-  function handleLocaleChange(loc: Locale) {
-    router.push(`/${loc}`)
-  }
+  const handleLocaleChange = useCallback(
+    (loc: Locale) => {
+      router.push(`/${loc}`)
+    },
+    [router]
+  )
 
   return (
     <Select

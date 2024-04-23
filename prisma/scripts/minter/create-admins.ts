@@ -11,7 +11,6 @@ export function createAdmins(prisma: PrismaClient) {
   const adminData = adminFullNames.map((name) => ({
     username: faker.internet.userName(name),
     email: faker.internet.email(name),
-    password: "pa$$word",
     profileUrl: "",
     avatarUrl: "",
     bio: "",

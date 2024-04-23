@@ -2,7 +2,6 @@
   {
     "username": "minter1",
     "email": "minter1@me.com",
-    "password": "minter1",
     "location": "Paris",
     "profileUrl": "",
     "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=1&random=1",
@@ -11,7 +10,6 @@
   {
     "username": "minter2",
     "email": "minter2@me.com",
-    "password": "minter2",
     "location": "Rio de Janeiro, Brazil",
     "profileUrl": "",
     "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=2&random=2",
@@ -20,7 +18,6 @@
   {
     "username": "minter3",
     "email": "minter3@me.com",
-    "password": "minter3",
     "location": "Atlanta, United States",
     "profileUrl": "",
     "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=3&random=3",
@@ -29,7 +26,6 @@
   {
     "username": "minter4",
     "email": "minter4@me.com",
-    "password": "minter4",
     "location": "London, United Kingdom",
     "profileUrl": "",
     "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=4&random=4",
@@ -38,7 +34,6 @@
   {
     "username": "minter5",
     "email": "minter5@me.com",
-    "password": "minter5",
     "location": "Rio de Janeiro, Brazil",
     "profileUrl": "",
     "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=5&random=5",
@@ -47,7 +42,6 @@
   {
     "username": "minter6",
     "email": "minter6@me.com",
-    "password": "minter6",
     "location": "Paris, France",
     "profileUrl": "",
     "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=6&random=6",
@@ -56,7 +50,6 @@
   {
     "username": "minter7",
     "email": "minter7@me.com",
-    "password": "minter7",
     "location": "Toronto, Canada",
     "profileUrl": "",
     "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=7&random=7",
@@ -65,7 +58,6 @@
   {
     "username": "minter8",
     "email": "minter8@me.com",
-    "password": "minter8",
     "location": "Vancouver, Canada",
     "profileUrl": "",
     "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=8&random=8",
@@ -74,7 +66,6 @@
   {
     "username": "minter9",
     "email": "minter9@me.com",
-    "password": "minter9",
     "location": "Geneva, Switzerland",
     "profileUrl": "",
     "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=9&random=9",
@@ -83,7 +74,6 @@
   {
     "username": "minter10",
     "email": "minter10@me.com",
-    "password": "minter10",
     "location": "Bern, Switzerland",
     "profileUrl": "",
     "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=10&random=10",
