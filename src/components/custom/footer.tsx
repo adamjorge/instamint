@@ -2,6 +2,7 @@
 
 import SearchWrapper from "@/components/custom/search/search-wrapper"
 import { Drawer, DrawerTrigger } from "@/components/ui/drawer"
+import { signOut } from "next-auth/react"
 import Link from "next/link"
 import { useState } from "react"
 import { FiHeart, FiHome, FiSearch, FiUser } from "react-icons/fi"
@@ -30,6 +31,9 @@ export default function Footer() {
         </button>
         <button>
           <FiUser className="w-6 h-6 text-gray-400 hover:text-green-500" />
+        </button>
+        <button onClick={() => signOut()}>
+          <span>Sign out test</span>
         </button>
       </nav>
     </footer>

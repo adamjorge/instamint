@@ -1,17 +1,25 @@
-import authConfig from "@/config/auth.config"
-import NextAuth from "next-auth"
+import { locales } from "@/config/i18n/locales"
+import { auth } from "@/lib/auth"
+import createIntlMiddleware from "next-intl/middleware"
+import { NextRequest, NextResponse } from "next/server"
 
-// eslint-disable-next-line new-cap
-export const { auth: middleware } = NextAuth(authConfig)
+export default async function middleware(request: NextRequest) {
+  const session = await auth()
 
-// Import { locales } from "@/config/i18n/locales"
-// import createMiddleware from "next-intl/middleware"
+  if (!session?.user) {
+    return NextResponse.redirect(new URL("/login", request.url))
+  }
 
-// export default createMiddleware({
-//   locales,
-//   defaultLocale: "en"
-// })
+  const defaultLocale = "en"
+  const handleI18nRouting = createIntlMiddleware({
+    locales,
+    defaultLocale
+  })
+  const res = handleI18nRouting(request)
 
-// export const config = {
-//   matcher: ["/", "/(en|es|fr|ja|pt|zh)/:path*"]
-// }
+  return res
+}
+
+export const config = {
+  matcher: ["/", "/(en|es|fr|ja|pt|zh)/:path*"]
+}

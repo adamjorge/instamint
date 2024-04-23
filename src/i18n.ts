@@ -17,3 +17,4 @@ export default getRequestConfig(async ({ locale }: { locale: Locale }) => {
     messages
   }
 })
+

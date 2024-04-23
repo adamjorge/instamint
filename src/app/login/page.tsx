@@ -1,15 +1,14 @@
-import { SignIn } from "@/components/sign-in"
-import { auth } from "@/lib/auth"
+import SignInForm from "@/components/sign-in-form"
+// Import { auth } from "@/lib/auth"
 
-export default async function Page() {
-  const session = await auth()
-  console.log("SESSION IS", session)
+export default function Page() {
+  // Const session = await auth()
 
   return (
     <div>
-      {session?.user ? <h1>Logged in</h1> : null}
-      <h1>Login</h1>
-      <SignIn />
+      {/* {session?.user ? <h1>Logged in</h1> : null}
+      <h1>Login</h1> */}
+      <SignInForm />
     </div>
   )
 }
