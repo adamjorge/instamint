@@ -1,7 +1,7 @@
 "use client"
 
 import { useFormState } from "react-dom"
-import ResendButton from "./resend-button"
+import ResendButton from "@/components/custom/email/verify/send/resend-button"
 import { useSearchParams } from "next/navigation"
 import { resendVerificationEmail } from "@/actions/auth"
 
@@ -9,7 +9,7 @@ export default function Form() {
   const searchParams = useSearchParams()
   const email = searchParams.get("email") || ""
   const verificationSent = Boolean(searchParams.get("verification_sent"))
-  const [formState, action] = useFormState(resendVerificationEmail.bind(null, email), "undefined")
+  const [formState, action] = useFormState(resendVerificationEmail.bind(null, email), "")
 
   return (
     <>

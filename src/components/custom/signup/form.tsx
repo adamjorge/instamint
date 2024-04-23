@@ -1,82 +1,125 @@
 "use client"
 
-import Link from "next/link"
-import { signUp } from "@/actions/auth"
-import { useFormState } from "react-dom"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import * as z from "zod"
+import { findUserByEmail, signUp } from "@/actions/auth"
 import { Button } from "@/components/ui/button"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import Link from "next/link"
+import { useState } from "react"
 
-export default function Form() {
-  const [formState, action] = useFormState(signUp, {
-    errors: {}
+interface SignUpFormData {
+  email: string
+  password: string
+  name: string
+}
+
+const formSchema = z.object({
+  email: z
+    .string()
+    .email({ message: "Invalid email address" })
+    .min(3, { message: "Email must be at least 3 characters" }),
+  password: z.string().min(6, { message: "Password must be at least 6 characters" }),
+  name: z.string().min(6, { message: "Name must be at least 6 characters" })
+})
+
+export default function SignUpForm() {
+  const [error, setError] = useState<string | null>(null)
+  const form = useForm<SignUpFormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+      name: ""
+    }
   })
 
+  async function handleSubmit(values: SignUpFormData) {
+    try {
+      const isEmailExists = await findUserByEmail(values.email)
+
+      if (isEmailExists) {
+        setError("Email already exists")
+      } else {
+        await signUp(values)
+      }
+    } catch (e) {
+      setError("Error signing up:")
+    }
+  }
+
   return (
-    <div className="space-y-3 items-center">
-      <form action={action}>
-        <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
-          <h1 className="mb-3 text-2xl">Sign Up Now!</h1>
-          <div className="w-full mb-4">
-            <div>
-              <label className="mb-3 mt-5 block text-xs font-medium text-gray-900" htmlFor="email">
-                Email
-              </label>
-              <input
-                className="peer block w-full rounded-md border border-gray-200 py-[9px] px-3 text-sm outline-2 placeholder:text-gray-500"
-                placeholder="Enter your email"
-                type="email"
-                id="email"
-                name="email"
-                defaultValue=""
-              />
-              {formState.errors.email && (
-                <div className="text-sm text-red-500">{formState.errors.email.join(", ")}</div>
-              )}
-            </div>
-            <div>
-              <label
-                className="mb-3 mt-5 block text-xs font-medium text-gray-900"
-                htmlFor="password"
-              >
-                Password
-              </label>
-              <input
-                className="peer block w-full rounded-md border border-gray-200 py-[9px] px-3 text-sm outline-2 placeholder:text-gray-500"
-                placeholder="Enter your password"
-                type="password"
-                id="password"
-                name="password"
-                defaultValue=""
-              />
-              {formState.errors.password && (
-                <div className="text-sm text-red-500">{formState.errors.password.join(", ")}</div>
-              )}
-            </div>
-            <div>
-              <label className="mb-3 mt-5 block text-xs font-medium text-gray-900" htmlFor="name">
-                name
-              </label>
-              <input
-                className="peer block w-full rounded-md border border-gray-200 py-[9px] px-3 text-sm outline-2 placeholder:text-gray-500"
-                placeholder="Enter your name"
-                type="text"
-                id="name"
-                name="name"
-                defaultValue=""
-              />
-            </div>
-            {formState.errors.name && (
-              <div className="text-sm text-red-500">{formState.errors.name.join(", ")}</div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(handleSubmit)}
+          className="max-w-md w-full flex flex-col gap-4"
+        >
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter your email" type="email" id="email" {...field} />
+                </FormControl>
+                <FormMessage />
+                {error && <div className="text-red-500">{error}</div>}
+              </FormItem>
             )}
-          </div>
-          <Button />
+          />
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Password</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Enter your password"
+                    type="password"
+                    id="password"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter your name" type="text" id="name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button type="submit" className="w-full">
+            SignUp
+          </Button>
           <div className="mt-4 text-center">
-            Already have an account?&nbsp;
+            <span style={{ marginRight: "0.5em" }}>Already have an account?</span>
             <Link href="/login" className="underline">
               Login
             </Link>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </Form>
+    </main>
   )
 }

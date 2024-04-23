@@ -4,7 +4,8 @@ import { findUserByEmail, verifyEmail } from "@/actions/auth"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
-import Form from "./send/form"
+import Form from "@/components/custom/email/verify/send/form"
+import { Button } from "@/components/ui/button"
 
 export default function VerifyEmail() {
   const searchParams = useSearchParams()
@@ -47,12 +48,26 @@ export default function VerifyEmail() {
 
   return (
     <>
-      <div className="mb-4">{isLoading ? <Form /> : errorMessage || result}</div>
-      <div className="my-3">
-        <Link href="/login" className="bg-white py-3 px-2 rounded">
-          Back to Login
-        </Link>
+      <div className="mb-4">
+        {isLoading ? (
+          <Form />
+        ) : (
+          <>
+            {errorMessage ? (
+              <div className="text-green-500">{errorMessage}</div>
+            ) : (
+              <div className="text-green-500">{result}</div>
+            )}
+          </>
+        )}
       </div>
+      {!isLoading && !errorMessage && (
+        <div className="my-3 w-full">
+          <Link href="/login" className="bg-white py-3 px-2 rounded">
+            <Button>Back to Login</Button>
+          </Link>
+        </div>
+      )}
     </>
   )
 }
