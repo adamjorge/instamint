@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
+/* eslint-disable */
 export default function SignInForm() {
   const form = useForm<z.infer<typeof connectionSchema>>({
     resolver: zodResolver(connectionSchema),
@@ -28,10 +29,11 @@ export default function SignInForm() {
   })
 
   async function onSubmit(values: z.infer<typeof connectionSchema>) {
+    console.log("VALUES : " + JSON.stringify(values))
+
     await signIn("credentials", {
       email: values.email,
-      password: values.password,
-      callbackUrl: "http://localhost:3000/en"
+      password: values.password
     })
   }
 
@@ -59,7 +61,7 @@ export default function SignInForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Input {...field} type="password" />
               </FormControl>
               <FormMessage />
             </FormItem>

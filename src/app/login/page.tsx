@@ -1,13 +1,16 @@
 import SignInForm from "@/components/sign-in-form"
-// Import { auth } from "@/lib/auth"
+import { auth } from "@/lib/auth"
+import { redirect } from "next/navigation"
 
-export default function Page() {
-  // Const session = await auth()
+export default async function Page() {
+  const session = await auth()
+
+  if (session?.user) {
+    redirect("/en")
+  }
 
   return (
     <div>
-      {/* {session?.user ? <h1>Logged in</h1> : null}
-      <h1>Login</h1> */}
       <SignInForm />
     </div>
   )
