@@ -1,6 +1,6 @@
 export const APP_NAME = "Instamint"
 
-export const APP_DEFAULT_TITLE = "Instamint, your social network for minting NFTs"
+export const APP_DEFAULT_TITLE = "Instamint"
 
 export const APP_TITLE_TEMPLATE = "%s | Instamint"
 

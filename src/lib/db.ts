@@ -1,6 +1,9 @@
 import { PrismaClient } from "@prisma/client"
 
-const prismaSingleton = () => new PrismaClient()
+const prismaSingleton = () =>
+  new PrismaClient({
+    log: ["query", "info", "warn", "error"]
+  })
 
 declare global {
   //! Don't delete "var" keyword

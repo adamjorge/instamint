@@ -1,10 +1,25 @@
 {
+  "id": "/",
   "name": "Instamint",
-  "theme_color": "#FFFFFF",
+  "short_name": "Instamint",
+  "description": "Instamint is a social media platform that allows users to share photos and videos with their friends and family.",
   "background_color": "#FFFFFF",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
+  "screenshots": [
+    {
+      "src": "splash_screens/4__iPhone_SE__iPod_touch_5th_generation_and_later_landscape.png",
+      "sizes": "1136x640",
+      "type": "image/png"
+    },
+    {
+      "src": "splash_screens/iPhone_15_Pro_Max__iPhone_15_Plus__iPhone_14_Pro_Max_portrait.png",
+      "sizes": "1290x2796",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
   "icons": [
     {
       "src": "windows11/SmallTile.scale-100.png",

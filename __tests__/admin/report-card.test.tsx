@@ -1,9 +1,9 @@
-import ReportCard from "@/components/custom/reports/report-card"
+import ReportCard from "@/components/custom/admin/reports/report-card"
 import { ReportValidationSchema } from "@/validators/schemas/reportSchema"
 import { describe, expect, it } from "@jest/globals"
 import { render, screen } from "@testing-library/react"
 
-describe("Reports", () => {
+describe("Report cards display expected attributes", () => {
   it("should render report components", () => {
     const report = {
       id: 1,
