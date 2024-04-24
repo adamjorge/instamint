@@ -18,7 +18,7 @@ export default function VerifyEmail() {
   useEffect(() => {
     emailVerification()
       .then(() => {
-        setResult("Email verified successfully. Please relogin.")
+        setResult("Email verified successfully. Please login.")
       })
       .catch(() => {
         setErrorMessage("A verification link has been sent to your email, please verify your email")

@@ -2,12 +2,7 @@
 
 import { signUp, authenticate } from "./authUtils"
 import { isUsersEmailVerified } from "./verificationUtils"
-import {
-  sendVerificationEmail,
-  generateEmailVerificationToken,
-  resendVerificationEmail,
-  verifyEmail
-} from "./emailUtils"
+import { sendVerificationEmail, generateEmailVerificationToken, verifyEmail } from "./emailUtils"
 import { findUserByEmail, generatePasswordHash } from "./dbUtils"
 
 export {
@@ -18,6 +13,5 @@ export {
   generatePasswordHash,
   sendVerificationEmail,
   generateEmailVerificationToken,
-  resendVerificationEmail,
   verifyEmail
 }

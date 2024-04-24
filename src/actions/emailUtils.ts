@@ -19,7 +19,7 @@ export const generateEmailVerificationToken = () =>
   })
 
 export const sendVerificationEmail = async (email: string, token: string) => {
-  const requiredEnvVariables = ["MAIL_HOST", "MAIL_PORT", "MAIL_USERNAME", "MAIL_PASSWORD"]
+  const requiredEnvVariables = ["SMTP_SERVICE", "SMTP_EMAIL", "SMTP_PASSWORD"]
   for (const envVar of requiredEnvVariables) {
     if (!process.env[envVar]) {
       throw new Error(`Environment variable ${envVar} is missing.`)
@@ -27,11 +27,10 @@ export const sendVerificationEmail = async (email: string, token: string) => {
   }
 
   const transporter: nodemailer.Transporter = nodemailer.createTransport({
-    host: process.env.MAIL_HOST,
-    port: Number(process.env.EMAIL_PORT),
+    service: process.env.SMTP_SERVICE,
     auth: {
-      user: process.env.MAIL_USERNAME,
-      pass: process.env.MAIL_PASSWORD
+      user: process.env.SMTP_EMAIL,
+      pass: process.env.SMTP_PASSWORD
     }
   })
   const emailData = {
@@ -45,23 +44,6 @@ export const sendVerificationEmail = async (email: string, token: string) => {
   }
 
   await transporter.sendMail(emailData)
-}
-
-export const resendVerificationEmail = async (email: string) => {
-  try {
-    const emailVerificationToken = await generateEmailVerificationToken()
-
-    await db.user.update({
-      where: { email },
-      data: { emailVerifToken: emailVerificationToken }
-    })
-
-    await sendVerificationEmail(email, emailVerificationToken)
-  } catch (error) {
-    return "Something went wrong."
-  }
-
-  return "Email verification sent."
 }
 
 export const verifyEmail = (email: string) =>
