@@ -10,7 +10,7 @@ export default function Home() {
         alt="Instamint Logo"
         className="dark:invert"
         width={100}
-        height={24}
+        height={25}
         priority
       />
     </main>

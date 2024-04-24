@@ -1,6 +1,7 @@
 import prisma from "@/lib/db"
 import Credentials from "@auth/core/providers/credentials"
 import { PrismaAdapter } from "@auth/prisma-adapter"
+import bcryptjs from "bcryptjs"
 import NextAuth from "next-auth"
 
 // eslint-disable-next-line new-cap
@@ -21,12 +22,17 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       async authorize(c) {
         const user = await prisma.user.findFirst({
           where: {
-            email: c.email as string,
-            password: c.password as string
+            email: c.email as string
           }
         })
 
         if (!user) {
+          return null
+        }
+
+        const passwordMatch = await bcryptjs.compare(c.password as string, user.password || "")
+
+        if (!passwordMatch) {
           return null
         }
 

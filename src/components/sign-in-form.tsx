@@ -3,7 +3,10 @@
 import { connectionSchema } from "@/validators/schemas/connectionSchema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { signIn } from "next-auth/react"
+import { useSearchParams } from "next/navigation"
+import { useEffect } from "react"
 import { useForm } from "react-hook-form"
+import { toast } from "sonner"
 import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
@@ -20,6 +23,22 @@ import { Input } from "@/components/ui/input"
 
 /* eslint-disable */
 export default function SignInForm() {
+  const searchParams = useSearchParams()
+  const error = searchParams.get("error")
+  const logout = searchParams.get("logout")
+
+  useEffect(() => {
+    // Don't remove the setTimeout, it's a way to display toast on page load https://sonner.emilkowal.ski/toast#render-toast-on-page-load
+    setTimeout(() => {
+      if (error) {
+        toast.error("Invalid credentials")
+      }
+      if (logout) {
+        toast.info("You have been logged out")
+      }
+    })
+  }, [error, logout])
+
   const form = useForm<z.infer<typeof connectionSchema>>({
     resolver: zodResolver(connectionSchema),
     defaultValues: {
@@ -45,7 +64,7 @@ export default function SignInForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Mail</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
