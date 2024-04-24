@@ -53,9 +53,9 @@ model Comment {
   updatedAt DateTime? @updatedAt
   nftId     Int
   minterId  Int
-  Minter    Minter    @relation(fields: [minterId], references: [id])
-  Nft       Nft       @relation(fields: [nftId], references: [id])
-  Report    Report[]
+  minter    Minter    @relation(fields: [minterId], references: [id])
+  nft       Nft       @relation(fields: [nftId], references: [id])
+  reports   Report[]
 }
 
 model Hashtag {
@@ -131,9 +131,9 @@ model Report {
   minterId  Int?
   teaBagId  Int?
   commentId Int?
-  Minter    Minter?  @relation(fields: [minterId], references: [id])
-  TeaBag    TeaBag?  @relation(fields: [teaBagId], references: [id])
-  Comment   Comment? @relation(fields: [commentId], references: [id])
+  minter    Minter?  @relation(fields: [minterId], references: [id])
+  teaBag    TeaBag?  @relation(fields: [teaBagId], references: [id])
+  comment   Comment? @relation(fields: [commentId], references: [id])
 }
 
 model TeaBag {
@@ -143,5 +143,5 @@ model TeaBag {
   profileUrl String
   createdAt  DateTime  @default(now())
   updatedAt  DateTime? @updatedAt
-  Report     Report[]
+  reports    Report[]
 }
