@@ -13,17 +13,17 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: "20.12.1"
       - name: Install dependencies
         run: npm ci
-      - name: Create .env file
-        run: |
-          touch .env
-          echo "AUTH_SECRET=${{ secrets.AUTH_SECRET }}"
       - name: Lint code
         run: npm run lint
       - name: Build code
-        run: npm run build
+        run: |
+          touch .env
+          echo "AUTH_SECRET=${{ secrets.AUTH_SECRET }}" > .env
+          cat .env
+          npm run build
 
   unit-tests:
     runs-on: ubuntu-latest
