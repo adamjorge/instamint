@@ -1,5 +1,5 @@
 import MinterCard from "@/components/custom/minters/minter-card"
-import NftCard from "@/components/custom/nfts/nft-card"
+import SearchNftCard from "@/components/custom/search/nfts/search-nft-card"
 import TeaBagCard from "@/components/custom/teabags/teabag-card"
 import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
 import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
@@ -34,7 +34,7 @@ describe("Search", () => {
 })
 
 async function testNftRender(nft: NftSearchNftSchemaType) {
-  const { getByText, getByAltText } = render(<NftCard {...nft} />)
+  const { getByText, getByAltText } = render(<SearchNftCard {...nft} />)
 
   expect(getByText(`@${nft.originalContent.minter.username}`)).toBeDefined()
   expect(getByText(nft.description)).toBeDefined()
