@@ -1,9 +1,11 @@
 import Footer from "@/components/custom/footer"
 import LanguageSelector from "@/components/custom/language-selector"
+import { signOut } from "@/lib/auth"
 import Providers from "@/providers/portalProviders"
 import { useLocale, useMessages, useTimeZone } from "next-intl"
 import React from "react"
 
+import { Button } from "@/components/ui/button"
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
 import "@/styles/globals.css"
 import type { Metadata } from "next"
@@ -68,7 +70,19 @@ export default function PortalLayout({
       <body className={inter.className}>
         <main>
           <Providers {...i18nProps}>
-            <LanguageSelector />
+            <div className="flex w-full justify-between items-center mt-3 px-3">
+              <LanguageSelector />
+              <form
+                action={async () => {
+                  "use server"
+                  await signOut()
+                }}
+              >
+                <Button type="submit" className="bg-red-500">
+                  Sign out
+                </Button>
+              </form>
+            </div>
             {children}
             <Footer />
           </Providers>

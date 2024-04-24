@@ -30,7 +30,7 @@ export default function LanguageSelector() {
         handleLocaleChange(value)
       }}
     >
-      <SelectTrigger className="w-32 mt-3 ml-3">
+      <SelectTrigger className="w-32">
         <SelectValue placeholder="Language" />
       </SelectTrigger>
       <SelectContent className="w-32">
