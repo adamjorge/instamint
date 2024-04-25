@@ -1,11 +1,12 @@
-import { Nft } from "@prisma/client"
+import { nftSchema } from "@/validators/schemas/nfts/nftSchema"
 import axios, { isAxiosError } from "axios"
 
 export default async function fetchNft(id: number) {
   try {
-    const response = await axios.get<Nft>(`/api/nfts/${id.toString()}`)
+    const response = await axios.get(`/api/nfts/${id.toString()}`)
+    const nft = nftSchema.parse(response.data)
 
-    return response.data
+    return nft
   } catch (error) {
     if (isAxiosError(error)) {
       throw new Error(error.message)

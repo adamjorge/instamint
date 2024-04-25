@@ -8,6 +8,11 @@ const originalContentSchema = z.object({
   id: z.number(),
   minter: minterSchema
 })
+const hashtagSchema = z.object({
+  id: z.number(),
+  name: z.string()
+})
+const hashtagListSchema = z.array(hashtagSchema)
 
 export const nftSchema = z.object({
   id: z.number(),
@@ -15,7 +20,9 @@ export const nftSchema = z.object({
   imageUrl: z.string(),
   price: z.number(),
   location: z.string().nullable(),
-  isDraft: z.boolean(),
   createdAt: z.string(),
-  originalContent: originalContentSchema
+  originalContent: originalContentSchema,
+  hashtags: hashtagListSchema
 })
+
+export type NftType = z.infer<typeof nftSchema>

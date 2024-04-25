@@ -1,23 +1,38 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import useRelativeTime from "@/hooks/useRelativeTime"
 import { CommentType } from "@/validators/schemas/nfts/comments/commentSchema"
-import { useFormatter } from "next-intl"
+import ChildComment from "@/components/custom/comment-section/child-comment"
 
 export default function Comment({ comment }: { comment: CommentType }) {
-  const formatter = useFormatter()
-  const date = new Date(comment.createdAt)
-  const relativeTime = formatter.relativeTime(date, { now: new Date() })
+  const relativeTime = useRelativeTime(comment.createdAt)
 
   return (
-    <div className="text-sm flex items-start gap-4">
-      <Avatar className="w-10 h-10 border">
-        <AvatarImage alt="@shadcn" src="/flags/en.svg" />
-      </Avatar>
-      <div className="grid gap-1.5">
-        <div className="flex items-center gap-2">
-          <div className="font-semibold">@{comment.nft.originalContent.minter.username}</div>
-          <div className="text-gray-500 text-xs dark:text-gray-400">{relativeTime}</div>
+    <div className="space-y-4">
+      <div className="flex">
+        <Avatar className="mr-3">
+          <AvatarImage alt="User Avatar" src="/flags/en.svg" />
+          <AvatarFallback>JD</AvatarFallback>
+        </Avatar>
+        <div>
+          <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">
+            @{comment.nft.originalContent.minter.username}
+            <div className="text-gray-500 text-xs dark:text-gray-400">{relativeTime}</div>
+          </h4>
+          <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
+            {comment.content}
+          </p>
+          {comment.children.length > 0 && (
+            <div className="mt-2 ml-4 space-y-4">
+              {comment.children.map((child) => (
+                <ChildComment
+                  key={child.id}
+                  comment={child}
+                  username={comment.nft.originalContent.minter.username}
+                />
+              ))}
+            </div>
+          )}
         </div>
-        <div>{comment.content}</div>
       </div>
     </div>
   )

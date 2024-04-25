@@ -7,6 +7,14 @@ export default async function searchNftComments(nftId: string) {
       content: true,
       createdAt: true,
       updatedAt: true,
+      children: {
+        select: {
+          id: true,
+          content: true,
+          createdAt: true,
+          updatedAt: true
+        }
+      },
       nft: {
         select: {
           originalContent: {
@@ -22,7 +30,7 @@ export default async function searchNftComments(nftId: string) {
         }
       }
     },
-    where: { nftId: Number(nftId) },
+    where: { nftId: Number(nftId), parentId: null },
     orderBy: { createdAt: "desc" }
   })
 

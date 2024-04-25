@@ -18,6 +18,12 @@ export default async function searchNft(id: string) {
             }
           }
         }
+      },
+      hashtags: {
+        select: {
+          id: true,
+          name: true
+        }
       }
     },
     where: { id: parseInt(id, 10) }

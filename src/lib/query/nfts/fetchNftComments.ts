@@ -1,10 +1,9 @@
 import { commentListSchema } from "@/validators/schemas/nfts/comments/commentSchema"
-import { Comment } from "@prisma/client"
 import axios, { isAxiosError } from "axios"
 
 export default async function fetchNftComments(nftId: number) {
   try {
-    const response = await axios.get<Comment>(`/api/nfts/${nftId.toString()}/comments`)
+    const response = await axios.get(`/api/nfts/${nftId.toString()}/comments`)
     const comments = commentListSchema.parse(response.data)
 
     return comments
