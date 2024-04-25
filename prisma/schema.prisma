@@ -2,9 +2,9 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
- 
+
 generator client {
-  provider        = "prisma-client-js"
+  provider      = "prisma-client-js"
   binaryTargets = ["native", "rhel-openssl-3.0.x"]
 }
 
@@ -70,10 +70,14 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified DateTime?
+  phoneNumber   String?
   password      String?
+  is2FAEnabled  Boolean   @default(false)
+  isAdmin       Boolean   @default(false)
   image         String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+  deletedAt     DateTime?
   accounts      Account[]
   sessions      Session[]
   minterId      Int
@@ -83,8 +87,6 @@ model User {
 model Minter {
   id                  Int               @id @default(autoincrement())
   username            String            @unique
-  email               String            @unique
-  phoneNumber         String?
   defaultLanguage     String            @default("fr")
   profileUrl          String
   avatarUrl           String
@@ -93,11 +95,6 @@ model Minter {
   authorName          String?
   isVisible           Boolean           @default(true)
   isSearchableByEmail Boolean           @default(true)
-  is2FAEnabled        Boolean           @default(false)
-  isAdmin             Boolean           @default(false)
-  createdAt           DateTime          @default(now())
-  updatedAt           DateTime?         @updatedAt
-  deletedAt           DateTime?
   Comment             Comment[]
   OriginalContent     OriginalContent[]
   Report              Report[]

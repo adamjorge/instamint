@@ -18,9 +18,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         password: { label: "Password", type: "password" }
       },
 
-      // Attendu admin@admin admin
       async authorize(c) {
-        const user = await prisma.user.findFirst({
+        const user = await prisma.user.findUnique({
           where: {
             email: c.email as string
           }

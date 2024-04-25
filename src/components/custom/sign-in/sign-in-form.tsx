@@ -19,7 +19,10 @@ import { Input } from "@/components/ui/input"
 export default function SignInForm({ ...props }: SignInFormProps) {
   return (
     <Form {...props.form}>
-      <form onSubmit={props.form.handleSubmit(props.onSubmit)} className="space-y-8">
+      <form
+        onSubmit={props.form.handleSubmit(props.onSubmit)}
+        className="flex flex-col justify-center space-y-8"
+      >
         <FormField
           control={props.form.control}
           name="email"

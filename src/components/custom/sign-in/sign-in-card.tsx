@@ -1,15 +1,18 @@
+"use client"
+
 import SignInWrapper from "@/components/custom/sign-in/sign-in-wrapper"
+import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Arvo } from "next/font/google"
+import { Lora } from "next/font/google"
 import Image from "next/image"
-import Link from "next/link"
+import { toast } from "sonner"
 
 // eslint-disable-next-line new-cap
-const kanit = Arvo({ subsets: ["latin"], weight: "700" })
+const kanit = Lora({ subsets: ["latin"], weight: "700" })
 
 export default function SignInCard() {
   return (
-    <Card className="p-10 space-y-5">
+    <Card className="p-8 space-y-5">
       <CardHeader>
         <CardTitle className="flex space-x-5 items-center justify-center">
           <Image
@@ -26,16 +29,12 @@ export default function SignInCard() {
       <CardContent>
         <SignInWrapper />
       </CardContent>
-      <CardFooter className="flex flex-col space-y-8">
-        <div className="flex flex-col items-center text-sm">
-          <p>Don't have an account?</p>
-          <Link href="" className="text-blue-500">
-            Sign up
-          </Link>
-        </div>
-        <p className="text-center text-sm text-gray-500">
-          &copy; 2024 Instamint. All rights reserved.
-        </p>
+      <CardFooter className="flex flex-col text-sm">
+        <p>Don't have an account?</p>
+        <Button onClick={() => toast.error("This feature is a work in progress")} className="mt-3">
+          Sign up
+        </Button>
+        <p className="text-gray-500 mt-6">&copy; 2024 Instamint. All rights reserved.</p>
       </CardFooter>
     </Card>
   )
