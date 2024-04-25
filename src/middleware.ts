@@ -7,7 +7,7 @@ export default async function middleware(request: NextRequest) {
   const session = await auth()
 
   if (!session?.user) {
-    return NextResponse.redirect(new URL("/login", request.url))
+    return NextResponse.redirect(new URL("/auth/login", request.url))
   }
 
   if (!request.nextUrl.pathname.startsWith("/admin")) {
