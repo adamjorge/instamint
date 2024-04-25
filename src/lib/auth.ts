@@ -2,7 +2,7 @@ import prisma from "@/lib/db"
 import Credentials from "@auth/core/providers/credentials"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import bcryptjs from "bcryptjs"
-import NextAuth from "next-auth"
+import NextAuth, { User } from "next-auth"
 
 // eslint-disable-next-line new-cap
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -44,5 +44,22 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   session: {
     strategy: "jwt"
+  },
+  callbacks: {
+    session({ session, token }) {
+      return {
+        ...session,
+        user: {
+          ...(token.user as User)
+        }
+      }
+    },
+    jwt({ token, user }) {
+      if (typeof user === "object" && Object.keys(user).length > 0) {
+        token.user = user
+      }
+
+      return token
+    }
   }
 })

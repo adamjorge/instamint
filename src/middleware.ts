@@ -21,6 +21,10 @@ export default async function middleware(request: NextRequest) {
     return res
   }
 
+  if (!session.user.isAdmin) {
+    return NextResponse.redirect(new URL("/", request.url))
+  }
+
   return null
 }
 
