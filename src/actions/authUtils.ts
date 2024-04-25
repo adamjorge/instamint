@@ -99,7 +99,7 @@ export async function signUp(formData: SignUpFormData): Promise<SignUpFormState>
 
   await sendVerificationEmail(formData.email, verificationToken)
 
-  redirect(`/email/verify/send?email=${formData.email}&verification_sent=1`)
+  redirect(`/auth/email/verify/send?email=${formData.email}&verification_sent=1`)
 
   return { errors: {} }
 }

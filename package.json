@@ -28,9 +28,12 @@
     "test:report": "playwright show-report"
   },
   "dependencies": {
-    "@auth/prisma-adapter": "^1.6.0",
+    "@auth/prisma-adapter": "^2.0.0",
     "@ducanh2912/next-pwa": "^10.2.6",
+    "@formatjs/intl-localematcher": "^0.5.4",
     "@hookform/resolvers": "^3.3.4",
+    "@neondatabase/serverless": "^0.9.1",
+    "@prisma/adapter-neon": "^5.12.1",
     "@prisma/client": "^5.12.1",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
@@ -39,10 +42,12 @@
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
-    "@tanstack/react-query": "^5.29.0",
+    "@radix-ui/react-toast": "^1.1.5",
+    "@tanstack/react-query": "^5.29.2",
+    "@tanstack/react-query-devtools": "^5.32.0",
     "@tanstack/react-table": "^8.16.0",
-    "@types/bcryptjs": "^2.4.6",
-    "@types/nodemailer": "^6.4.14",
+    "@types/intl": "^1.2.2",
+    "@types/negotiator": "^0.6.3",
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.0",
@@ -53,10 +58,11 @@
     "next": "14.1.4",
     "next-auth": "^5.0.0-beta.16",
     "next-intl": "^3.11.3",
-    "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
+    "nodemailer": "^6.9.13",
+    "@types/nodemailer": "^6.4.14",
     "react-icons": "^5.0.1",
     "server-only": "^0.0.1",
     "sonner": "^1.4.41",
@@ -64,7 +70,8 @@
     "tailwindcss-animate": "^1.0.7",
     "use-intl": "^3.11.3",
     "vaul": "^0.9.0",
-    "zod": "^3.22.4"
+    "ws": "^8.16.0",
+    "zod": "^3.23.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
@@ -75,10 +82,12 @@
     "@playwright/test": "^1.43.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.1",
+    "@types/bcryptjs": "^2.4.6",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.7",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/ws": "^8.5.10",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
     "autoprefixer": "^10.4.19",
     "cz-conventional-changelog": "^3.3.0",
@@ -104,7 +113,7 @@
     "webpack": "^5.91.0"
   },
   "engines": {
-    "node": "20.12.1"
+    "node": "20.x"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"

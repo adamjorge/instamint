@@ -39,7 +39,7 @@ export const sendVerificationEmail = async (email: string, token: string) => {
     subject: "Account creation email verification",
     html: `
       <p>Click the link below to verify your email:</p>
-      <a href="http://localhost:3000/email/verify?email=${email}&token=${token}">Verify Email</a>
+      <a href="http://localhost:3000/auth/email/verify?email=${email}&token=${token}">Verify Email</a>
     `
   }
 
