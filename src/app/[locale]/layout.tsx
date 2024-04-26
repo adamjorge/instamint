@@ -1,11 +1,9 @@
-import Footer from "@/components/custom/footer"
 import LanguageSelector from "@/components/custom/language-selector"
-import { signOut } from "@/lib/auth"
 import Providers from "@/providers/portalProviders"
 import { useLocale, useMessages, useTimeZone } from "next-intl"
 import React from "react"
+import { Toaster } from "sonner"
 
-import { Button } from "@/components/ui/button"
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
 import "@/styles/globals.css"
 import type { Metadata } from "next"
@@ -68,24 +66,14 @@ export default function PortalLayout({
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <main>
+        <main className="min-h-screen">
           <Providers {...i18nProps}>
-            <div className="flex w-full justify-between items-center mt-3 px-3">
+            <div className="flex flex-col w-full">
               <LanguageSelector />
-              <form
-                action={async () => {
-                  "use server"
-                  await signOut()
-                }}
-              >
-                <Button type="submit" className="bg-red-500">
-                  Sign out
-                </Button>
-              </form>
+              {children}
             </div>
-            {children}
-            <Footer />
           </Providers>
+          <Toaster position="bottom-right" richColors closeButton />
         </main>
       </body>
     </html>

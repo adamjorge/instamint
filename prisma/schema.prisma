@@ -80,7 +80,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   minterId      Int
-  Minter        Minter    @relation(fields: [minterId], references: [id])
+  minter        Minter    @relation(fields: [minterId], references: [id])
 }
 
 model Minter {
@@ -94,10 +94,10 @@ model Minter {
   authorName          String?
   isVisible           Boolean           @default(true)
   isSearchableByEmail Boolean           @default(true)
-  Comment             Comment[]
-  OriginalContent     OriginalContent[]
-  Report              Report[]
-  User                User[]
+  comments            Comment[]
+  originalContents    OriginalContent[]
+  reports             Report[]
+  users               User[]
 }
 
 model Nft {

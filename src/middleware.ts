@@ -1,27 +1,27 @@
-import { locales } from "@/config/i18n/locales"
+import { defaultLocale, locales } from "@/config/i18n/locales"
 import { auth } from "@/lib/auth"
-import createIntlMiddleware from "next-intl/middleware"
+import createMiddleware from "next-intl/middleware"
 import { NextRequest, NextResponse } from "next/server"
 
 export default async function middleware(request: NextRequest) {
   const session = await auth()
 
-  if (!session?.user) {
-    return NextResponse.redirect(new URL("/auth/login", request.url))
-  }
-
   if (!request.nextUrl.pathname.startsWith("/admin")) {
-    const defaultLocale = "en"
-    const handleI18nRouting = createIntlMiddleware({
+    const handleI18nRouting = createMiddleware({
       locales,
       defaultLocale
     })
     const res = handleI18nRouting(request)
+    const languageFromCookies = request.cookies.get("NEXT_LOCALE")?.value || defaultLocale
+
+    if (!session?.user && !request.url.includes("login")) {
+      return NextResponse.redirect(new URL(`/${languageFromCookies}/login`, request.url))
+    }
 
     return res
   }
 
-  if (!session.user.isAdmin) {
+  if (!session?.user.isAdmin) {
     return NextResponse.redirect(new URL("/", request.url))
   }
 

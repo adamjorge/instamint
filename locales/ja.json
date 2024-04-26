@@ -1,14 +1,14 @@
 {
   "global": {
-    "check": "しらべる",
+    "check": "確認する",
     "loading": "読み込み中...",
-    "noResults": "結果が見つかりませんでした。",
+    "noResults": "結果が見つかりません。",
     "resultsFor": "検索結果：",
     "noResultsFor": "結果が見つかりませんでした：",
-    "noResultsSentence": "検索キーワードに一致する結果が見つかりませんでした。",
+    "noResultsSentence": "検索条件に一致する結果が見つかりませんでした。",
     "error": "エラーが発生しました。後でもう一度お試しください。",
-    "searchWelcome": "検索ページへようこそ。ここではNFTやミンターを検索できます。",
-    "nftPrice": "価格: ${price}"
+    "searchWelcome": "検索ページへようこそ。ここではNFTまたはミンターを検索できます。",
+    "nftPrice": "価格：${price}"
   },
   "search": {
     "cancel": "キャンセル",
@@ -19,5 +19,15 @@
     "searchSentence": "NFTまたはミンターを検索します。",
     "searchPlaceholder": "検索...",
     "submit": "送信"
+  },
+  "login": {
+    "mail": "メール",
+    "connectionInfo": "登録に使用したメールアドレスです。",
+    "password": "パスワード",
+    "submit": "送信",
+    "login": "ログイン",
+    "accountQuestion": "アカウントをお持ちでないですか？",
+    "signUp": "サインアップ",
+    "rights": "© 2024 Instamint. 全著作権所有。"
   }
 }

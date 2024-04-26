@@ -38,10 +38,16 @@ export default function SignInWrapper() {
   })
 
   async function onSubmit(values: z.infer<typeof connectionSchema>) {
-    await signIn("credentials", {
-      email: values.email,
-      password: values.password
-    })
+    await signIn(
+      "credentials",
+      {
+        email: values.email,
+        password: values.password
+      },
+      {
+        callbackUrl: "/"
+      }
+    )
   }
 
   const SignInFormProps = {

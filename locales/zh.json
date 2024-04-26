@@ -6,18 +6,28 @@
     "resultsFor": "搜索结果：",
     "noResultsFor": "未找到结果：",
     "noResultsSentence": "未找到与搜索词匹配的结果。",
-    "error": "发生错误，请稍后重试。",
-    "searchWelcome": "欢迎来到您的搜索页面。在这里，您可以搜索NFT或铸造者。",
-    "nftPrice": "价格: ${price}"
+    "error": "出现错误，请稍后重试。",
+    "searchWelcome": "欢迎来到搜索页面。您可以在这里搜索NFT或铸造者。",
+    "nftPrice": "价格：${price}"
   },
   "search": {
     "cancel": "取消",
-    "minPrice": "最低价",
-    "maxPrice": "最高价",
+    "minPrice": "最低价格",
+    "maxPrice": "最高价格",
     "noSearchResultsFor": "未找到{type}",
     "search": "搜索",
     "searchSentence": "搜索NFT或铸造者。",
     "searchPlaceholder": "搜索...",
     "submit": "提交"
+  },
+  "login": {
+    "mail": "邮箱",
+    "connectionInfo": "这是您注册时使用的邮箱。",
+    "password": "密码",
+    "submit": "提交",
+    "login": "登录",
+    "accountQuestion": "还没有账号？",
+    "signUp": "注册",
+    "rights": "© 2024 Instamint。保留所有权利。"
   }
 }

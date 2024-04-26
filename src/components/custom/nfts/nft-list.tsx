@@ -1,6 +1,6 @@
 import NftCard from "@/components/custom/nfts/nft-card"
 import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
-import { useTranslations } from "use-intl"
+import { useTranslations } from "next-intl"
 
 export default function NftList({ nfts }: NftListProps) {
   const t = useTranslations("search")

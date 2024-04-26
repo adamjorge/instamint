@@ -21,5 +21,15 @@ export const MessageSchema = z.object({
     searchSentence: z.string(),
     searchPlaceholder: z.string(),
     submit: z.string()
-  })
+  }),
+  login: z.object({
+    mail: z.string(),
+    connectionInfo: z.string(),
+    password: z.string(),
+    submit: z.string(),
+    login: z.string(),
+    accountQuestion: z.string(),
+    signUp: z.string(),
+    rights: z.string()
+  }),
 })

@@ -3,21 +3,31 @@
     "check": "Verificar",
     "loading": "Carregando...",
     "noResults": "Nenhum resultado encontrado.",
-    "resultsFor": "Resultados para:",
+    "resultsFor": "Resultados da pesquisa para:",
     "noResultsFor": "Nenhum resultado encontrado para:",
     "noResultsSentence": "Nenhum resultado encontrado para o termo de pesquisa.",
-    "error": "Ocorreu um erro. Por favor, tente novamente mais tarde.",
+    "error": "Ocorreu um erro, por favor, tente novamente mais tarde.",
     "searchWelcome": "Bem-vindo à sua página de pesquisa. Aqui você pode pesquisar NFTs ou criadores.",
     "nftPrice": "Preço: ${price}"
   },
   "search": {
     "cancel": "Cancelar",
-    "minPrice": "Preço mín.",
-    "maxPrice": "Preço máx.",
+    "minPrice": "Preço mínimo",
+    "maxPrice": "Preço máximo",
     "noSearchResultsFor": "Nenhum {type} encontrado",
     "search": "Pesquisar",
     "searchSentence": "Pesquisar um NFT ou um criador.",
     "searchPlaceholder": "Pesquisar...",
     "submit": "Enviar"
+  },
+  "login": {
+    "mail": "E-mail",
+    "connectionInfo": "Este é o e-mail que você usou para se registrar.",
+    "password": "Senha",
+    "submit": "Enviar",
+    "login": "Entrar",
+    "accountQuestion": "Não tem uma conta?",
+    "signUp": "Cadastre-se",
+    "rights": "© 2024 Instamint. Todos os direitos reservados."
   }
 }

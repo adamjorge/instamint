@@ -2,7 +2,7 @@ import MinterList from "@/components/custom/minters/minter-list"
 import NftList from "@/components/custom/nfts/nft-list"
 import TeaBagList from "@/components/custom/teabags/teabag-list"
 import { SearchSchemaType } from "@/validators/schemas/search/searchSchema"
-import { useTranslations } from "use-intl"
+import { useTranslations } from "next-intl"
 
 export default function SearchResults({ search, results }: SearchResultsProps) {
   const t = useTranslations("global")

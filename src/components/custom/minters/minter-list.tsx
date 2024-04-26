@@ -1,6 +1,6 @@
 import MinterCard from "@/components/custom/minters/minter-card"
 import { MinterSearchMintersSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
-import { useTranslations } from "use-intl"
+import { useTranslations } from "next-intl"
 
 export default function MinterList({ minters }: MinterListProps) {
   const t = useTranslations("search")
