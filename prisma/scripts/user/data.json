@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "name": "admin",
+    "email": "admin@admin.com",
+    "password": "$2a$10$P0OZ2JWURBPiJmAU4zycEeyOIAA.WVRaHCk7FsXMt5oQ0f7Neqd9a",
+    "isAdmin": true,
+    "minterId": 1
+  },
+  {
+    "id": "2",
+    "name": "notadmin",
+    "email": "notadmin@notadmin.com",
+    "password": "$2a$12$sKnAfsv061bllED8.pZ6Qe7ttjWPWtR0dxuClBk404Cs23/CXpqtK",
+    "isAdmin": false,
+    "minterId": 2
+  }
+]
