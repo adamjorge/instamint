@@ -22,7 +22,6 @@ jobs:
         run: |
           touch .env
           echo "AUTH_SECRET=${{ secrets.AUTH_SECRET }}" > .env
-          cat .env
           npm run build
 
   unit-tests:
@@ -50,7 +49,13 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npm run test:e2e
+        run: |
+          touch .env
+          echo "AUTH_SECRET=${{ secrets.AUTH_SECRET }}" > .env
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
+          echo "ADMIN_EMAIL=${{ secrets.ADMIN_EMAIL }}" >> .env
+          echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> .env
+          npm run test:e2e
       - uses: actions/upload-artifact@v4
         if: always()
         with:
