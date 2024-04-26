@@ -2,39 +2,13 @@ import ReportCard from "@/components/custom/admin/reports/report-card"
 import { ReportValidationSchema } from "@/validators/schemas/reportSchema"
 import { describe, expect, it } from "@jest/globals"
 import { render, screen } from "@testing-library/react"
+import mockedReportsResult from "./report-mock-response.json"
 
-describe("Report cards display expected attributes", () => {
+describe("report cards display expected attributes", () => {
   it("should render report components", () => {
-    const report = {
-      id: 1,
-      content: "Inappropriate content",
-      createdAt: "2023-09-01T00:00:00.000Z",
-      updatedAt: "2023-09-01T00:00:00.000Z",
-      minterId: 1,
-      teaBagId: null,
-      commentId: null
-    }
-    const reportObject = ReportValidationSchema.parse(report)
-    const secondReport = {
-      id: 2,
-      content: "Inappropriate content 2",
-      createdAt: "2023-10-01T00:00:00.000Z",
-      updatedAt: "2023-10-01T00:00:00.000Z",
-      minterId: null,
-      teaBagId: 1,
-      commentId: null
-    }
-    const secondReportObject = ReportValidationSchema.parse(secondReport)
-    const thirdReport = {
-      id: 3,
-      content: "Inappropriate content 3",
-      createdAt: "2023-11-01T00:00:00.000Z",
-      updatedAt: "2023-11-01T00:00:00.000Z",
-      minterId: null,
-      teaBagId: null,
-      commentId: 1
-    }
-    const thirdReportObject = ReportValidationSchema.parse(thirdReport)
+    const reportObject = ReportValidationSchema.parse(mockedReportsResult.reports[0])
+    const secondReportObject = ReportValidationSchema.parse(mockedReportsResult.reports[1])
+    const thirdReportObject = ReportValidationSchema.parse(mockedReportsResult.reports[2])
 
     render(<ReportCard report={reportObject} type="minters" />)
     expect(screen.getByText("Report ID: 1")).toBeDefined()
