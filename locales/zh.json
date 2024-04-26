@@ -8,7 +8,8 @@
     "noResultsSentence": "未找到与搜索词匹配的结果。",
     "error": "出现错误，请稍后重试。",
     "searchWelcome": "欢迎来到搜索页面。您可以在这里搜索NFT或铸造者。",
-    "nftPrice": "价格：${price}"
+    "nftPrice": "价格：${price}",
+    "signOut": "登出"
   },
   "search": {
     "cancel": "取消",

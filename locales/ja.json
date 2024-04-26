@@ -8,7 +8,8 @@
     "noResultsSentence": "検索条件に一致する結果が見つかりませんでした。",
     "error": "エラーが発生しました。後でもう一度お試しください。",
     "searchWelcome": "検索ページへようこそ。ここではNFTまたはミンターを検索できます。",
-    "nftPrice": "価格：${price}"
+    "nftPrice": "価格：${price}",
+    "signOut": "サインアウト"
   },
   "search": {
     "cancel": "キャンセル",

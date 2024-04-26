@@ -8,7 +8,8 @@
     "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
     "error": "Se produjo un error. Por favor, inténtalo de nuevo más tarde.",
     "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí puedes buscar NFTs o creadores.",
-    "nftPrice": "Precio: ${price}"
+    "nftPrice": "Precio: ${price}",
+    "signOut": "Cerrar sesión"
   },
   "search": {
     "cancel": "Cancelar",

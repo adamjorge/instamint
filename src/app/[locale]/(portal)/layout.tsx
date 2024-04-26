@@ -1,5 +1,6 @@
 import Footer from "@/components/custom/footer"
 import { signOut } from "@/lib/auth"
+import { useTranslations } from "next-intl"
 import React from "react"
 
 import { Button } from "@/components/ui/button"
@@ -9,6 +10,8 @@ export default function PortalLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const t = useTranslations("global")
+
   return (
     <div>
       <form
@@ -18,7 +21,7 @@ export default function PortalLayout({
         }}
       >
         <Button type="submit" className="bg-red-500">
-          Sign out
+          {t("signOut")}
         </Button>
       </form>
       <div>{children}</div>
