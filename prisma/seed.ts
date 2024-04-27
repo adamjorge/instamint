@@ -1,20 +1,20 @@
 import { PrismaClient } from "@prisma/client"
 import {
-  createAdmins,
   createComments,
   createHashtags,
   createMinters,
   createNfts,
   createOriginalContents,
   createReports,
-  createTeaBags
+  createTeaBags,
+  createUsers
 } from "./scripts"
 
 const prisma = new PrismaClient()
 
 async function main() {
-  await createAdmins(prisma)
   await createMinters(prisma)
+  await createUsers(prisma)
   await createHashtags(prisma)
   await createOriginalContents(prisma)
   await createNfts(prisma)

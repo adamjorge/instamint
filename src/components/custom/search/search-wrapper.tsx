@@ -1,10 +1,10 @@
 "use client"
 
+import SearchDrawer, { SearchDrawerProps } from "@/components/custom/search/drawer/search-drawer"
+import useSearchUrlBuilder from "@/hooks/useSearchUrlBuilder"
 import { useLocale } from "next-intl"
 import { useRouter } from "next/navigation"
 import React, { useCallback, useEffect } from "react"
-import SearchDrawer, { SearchDrawerProps } from "@/components/custom/search/drawer/search-drawer"
-import useSearchUrlBuilder from "@/hooks/useSearchUrlBuilder"
 
 export default function SearchWrapper({ isOpen, setIsOpen }: SearchWrapperProps) {
   const router = useRouter()

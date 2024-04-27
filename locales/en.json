@@ -8,7 +8,8 @@
     "noResultsSentence": "No results found for the search term.",
     "error": "An error occurred, please try again later.",
     "searchWelcome": "Welcome to your search page. This is where you can search for NFTs or minters.",
-    "nftPrice": "Price: ${price}"
+    "nftPrice": "Price: ${price}",
+    "signOut": "Sign out"
   },
   "search": {
     "cancel": "Cancel",
@@ -19,5 +20,15 @@
     "searchSentence": "Search an NFT or a minter.",
     "searchPlaceholder": "Search...",
     "submit": "Submit"
+  },
+  "login": {
+    "mail": "Mail",
+    "connectionInfo": "This is the email you used to register.",
+    "password": "Password",
+    "submit": "Submit",
+    "login": "Login",
+    "accountQuestion": "Don't have an account?",
+    "signUp": "Sign up",
+    "rights": "© 2024 Instamint. All rights reserved."
   }
 }

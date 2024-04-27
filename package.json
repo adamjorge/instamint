@@ -28,8 +28,9 @@
     "test:report": "playwright show-report"
   },
   "dependencies": {
-    "@auth/prisma-adapter": "^1.6.0",
+    "@auth/prisma-adapter": "^2.0.0",
     "@ducanh2912/next-pwa": "^10.2.6",
+    "@formatjs/intl-localematcher": "^0.5.4",
     "@hookform/resolvers": "^3.3.4",
     "@prisma/client": "^5.12.1",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
@@ -38,20 +39,22 @@
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
-    "@tanstack/react-query": "^5.29.0",
-    "@tanstack/react-table": "^8.16.0",
-    "@types/bcryptjs": "^2.4.6",
     "@types/nodemailer": "^6.4.14",
+    "@radix-ui/react-toast": "^1.1.5",
+    "@tanstack/react-query": "^5.29.2",
+    "@tanstack/react-query-devtools": "^5.32.0",
+    "@tanstack/react-table": "^8.16.0",
+    "@types/intl": "^1.2.2",
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "http-status-codes": "^2.3.0",
-    "lucide-react": "^0.364.0",
-    "next": "14.1.4",
-    "next-auth": "^5.0.0-beta.16",
     "next-intl": "^3.12.0",
     "nodemailer": "^6.9.13",
+    "lucide-react": "^0.368.0",
+    "next": "14.1.4",
+    "next-auth": "^5.0.0-beta.16",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
@@ -60,7 +63,8 @@
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.0",
-    "zod": "^3.22.4"
+    "ws": "^8.16.0",
+    "zod": "^3.23.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
@@ -70,13 +74,15 @@
     "@jest/globals": "^29.7.0",
     "@playwright/test": "^1.43.0",
     "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/react": "^14.3.0",
+    "@testing-library/react": "^15.0.1",
+    "@types/bcryptjs": "^2.4.6",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "^7.5.0",
-    "autoprefixer": "^10.0.1",
+    "@types/ws": "^8.5.10",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "autoprefixer": "^10.4.19",
     "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^16.4.5",
     "eslint": "^8",
@@ -100,7 +106,7 @@
     "webpack": "^5.91.0"
   },
   "engines": {
-    "node": "20.12.1"
+    "node": "20.x"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"

@@ -2,9 +2,9 @@ export * from "./comment/create-comments"
 
 export * from "./hashtag/create-hashtags"
 
-export * from "./minter/create-admins"
-
 export * from "./minter/create-minters"
+
+export * from "./user/create-users"
 
 export * from "./teabag/create-teabag"
 

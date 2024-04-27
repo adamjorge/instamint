@@ -13,7 +13,7 @@ declare global {
   var prismaGlobal: undefined | ReturnType<typeof prismaSingleton>
 }
 
-const prisma = global.prismaGlobal || prismaSingleton()
+const prisma = global.prismaGlobal ?? prismaSingleton()
 
 export default prisma
 

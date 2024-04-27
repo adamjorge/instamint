@@ -8,7 +8,8 @@
     "noResultsSentence": "Aucun résultat trouvé pour le terme de recherche.",
     "error": "Une erreur est survenue, veuillez réessayer plus tard.",
     "searchWelcome": "Bienvenue sur votre page de recherche. C'est ici que vous pouvez rechercher des NFTs ou des créateurs.",
-    "nftPrice": "Prix: ${price}"
+    "nftPrice": "Prix : ${price}",
+    "signOut": "Déconnexion"
   },
   "search": {
     "cancel": "Annuler",
@@ -19,5 +20,15 @@
     "searchSentence": "Rechercher un NFT ou un créateur.",
     "searchPlaceholder": "Rechercher...",
     "submit": "Soumettre"
+  },
+  "login": {
+    "mail": "Email",
+    "connectionInfo": "Il s'agit de l'email que vous avez utilisé pour vous inscrire.",
+    "password": "Mot de passe",
+    "submit": "Soumettre",
+    "login": "Connexion",
+    "accountQuestion": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire",
+    "rights": "© 2024 Instamint. Tous droits réservés."
   }
 }

@@ -10,7 +10,8 @@ export const MessageSchema = z.object({
     noResultsSentence: z.string(),
     error: z.string(),
     searchWelcome: z.string(),
-    nftPrice: z.string()
+    nftPrice: z.string(),
+    signOut: z.string()
   }),
   search: z.object({
     cancel: z.string(),
@@ -21,5 +22,15 @@ export const MessageSchema = z.object({
     searchSentence: z.string(),
     searchPlaceholder: z.string(),
     submit: z.string()
+  }),
+  login: z.object({
+    mail: z.string(),
+    connectionInfo: z.string(),
+    password: z.string(),
+    submit: z.string(),
+    login: z.string(),
+    accountQuestion: z.string(),
+    signUp: z.string(),
+    rights: z.string()
   })
 })

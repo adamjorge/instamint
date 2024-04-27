@@ -1,10 +1,49 @@
-generator client {
-  provider = "prisma-client-js"
-}
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+model Account {
+  id                 String    @id @default(cuid())
+  userId             String
+  providerType       String
+  providerId         String
+  providerAccountId  String
+  refreshToken       String?
+  accessToken        String?
+  accessTokenExpires DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id])
+
+  @@unique([providerId, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       String
+  expires      DateTime
+  sessionToken String   @unique
+  accessToken  String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
+}
+
+model VerificationRequest {
+  id         String   @id @default(cuid())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([identifier, token])
 }
 
 model Comment {
@@ -27,23 +66,27 @@ model Hashtag {
 }
 
 model User {
-  id              String    @id @default(cuid())
-  name            String    @db.VarChar(255)
-  email           String    @unique @db.VarChar(255)
-  emailVerifiedAt DateTime?
-  emailVerifToken String?   @db.VarChar(255)
-  password        String    @db.VarChar(255)
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
-  minter          Minter?   @relation(fields: [minterId], references: [id])
-  minterId        Int?
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  phoneNumber   String?
+  password      String?
+  emailVerifToken String? @db.VarChar(255)
+  is2FAEnabled  Boolean   @default(false)
+  isAdmin       Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  deletedAt     DateTime?
+  accounts      Account[]
+  sessions      Session[]
+  minterId      Int
+  minter        Minter    @relation(fields: [minterId], references: [id])
 }
+
 model Minter {
   id                  Int               @id @default(autoincrement())
   username            String            @unique
-  email               String            @unique
-  password            String
-  phoneNumber         String?
   defaultLanguage     String            @default("fr")
   profileUrl          String
   avatarUrl           String
@@ -52,14 +95,9 @@ model Minter {
   authorName          String?
   isVisible           Boolean           @default(true)
   isSearchableByEmail Boolean           @default(true)
-  is2FAEnabled        Boolean           @default(false)
-  isAdmin             Boolean           @default(false)
-  createdAt           DateTime          @default(now())
-  updatedAt           DateTime?         @updatedAt
-  deletedAt           DateTime?
-  Comment             Comment[]
-  OriginalContent     OriginalContent[]
-  Report              Report[]
+  comments            Comment[]
+  originalContents    OriginalContent[]
+  reports             Report[]
   users               User[]
 }
 

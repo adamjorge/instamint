@@ -1,6 +1,6 @@
 import TeaBagCard from "@/components/custom/teabags/teabag-card"
 import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
-import { useTranslations } from "use-intl"
+import { useTranslations } from "next-intl"
 
 export default function TeaBagList({ teabags }: TeaBagListProps) {
   const t = useTranslations("search")
