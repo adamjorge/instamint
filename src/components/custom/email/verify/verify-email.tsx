@@ -4,7 +4,7 @@ import { findUserByEmail, verifyEmail } from "@/actions/auth"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
-import Form from "@/components/custom/email/verify/send/form"
+import Form from "@/components/custom/email/verify/form"
 import { Button } from "@/components/ui/button"
 
 export default function VerifyEmail() {

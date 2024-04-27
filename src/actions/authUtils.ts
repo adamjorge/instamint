@@ -2,38 +2,9 @@
 
 import prisma from "@/lib/db"
 import { z } from "zod"
-import { AuthError } from "next-auth"
-import { EmailNotVerifiedError } from "@/errors"
 import { generateEmailVerificationToken, sendVerificationEmail } from "./emailUtils"
 import { findUserByEmail, generatePasswordHash } from "./dbUtils"
-import { isUsersEmailVerified } from "./verificationUtils"
 import { redirect } from "next/navigation"
-
-const db = prisma
-
-export async function authenticate(prevState: string | undefined, formData: FormData) {
-  try {
-    await isUsersEmailVerified(formData.get("email") as string)
-  } catch (error) {
-    if (error instanceof AuthError) {
-      switch (error.type) {
-        case "CredentialsSignin":
-          return "Invalid credentials."
-
-        default:
-          return "Something went wrong."
-      }
-    }
-
-    if (error instanceof EmailNotVerifiedError) {
-      return error.message
-    }
-
-    throw error
-  }
-
-  return "Something went wrong."
-}
 
 const signUpSchema = z.object({
   name: z.string().min(3).max(255),
@@ -79,7 +50,7 @@ export async function signUp(formData: SignUpFormData): Promise<SignUpFormState>
   const verificationToken = await generateEmailVerificationToken()
 
   try {
-    await db.user.create({
+    await prisma.user.create({
       data: {
         name: formData.name,
         email: formData.email,
@@ -99,7 +70,7 @@ export async function signUp(formData: SignUpFormData): Promise<SignUpFormState>
 
   await sendVerificationEmail(formData.email, verificationToken)
 
-  redirect(`/auth/email/verify/send?email=${formData.email}&verification_sent=1`)
+  redirect(`/auth/email/verify?email=${formData.email}&verification_sent=1`)
 
   return { errors: {} }
 }

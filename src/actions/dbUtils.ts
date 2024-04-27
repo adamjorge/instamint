@@ -3,10 +3,8 @@
 import prisma from "@/lib/db"
 import bcryptjs from "bcryptjs"
 
-const db = prisma
-
 export const findUserByEmail = async (email: string) =>
-  await db.user.findFirst({
+  await prisma.user.findFirst({
     where: {
       email
     }

@@ -2,7 +2,7 @@
 
 import nodemailer from "nodemailer"
 import { randomBytes } from "crypto"
-import db from "@/lib/db"
+import prisma from "@/lib/db"
 
 export const generateEmailVerificationToken = () =>
   new Promise<string>((resolve, reject) => {
@@ -47,7 +47,7 @@ export const sendVerificationEmail = async (email: string, token: string) => {
 }
 
 export const verifyEmail = (email: string) =>
-  db.user.update({
+  prisma.user.update({
     where: { email },
     data: {
       emailVerifiedAt: new Date(),
