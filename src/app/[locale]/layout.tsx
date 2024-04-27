@@ -1,8 +1,8 @@
-import Footer from "@/components/custom/footer"
 import LanguageSelector from "@/components/custom/language-selector"
 import Providers from "@/providers/portalProviders"
 import { useLocale, useMessages, useTimeZone } from "next-intl"
 import React from "react"
+import { Toaster } from "sonner"
 
 import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
 import "@/styles/globals.css"
@@ -66,12 +66,14 @@ export default function PortalLayout({
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <main>
+        <main className="min-h-screen">
           <Providers {...i18nProps}>
-            <LanguageSelector />
-            {children}
-            <Footer />
+            <div className="flex flex-col w-full">
+              <LanguageSelector />
+              {children}
+            </div>
           </Providers>
+          <Toaster position="bottom-right" richColors closeButton />
         </main>
       </body>
     </html>

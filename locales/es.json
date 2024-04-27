@@ -3,21 +3,32 @@
     "check": "Verificar",
     "loading": "Cargando...",
     "noResults": "No se encontraron resultados.",
-    "resultsFor": "Resultados de búsqueda para:",
+    "resultsFor": "Resultados de la búsqueda para:",
     "noResultsFor": "No se encontraron resultados para:",
     "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
-    "error": "Se produjo un error, por favor inténtalo de nuevo más tarde.",
-    "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí puedes buscar NFTs o minters.",
-    "nftPrice": "Precio: ${price}"
+    "error": "Se produjo un error. Por favor, inténtalo de nuevo más tarde.",
+    "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí puedes buscar NFTs o creadores.",
+    "nftPrice": "Precio: ${price}",
+    "signOut": "Cerrar sesión"
   },
   "search": {
     "cancel": "Cancelar",
-    "minPrice": "Precio mín.",
-    "maxPrice": "Precio máx.",
+    "minPrice": "Precio mínimo",
+    "maxPrice": "Precio máximo",
     "noSearchResultsFor": "No se encontraron {type}",
     "search": "Buscar",
-    "searchSentence": "Buscar un NFT o un minter.",
+    "searchSentence": "Buscar un NFT o un creador.",
     "searchPlaceholder": "Buscar...",
     "submit": "Enviar"
+  },
+  "login": {
+    "mail": "Correo electrónico",
+    "connectionInfo": "Este es el correo electrónico que utilizaste para registrarte.",
+    "password": "Contraseña",
+    "submit": "Enviar",
+    "login": "Iniciar sesión",
+    "accountQuestion": "¿No tienes una cuenta?",
+    "signUp": "Regístrate",
+    "rights": "© 2024 Instamint. Todos los derechos reservados."
   }
 }

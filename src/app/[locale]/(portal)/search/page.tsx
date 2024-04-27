@@ -4,7 +4,7 @@ import SearchResults from "@/components/custom/search/search-results"
 import { fetchSearch } from "@/lib/query/search/search"
 import { useQuery } from "@tanstack/react-query"
 import { useSearchParams } from "next/navigation"
-import { useTranslations } from "use-intl"
+import { useTranslations } from "next-intl"
 
 export default function SearchPage() {
   const queryString = useSearchParams()

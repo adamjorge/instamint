@@ -11,7 +11,6 @@ export async function searchMinters(search: string) {
       location: true
     },
     where: {
-      isAdmin: false,
       OR: [
         {
           username: { contains: search, mode: "insensitive" }
