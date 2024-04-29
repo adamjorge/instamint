@@ -1,12 +1,12 @@
 {
   "data": [
-    { 
-      "header": "Name", 
-      "accessorKey": "name" 
+    {
+      "header": "Name",
+      "accessorKey": "name"
     },
-    { 
-      "header": "Email", 
-      "accessorKey": "email" 
+    {
+      "header": "Email",
+      "accessorKey": "email"
     }
   ]
 }
