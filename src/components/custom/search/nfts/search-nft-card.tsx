@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Image from "next/image"
 import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 
-export default function NftCard(nft: NftSearchNftSchemaType) {
+export default function SearchNftCard(nft: NftSearchNftSchemaType) {
   return (
     <Card className="bg-muted m-4">
       <CardHeader>
