@@ -2,7 +2,8 @@ import { z } from "zod"
 
 const minterSchema = z.object({
   id: z.number(),
-  username: z.string()
+  username: z.string(),
+  avatarUrl: z.string()
 })
 const originalContentSchema = z.object({
   minter: minterSchema
@@ -14,7 +15,8 @@ const childCommentSchema = z.object({
   id: z.number(),
   content: z.string(),
   createdAt: z.string(),
-  updatedAt: z.string()
+  updatedAt: z.string(),
+  author: minterSchema
 })
 
 export type ChildCommentType = z.infer<typeof childCommentSchema>
@@ -27,7 +29,8 @@ export const commentSchema = z.object({
   createdAt: z.string(),
   updatedAt: z.string(),
   children: childrenCommentSchema,
-  nft: nftSchema
+  nft: nftSchema,
+  author: minterSchema
 })
 
 export type CommentType = z.infer<typeof commentSchema>

@@ -10,12 +10,12 @@ export default function Comment({ comment }: { comment: CommentType }) {
     <div className="space-y-4">
       <div className="flex">
         <Avatar className="mr-3">
-          <AvatarImage alt="User Avatar" src="/flags/en.svg" />
+          <AvatarImage alt={comment.author.id.toString()} src={comment.author.avatarUrl} />
           <AvatarFallback>JD</AvatarFallback>
         </Avatar>
         <div>
           <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">
-            @{comment.nft.originalContent.minter.username}
+            @{comment.author.username}
             <div className="text-gray-500 text-xs dark:text-gray-400">{relativeTime}</div>
           </h4>
           <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
@@ -24,11 +24,7 @@ export default function Comment({ comment }: { comment: CommentType }) {
           {comment.children.length > 0 && (
             <div className="mt-2 ml-4 space-y-4">
               {comment.children.map((child) => (
-                <ChildComment
-                  key={child.id}
-                  comment={child}
-                  username={comment.nft.originalContent.minter.username}
-                />
+                <ChildComment key={child.id} comment={child} />
               ))}
             </div>
           )}

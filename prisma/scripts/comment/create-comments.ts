@@ -5,7 +5,7 @@ export function createComments(prisma: PrismaClient) {
   const data: Comment[] = rawData.map((comment: Comment) => ({
     id: comment.id,
     content: comment.content,
-    minterId: comment.minterId,
+    authorId: comment.authorId,
     nftId: comment.nftId,
     parentId: comment.parentId,
     createdAt: getRandomDate(new Date(2022, 0, 1), new Date())
@@ -21,7 +21,7 @@ function getRandomDate(start: Date, end: Date) {
 interface Comment {
   id: number
   content: string
-  minterId: number
+  authorId: number
   nftId: number
   parentId: number | null
 }

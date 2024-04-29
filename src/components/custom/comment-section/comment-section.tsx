@@ -37,18 +37,20 @@ export default function CommentSection({ nftId }: { nftId: number }) {
       <div className="prose prose-gray mx-auto max-w-6xl dark:prose-invert">
         <div className="grid gap-6">
           <h2 className="font-semibold text-xl">{data.length} Comments</h2>
-          <Collapsible className="space-y-4">
-            <CollapsibleContent className="space-y-4">
-              {visibleComments.map((comment) => (
-                <Comment key={comment.id} comment={comment} />
-              ))}
-            </CollapsibleContent>
-            <CollapsibleTrigger asChild>
-              <Button size="sm" variant="ghost" onClick={handleShowMore}>
-                {showAllComments ? "Show less" : "Show more"} comments
-              </Button>
-            </CollapsibleTrigger>
-          </Collapsible>
+          {data.length > 0 && (
+            <Collapsible className="space-y-4">
+              <CollapsibleContent className="space-y-4">
+                {visibleComments.map((comment) => (
+                  <Comment key={comment.id} comment={comment} />
+                ))}
+              </CollapsibleContent>
+              <CollapsibleTrigger asChild>
+                <Button size="sm" variant="ghost" onClick={handleShowMore}>
+                  {showAllComments ? "Show less" : "Show more"} comments
+                </Button>
+              </CollapsibleTrigger>
+            </Collapsible>
+          )}
         </div>
       </div>
     </div>

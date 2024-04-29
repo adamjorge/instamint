@@ -54,8 +54,8 @@ model Comment {
   parentId  Int?
   parent    Comment?  @relation("CommentToComment", fields: [parentId], references: [id])
   nftId     Int
-  minterId  Int
-  minter    Minter    @relation(fields: [minterId], references: [id])
+  authorId  Int
+  author    Minter    @relation(fields: [authorId], references: [id])
   nft       Nft       @relation(fields: [nftId], references: [id])
   reports   Report[]
   children  Comment[] @relation("CommentToComment")

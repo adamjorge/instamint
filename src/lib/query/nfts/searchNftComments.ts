@@ -7,12 +7,26 @@ export default async function searchNftComments(nftId: string) {
       content: true,
       createdAt: true,
       updatedAt: true,
+      author: {
+        select: {
+          id: true,
+          username: true,
+          avatarUrl: true
+        }
+      },
       children: {
         select: {
           id: true,
           content: true,
           createdAt: true,
-          updatedAt: true
+          updatedAt: true,
+          author: {
+            select: {
+              id: true,
+              username: true,
+              avatarUrl: true
+            }
+          }
         }
       },
       nft: {
@@ -22,7 +36,8 @@ export default async function searchNftComments(nftId: string) {
               minter: {
                 select: {
                   id: true,
-                  username: true
+                  username: true,
+                  avatarUrl: true
                 }
               }
             }
