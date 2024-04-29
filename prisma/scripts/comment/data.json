@@ -2,7 +2,7 @@
   {
     "id": 1,
     "content": "I really like this NFT",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 1,
     "parentId": null
   },
@@ -51,7 +51,7 @@
   {
     "id": 17,
     "content": "17th comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 1,
     "parentId": null
   },
@@ -72,7 +72,7 @@
   {
     "id": 47,
     "content": "Another NFT comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 1,
     "parentId": null
   },
@@ -93,7 +93,7 @@
   {
     "id": 50,
     "content": "NFT Comment 29 by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 1,
     "parentId": null
   },
@@ -114,7 +114,7 @@
   {
     "id": 53,
     "content": "Yet another NFT comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 1,
     "parentId": null
   },
@@ -135,7 +135,7 @@
   {
     "id": 56,
     "content": "NFT Comment number 14 by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 1,
     "parentId": null
   },
@@ -156,7 +156,7 @@
   {
     "id": 59,
     "content": "17th NFT comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 1,
     "parentId": null
   },
@@ -184,7 +184,7 @@
   {
     "id": 62,
     "content": "20th NFT comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 2,
     "parentId": null
   },
@@ -205,7 +205,7 @@
   {
     "id": 65,
     "content": "NFT Comment 23 by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 2,
     "parentId": null
   },
@@ -226,7 +226,7 @@
   {
     "id": 68,
     "content": "Another NFT comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 2,
     "parentId": null
   },
@@ -247,7 +247,7 @@
   {
     "id": 71,
     "content": "NFT Comment 29 by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 2,
     "parentId": 68
   },
@@ -275,7 +275,7 @@
   {
     "id": 23,
     "content": "Comment 23 by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 3,
     "parentId": null
   },
@@ -296,7 +296,7 @@
   {
     "id": 26,
     "content": "Another comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 3,
     "parentId": null
   },
@@ -317,7 +317,7 @@
   {
     "id": 29,
     "content": "Comment 29 by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 3,
     "parentId": null
   },
@@ -338,7 +338,7 @@
   {
     "id": 6,
     "content": "This NFT speaks to my soul, it's like it was made for me",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 3,
     "parentId": 60
   },
@@ -366,7 +366,7 @@
   {
     "id": 20,
     "content": "20th comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 4,
     "parentId": null
   },
@@ -380,14 +380,14 @@
   {
     "id": 8,
     "content": "Another comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 4,
     "parentId": 68
   },
   {
     "id": 32,
     "content": "Another NFT comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 5,
     "parentId": null
   },
@@ -408,7 +408,7 @@
   {
     "id": 35,
     "content": "NFT Comment number 14 by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 5,
     "parentId": null
   },
@@ -429,7 +429,7 @@
   {
     "id": 38,
     "content": "17th NFT comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 5,
     "parentId": null
   },
@@ -450,7 +450,7 @@
   {
     "id": 41,
     "content": "20th NFT comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 5,
     "parentId": null
   },
@@ -471,7 +471,7 @@
   {
     "id": 44,
     "content": "NFT Comment 23 by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 5,
     "parentId": null
   },
@@ -485,7 +485,7 @@
   {
     "id": 11,
     "content": "Another comment by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 5,
     "parentId": null
   },
@@ -506,7 +506,7 @@
   {
     "id": 14,
     "content": "Comment number 14 by minterId 1",
-    "minterId": 1,
+    "minterId": 4,
     "nftId": 5,
     "parentId": null
   }
