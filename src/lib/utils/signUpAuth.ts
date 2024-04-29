@@ -2,9 +2,10 @@
 
 import prisma from "@/lib/db"
 import { z } from "zod"
-import { generateEmailVerificationToken, sendVerificationEmail } from "./emailUtils"
-import { findUserByEmail, generatePasswordHash } from "./dbUtils"
+import { generateEmailVerificationToken, sendVerificationEmail } from "@/lib/utils/email"
+import { findUserByEmail, generatePasswordHash } from "@/lib/utils/db"
 import { redirect } from "next/navigation"
+import { faker } from "@faker-js/faker"
 
 const signUpSchema = z.object({
   name: z.string().min(3).max(255),
@@ -50,12 +51,21 @@ export async function signUp(formData: SignUpFormData): Promise<SignUpFormState>
   const verificationToken = await generateEmailVerificationToken()
 
   try {
+    const minter = await prisma.minter.create({
+      data: {
+        username: faker.internet.userName(),
+        profileUrl: faker.image.urlLoremFlickr(),
+        avatarUrl: faker.image.avatar(),
+        bio: faker.lorem.paragraph()
+      }
+    })
     await prisma.user.create({
       data: {
         name: formData.name,
         email: formData.email,
         password: hashed,
-        emailVerifToken: verificationToken
+        emailVerifyToken: verificationToken,
+        minterId: minter.id
       }
     })
   } catch (error: unknown) {

@@ -1,3 +1,5 @@
+"use client"
+
 import VerifyEmail from "@/components/custom/email/verify/verify-email"
 import Loading from "@/components/ui/loading"
 import { Suspense } from "react"

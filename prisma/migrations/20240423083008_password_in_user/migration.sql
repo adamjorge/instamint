@@ -6,6 +6,3 @@
 */
 -- AlterTable
 ALTER TABLE "Minter" DROP COLUMN "password";
-
--- AlterTable
-ALTER TABLE "User" ADD COLUMN     "password" TEXT;

@@ -50,7 +50,7 @@ export const verifyEmail = (email: string) =>
   prisma.user.update({
     where: { email },
     data: {
-      emailVerifiedAt: new Date(),
-      emailVerifToken: null
+      emailVerified: new Date(),
+      emailVerifyToken: null
     }
   })
