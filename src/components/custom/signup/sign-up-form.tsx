@@ -9,7 +9,7 @@ import EmailField from "@/components/custom/signup/formFields/email-field"
 import PasswordField from "@/components/custom/signup/formFields/password-field"
 import NameField from "@/components/custom/signup/formFields/name-field"
 
-export default function SignUpFormLogic() {
+export default function SignUpForm() {
   type FieldValues = SignUpFormData
 
   const form = useForm<FieldValues>({

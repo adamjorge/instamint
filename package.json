@@ -50,6 +50,7 @@
     "@types/intl": "^1.2.2",
     "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
+    "@types/bcryptjs": "^2.4.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "http-status-codes": "^2.3.0",
