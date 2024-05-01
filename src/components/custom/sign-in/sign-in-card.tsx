@@ -1,12 +1,11 @@
 "use client"
 
 import SignInWrapper from "@/components/custom/sign-in/sign-in-wrapper"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { useTranslations } from "next-intl"
 import { Lora } from "next/font/google"
 import Image from "next/image"
-import { toast } from "sonner"
+import LinkButton from "@/components/ui/custom/LinkButton"
 
 // eslint-disable-next-line new-cap
 const lora = Lora({ subsets: ["latin"], weight: "700" })
@@ -34,9 +33,9 @@ export default function SignInCard() {
       </CardContent>
       <CardFooter className="flex flex-col text-sm">
         <p>{t("accountQuestion")}</p>
-        <Button onClick={() => toast.error("This feature is a work in progress")} className="mt-3">
+        <LinkButton withLocale href="/signup" >
           {t("signUp")}
-        </Button>
+        </LinkButton>
         <p className="text-gray-500 mt-6">{t("rights")}</p>
       </CardFooter>
     </Card>
