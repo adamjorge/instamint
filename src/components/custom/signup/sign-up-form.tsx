@@ -35,7 +35,7 @@ export default function SignUpForm() {
           <PasswordField control={form.control} />
           <NameField control={form.control} />
           <Button type="submit" className="w-full">
-            SignUp
+            Sign Up
           </Button>
           <div className="mt-4 text-center">
             <span style={{ marginRight: "0.5em" }}>Already have an account?</span>
