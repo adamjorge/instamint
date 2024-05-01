@@ -19,6 +19,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepare": "husky",
     "test:unit": "jest",
     "test:unit:watch": "jest --watch",
