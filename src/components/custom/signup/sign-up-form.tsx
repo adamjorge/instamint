@@ -1,14 +1,14 @@
-import { Button } from "@/components/ui/button"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Form } from "@/components/ui/form"
-import { SignUpFormData, handleSubmit } from "@/components/custom/signup/submit-handler"
-import { useForm } from "react-hook-form"
 import { formSchema } from "@/components/custom/signup/form-schema"
 import EmailField from "@/components/custom/signup/formFields/email-field"
-import PasswordField from "@/components/custom/signup/formFields/password-field"
 import NameField from "@/components/custom/signup/formFields/name-field"
-import { useTranslations } from "next-intl"
+import PasswordField from "@/components/custom/signup/formFields/password-field"
+import { SignUpFormData, handleSubmit } from "@/components/custom/signup/submit-handler"
+import { Button } from "@/components/ui/button"
 import LinkButton from "@/components/ui/custom/LinkButton"
+import { Form } from "@/components/ui/form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useTranslations } from "next-intl"
+import { useForm } from "react-hook-form"
 
 export default function SignUpForm() {
   type FieldValues = SignUpFormData
@@ -41,7 +41,7 @@ export default function SignUpForm() {
           <div className="mt-4 text-center">
             <span style={{ marginRight: "0.5em" }}>Already have an account?</span>
             <LinkButton withLocale href="/login">
-                Login
+              Login
             </LinkButton>
           </div>
         </form>

@@ -2,10 +2,10 @@
 
 import SignInWrapper from "@/components/custom/sign-in/sign-in-wrapper"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import LinkButton from "@/components/ui/custom/LinkButton"
 import { useTranslations } from "next-intl"
 import { Lora } from "next/font/google"
 import Image from "next/image"
-import LinkButton from "@/components/ui/custom/LinkButton"
 
 // eslint-disable-next-line new-cap
 const lora = Lora({ subsets: ["latin"], weight: "700" })
@@ -33,7 +33,7 @@ export default function SignInCard() {
       </CardContent>
       <CardFooter className="flex flex-col text-sm">
         <p>{t("accountQuestion")}</p>
-        <LinkButton withLocale href="/signup" >
+        <LinkButton withLocale href="/signup">
           {t("signUp")}
         </LinkButton>
         <p className="text-gray-500 mt-6">{t("rights")}</p>

@@ -1,7 +1,7 @@
-import { z } from "zod"
-import { nftSearchNftsSchema } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { minterSearchMintersSchema } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
+import { nftSearchNftsSchema } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { teabagsSearchTeabagsSchema } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
+import { z } from "zod"
 
 export const searchSchema = z.object({
   nfts: nftSearchNftsSchema,

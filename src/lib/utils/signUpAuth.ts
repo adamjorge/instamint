@@ -1,11 +1,11 @@
 "use server"
 
 import prisma from "@/lib/db"
-import { z } from "zod"
-import { generateEmailVerificationToken, sendVerificationEmail } from "@/lib/utils/email"
 import { findUserByEmail, generatePasswordHash } from "@/lib/utils/db"
-import { redirect } from "next/navigation"
+import { generateEmailVerificationToken, sendVerificationEmail } from "@/lib/utils/email"
 import { faker } from "@faker-js/faker"
+import { redirect } from "next/navigation"
+import { z } from "zod"
 
 const signUpSchema = z.object({
   name: z.string().min(3).max(255),

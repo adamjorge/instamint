@@ -1,7 +1,7 @@
-import { Control } from "react-hook-form"
-import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
 import { SignUpFormData } from "@/components/custom/signup/submit-handler"
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Control } from "react-hook-form"
 
 interface NameFieldProps {
   control: Control<SignUpFormData>

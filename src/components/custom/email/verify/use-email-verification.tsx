@@ -1,9 +1,9 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { findUserByEmail } from "@/lib/utils/db"
 import { verifyEmail } from "@/lib/utils/email"
 import { useSearchParams } from "next/navigation"
+import { useEffect, useState } from "react"
 
 export default function useEmailVerification() {
   const searchParams = useSearchParams()

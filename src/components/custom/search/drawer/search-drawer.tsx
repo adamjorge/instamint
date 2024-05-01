@@ -1,5 +1,8 @@
 "use client"
 
+import SearchDrawerInputList, {
+  SearchDrawerInputListProps
+} from "@/components/custom/search/drawer/search-drawer-input-list"
 import { Button } from "@/components/ui/button"
 import {
   DrawerClose,
@@ -11,9 +14,6 @@ import {
 } from "@/components/ui/drawer"
 import { useTranslations } from "next-intl"
 import React from "react"
-import SearchDrawerInputList, {
-  SearchDrawerInputListProps
-} from "@/components/custom/search/drawer/search-drawer-input-list"
 
 export default function SearchDrawer({ ...props }: SearchDrawerProps) {
   const searchDrawerInputListProps: Omit<SearchDrawerInputListProps, "handleSearchSubmit"> = props

@@ -1,6 +1,6 @@
-import { z } from "zod"
 import { nftsSearchHashtagsSchema } from "@/validators/schemas/search/nfts/nftSearchHashtagSchema"
 import { nftSearchOriginalContentSchema } from "@/validators/schemas/search/nfts/nftSearchOriginalContentSchema"
+import { z } from "zod"
 
 export const nftSearchNftSchema = z.object({
   id: z.number(),

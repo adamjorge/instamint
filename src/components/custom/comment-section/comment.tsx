@@ -1,7 +1,7 @@
+import ChildComment from "@/components/custom/comment-section/child-comment"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import useRelativeTime from "@/hooks/useRelativeTime"
 import { CommentType } from "@/validators/schemas/nfts/comments/commentSchema"
-import ChildComment from "@/components/custom/comment-section/child-comment"
 
 export default function Comment({ comment }: { comment: CommentType }) {
   const relativeTime = useRelativeTime(comment.createdAt)

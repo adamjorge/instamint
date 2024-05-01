@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test"
 import dotenv from "dotenv"
+
 dotenv.config()
 
 if (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD) {

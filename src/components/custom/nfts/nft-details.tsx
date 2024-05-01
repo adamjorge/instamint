@@ -1,8 +1,8 @@
-import { Badge } from "@/components/ui/badge"
-import Image from "next/image"
 import CommentSection from "@/components/custom/comment-section/comment-section"
-import { NftType } from "@/validators/schemas/nfts/nftSchema"
+import { Badge } from "@/components/ui/badge"
 import useRelativeTime from "@/hooks/useRelativeTime"
+import { NftType } from "@/validators/schemas/nfts/nftSchema"
+import Image from "next/image"
 
 export default function NftDetails({ nft }: NftDetailsProps) {
   const relativeTime = useRelativeTime(nft.createdAt)

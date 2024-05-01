@@ -1,8 +1,8 @@
 "use server"
 
-import nodemailer from "nodemailer"
-import { randomBytes } from "crypto"
 import prisma from "@/lib/db"
+import { randomBytes } from "crypto"
+import nodemailer from "nodemailer"
 
 export const generateEmailVerificationToken = () =>
   new Promise<string>((resolve, reject) => {

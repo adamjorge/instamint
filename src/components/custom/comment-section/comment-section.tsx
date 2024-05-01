@@ -1,6 +1,6 @@
+import Comment from "@/components/custom/comment-section/comment"
 import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import Comment from "@/components/custom/comment-section/comment"
 import fetchNftComments from "@/lib/query/nfts/fetchNftComments"
 import { useQuery } from "@tanstack/react-query"
 import { useCallback, useEffect, useState } from "react"
