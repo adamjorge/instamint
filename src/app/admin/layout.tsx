@@ -2,11 +2,10 @@
 
 import MenubarLayout from "@/components/custom/admin/menubar-layout"
 import Providers from "@/providers/adminProviders"
+import "@/styles/globals.css"
 import { Inter } from "next/font/google"
 import React from "react"
 import { Toaster } from "sonner"
-
-import "@/styles/globals.css"
 
 // eslint-disable-next-line new-cap
 const inter = Inter({ subsets: ["latin"] })

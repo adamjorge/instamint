@@ -1,5 +1,5 @@
-import { signUp } from "@/lib/utils/signUpAuth"
 import { findUserByEmail } from "@/lib/utils/db"
+import { signUp } from "@/lib/utils/signUpAuth"
 import { toast } from "sonner"
 
 export interface SignUpFormData {

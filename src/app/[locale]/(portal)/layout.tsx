@@ -1,9 +1,8 @@
 import Footer from "@/components/custom/footer"
+import { Button } from "@/components/ui/button"
 import { signOut } from "@/lib/auth"
 import { useTranslations } from "next-intl"
 import React from "react"
-
-import { Button } from "@/components/ui/button"
 
 export default function PortalLayout({
   children

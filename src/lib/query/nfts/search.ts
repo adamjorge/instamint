@@ -1,6 +1,7 @@
-import { Prisma } from "@prisma/client"
-import NftSelect = Prisma.NftSelect
 import prisma from "@/lib/db"
+import { Prisma } from "@prisma/client"
+
+import NftSelect = Prisma.NftSelect
 
 const nftSearchSelect: NftSelect = {
   id: true,

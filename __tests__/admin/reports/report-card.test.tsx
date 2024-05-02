@@ -2,6 +2,7 @@ import ReportCard from "@/components/custom/admin/reports/report-card"
 import { ReportValidationSchema } from "@/validators/schemas/reportSchema"
 import { describe, expect, it } from "@jest/globals"
 import { render, screen } from "@testing-library/react"
+
 import mockedReportsResult from "./report-mock-response.json"
 
 describe("report cards display expected attributes", () => {

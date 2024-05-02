@@ -1,9 +1,8 @@
 "use client"
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import Form from "@/components/custom/email/verify/form"
 import useEmailVerification from "@/components/custom/email/verify/use-email-verification"
+import LinkButton from "@/components/ui/custom/link-button"
 
 export default function VerifyEmail() {
   const { isLoading, result, errorMessage } = useEmailVerification()
@@ -25,9 +24,9 @@ export default function VerifyEmail() {
       </div>
       {!isLoading && !errorMessage && (
         <div className="my-3 w-full">
-          <Link href="/en/login" className="bg-white py-3 px-2 rounded">
-            <Button>Back to Login</Button>
-          </Link>
+          <LinkButton withLocale href="/login" className="bg-white py-3 px-2 rounded">
+            Back to Login
+          </LinkButton>
         </div>
       )}
     </>

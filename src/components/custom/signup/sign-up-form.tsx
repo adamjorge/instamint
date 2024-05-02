@@ -1,17 +1,18 @@
-import { Button } from "@/components/ui/button"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Form } from "@/components/ui/form"
-import Link from "next/link"
-import { SignUpFormData, handleSubmit } from "@/components/custom/signup/submit-handler"
-import { useForm } from "react-hook-form"
 import { formSchema } from "@/components/custom/signup/form-schema"
 import EmailField from "@/components/custom/signup/formFields/email-field"
-import PasswordField from "@/components/custom/signup/formFields/password-field"
 import NameField from "@/components/custom/signup/formFields/name-field"
+import PasswordField from "@/components/custom/signup/formFields/password-field"
+import { SignUpFormData, handleSubmit } from "@/components/custom/signup/submit-handler"
+import { Button } from "@/components/ui/button"
+import LinkButton from "@/components/ui/custom/link-button"
+import { Form } from "@/components/ui/form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useTranslations } from "next-intl"
+import { useForm } from "react-hook-form"
 
 export default function SignUpForm() {
   type FieldValues = SignUpFormData
-
+  const t = useTranslations("login")
   const form = useForm<FieldValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,13 +36,13 @@ export default function SignUpForm() {
           <PasswordField control={form.control} />
           <NameField control={form.control} />
           <Button type="submit" className="w-full">
-            Sign Up
+            {t("signUp")}
           </Button>
           <div className="mt-4 text-center">
             <span style={{ marginRight: "0.5em" }}>Already have an account?</span>
-            <Link href="/en/login" className="underline">
+            <LinkButton withLocale href="/login">
               Login
-            </Link>
+            </LinkButton>
           </div>
         </form>
       </Form>

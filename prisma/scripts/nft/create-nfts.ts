@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker"
 import { PrismaClient } from "@prisma/client"
+
 import hashtags from "../hashtag/data.json"
 
 const availableLocations = [

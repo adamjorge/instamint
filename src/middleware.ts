@@ -14,7 +14,7 @@ export default async function middleware(request: NextRequest) {
     const res = handleI18nRouting(request)
     const languageFromCookies = request.cookies.get("NEXT_LOCALE")?.value || defaultLocale
 
-    if (!session?.user && !request.url.includes("login")) {
+    if (!session?.user && !isRedirecting(request.url)) {
       return NextResponse.redirect(new URL(`/${languageFromCookies}/login`, request.url))
     }
 
@@ -30,4 +30,10 @@ export default async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: ["/", "/(en|es|fr|ja|pt|zh)/:path*", "/admin/:path*"]
+}
+
+function isRedirecting(url: string) {
+  const routeNames = ["login", "signup", "email"]
+
+  return routeNames.some((name) => url.includes(name))
 }
