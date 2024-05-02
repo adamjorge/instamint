@@ -52,8 +52,8 @@ model Comment {
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
   nftId     Int
-  minterId  Int
-  Minter    Minter    @relation(fields: [minterId], references: [id])
+  minterId  Int?
+  Minter    Minter?   @relation(fields: [minterId], references: [id])
   Nft       Nft       @relation(fields: [nftId], references: [id])
   Report    Report[]
 }
@@ -80,7 +80,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   minterId      Int
-  minter        Minter    @relation(fields: [minterId], references: [id])
+  minter        Minter    @relation(fields: [minterId], references: [id], onDelete: Cascade)
 }
 
 model Minter {
@@ -120,8 +120,8 @@ model OriginalContent {
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
   nft       Nft?
-  minter    Minter    @relation(fields: [minterId], references: [id])
-  minterId  Int
+  minter    Minter?   @relation(fields: [minterId], references: [id])
+  minterId  Int?
 }
 
 model Report {

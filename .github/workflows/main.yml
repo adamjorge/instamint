@@ -2,9 +2,9 @@ name: Main workflow with Vercel deployment
 
 on:
   push:
-    branches: ["feature/*", "hotfix/*"]
+    branches: ["main", "develop", "feature/*", "hotfix/*"]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "develop"]
 
 jobs:
   lint-and-build:
@@ -61,7 +61,7 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 30
+          retention-days: 7
 
   deploy-preview:
     if: ${{ github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/heads/feature/') }}

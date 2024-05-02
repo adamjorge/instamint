@@ -3,7 +3,7 @@ import { Minter, PrismaPromise, User } from "@prisma/client"
 
 export async function deleteMinters() {
   const deletionPromises: Array<PrismaPromise<User | Minter>> = []
-  const mintersToDelete: Array<number> = []
+  const mintersToDelete = new Set<number>()
   const usersToDelete = await prisma.user.findMany({
     where: {
       deletedAt: {
@@ -12,24 +12,25 @@ export async function deleteMinters() {
     }
   })
 
-  usersToDelete.forEach((user) => {
-    const deletionUserPromise = prisma.user.delete({
-      where: {
-        id: user.id
-      }
-    })
+  for (const user of usersToDelete) {
+    deletionPromises.push(
+      prisma.user.delete({
+        where: {
+          id: user.id
+        }
+      })
+    )
+    mintersToDelete.add(user.minterId)
+  }
 
-    mintersToDelete.push(user.minterId)
-    deletionPromises.push(deletionUserPromise)
-  })
   mintersToDelete.forEach((minterId) => {
-    const deletionMinterPromise = prisma.minter.delete({
-      where: {
-        id: minterId
-      }
-    })
-
-    deletionPromises.push(deletionMinterPromise)
+    deletionPromises.push(
+      prisma.minter.delete({
+        where: {
+          id: minterId
+        }
+      })
+    )
   })
 
   return await Promise.all(deletionPromises)
