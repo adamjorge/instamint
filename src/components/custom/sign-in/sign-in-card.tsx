@@ -2,7 +2,7 @@
 
 import SignInWrapper from "@/components/custom/sign-in/sign-in-wrapper"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import LinkButton from "@/components/ui/custom/LinkButton"
+import LinkButton from "@/components/ui/custom/link-button"
 import { useTranslations } from "next-intl"
 import { Lora } from "next/font/google"
 import Image from "next/image"
@@ -31,12 +31,12 @@ export default function SignInCard() {
       <CardContent>
         <SignInWrapper />
       </CardContent>
-      <CardFooter className="flex flex-col text-sm">
+      <CardFooter className="flex flex-col text-sm space-y-6">
         <p>{t("accountQuestion")}</p>
         <LinkButton withLocale href="/signup">
           {t("signUp")}
         </LinkButton>
-        <p className="text-gray-500 mt-6">{t("rights")}</p>
+        <p className="text-gray-500">{t("rights")}</p>
       </CardFooter>
     </Card>
   )

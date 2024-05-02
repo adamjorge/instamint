@@ -1,10 +1,10 @@
 "use server"
 
+import { redirect } from "@/config/i18n/locales"
 import prisma from "@/lib/db"
 import { findUserByEmail, generatePasswordHash } from "@/lib/utils/db"
 import { generateEmailVerificationToken, sendVerificationEmail } from "@/lib/utils/email"
 import { faker } from "@faker-js/faker"
-import { redirect } from "next/navigation"
 import { z } from "zod"
 
 const signUpSchema = z.object({
@@ -80,7 +80,7 @@ export async function signUp(formData: SignUpFormData): Promise<SignUpFormState>
 
   await sendVerificationEmail(formData.email, verificationToken)
 
-  redirect(`/auth/email/verify?email=${formData.email}&verification_sent=1`)
+  redirect(`/email/verify?email=${formData.email}&verification_sent=1`)
 
   return { errors: {} }
 }

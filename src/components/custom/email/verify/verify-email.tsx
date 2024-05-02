@@ -2,7 +2,7 @@
 
 import Form from "@/components/custom/email/verify/form"
 import useEmailVerification from "@/components/custom/email/verify/use-email-verification"
-import LinkButton from "@/components/ui/custom/LinkButton"
+import LinkButton from "@/components/ui/custom/link-button"
 
 export default function VerifyEmail() {
   const { isLoading, result, errorMessage } = useEmailVerification()

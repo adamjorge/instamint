@@ -2,6 +2,7 @@
 
 import prisma from "@/lib/db"
 import { randomBytes } from "crypto"
+import { getLocale } from "next-intl/server"
 import nodemailer from "nodemailer"
 
 export const generateEmailVerificationToken = () =>
@@ -33,13 +34,15 @@ export const sendVerificationEmail = async (email: string, token: string) => {
       pass: process.env.SMTP_PASSWORD
     }
   })
+  const locale = await getLocale()
+  const url = process.env.BASE_URL || "http://localhost:3000"
   const emailData = {
     from: '"Instamint, your social network for minting NFTs" <instamint.deva.noreply@gmail.com>',
     to: email,
     subject: "Account creation email verification",
     html: `
       <p>Click the link below to verify your email:</p>
-      <a href="http://localhost:3000/auth/email/verify?email=${email}&token=${token}">Verify Email</a>
+      <a href="${url}/${locale}/email/verify?email=${email}&token=${token}">Verify Email</a>
     `
   }
 
