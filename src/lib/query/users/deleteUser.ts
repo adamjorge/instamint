@@ -1,11 +1,14 @@
 import prisma from "@/lib/db"
 
-export const deleteUser = async (userId: string) =>
+export async function deleteUser(userId: string) {
+  const todayDate = new Date()
+
   await prisma.user.update({
     where: {
       id: userId
     },
     data: {
-      deletedAt: new Date()
+      deletedAt: todayDate
     }
   })
+}
