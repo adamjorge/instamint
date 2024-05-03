@@ -25,7 +25,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           }
         })
 
-        if (!user) {
+        if (!user || user.deletedAt !== null) {
           return null
         }
 
@@ -40,7 +40,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     })
   ],
   pages: {
-    signIn: "/en/login"
+    signIn: "/login"
   },
   session: {
     strategy: "jwt"

@@ -1,4 +1,4 @@
-import ProfileView from "@/components/custom/profile/profile-view"
+import ProfileChanges from "@/components/custom/profile/profile-changes"
 import { auth } from "@/lib/auth"
 import { redirect } from "next/navigation"
 
@@ -9,5 +9,5 @@ export default async function ProfilePage() {
     redirect("/")
   }
 
-  return <ProfileView userId={session.user.id} />
+  return <ProfileChanges userId={session.user.id} />
 }

@@ -3,9 +3,9 @@ import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function DELETE() {
   try {
-    const deletedMinters = await deleteMinters()
+    await deleteMinters()
 
-    return Response.json(deletedMinters)
+    return Response.json("Cleaned up minters")
   } catch (error) {
     return Response.json(
       { message: ReasonPhrases.INTERNAL_SERVER_ERROR },

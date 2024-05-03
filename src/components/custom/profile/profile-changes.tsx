@@ -1,8 +1,23 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { handleDeleteUser } from "@/lib/query/users/handleDeleteUser"
+import { useMutation } from "@tanstack/react-query"
+import { signOut } from "next-auth/react"
+import { useLocale } from "next-intl"
 
-export default function ProfileChanges({ handleClickOnDelete }: ChangesProps) {
+export default function ProfileChanges({ userId }: ChangesProps) {
+  const locale = useLocale()
+  const mutation = useMutation({
+    mutationFn: () => handleDeleteUser(userId),
+    onSuccess: async () => {
+      await signOut({ callbackUrl: `/${locale}/login?deleted=true`, redirect: true })
+    }
+  })
+  const handleClickOnDelete = () => {
+    mutation.mutate()
+  }
+
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <h2>Modifier le profil</h2>
@@ -14,5 +29,5 @@ export default function ProfileChanges({ handleClickOnDelete }: ChangesProps) {
 }
 
 type ChangesProps = {
-  handleClickOnDelete: () => void
+  userId: string
 }
