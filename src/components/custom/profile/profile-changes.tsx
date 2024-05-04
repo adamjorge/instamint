@@ -32,7 +32,7 @@ export default function ProfileChanges({ userId }: ChangesProps) {
   }, [mutation])
 
   return (
-    <div className="flex flex-col items-center ml-5 space-y-5 w-full">
+    <div className="flex flex-col items-center ml-5 mt-10 space-y-5 w-full">
       <h2 className="font-bold text-xl">{t("changeProfile")}</h2>
       <Avatar>
         <AvatarFallback>IN</AvatarFallback>

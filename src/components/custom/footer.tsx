@@ -34,7 +34,7 @@ export default function Footer() {
         <button onClick={handleClickOnWIP}>
           <FiHeart className="w-6 h-6 text-medium hover:text-sea" />
         </button>
-        <Link href={`/${locale}/profile/change`}>
+        <Link href={`/${locale}/profile/changes`}>
           <FiUser className="w-6 h-6 text-medium hover:text-sea" />
         </Link>
       </nav>
