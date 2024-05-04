@@ -1,34 +1,55 @@
 {
   "global": {
-    "check": "確認する",
+    "check": "確認",
     "loading": "読み込み中...",
-    "noResults": "結果が見つかりません。",
+    "noResults": "結果が見つかりませんでした。",
     "resultsFor": "検索結果：",
-    "noResultsFor": "結果が見つかりませんでした：",
-    "noResultsSentence": "検索条件に一致する結果が見つかりませんでした。",
+    "noResultsFor": "検索結果が見つかりませんでした：",
+    "noResultsSentence": "検索語句に一致する結果が見つかりませんでした。",
     "error": "エラーが発生しました。後でもう一度お試しください。",
-    "searchWelcome": "検索ページへようこそ。ここではNFTまたはミンターを検索できます。",
+    "searchWelcome": "検索ページへようこそ。ここではNFTや作成者を検索できます。",
     "nftPrice": "価格：${price}",
-    "signOut": "サインアウト"
+    "signOut": "ログアウト"
   },
   "search": {
     "cancel": "キャンセル",
     "minPrice": "最低価格",
     "maxPrice": "最高価格",
-    "noSearchResultsFor": "{type} が見つかりません",
+    "noSearchResultsFor": "{type}が見つかりません",
     "search": "検索",
-    "searchSentence": "NFTまたはミンターを検索します。",
+    "searchSentence": "NFTや作成者を検索します。",
     "searchPlaceholder": "検索...",
     "submit": "送信"
   },
   "login": {
     "mail": "メール",
-    "connectionInfo": "登録に使用したメールアドレスです。",
+    "connectionInfo": "これは登録に使用したメールアドレスです。",
     "password": "パスワード",
     "submit": "送信",
     "login": "ログイン",
     "accountQuestion": "アカウントをお持ちでないですか？",
     "signUp": "サインアップ",
-    "rights": "© 2024 Instamint. 全著作権所有。"
+    "rights": "© 2024 Instamint. All rights reserved."
+  },
+  "howToMenu": {
+    "howTo": "Instamintの使い方",
+    "changeProfile": "プロフィールを変更",
+    "notifications": "通知"
+  },
+  "privacyMenu": {
+    "whoCanSee": "プロフィールを見ることができる人は？",
+    "privacy": "プライバシー"
+  },
+  "applicationMenu": {
+    "yourApplication": "あなたのアプリケーション",
+    "language": "言語"
+  },
+  "profileChanges": {
+    "changeProfile": "プロフィールを変更",
+    "bio": "自己紹介",
+    "bioWIP": "この機能はまだ開発中です。",
+    "deleteAccount": "アカウントを削除",
+    "deleteAccountConfirmation": "本当にアカウントを削除しますか？",
+    "deleteAccountDescription": "この操作は取り消せず、すべてのデータが削除されます。続行する前にご確認ください。"
   }
 }

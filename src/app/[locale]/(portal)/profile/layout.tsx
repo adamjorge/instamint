@@ -1,6 +1,6 @@
 "use client"
 
-import ProfileMenu from "@/components/custom/profile/profile-menu"
+import ProfileMenu from "@/components/custom/profile/profile-menu/full-profile-menu"
 import React from "react"
 
 export default function ProfileView({
@@ -9,7 +9,7 @@ export default function ProfileView({
   children: React.ReactNode
 }>) {
   return (
-    <div className="h-screen flex mt-10 items-baseline">
+    <div className="h-screen flex mt-10">
       <ProfileMenu />
       {children}
     </div>
