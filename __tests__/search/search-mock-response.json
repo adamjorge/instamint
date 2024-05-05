@@ -18,21 +18,13 @@
         "minter": {
           "id": 5,
           "username": "oneEleven",
-          "email": "oneeleven@me.com",
-          "password": "minter1",
-          "phoneNumber": null,
           "defaultLanguage": "fr",
           "profileUrl": "",
           "avatarUrl": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true,
-          "is2FAEnabled": false,
-          "isAdmin": false,
-          "createdAt": "2024-04-12T20:12:42.579Z",
-          "updatedAt": "2024-04-12T20:12:42.579Z",
-          "deletedAt": null
+          "isSearchableByEmail": true
         }
       },
       "hashtags": []
@@ -55,21 +47,13 @@
         "minter": {
           "id": 5,
           "username": "twoEleven",
-          "email": "twoeleven@me.com",
-          "password": "minter1",
-          "phoneNumber": null,
           "defaultLanguage": "fr",
           "profileUrl": "",
           "avatarUrl": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true,
-          "is2FAEnabled": false,
-          "isAdmin": false,
-          "createdAt": "2024-04-12T20:12:42.579Z",
-          "updatedAt": "2024-04-12T20:12:42.579Z",
-          "deletedAt": null
+          "isSearchableByEmail": true
         }
       },
       "hashtags": []
@@ -92,21 +76,13 @@
         "minter": {
           "id": 5,
           "username": "fourEleven",
-          "email": "foureleven@me.com",
-          "password": "minter1",
-          "phoneNumber": null,
           "defaultLanguage": "fr",
           "profileUrl": "",
           "avatarUrl": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true,
-          "is2FAEnabled": false,
-          "isAdmin": false,
-          "createdAt": "2024-04-12T20:12:42.579Z",
-          "updatedAt": "2024-04-12T20:12:42.579Z",
-          "deletedAt": null
+          "isSearchableByEmail": true
         }
       },
       "hashtags": []
@@ -129,21 +105,13 @@
         "minter": {
           "id": 5,
           "username": "nineEleven",
-          "email": "nineeleven@me.com",
-          "password": "minter1",
-          "phoneNumber": null,
           "defaultLanguage": "fr",
           "profileUrl": "",
           "avatarUrl": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true,
-          "is2FAEnabled": false,
-          "isAdmin": false,
-          "createdAt": "2024-04-12T20:12:42.579Z",
-          "updatedAt": "2024-04-12T20:12:42.579Z",
-          "deletedAt": null
+          "isSearchableByEmail": true
         }
       },
       "hashtags": []
@@ -153,9 +121,6 @@
     {
       "id": 1,
       "username": "oneEleven",
-      "email": "oneeleven@me.com",
-      "password": "minter1",
-      "phoneNumber": null,
       "defaultLanguage": "fr",
       "profileUrl": "",
       "location": "Paris",
@@ -163,19 +128,11 @@
       "bio": "first bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true,
-      "is2FAEnabled": false,
-      "isAdmin": false,
-      "createdAt": "2024-04-12T20:12:42.579Z",
-      "updatedAt": "2024-04-12T20:12:42.579Z",
-      "deletedAt": null
+      "isSearchableByEmail": true
     },
     {
       "id": 2,
       "username": "twoEleven",
-      "email": "twoeleven@me.com",
-      "password": "minter1",
-      "phoneNumber": null,
       "defaultLanguage": "fr",
       "profileUrl": "",
       "location": "Paris",
@@ -183,19 +140,11 @@
       "bio": "second bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true,
-      "is2FAEnabled": false,
-      "isAdmin": false,
-      "createdAt": "2024-04-12T20:12:42.579Z",
-      "updatedAt": "2024-04-12T20:12:42.579Z",
-      "deletedAt": null
+      "isSearchableByEmail": true
     },
     {
       "id": 4,
       "username": "fourEleven",
-      "email": "foureleven@me.com",
-      "password": "minter1",
-      "phoneNumber": null,
       "defaultLanguage": "fr",
       "profileUrl": "",
       "location": "Paris",
@@ -203,19 +152,11 @@
       "bio": "third bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true,
-      "is2FAEnabled": false,
-      "isAdmin": false,
-      "createdAt": "2024-04-12T20:12:42.579Z",
-      "updatedAt": "2024-04-12T20:12:42.579Z",
-      "deletedAt": null
+      "isSearchableByEmail": true
     },
     {
       "id": 5,
       "username": "nineEleven",
-      "email": "nineeleven@me.com",
-      "password": "minter1",
-      "phoneNumber": null,
       "defaultLanguage": "fr",
       "profileUrl": "",
       "location": "Paris",
@@ -223,12 +164,7 @@
       "bio": "fourth bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true,
-      "is2FAEnabled": false,
-      "isAdmin": false,
-      "createdAt": "2024-04-12T20:12:42.579Z",
-      "updatedAt": "2024-04-12T20:12:42.579Z",
-      "deletedAt": null
+      "isSearchableByEmail": true
     }
   ],
   "teabags": [

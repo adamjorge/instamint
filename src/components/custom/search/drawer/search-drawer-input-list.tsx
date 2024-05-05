@@ -1,6 +1,7 @@
 import { Input } from "@/components/ui/input"
 import { useTranslations } from "next-intl"
 import React from "react"
+
 import SearchPriceInput from "../search-price-input"
 
 export default function SearchDrawerInputList({ ...props }: SearchDrawerInputListProps) {

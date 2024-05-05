@@ -1,5 +1,6 @@
 "use client"
 
+import SignInForm from "@/components/custom/sign-in/sign-in-form"
 import { connectionSchema } from "@/validators/schemas/connectionSchema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { signIn } from "next-auth/react"
@@ -8,8 +9,6 @@ import { useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { z } from "zod"
-
-import SignInForm from "@/components/custom/sign-in/sign-in-form"
 
 export default function SignInWrapper() {
   const searchParams = useSearchParams()

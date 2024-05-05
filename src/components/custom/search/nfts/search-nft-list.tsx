@@ -1,8 +1,9 @@
-import NftCard from "@/components/custom/nfts/nft-card"
+import SearchNftCard from "@/components/custom/search/nfts/search-nft-card"
+import { Link } from "@/config/i18n/locales"
 import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { useTranslations } from "next-intl"
 
-export default function NftList({ nfts }: NftListProps) {
+export default function SearchNftList({ nfts }: NftListProps) {
   const t = useTranslations("search")
 
   return (
@@ -13,7 +14,9 @@ export default function NftList({ nfts }: NftListProps) {
       ) : (
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           {nfts.map((nft) => (
-            <NftCard key={nft.id} {...nft} />
+            <Link href={`/nfts/${nft.id.toString()}`} key={nft.id}>
+              <SearchNftCard key={nft.id} {...nft} />
+            </Link>
           ))}
         </div>
       )}

@@ -1,13 +1,13 @@
-import axios, { isAxiosError } from "axios"
+import { searchMinters } from "@/lib/query/minters/search"
+import { searchNfts } from "@/lib/query/nfts/search"
+import SearchUrlBuilder from "@/lib/query/search/search-url-builder"
+import { searchTeaBags } from "@/lib/query/teabags/search"
 import { MinterSearchMintersSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
 import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
 import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
 import { SearchType } from "@/validators/types/searchType"
-import { searchNfts } from "@/lib/query/nfts/search"
-import { searchMinters } from "@/lib/query/minters/search"
-import { searchTeaBags } from "@/lib/query/teabags/search"
-import SearchUrlBuilder from "@/lib/query/search/search-url-builder"
+import axios, { isAxiosError } from "axios"
 
 export async function fetchSearch(searchTerm: string, minPrice: string, maxPrice: string) {
   if (searchTerm === "") {

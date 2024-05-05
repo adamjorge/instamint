@@ -2,7 +2,7 @@
 
 import { Locale } from "@/config/i18n/locales"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { NextIntlClientProvider, type AbstractIntlMessages } from "next-intl"
+import { type AbstractIntlMessages, NextIntlClientProvider } from "next-intl"
 import React, { useState } from "react"
 
 export default function Providers({

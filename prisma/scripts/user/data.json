@@ -14,5 +14,21 @@
     "password": "$2a$12$sKnAfsv061bllED8.pZ6Qe7ttjWPWtR0dxuClBk404Cs23/CXpqtK",
     "isAdmin": false,
     "minterId": 2
+  },
+  {
+    "id": "3",
+    "name": "notadmin2",
+    "email": "notadmin2@notadmin.com",
+    "password": "$2a$12$sKnAfsv061bllED8.pZ6Qe7ttjWPWtR0dxuClBk404Cs23/CXpqtK",
+    "isAdmin": false,
+    "minterId": 3
+  },
+  {
+    "id": "4",
+    "name": "notadmin3",
+    "email": "notadmin3@notadmin.com",
+    "password": "$2a$12$sKnAfsv061bllED8.pZ6Qe7ttjWPWtR0dxuClBk404Cs23/CXpqtK",
+    "isAdmin": false,
+    "minterId": 4
   }
 ]

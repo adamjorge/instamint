@@ -1,8 +1,17 @@
 import { PrismaClient } from "@prisma/client"
+
 import rawData from "./data.json"
 
 export function createHashtags(prisma: PrismaClient) {
-  const data = rawData.map((hashtag: string) => ({ name: hashtag }))
+  const data: Hashtag[] = rawData.map((hashtag: Hashtag) => ({
+    id: hashtag.id,
+    name: hashtag.name
+  }))
 
   return prisma.hashtag.createMany({ data })
+}
+
+interface Hashtag {
+  id: number
+  name: string
 }

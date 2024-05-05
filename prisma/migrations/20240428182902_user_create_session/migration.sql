@@ -1,3 +1,27 @@
+/*
+  Warnings:
+
+  - You are about to drop the column `emailVerifToken` on the `User` table. All the data in the column will be lost.
+  - You are about to drop the column `emailVerifiedAt` on the `User` table. All the data in the column will be lost.
+  - Made the column `minterId` on table `User` required. This step will fail if there are existing NULL values in that column.
+
+*/
+-- DropForeignKey
+ALTER TABLE "User" DROP CONSTRAINT "User_minterId_fkey";
+
+-- AlterTable
+ALTER TABLE "User" DROP COLUMN "emailVerifToken",
+DROP COLUMN "emailVerifiedAt",
+ADD COLUMN     "emailVerified" TIMESTAMP(3),
+ADD COLUMN     "emailVerifyToken" VARCHAR(255),
+ALTER COLUMN "name" DROP NOT NULL,
+ALTER COLUMN "name" SET DATA TYPE TEXT,
+ALTER COLUMN "email" DROP NOT NULL,
+ALTER COLUMN "email" SET DATA TYPE TEXT,
+ALTER COLUMN "password" DROP NOT NULL,
+ALTER COLUMN "password" SET DATA TYPE TEXT,
+ALTER COLUMN "minterId" SET NOT NULL;
+
 -- CreateTable
 CREATE TABLE "Account" (
     "id" TEXT NOT NULL,
@@ -39,20 +63,6 @@ CREATE TABLE "VerificationRequest" (
     CONSTRAINT "VerificationRequest_pkey" PRIMARY KEY ("id")
 );
 
--- CreateTable
-CREATE TABLE "User" (
-    "id" TEXT NOT NULL,
-    "name" TEXT,
-    "email" TEXT,
-    "emailVerified" TIMESTAMP(3),
-    "image" TEXT,
-    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
-    "minterId" INTEGER NOT NULL,
-
-    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
-);
-
 -- CreateIndex
 CREATE UNIQUE INDEX "Account_providerId_providerAccountId_key" ON "Account"("providerId", "providerAccountId");
 
@@ -67,9 +77,6 @@ CREATE UNIQUE INDEX "VerificationRequest_token_key" ON "VerificationRequest"("to
 
 -- CreateIndex
 CREATE UNIQUE INDEX "VerificationRequest_identifier_token_key" ON "VerificationRequest"("identifier", "token");
-
--- CreateIndex
-CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- AddForeignKey
 ALTER TABLE "Account" ADD CONSTRAINT "Account_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

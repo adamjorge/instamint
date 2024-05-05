@@ -1,6 +1,8 @@
 import { faker } from "@faker-js/faker"
 import { PrismaClient } from "@prisma/client"
 
+import hashtags from "../hashtag/data.json"
+
 const availableLocations = [
   null,
   "Paris, France",
@@ -28,8 +30,12 @@ export async function createNfts(prisma: PrismaClient) {
     location: faker.helpers.arrayElement(availableLocations),
     price: faker.number.float({ min: 0, max: 100, fractionDigits: 2 }),
     description: faker.lorem.paragraph(),
-    isDraft: false
+    isDraft: false,
+    hashtags: {
+      connect: faker.helpers.arrayElements(hashtags, { min: 0, max: 4 })
+    }
   }))
+  const promises = data.map((nft) => prisma.nft.create({ data: nft }))
 
-  return prisma.nft.createMany({ data })
+  return await Promise.all(promises)
 }
