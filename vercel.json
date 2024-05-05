@@ -2,10 +2,10 @@
   "git": {
     "deploymentEnabled": false
   },
-  "crons": {
-    "daily-cleanup": {
-      "path": "/api/users/daily",
+  "crons": [
+    {
+      "path": "/api/users/cron",
       "schedule": "0 5 * * *"
     }
-  }
+  ]
 }

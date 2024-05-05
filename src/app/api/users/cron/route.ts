@@ -1,4 +1,4 @@
-import { deleteMinters } from "@/lib/query/minters/daily/delete"
+import { deleteMinters } from "@/lib/query/minters/delete"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function DELETE() {
