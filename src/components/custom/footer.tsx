@@ -19,10 +19,10 @@ export default function Footer() {
   return (
     <footer className="fixed bottom-0 left-0 right-0 p-4 bg-gray-800 text-white">
       <nav className="flex justify-around">
-        <Link href="/">
+        <Link href="/" aria-label="home">
           <FiHome className="w-6 h-6 text-medium hover:text-sea" />
         </Link>
-        <Drawer open={isOpen} onOpenChange={setIsOpen}>
+        <Drawer open={isOpen} onOpenChange={setIsOpen} aria-label="search">
           <DrawerTrigger>
             <FiSearch className="w-6 h-6 text-medium hover:text-sea" />
           </DrawerTrigger>
@@ -34,7 +34,7 @@ export default function Footer() {
         <button onClick={handleClickOnWIP}>
           <FiHeart className="w-6 h-6 text-medium hover:text-sea" />
         </button>
-        <Link href={`/${locale}/profile/changes`}>
+        <Link href={`/${locale}/profile/changes`} aria-label="profile">
           <FiUser className="w-6 h-6 text-medium hover:text-sea" />
         </Link>
       </nav>

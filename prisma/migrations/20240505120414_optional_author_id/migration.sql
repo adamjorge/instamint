@@ -1,11 +1,5 @@
-/*
-  Warnings:
-
-  - You are about to drop the column `image` on the `User` table. All the data in the column will be lost.
-
-*/
 -- DropForeignKey
-ALTER TABLE "Comment" DROP CONSTRAINT "Comment_minterId_fkey";
+ALTER TABLE "Comment" DROP CONSTRAINT "Comment_authorId_fkey";
 
 -- DropForeignKey
 ALTER TABLE "OriginalContent" DROP CONSTRAINT "OriginalContent_minterId_fkey";
@@ -14,16 +8,13 @@ ALTER TABLE "OriginalContent" DROP CONSTRAINT "OriginalContent_minterId_fkey";
 ALTER TABLE "User" DROP CONSTRAINT "User_minterId_fkey";
 
 -- AlterTable
-ALTER TABLE "Comment" ALTER COLUMN "minterId" DROP NOT NULL;
+ALTER TABLE "Comment" ALTER COLUMN "authorId" DROP NOT NULL;
 
 -- AlterTable
 ALTER TABLE "OriginalContent" ALTER COLUMN "minterId" DROP NOT NULL;
 
--- AlterTable
-ALTER TABLE "User" DROP COLUMN "image";
-
 -- AddForeignKey
-ALTER TABLE "Comment" ADD CONSTRAINT "Comment_minterId_fkey" FOREIGN KEY ("minterId") REFERENCES "Minter"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "Comment" ADD CONSTRAINT "Comment_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "Minter"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "User" ADD CONSTRAINT "User_minterId_fkey" FOREIGN KEY ("minterId") REFERENCES "Minter"("id") ON DELETE CASCADE ON UPDATE CASCADE;

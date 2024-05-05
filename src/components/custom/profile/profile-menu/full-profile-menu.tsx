@@ -7,7 +7,7 @@ import { useState } from "react"
 import { RxHamburgerMenu } from "react-icons/rx"
 
 export default function ProfileMenu() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
@@ -15,19 +15,17 @@ export default function ProfileMenu() {
   return (
     <>
       <div className="fixed flex w-full justify-end">
-        <a className="mr-5 cursor-pointer" onClick={toggleMenu}>
-          <RxHamburgerMenu size={25} />
+        <a className="mr-5 cursor-pointer" onClick={toggleMenu} aria-label="burger">
+          <RxHamburgerMenu size={20} />
         </a>
       </div>
 
       <div
-        className={clsx(
-          "space-y-5 border-r h-full ml-3 pr-3 transition-all animate-fade-right animate-ease-in-out",
-          {
-            "opacity-100": isOpen,
-            "w-0 opacity-0": !isOpen
-          }
-        )}
+        className={clsx("space-y-5 border-r h-full ml-3 pr-3 transition-all duration-500", {
+          "opacity-100": isOpen,
+          "w-0 opacity-0": !isOpen
+        })}
+        aria-label="profile-menu"
       >
         <HowToMenu />
         <Separator />
