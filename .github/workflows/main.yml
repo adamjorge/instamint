@@ -57,6 +57,8 @@ jobs:
           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
           echo "ADMIN_EMAIL=${{ secrets.ADMIN_EMAIL }}" >> .env
           echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> .env
+          echo "NOTADMIN_EMAIL=${{ secrets.NOTADMIN_EMAIL }}" >> .env
+          echo "NOTADMIN_PASSWORD=${{ secrets.NOTADMIN_PASSWORD }}" >> .env
           npm run test:e2e
       - uses: actions/upload-artifact@v4
         if: always()
