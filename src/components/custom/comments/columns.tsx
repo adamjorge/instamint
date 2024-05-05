@@ -44,7 +44,7 @@ export const columns: ColumnDef<Comment>[] = [
     header: "Commented NFT ID"
   },
   {
-    accessorKey: "minterId",
+    accessorKey: "authorId",
     header: "Minter ID"
   },
   {
