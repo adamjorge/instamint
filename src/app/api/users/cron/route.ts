@@ -1,9 +1,9 @@
-import { deleteMinters } from "@/lib/query/minters/delete"
+import { cleanMinters } from "@/lib/query/minters/clean"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function DELETE() {
   try {
-    await deleteMinters()
+    await cleanMinters()
 
     return Response.json("Cleaned up minters")
   } catch (error) {

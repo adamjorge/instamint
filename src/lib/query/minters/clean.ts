@@ -1,7 +1,7 @@
 import prisma from "@/lib/db"
 import { Minter, PrismaPromise, User } from "@prisma/client"
 
-export async function deleteMinters() {
+export async function cleanMinters() {
   const deletionUsersPromises: Array<PrismaPromise<User>> = []
   const deletionMintersPromises: Array<PrismaPromise<Minter>> = []
   const mintersToDelete = new Set<number>()
