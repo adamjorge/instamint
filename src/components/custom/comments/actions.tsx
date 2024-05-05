@@ -42,6 +42,6 @@ type ActionsProps = {
     createdAt: string
     updatedAt: string | null
     nftId: number
-    minterId: number
+    authorId: number | null
   }>
 }

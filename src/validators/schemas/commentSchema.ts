@@ -6,7 +6,7 @@ export const CommentValidationSchema = z.object({
   createdAt: z.string(),
   updatedAt: z.string().nullable(),
   nftId: z.number(),
-  minterId: z.number()
+  authorId: z.number().nullable()
 })
 
 export type Comment = z.infer<typeof CommentValidationSchema>
