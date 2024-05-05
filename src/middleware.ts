@@ -29,7 +29,7 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/(en|es|fr|ja|pt|zh)/:path*", "/admin/:path*"]
+  matcher: ["/", "/(en|es|fr|ja|pt|zh)/:path*", "/login", "/admin/:path*"]
 }
 
 function isRedirecting(url: string) {

@@ -13,20 +13,22 @@ import { z } from "zod"
 export default function SignInWrapper() {
   const searchParams = useSearchParams()
   const error = searchParams.get("error")
-  const logout = searchParams.get("logout")
+  const deleted = searchParams.get("deleted")
 
   useEffect(() => {
-    // Don't remove the setTimeout, it's a way to display toast on page load https://sonner.emilkowal.ski/toast#render-toast-on-page-load
+    // Don't remove the setTimeout, it's a way to display toast on page load after the first render https://sonner.emilkowal.ski/toast#render-toast-on-page-load
     setTimeout(() => {
       if (error) {
         toast.error("Invalid credentials")
       }
 
-      if (logout) {
-        toast.info("You have been logged out")
+      if (deleted) {
+        toast.info(
+          "Your request to delete your account has been successfully received. See you soon!"
+        )
       }
     })
-  }, [error, logout])
+  }, [error, deleted])
 
   const form = useForm<z.infer<typeof connectionSchema>>({
     resolver: zodResolver(connectionSchema),

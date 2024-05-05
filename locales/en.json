@@ -30,5 +30,26 @@
     "accountQuestion": "Don't have an account?",
     "signUp": "Sign up",
     "rights": "© 2024 Instamint. All rights reserved."
+  },
+  "howToMenu": {
+    "howTo": "How to use Instamint",
+    "changeProfile": "Edit profile",
+    "notifications": "Notifications"
+  },
+  "privacyMenu": {
+    "whoCanSee": "Who can see my profile?",
+    "privacy": "Privacy"
+  },
+  "applicationMenu": {
+    "yourApplication": "Your application",
+    "language": "Language"
+  },
+  "profileChanges": {
+    "changeProfile": "Edit profile",
+    "bio": "Bio",
+    "bioWIP": "This feature is still in development.",
+    "deleteAccount": "Delete your account",
+    "deleteAccountConfirmation": "Are you sure you want to delete your account?",
+    "deleteAccountDescription": "This action is irreversible and will delete all your data. Please be sure before proceeding."
   }
 }

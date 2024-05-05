@@ -32,5 +32,26 @@ export const MessageSchema = z.object({
     accountQuestion: z.string(),
     signUp: z.string(),
     rights: z.string()
+  }),
+  howToMenu: z.object({
+    howTo: z.string(),
+    changeProfile: z.string(),
+    notifications: z.string()
+  }),
+  privacyMenu: z.object({
+    whoCanSee: z.string(),
+    privacy: z.string()
+  }),
+  applicationMenu: z.object({
+    yourApplication: z.string(),
+    language: z.string()
+  }),
+  profileChanges: z.object({
+    changeProfile: z.string(),
+    bio: z.string(),
+    bioWIP: z.string(),
+    deleteAccount: z.string(),
+    deleteAccountConfirmation: z.string(),
+    deleteAccountDescription: z.string()
   })
 })

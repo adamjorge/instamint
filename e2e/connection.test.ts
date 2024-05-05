@@ -4,7 +4,7 @@ import dotenv from "dotenv"
 dotenv.config()
 
 if (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD) {
-  throw new Error("Please provide EMAIL_ADMIN and PASSWORD_ADMIN in .env file")
+  throw new Error("Please provide ADMIN_EMAIL and ADMIN_PASSWORD in .env file")
 }
 
 const userAdmin = { email: process.env.ADMIN_EMAIL, password: process.env.ADMIN_PASSWORD }

@@ -1,5 +1,3 @@
-"use client"
-
-export default function Home() {
-  return <></>
+export default function HomePage() {
+  return <p className="flex w-full justify-center">Homepage Under Construction 🚧</p>
 }

@@ -54,8 +54,8 @@ model Comment {
   parentId  Int?
   parent    Comment?  @relation("CommentToComment", fields: [parentId], references: [id])
   nftId     Int
-  authorId  Int
-  author    Minter    @relation(fields: [authorId], references: [id])
+  authorId  Int?
+  author    Minter?   @relation(fields: [authorId], references: [id])
   nft       Nft       @relation(fields: [nftId], references: [id])
   reports   Report[]
   children  Comment[] @relation("CommentToComment")
@@ -84,7 +84,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   minterId      Int
-  minter        Minter    @relation(fields: [minterId], references: [id])
+  minter        Minter    @relation(fields: [minterId], references: [id], onDelete: Cascade)
 }
 
 model Minter {
@@ -124,8 +124,8 @@ model OriginalContent {
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
   nft       Nft?
-  minter    Minter    @relation(fields: [minterId], references: [id])
-  minterId  Int
+  minter    Minter?   @relation(fields: [minterId], references: [id])
+  minterId  Int?
 }
 
 model Report {

@@ -3,7 +3,7 @@ import { auth } from "@/lib/auth"
 import { useLocale } from "next-intl"
 import { redirect } from "next/navigation"
 
-export default async function Page() {
+export default async function LoginPage() {
   const session = await auth()
   const locale = useLocale()
 

@@ -3,10 +3,10 @@
     "check": "Vérifier",
     "loading": "Chargement...",
     "noResults": "Aucun résultat trouvé.",
-    "resultsFor": "Résultats de recherche pour :",
+    "resultsFor": "Résultats de la recherche pour :",
     "noResultsFor": "Aucun résultat trouvé pour :",
     "noResultsSentence": "Aucun résultat trouvé pour le terme de recherche.",
-    "error": "Une erreur est survenue, veuillez réessayer plus tard.",
+    "error": "Une erreur s'est produite, veuillez réessayer plus tard.",
     "searchWelcome": "Bienvenue sur votre page de recherche. C'est ici que vous pouvez rechercher des NFTs ou des créateurs.",
     "nftPrice": "Prix : ${price}",
     "signOut": "Déconnexion"
@@ -22,13 +22,34 @@
     "submit": "Soumettre"
   },
   "login": {
-    "mail": "Email",
-    "connectionInfo": "Il s'agit de l'email que vous avez utilisé pour vous inscrire.",
+    "mail": "E-mail",
+    "connectionInfo": "Il s'agit de l'e-mail que vous avez utilisé pour vous inscrire.",
     "password": "Mot de passe",
     "submit": "Soumettre",
     "login": "Connexion",
     "accountQuestion": "Vous n'avez pas de compte ?",
     "signUp": "S'inscrire",
     "rights": "© 2024 Instamint. Tous droits réservés."
+  },
+  "howToMenu": {
+    "howTo": "Comment utiliser Instamint",
+    "changeProfile": "Modifier le profil",
+    "notifications": "Notifications"
+  },
+  "privacyMenu": {
+    "whoCanSee": "Qui peut voir mon profil ?",
+    "privacy": "Confidentialité"
+  },
+  "applicationMenu": {
+    "yourApplication": "Votre application",
+    "language": "Langue"
+  },
+  "profileChanges": {
+    "changeProfile": "Modifier le profil",
+    "bio": "Biographie",
+    "bioWIP": "Cette fonctionnalité est encore en développement.",
+    "deleteAccount": "Supprimer votre compte",
+    "deleteAccountConfirmation": "Êtes-vous sûr de vouloir supprimer votre compte ?",
+    "deleteAccountDescription": "Cette action est irréversible et supprimera toutes vos données. Veuillez vous assurer avant de continuer."
   }
 }
