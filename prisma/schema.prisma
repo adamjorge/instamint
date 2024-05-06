@@ -102,6 +102,16 @@ model Minter {
   originalContents    OriginalContent[]
   reports             Report[]
   users               User[]
+  followers           Follow[] @relation("follower")
+  following           Follow[] @relation("following")
+}
+
+model Follow {
+  id        String     @id @default(cuid())
+  followerId Int
+  follower  Minter  @relation("follower", fields: [followerId], references: [id])
+  followingId Int
+  following Minter  @relation("following", fields: [followingId], references: [id])
 }
 
 model Nft {
