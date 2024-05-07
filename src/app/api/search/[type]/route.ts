@@ -8,6 +8,14 @@ export async function GET(req: Request, { params }: { params: { type: SearchType
   const search = searchParams.get("search")
   const minPrice = searchParams.get("min") || ""
   const maxPrice = searchParams.get("max") || ""
+  const currentUserId = searchParams.get("currentUserId")
+
+  if (!currentUserId) {
+    return Response.json(
+      { message: "Missing currentUserId parameter" },
+      { status: StatusCodes.BAD_REQUEST }
+    )
+  }
 
   if (!["minters", "nfts", "teabags"].includes(type)) {
     return Response.json({ message: "Invalid type" }, { status: StatusCodes.BAD_REQUEST })
@@ -21,7 +29,13 @@ export async function GET(req: Request, { params }: { params: { type: SearchType
   }
 
   try {
-    const results = await searchByType({ type, searchTerm: search, minPrice, maxPrice })
+    const results = await searchByType({
+      type,
+      searchTerm: search,
+      minPrice,
+      maxPrice,
+      currentUserId
+    })
 
     return Response.json(results)
   } catch (error) {

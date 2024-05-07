@@ -9,7 +9,9 @@ import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teab
 import { SearchType } from "@/validators/types/searchType"
 import axios, { isAxiosError } from "axios"
 
-export async function fetchSearch(searchTerm: string, minPrice: string, maxPrice: string) {
+export async function fetchSearch(searchParameters: SearchParameters) {
+  const { searchTerm, minPrice, maxPrice, currentUserId } = searchParameters
+
   if (searchTerm === "") {
     return { nfts: [], minters: [], teabags: [] }
   }
@@ -22,6 +24,7 @@ export async function fetchSearch(searchTerm: string, minPrice: string, maxPrice
       .setBaseUrl("/api/search/minters")
       .setMinPrice("")
       .setMaxPrice("")
+      .setCurrentUserId(currentUserId.toString())
     const minters = await axios.get<MinterSearchMintersSchemaType>(minterUrlBuilder.build())
     const teabagUrlBuilder = builder
       .setBaseUrl("/api/search/teabags")
@@ -44,14 +47,14 @@ export async function fetchSearch(searchTerm: string, minPrice: string, maxPrice
 }
 
 export async function searchByType(options: SearchOptions) {
-  const { type, searchTerm, minPrice, maxPrice } = options
+  const { type, searchTerm, minPrice, maxPrice, currentUserId } = options
 
   switch (type) {
     case "nfts":
       return await searchNfts({ search: searchTerm, minPrice, maxPrice })
 
     case "minters":
-      return await searchMinters(searchTerm)
+      return await searchMinters(searchTerm, currentUserId)
 
     case "teabags":
       return await searchTeaBags(searchTerm)
@@ -61,9 +64,13 @@ export async function searchByType(options: SearchOptions) {
   }
 }
 
-type SearchOptions = {
-  type: SearchType
+type SearchParameters = {
   searchTerm: string
   minPrice: string
   maxPrice: string
+  currentUserId: string
+}
+
+type SearchOptions = SearchParameters & {
+  type: SearchType
 }

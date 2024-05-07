@@ -1,5 +1,5 @@
 import MinterList from "@/components/custom/minters/minter-list"
-import SearchNftList from "@/components/custom/search/nfts/search-nft-list"
+import SearchNftList from "@/components/custom/nfts/nft-list"
 import TeaBagList from "@/components/custom/teabags/teabag-list"
 import { SearchSchemaType } from "@/validators/schemas/search/searchSchema"
 import { useTranslations } from "next-intl"
