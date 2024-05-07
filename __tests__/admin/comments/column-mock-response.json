@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "header": "Name",
+      "accessorKey": "name"
+    },
+    {
+      "header": "Email",
+      "accessorKey": "email"
+    }
+  ]
+}

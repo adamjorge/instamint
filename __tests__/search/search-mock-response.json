@@ -1,0 +1,178 @@
+{
+  "nfts": [
+    {
+      "id": 1,
+      "description": "Description one",
+      "imageUrl": "https://loremflickr.com/320/240?lock=1&random=1",
+      "price": 0.71,
+      "location": "",
+      "isDraft": false,
+      "createdAt": "2024-04-12T20:12:42.602Z",
+      "originalContentId": 1,
+      "originalContent": {
+        "id": 1,
+        "imageUrl": "https://loremflickr.com/320/240?lock=1&random=1",
+        "createdAt": "2024-04-12T20:12:42.591Z",
+        "updatedAt": "2024-04-12T20:12:42.591Z",
+        "minterId": 5,
+        "minter": {
+          "id": 5,
+          "username": "oneEleven",
+          "defaultLanguage": "fr",
+          "profileUrl": "",
+          "avatarUrl": "",
+          "bio": "",
+          "authorName": null,
+          "isVisible": true,
+          "isSearchableByEmail": true
+        }
+      },
+      "hashtags": []
+    },
+    {
+      "id": 2,
+      "description": "Description two",
+      "imageUrl": "https://loremflickr.com/320/240?lock=2&random=2",
+      "price": 22.54,
+      "location": "",
+      "isDraft": false,
+      "createdAt": "2024-04-12T20:12:42.602Z",
+      "originalContentId": 2,
+      "originalContent": {
+        "id": 2,
+        "imageUrl": "https://loremflickr.com/320/240?lock=2&random=2",
+        "createdAt": "2024-04-12T20:12:42.591Z",
+        "updatedAt": "2024-04-12T20:12:42.591Z",
+        "minterId": 5,
+        "minter": {
+          "id": 5,
+          "username": "twoEleven",
+          "defaultLanguage": "fr",
+          "profileUrl": "",
+          "avatarUrl": "",
+          "bio": "",
+          "authorName": null,
+          "isVisible": true,
+          "isSearchableByEmail": true
+        }
+      },
+      "hashtags": []
+    },
+    {
+      "id": 4,
+      "description": "Description four",
+      "imageUrl": "https://loremflickr.com/320/240?lock=4&random=4",
+      "price": 35.22,
+      "location": "",
+      "isDraft": false,
+      "createdAt": "2024-04-12T20:12:42.602Z",
+      "originalContentId": 4,
+      "originalContent": {
+        "id": 4,
+        "imageUrl": "https://loremflickr.com/320/240?lock=4&random=4",
+        "createdAt": "2024-04-12T20:12:42.591Z",
+        "updatedAt": "2024-04-12T20:12:42.591Z",
+        "minterId": 5,
+        "minter": {
+          "id": 5,
+          "username": "fourEleven",
+          "defaultLanguage": "fr",
+          "profileUrl": "",
+          "avatarUrl": "",
+          "bio": "",
+          "authorName": null,
+          "isVisible": true,
+          "isSearchableByEmail": true
+        }
+      },
+      "hashtags": []
+    },
+    {
+      "id": 9,
+      "description": "Description nine",
+      "imageUrl": "https://loremflickr.com/320/240?lock=9&random=9",
+      "price": 76.44,
+      "location": "",
+      "isDraft": false,
+      "createdAt": "2024-04-12T20:12:42.602Z",
+      "originalContentId": 9,
+      "originalContent": {
+        "id": 9,
+        "imageUrl": "https://loremflickr.com/320/240?lock=9&random=9",
+        "createdAt": "2024-04-12T20:12:42.591Z",
+        "updatedAt": "2024-04-12T20:12:42.591Z",
+        "minterId": 5,
+        "minter": {
+          "id": 5,
+          "username": "nineEleven",
+          "defaultLanguage": "fr",
+          "profileUrl": "",
+          "avatarUrl": "",
+          "bio": "",
+          "authorName": null,
+          "isVisible": true,
+          "isSearchableByEmail": true
+        }
+      },
+      "hashtags": []
+    }
+  ],
+  "minters": [
+    {
+      "id": 1,
+      "username": "oneEleven",
+      "defaultLanguage": "fr",
+      "profileUrl": "",
+      "location": "Paris",
+      "avatarUrl": "https://loremflickr.com/320/240?lock=1&random=1",
+      "bio": "first bio",
+      "authorName": null,
+      "isVisible": true,
+      "isSearchableByEmail": true
+    },
+    {
+      "id": 2,
+      "username": "twoEleven",
+      "defaultLanguage": "fr",
+      "profileUrl": "",
+      "location": "Paris",
+      "avatarUrl": "https://loremflickr.com/320/240?lock=2&random=2",
+      "bio": "second bio",
+      "authorName": null,
+      "isVisible": true,
+      "isSearchableByEmail": true
+    },
+    {
+      "id": 4,
+      "username": "fourEleven",
+      "defaultLanguage": "fr",
+      "profileUrl": "",
+      "location": "Paris",
+      "avatarUrl": "https://loremflickr.com/320/240?lock=4&random=4",
+      "bio": "third bio",
+      "authorName": null,
+      "isVisible": true,
+      "isSearchableByEmail": true
+    },
+    {
+      "id": 5,
+      "username": "nineEleven",
+      "defaultLanguage": "fr",
+      "profileUrl": "",
+      "location": "Paris",
+      "avatarUrl": "https://loremflickr.com/320/240?lock=5&random=5",
+      "bio": "fourth bio",
+      "authorName": null,
+      "isVisible": true,
+      "isSearchableByEmail": true
+    }
+  ],
+  "teabags": [
+    {
+      "id": 3,
+      "name": "sugar",
+      "profileUrl": "",
+      "bio": "first teabag bio"
+    }
+  ]
+}

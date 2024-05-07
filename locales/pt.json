@@ -1,0 +1,55 @@
+{
+  "global": {
+    "check": "Verificar",
+    "loading": "Carregando...",
+    "noResults": "Nenhum resultado encontrado.",
+    "resultsFor": "Resultados da busca para:",
+    "noResultsFor": "Nenhum resultado encontrado para:",
+    "noResultsSentence": "Nenhum resultado encontrado para o termo de busca.",
+    "error": "Ocorreu um erro, por favor, tente novamente mais tarde.",
+    "searchWelcome": "Bem-vindo à sua página de busca. Aqui é onde você pode procurar NFTs ou criadores.",
+    "nftPrice": "Preço: ${price}",
+    "signOut": "Sair"
+  },
+  "search": {
+    "cancel": "Cancelar",
+    "minPrice": "Preço mínimo",
+    "maxPrice": "Preço máximo",
+    "noSearchResultsFor": "Nenhum {type} encontrado",
+    "search": "Buscar",
+    "searchSentence": "Buscar um NFT ou um criador.",
+    "searchPlaceholder": "Buscar...",
+    "submit": "Enviar"
+  },
+  "login": {
+    "mail": "E-mail",
+    "connectionInfo": "Este é o e-mail que você usou para se registrar.",
+    "password": "Senha",
+    "submit": "Enviar",
+    "login": "Login",
+    "accountQuestion": "Não tem uma conta?",
+    "signUp": "Cadastre-se",
+    "rights": "© 2024 Instamint. Todos os direitos reservados."
+  },
+  "howToMenu": {
+    "howTo": "Como usar o Instamint",
+    "changeProfile": "Editar perfil",
+    "notifications": "Notificações"
+  },
+  "privacyMenu": {
+    "whoCanSee": "Quem pode ver meu perfil?",
+    "privacy": "Privacidade"
+  },
+  "applicationMenu": {
+    "yourApplication": "Sua aplicação",
+    "language": "Idioma"
+  },
+  "profileChanges": {
+    "changeProfile": "Editar perfil",
+    "bio": "Biografia",
+    "bioWIP": "Esta funcionalidade ainda está em desenvolvimento.",
+    "deleteAccount": "Excluir sua conta",
+    "deleteAccountConfirmation": "Tem certeza de que deseja excluir sua conta?",
+    "deleteAccountDescription": "Esta ação é irreversível e excluirá todos os seus dados. Por favor, certifique-se antes de continuar."
+  }
+}

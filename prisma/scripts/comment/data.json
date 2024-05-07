@@ -1,0 +1,513 @@
+[
+  {
+    "id": 1,
+    "content": "I really like this NFT",
+    "authorId": 4,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 2,
+    "content": "I'm not a fan of this NFT",
+    "authorId": 2,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 3,
+    "content": "No, you're wrong. This NFT is amazing!",
+    "authorId": 3,
+    "nftId": 1,
+    "parentId": 2
+  },
+  {
+    "id": 4,
+    "content": "I agree with you. This NFT is amazing!",
+    "authorId": 2,
+    "nftId": 1,
+    "parentId": 2
+  },
+  {
+    "id": 5,
+    "content": "I'm not sure how I feel about this NFT",
+    "authorId": 2,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 15,
+    "content": "This is comment 15 by minterId 2",
+    "authorId": 2,
+    "nftId": 1,
+    "parentId": 5
+  },
+  {
+    "id": 16,
+    "content": "Comment 16 by minterId 3",
+    "authorId": 3,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 17,
+    "content": "17th comment by minterId 1",
+    "authorId": 4,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 18,
+    "content": "Number 18 comment by minterId 2",
+    "authorId": 2,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 46,
+    "content": "A NFT comment by minterId 3",
+    "authorId": 3,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 47,
+    "content": "Another NFT comment by minterId 1",
+    "authorId": 4,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 48,
+    "content": "This is NFT comment number 27 by minterId 2",
+    "authorId": 2,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 49,
+    "content": "The 28th NFT comment by minterId 3",
+    "authorId": 3,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 50,
+    "content": "NFT Comment 29 by minterId 1",
+    "authorId": 4,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 51,
+    "content": "The final NFT comment by minterId 2",
+    "authorId": 2,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 52,
+    "content": "Last NFT comment by minterId 3",
+    "authorId": 3,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 53,
+    "content": "Yet another NFT comment by minterId 1",
+    "authorId": 4,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 54,
+    "content": "Another NFT comment by minterId 2",
+    "authorId": 2,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 55,
+    "content": "One more NFT comment by minterId 3",
+    "authorId": 3,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 56,
+    "content": "NFT Comment number 14 by minterId 1",
+    "authorId": 4,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 57,
+    "content": "This is NFT comment 15 by minterId 2",
+    "authorId": 2,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 58,
+    "content": "NFT Comment 16 by minterId 3",
+    "authorId": 3,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 59,
+    "content": "17th NFT comment by minterId 1",
+    "authorId": 4,
+    "nftId": 1,
+    "parentId": null
+  },
+  {
+    "id": 22,
+    "content": "Comment 22 by minterId 3",
+    "authorId": 3,
+    "nftId": 2,
+    "parentId": null
+  },
+  {
+    "id": 60,
+    "content": "Number 18 NFT comment by minterId 2",
+    "authorId": 2,
+    "nftId": 2,
+    "parentId": 60
+  },
+  {
+    "id": 61,
+    "content": "NFT Comment 19 by minterId 3",
+    "authorId": 3,
+    "nftId": 2,
+    "parentId": 60
+  },
+  {
+    "id": 62,
+    "content": "20th NFT comment by minterId 1",
+    "authorId": 4,
+    "nftId": 2,
+    "parentId": null
+  },
+  {
+    "id": 63,
+    "content": "NFT Comment number 21 by minterId 2",
+    "authorId": 2,
+    "nftId": 2,
+    "parentId": 62
+  },
+  {
+    "id": 64,
+    "content": "NFT Comment 22 by minterId 3",
+    "authorId": 3,
+    "nftId": 2,
+    "parentId": null
+  },
+  {
+    "id": 65,
+    "content": "NFT Comment 23 by minterId 1",
+    "authorId": 4,
+    "nftId": 2,
+    "parentId": null
+  },
+  {
+    "id": 66,
+    "content": "Another NFT comment by minterId 2",
+    "authorId": 2,
+    "nftId": 2,
+    "parentId": null
+  },
+  {
+    "id": 67,
+    "content": "A NFT comment by minterId 3",
+    "authorId": 3,
+    "nftId": 2,
+    "parentId": null
+  },
+  {
+    "id": 68,
+    "content": "Another NFT comment by minterId 1",
+    "authorId": 4,
+    "nftId": 2,
+    "parentId": null
+  },
+  {
+    "id": 69,
+    "content": "This is NFT comment number 27 by minterId 2",
+    "authorId": 2,
+    "nftId": 2,
+    "parentId": 68
+  },
+  {
+    "id": 70,
+    "content": "The 28th NFT comment by minterId 3",
+    "authorId": 3,
+    "nftId": 2,
+    "parentId": 68
+  },
+  {
+    "id": 71,
+    "content": "NFT Comment 29 by minterId 1",
+    "authorId": 4,
+    "nftId": 2,
+    "parentId": 68
+  },
+  {
+    "id": 72,
+    "content": "The final NFT comment by minterId 2",
+    "authorId": 2,
+    "nftId": 2,
+    "parentId": null
+  },
+  {
+    "id": 73,
+    "content": "Last NFT comment by minterId 3",
+    "authorId": 3,
+    "nftId": 2,
+    "parentId": null
+  },
+  {
+    "id": 10,
+    "content": "This is another comment by minterId 3",
+    "authorId": 3,
+    "nftId": 2,
+    "parentId": 50
+  },
+  {
+    "id": 23,
+    "content": "Comment 23 by minterId 1",
+    "authorId": 4,
+    "nftId": 3,
+    "parentId": null
+  },
+  {
+    "id": 24,
+    "content": "Another one by minterId 2",
+    "authorId": 2,
+    "nftId": 3,
+    "parentId": null
+  },
+  {
+    "id": 25,
+    "content": "A comment by minterId 3",
+    "authorId": 3,
+    "nftId": 3,
+    "parentId": null
+  },
+  {
+    "id": 26,
+    "content": "Another comment by minterId 1",
+    "authorId": 4,
+    "nftId": 3,
+    "parentId": null
+  },
+  {
+    "id": 27,
+    "content": "This is comment number 27 by minterId 2",
+    "authorId": 2,
+    "nftId": 3,
+    "parentId": null
+  },
+  {
+    "id": 28,
+    "content": "The 28th comment by minterId 3",
+    "authorId": 3,
+    "nftId": 3,
+    "parentId": null
+  },
+  {
+    "id": 29,
+    "content": "Comment 29 by minterId 1",
+    "authorId": 4,
+    "nftId": 3,
+    "parentId": null
+  },
+  {
+    "id": 30,
+    "content": "The final comment by minterId 2",
+    "authorId": 2,
+    "nftId": 3,
+    "parentId": null
+  },
+  {
+    "id": 31,
+    "content": "Last comment by minterId 3",
+    "authorId": 3,
+    "nftId": 3,
+    "parentId": null
+  },
+  {
+    "id": 6,
+    "content": "This NFT speaks to my soul, it's like it was made for me",
+    "authorId": 4,
+    "nftId": 3,
+    "parentId": 60
+  },
+  {
+    "id": 7,
+    "content": "I've seen a lot of NFTs, but this one stands out from the crowd",
+    "authorId": 2,
+    "nftId": 3,
+    "parentId": 59
+  },
+  {
+    "id": 9,
+    "content": "This is another comment by minterId 2",
+    "authorId": 2,
+    "nftId": 3,
+    "parentId": 32
+  },
+  {
+    "id": 19,
+    "content": "Comment 19 by minterId 3",
+    "authorId": 3,
+    "nftId": 4,
+    "parentId": null
+  },
+  {
+    "id": 20,
+    "content": "20th comment by minterId 1",
+    "authorId": 4,
+    "nftId": 4,
+    "parentId": null
+  },
+  {
+    "id": 21,
+    "content": "Comment number 21 by minterId 2",
+    "authorId": 2,
+    "nftId": 4,
+    "parentId": null
+  },
+  {
+    "id": 8,
+    "content": "Another comment by minterId 1",
+    "authorId": 4,
+    "nftId": 4,
+    "parentId": 68
+  },
+  {
+    "id": 32,
+    "content": "Another NFT comment by minterId 1",
+    "authorId": 4,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 33,
+    "content": "Yet another NFT comment by minterId 2",
+    "authorId": 2,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 34,
+    "content": "One more NFT comment by minterId 3",
+    "authorId": 3,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 35,
+    "content": "NFT Comment number 14 by minterId 1",
+    "authorId": 4,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 36,
+    "content": "This is NFT comment 15 by minterId 2",
+    "authorId": 2,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 37,
+    "content": "NFT Comment 16 by minterId 3",
+    "authorId": 3,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 38,
+    "content": "17th NFT comment by minterId 1",
+    "authorId": 4,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 39,
+    "content": "Number 18 NFT comment by minterId 2",
+    "authorId": 2,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 40,
+    "content": "NFT Comment 19 by minterId 3",
+    "authorId": 3,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 41,
+    "content": "20th NFT comment by minterId 1",
+    "authorId": 4,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 42,
+    "content": "NFT Comment number 21 by minterId 2",
+    "authorId": 2,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 43,
+    "content": "NFT Comment 22 by minterId 3",
+    "authorId": 3,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 44,
+    "content": "NFT Comment 23 by minterId 1",
+    "authorId": 4,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 45,
+    "content": "Another NFT comment by minterId 2",
+    "authorId": 2,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 11,
+    "content": "Another comment by minterId 1",
+    "authorId": 4,
+    "nftId": 5,
+    "parentId": null
+  },
+  {
+    "id": 12,
+    "content": "Yet another comment by minterId 2",
+    "authorId": 2,
+    "nftId": 5,
+    "parentId": 1
+  },
+  {
+    "id": 13,
+    "content": "One more comment by minterId 3",
+    "authorId": 3,
+    "nftId": 5,
+    "parentId": 68
+  },
+  {
+    "id": 14,
+    "content": "Comment number 14 by minterId 1",
+    "authorId": 4,
+    "nftId": 5,
+    "parentId": null
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "global": {
+    "check": "Check",
+    "loading": "Loading...",
+    "noResults": "No results found.",
+    "resultsFor": "Search results for:",
+    "noResultsFor": "No results found for:",
+    "noResultsSentence": "No results found for the search term.",
+    "error": "An error occurred, please try again later.",
+    "searchWelcome": "Welcome to your search page. This is where you can search for NFTs or minters.",
+    "nftPrice": "Price: ${price}",
+    "signOut": "Sign out"
+  },
+  "search": {
+    "cancel": "Cancel",
+    "minPrice": "Min. price",
+    "maxPrice": "Max. price",
+    "noSearchResultsFor": "No {type} found",
+    "search": "Search",
+    "searchSentence": "Search an NFT or a minter.",
+    "searchPlaceholder": "Search...",
+    "submit": "Submit"
+  },
+  "login": {
+    "mail": "Mail",
+    "connectionInfo": "This is the email you used to register.",
+    "password": "Password",
+    "submit": "Submit",
+    "login": "Login",
+    "accountQuestion": "Don't have an account?",
+    "signUp": "Sign up",
+    "rights": "© 2024 Instamint. All rights reserved."
+  },
+  "howToMenu": {
+    "howTo": "How to use Instamint",
+    "changeProfile": "Edit profile",
+    "notifications": "Notifications"
+  },
+  "privacyMenu": {
+    "whoCanSee": "Who can see my profile?",
+    "privacy": "Privacy"
+  },
+  "applicationMenu": {
+    "yourApplication": "Your application",
+    "language": "Language"
+  },
+  "profileChanges": {
+    "changeProfile": "Edit profile",
+    "bio": "Bio",
+    "bioWIP": "This feature is still in development.",
+    "deleteAccount": "Delete your account",
+    "deleteAccountConfirmation": "Are you sure you want to delete your account?",
+    "deleteAccountDescription": "This action is irreversible and will delete all your data. Please be sure before proceeding."
+  }
+}

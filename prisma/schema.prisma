@@ -1,0 +1,151 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+model Account {
+  id                 String    @id @default(cuid())
+  userId             String
+  providerType       String
+  providerId         String
+  providerAccountId  String
+  refreshToken       String?
+  accessToken        String?
+  accessTokenExpires DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id])
+
+  @@unique([providerId, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       String
+  expires      DateTime
+  sessionToken String   @unique
+  accessToken  String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
+}
+
+model VerificationRequest {
+  id         String   @id @default(cuid())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([identifier, token])
+}
+
+model Comment {
+  id        Int       @id @default(autoincrement())
+  content   String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+  parentId  Int?
+  parent    Comment?  @relation("CommentToComment", fields: [parentId], references: [id])
+  nftId     Int
+  authorId  Int?
+  author    Minter?   @relation(fields: [authorId], references: [id])
+  nft       Nft       @relation(fields: [nftId], references: [id])
+  reports   Report[]
+  children  Comment[] @relation("CommentToComment")
+}
+
+model Hashtag {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  nfts      Nft[]
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  phoneNumber   String?
+  password      String?
+  emailVerifyToken String?   @db.VarChar(255)
+  is2FAEnabled  Boolean   @default(false)
+  isAdmin       Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  deletedAt     DateTime?
+  accounts      Account[]
+  sessions      Session[]
+  minterId      Int
+  minter        Minter    @relation(fields: [minterId], references: [id], onDelete: Cascade)
+}
+
+model Minter {
+  id                  Int               @id @default(autoincrement())
+  username            String            @unique
+  defaultLanguage     String            @default("fr")
+  profileUrl          String
+  avatarUrl           String
+  bio                 String
+  location            String?
+  authorName          String?
+  isVisible           Boolean           @default(true)
+  isSearchableByEmail Boolean           @default(true)
+  comments            Comment[]
+  originalContents    OriginalContent[]
+  reports             Report[]
+  users               User[]
+}
+
+model Nft {
+  id                Int             @id @default(autoincrement())
+  description       String
+  imageUrl          String
+  price             Float
+  location          String?
+  isDraft           Boolean         @default(true)
+  createdAt         DateTime        @default(now())
+  originalContent   OriginalContent @relation(fields: [originalContentId], references: [id])
+  originalContentId Int             @unique
+  comments          Comment[]
+  hashtags          Hashtag[]
+}
+
+model OriginalContent {
+  id        Int       @id @default(autoincrement())
+  imageUrl  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+  nft       Nft?
+  minter    Minter?   @relation(fields: [minterId], references: [id])
+  minterId  Int?
+}
+
+model Report {
+  id        Int      @id @default(autoincrement())
+  content   String
+  createdAt DateTime @default(now())
+  minterId  Int?
+  teaBagId  Int?
+  commentId Int?
+  minter    Minter?  @relation(fields: [minterId], references: [id])
+  teaBag    TeaBag?  @relation(fields: [teaBagId], references: [id])
+  comment   Comment? @relation(fields: [commentId], references: [id])
+}
+
+model TeaBag {
+  id         Int       @id @default(autoincrement())
+  name       String
+  bio        String
+  profileUrl String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime? @updatedAt
+  reports    Report[]
+}
