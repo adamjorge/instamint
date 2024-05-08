@@ -1,4 +1,5 @@
 import { searchByType } from "@/lib/query/search/search"
+import { checkSearchParams } from "@/lib/utils/checkSearchParams"
 import { SearchType } from "@/validators/types/searchType"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
@@ -8,30 +9,21 @@ export async function GET(req: Request, { params }: { params: { type: SearchType
   const search = searchParams.get("search")
   const minPrice = searchParams.get("min") || ""
   const maxPrice = searchParams.get("max") || ""
-  const currentUserId = searchParams.get("currentUserId")
+  const userId = searchParams.get("currentUserId")
+  const checkProps = { type, search, userId }
+  const checkResponse = checkSearchParams({ ...checkProps })
 
-  if (!currentUserId) {
-    return Response.json(
-      { message: "Missing currentUserId parameter" },
-      { status: StatusCodes.BAD_REQUEST }
-    )
+  if (checkResponse.status !== StatusCodes.OK) {
+    return Response.json({ message: checkResponse.errorMessage }, { status: checkResponse.status })
   }
 
-  if (!["minters", "nfts", "teabags"].includes(type)) {
-    return Response.json({ message: "Invalid type" }, { status: StatusCodes.BAD_REQUEST })
-  }
-
-  if (!search) {
-    return Response.json(
-      { message: "Missing search parameter" },
-      { status: StatusCodes.BAD_REQUEST }
-    )
-  }
+  const searchTerm = search as string
+  const currentUserId = userId as string
 
   try {
     const results = await searchByType({
       type,
-      searchTerm: search,
+      searchTerm,
       minPrice,
       maxPrice,
       currentUserId

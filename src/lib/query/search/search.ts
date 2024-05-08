@@ -12,6 +12,10 @@ import axios, { isAxiosError } from "axios"
 export async function fetchSearch(searchParameters: SearchParameters) {
   const { searchTerm, minPrice, maxPrice, currentUserId } = searchParameters
 
+  if (!currentUserId) {
+    throw new Error("Missing currentUserId parameter")
+  }
+
   if (searchTerm === "") {
     return { nfts: [], minters: [], teabags: [] }
   }
@@ -54,6 +58,10 @@ export async function searchByType(options: SearchOptions) {
       return await searchNfts({ search: searchTerm, minPrice, maxPrice })
 
     case "minters":
+      if (!currentUserId) {
+        throw new Error("Missing currentUserId parameter")
+      }
+
       return await searchMinters(searchTerm, currentUserId)
 
     case "teabags":
@@ -68,7 +76,7 @@ type SearchParameters = {
   searchTerm: string
   minPrice: string
   maxPrice: string
-  currentUserId: string
+  currentUserId: string | undefined
 }
 
 type SearchOptions = SearchParameters & {

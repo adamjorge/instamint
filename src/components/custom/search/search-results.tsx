@@ -1,3 +1,5 @@
+"use client"
+
 import MinterList from "@/components/custom/minters/minter-list"
 import SearchNftList from "@/components/custom/nfts/nft-list"
 import TeaBagList from "@/components/custom/teabags/teabag-list"

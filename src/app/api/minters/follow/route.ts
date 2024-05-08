@@ -18,6 +18,6 @@ export async function POST(req: Request) {
 }
 
 type Payload = {
-  followerId: number
-  followingId: number
+  followerId: string
+  followingId: string
 }

@@ -1,7 +1,10 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
 import Image from "next/image"
+import { AiOutlineCheck } from "react-icons/ai"
 
 export default function MinterCard(minter: MinterSearchMinterSchemaType) {
   return (
@@ -18,7 +21,13 @@ export default function MinterCard(minter: MinterSearchMinterSchemaType) {
         <CardDescription>{minter.bio}</CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button>Follow</Button>
+        {minter.isFollowed ? (
+          <Button className="bg-dark flex space-x-1">
+            <span>Followed</span> <AiOutlineCheck />
+          </Button>
+        ) : (
+          <Button>Follow</Button>
+        )}
       </CardFooter>
     </Card>
   )
