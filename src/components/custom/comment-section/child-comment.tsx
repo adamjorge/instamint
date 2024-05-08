@@ -1,8 +1,9 @@
+import ReplySection from "@/components/custom/comment-section/reply-section/reply-section"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import useRelativeTime from "@/hooks/useRelativeTime"
 import { ChildCommentType } from "@/validators/schemas/nfts/comments/commentSchema"
 
-export default function ChildComment({ comment }: ChildCommentProps) {
+export default function ChildComment({ comment, nftId, parentId }: ChildCommentProps) {
   const relativeTime = useRelativeTime(comment.createdAt)
 
   return (
@@ -18,6 +19,7 @@ export default function ChildComment({ comment }: ChildCommentProps) {
         <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
           {comment.content}
         </p>
+        <ReplySection nftId={nftId} parentId={parentId} />
       </div>
     </div>
   )
@@ -25,4 +27,6 @@ export default function ChildComment({ comment }: ChildCommentProps) {
 
 type ChildCommentProps = {
   comment: ChildCommentType
+  nftId: number
+  parentId: number
 }

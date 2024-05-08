@@ -43,7 +43,7 @@ export default function CommentSection({ nftId }: { nftId: number }) {
             <Collapsible className="space-y-4">
               <CollapsibleContent className="space-y-4">
                 {visibleComments.map((comment) => (
-                  <Comment key={comment.id} comment={comment} />
+                  <Comment key={comment.id} nftId={nftId} comment={comment} />
                 ))}
               </CollapsibleContent>
               <CollapsibleTrigger asChild>
