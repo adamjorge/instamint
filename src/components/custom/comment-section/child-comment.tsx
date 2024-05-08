@@ -16,7 +16,7 @@ export default function ChildComment({ comment, nftId, parentId }: ChildCommentP
           @{comment.author.username}
           <div className="text-gray-500 text-xs dark:text-gray-400">{relativeTime}</div>
         </h4>
-        <p className="text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
+        <p className="text-md text-gray-700 dark:text-gray-400 leading-relaxed">
           {comment.content}
         </p>
         <ReplySection nftId={nftId} parentId={parentId} />

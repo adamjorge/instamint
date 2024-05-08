@@ -3,7 +3,7 @@ import { ReplyButtonContentType } from "@/validators/types/replyButtonContentTyp
 
 export default function ReplyButton({ content, onClick }: ReplyButtonProps) {
   return (
-    <Button size="sm" variant="default" onClick={onClick}>
+    <Button size="sm" variant="default" onClick={onClick} className="my-2">
       {content}
     </Button>
   )

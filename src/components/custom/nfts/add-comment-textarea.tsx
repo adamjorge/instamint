@@ -1,25 +1,24 @@
 import { Textarea } from "@/components/ui/textarea"
+import { maxCommentLength } from "@/constants/maxCommentLength"
 import { ChangeEvent } from "react"
 
-export default function ReplyTextArea({ value, onChange }: ReplyInputProps) {
-  const maxReplyLength = 300
-  let textAreaCount = value.length
-  const handleTextAreaChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    onChange(e)
-    textAreaCount = e.target.value.length
-  }
-
+export default function AddCommentTextarea({
+  value,
+  onChange,
+  placeholder,
+  count
+}: AddCommentTextareaProps) {
   return (
     <div>
       <Textarea
         value={value}
-        onChange={handleTextAreaChange}
-        placeholder="Reply..."
+        onChange={onChange}
+        placeholder={placeholder}
         className="input input-bordered w-full"
-        maxLength={maxReplyLength}
+        maxLength={maxCommentLength}
       />
       <p className="text-sm text-muted-foreground mt-2">
-        {textAreaCount}/{maxReplyLength}
+        {count}/{maxCommentLength}
       </p>
       <p className="text-sm text-muted-foreground mt-2">
         You can @mention other users and organizations.
@@ -28,7 +27,9 @@ export default function ReplyTextArea({ value, onChange }: ReplyInputProps) {
   )
 }
 
-type ReplyInputProps = {
+type AddCommentTextareaProps = {
   value: string
+  count: number
+  placeholder: string
   onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void
 }

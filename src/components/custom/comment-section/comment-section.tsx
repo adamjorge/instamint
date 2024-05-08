@@ -35,8 +35,8 @@ export default function CommentSection({ nftId }: { nftId: number }) {
   const visibleComments = showAllComments ? data.slice(0, numDisplayedComments) : []
 
   return (
-    <div className="px-4 py-6 md:px-6 md:py-12 lg:py-16">
-      <div className="prose prose-gray mx-auto max-w-6xl dark:prose-invert">
+    <div className="mb-4">
+      <div className="prose prose-gray mx-auto dark:prose-invert">
         <div className="grid gap-6">
           <h2 className="font-semibold text-xl">{commentsCount} Comments</h2>
           {data.length > 0 && (
