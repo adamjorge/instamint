@@ -119,3 +119,6 @@ ALTER TABLE "_HashtagToNft" ADD CONSTRAINT "_HashtagToNft_A_fkey" FOREIGN KEY ("
 
 -- AddForeignKey
 ALTER TABLE "_HashtagToNft" ADD CONSTRAINT "_HashtagToNft_B_fkey" FOREIGN KEY ("B") REFERENCES "Nft"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Modify Sequence
+ALTER SEQUENCE "Comment_id_seq" RESTART WITH 100;
