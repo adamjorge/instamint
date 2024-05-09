@@ -11,7 +11,7 @@ export default function MinterList({ minters }: MinterListProps) {
       {minters.length === 0 ? (
         <p className="text-center">{t("noSearchResultsFor", { type: "Minters" })}</p>
       ) : (
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-8">
           {minters.map((minter) => (
             <MinterCard key={minter.id} {...minter} />
           ))}

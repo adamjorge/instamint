@@ -12,7 +12,7 @@ export default function NftList({ nfts }: NftListProps) {
       {nfts.length === 0 ? (
         <p className="text-center">{t("noSearchResultsFor", { type: "NFTs" })}</p>
       ) : (
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-8">
           {nfts.map((nft) => (
             <Link href={`/nfts/${nft.id.toString()}`} key={nft.id}>
               <NftCard key={nft.id} {...nft} />

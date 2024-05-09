@@ -4,8 +4,8 @@ import Image from "next/image"
 
 export default function NftCard(nft: NftSearchNftSchemaType) {
   return (
-    <Card className="bg-muted m-4">
-      <CardHeader>
+    <Card className="bg-muted ml-2 mr-5 md:mr-2 xl:mr-3">
+      <CardHeader className="flex flex-col space-y-5">
         <Image
           className="self-center"
           src={nft.imageUrl}
