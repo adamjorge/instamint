@@ -2,6 +2,7 @@ import { auth } from "@/lib/auth"
 import createNftComment from "@/lib/query/nfts/createNftComment"
 import searchNftComments from "@/lib/query/nfts/searchNftComments"
 import { isValidRequest } from "@/lib/query/nfts/validate-request"
+import moderation from "@/lib/utils/moderation/moderate"
 import {
   CreateNftCommentType,
   createNftCommentSchema
@@ -44,6 +45,7 @@ export async function POST(req: Request, { params }: { params: { id: string } })
       return Response.json({ message: "Comment is too long" }, { status: StatusCodes.BAD_REQUEST })
     }
 
+    data.content = moderation.clean(data.content)
     const comment = await createNftComment(authorId, data)
 
     return Response.json(comment)
