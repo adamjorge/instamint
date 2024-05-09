@@ -1,13 +1,17 @@
 import prisma from "@/lib/db"
+import { getMinterByUserId } from "@/lib/query/minters/getMinterByUserId"
 
-export async function followMinter(followerId: string, followingId: string) {
-  const followerIdNumber = parseInt(followerId, 10)
-  const followingIdNumber = parseInt(followingId, 10)
+export async function followMinter(followerId: string, followingId: number) {
+  const user = await getMinterByUserId(followerId)
+
+  if (!user?.minterId) {
+    throw new Error("Minter not found")
+  }
 
   return await prisma.follow.create({
     data: {
-      followerId: followerIdNumber,
-      followingId: followingIdNumber
+      followerId: user.minterId,
+      followingId
     }
   })
 }

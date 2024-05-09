@@ -2,23 +2,32 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { followMinter } from "@/lib/query/minters/follow"
+import { follow } from "@/lib/query/minters/followAction"
 import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
 import { useMutation } from "@tanstack/react-query"
 import { clsx } from "clsx"
+import type { Session } from "next-auth"
 import Image from "next/image"
 import { useCallback, useState } from "react"
 import { AiOutlineCheck } from "react-icons/ai"
 
-export default function MinterCard(minter: MinterSearchMinterSchemaType) {
+export default function MinterCard({
+  minter,
+  session
+}: {
+  minter: MinterSearchMinterSchemaType
+  session: Session
+}) {
   const [isFollowed, setIsFollowed] = useState(minter.isFollowed)
   const mutation = useMutation({
-    mutationFn: () => followMinter()
+    mutationFn: () => follow(session.user.id, minter.id.toString()),
+    onSuccess: () => {
+      setIsFollowed(true)
+    }
   })
   const handleClickOnFollow = useCallback(() => {
     mutation.mutate()
-    setIsFollowed(!isFollowed)
-  }, [isFollowed, mutation])
+  }, [mutation])
 
   return (
     <Card className="bg-muted ml-2 mr-5 md:mr-2 xl:mr-3">

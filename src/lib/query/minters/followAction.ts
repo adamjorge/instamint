@@ -1,6 +1,6 @@
 import axios, { isAxiosError } from "axios"
 
-export default async function follow(followerId: string, followingId: string) {
+export async function follow(followerId: string, followingId: string) {
   try {
     const response = await axios.post("/api/minters/follow", {
       followerId,

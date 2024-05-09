@@ -1,9 +1,9 @@
 import prisma from "@/lib/db"
 
-export function getMinterByUserId() {
+export function getMinterByUserId(userId: string) {
   return prisma.user.findFirst({
     where: {
-      id: "1"
+      id: userId
     },
     include: {
       minter: true
