@@ -5,7 +5,11 @@ import {
 import axios, { isAxiosError } from "axios"
 
 export default async function postNftComment(data: CreateNftCommentType) {
-  const { nftId } = data
+  const { content, nftId } = data
+
+  if (content.length > 300) {
+    throw new Error("Comment is too long")
+  }
 
   try {
     const response = await axios.post(`/api/nfts/${nftId.toString()}/comments`, data)

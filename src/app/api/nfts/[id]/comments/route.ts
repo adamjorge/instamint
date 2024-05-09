@@ -39,6 +39,11 @@ export async function POST(req: Request, { params }: { params: { id: string } })
   try {
     const json = (await req.json()) as CreateNftCommentType
     const data = createNftCommentSchema.parse(json)
+
+    if (data.content.length > 300) {
+      return Response.json({ message: "Comment is too long" }, { status: StatusCodes.BAD_REQUEST })
+    }
+
     const comment = await createNftComment(authorId, data)
 
     return Response.json(comment)
