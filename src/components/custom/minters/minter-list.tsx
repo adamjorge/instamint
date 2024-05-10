@@ -1,4 +1,4 @@
-import MinterCard from "@/components/custom/minters/minter-card"
+import MinterWrapper from "@/components/custom/minters/minter-wrapper"
 import { MinterSearchMintersSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
 import type { Session } from "next-auth"
 import { useTranslations } from "next-intl"
@@ -14,7 +14,7 @@ export default function MinterList({ minters, session }: MinterListProps) {
       ) : (
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-8">
           {minters.map((minter) => (
-            <MinterCard key={minter.id} session={session} minter={minter} />
+            <MinterWrapper key={minter.id} session={session} minter={minter} />
           ))}
         </div>
       )}

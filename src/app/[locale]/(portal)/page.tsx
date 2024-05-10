@@ -1,3 +1,5 @@
+import Feed from "@/components/custom/feed/feed"
+
 export default function HomePage() {
-  return <p className="flex w-full justify-center">Homepage Under Construction 🚧</p>
+  return <Feed />
 }

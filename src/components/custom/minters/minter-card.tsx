@@ -2,32 +2,13 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { follow } from "@/lib/query/minters/followAction"
 import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
-import { useMutation } from "@tanstack/react-query"
 import { clsx } from "clsx"
-import type { Session } from "next-auth"
 import Image from "next/image"
-import { useCallback, useState } from "react"
 import { AiOutlineCheck } from "react-icons/ai"
 
-export default function MinterCard({
-  minter,
-  session
-}: {
-  minter: MinterSearchMinterSchemaType
-  session: Session
-}) {
-  const [isFollowed, setIsFollowed] = useState(minter.isFollowed)
-  const mutation = useMutation({
-    mutationFn: () => follow(session.user.id, minter.id.toString()),
-    onSuccess: () => {
-      setIsFollowed(true)
-    }
-  })
-  const handleClickOnFollow = useCallback(() => {
-    mutation.mutate()
-  }, [mutation])
+export default function MinterCard({ ...props }: MinterCardProps) {
+  const { minter, isFollowed, handleClickOnFollowButton } = props
 
   return (
     <Card className="bg-muted ml-2 mr-5 md:mr-2 xl:mr-3">
@@ -43,7 +24,7 @@ export default function MinterCard({
         <CardDescription>{minter.bio}</CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button className={clsx({ "bg-medium": isFollowed })} onClick={handleClickOnFollow}>
+        <Button className={clsx({ "bg-medium": isFollowed })} onClick={handleClickOnFollowButton}>
           {isFollowed ? (
             <div className="flex space-x-1">
               <span>Followed</span>
@@ -56,4 +37,10 @@ export default function MinterCard({
       </CardFooter>
     </Card>
   )
+}
+
+type MinterCardProps = {
+  minter: MinterSearchMinterSchemaType
+  isFollowed: boolean
+  handleClickOnFollowButton: () => void
 }

@@ -69,22 +69,22 @@ model Hashtag {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  phoneNumber   String?
-  password      String?
+  id               String    @id @default(cuid())
+  name             String?
+  email            String?   @unique
+  emailVerified    DateTime?
+  phoneNumber      String?
+  password         String?
   emailVerifyToken String?   @db.VarChar(255)
-  is2FAEnabled  Boolean   @default(false)
-  isAdmin       Boolean   @default(false)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  deletedAt     DateTime?
-  accounts      Account[]
-  sessions      Session[]
-  minterId      Int
-  minter        Minter    @relation(fields: [minterId], references: [id], onDelete: Cascade)
+  is2FAEnabled     Boolean   @default(false)
+  isAdmin          Boolean   @default(false)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  deletedAt        DateTime?
+  accounts         Account[]
+  sessions         Session[]
+  minterId         Int
+  minter           Minter    @relation(fields: [minterId], references: [id], onDelete: Cascade)
 }
 
 model Minter {
@@ -102,16 +102,17 @@ model Minter {
   originalContents    OriginalContent[]
   reports             Report[]
   users               User[]
-  followers           Follow[] @relation("follower")
-  following           Follow[] @relation("following")
+  followers           Follow[]          @relation("follower")
+  following           Follow[]          @relation("following")
 }
 
 model Follow {
-  id        String     @id @default(cuid())
-  followerId Int
-  follower  Minter  @relation("follower", fields: [followerId], references: [id])
+  followerId  Int
+  follower    Minter @relation("follower", fields: [followerId], references: [id])
   followingId Int
-  following Minter  @relation("following", fields: [followingId], references: [id])
+  following   Minter @relation("following", fields: [followingId], references: [id])
+ 
+  @@id(name: "followId", [followerId, followingId])
 }
 
 model Nft {
