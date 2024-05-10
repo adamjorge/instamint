@@ -1,5 +1,6 @@
 import CommentSection from "@/components/custom/comment-section/comment-section"
 import { Badge } from "@/components/ui/badge"
+import { Link } from "@/config/i18n/locales"
 import useRelativeTime from "@/hooks/useRelativeTime"
 import { NftType } from "@/validators/schemas/nfts/nftSchema"
 import Image from "next/image"
@@ -19,9 +20,11 @@ export default function NftDetails({ nft }: NftDetailsProps) {
       </div>
       <div className="flex flex-wrap items-center mb-6">
         {nft.hashtags.map((hashtag) => (
-          <Badge key={hashtag.id} className="mr-2 mb-2" variant="secondary">
-            #{hashtag.name}
-          </Badge>
+          <Link href={`/search?search=${hashtag.name}`} key={hashtag.id}>
+            <Badge key={hashtag.id} className="mr-2 mb-2" variant="secondary">
+              #{hashtag.name}
+            </Badge>
+          </Link>
         ))}
       </div>
       <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
