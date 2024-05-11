@@ -31,8 +31,10 @@ export default function PortalLayout({
       <body className={inter.className}>
         <main className="min-h-screen">
           <Providers {...i18nProps}>
-            <div className="flex flex-col w-full">
-              <LanguageSelector />
+            <div className="flex flex-col w-full mt-5">
+              <div className="ml-5">
+                <LanguageSelector />
+              </div>
               {children}
             </div>
           </Providers>

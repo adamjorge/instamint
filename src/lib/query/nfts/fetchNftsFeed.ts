@@ -1,9 +1,11 @@
 import { feedSchema } from "@/validators/schemas/nfts/feedSchema"
 import axios, { isAxiosError } from "axios"
 
-export async function fetchNftsFeed() {
+export async function fetchNftsFeed(cursor: number, minterId?: number) {
   try {
-    const response = await axios.get("/api/nfts/feed")
+    const response = minterId
+      ? await axios.get(`/api/nfts/feed/${minterId.toString()}?cursor=${cursor.toString()}`)
+      : await axios.get(`/api/nfts/feed?cursor=${cursor.toString()}`)
     const nfts = feedSchema.parse(response.data)
 
     return nfts

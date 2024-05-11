@@ -1,7 +1,8 @@
 import { nftsFeed } from "@/lib/query/nfts/nftsFeed"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
-export async function GET(req: Request) {
+export async function GET(req: Request, { params }: { params: { connectedMinterId: string } }) {
+  const { connectedMinterId } = params
   const { searchParams } = new URL(req.url)
   const cursor = searchParams.get("cursor")
 
@@ -10,7 +11,7 @@ export async function GET(req: Request) {
   }
 
   try {
-    const nfts = await nftsFeed(parseInt(cursor, 10))
+    const nfts = await nftsFeed(parseInt(cursor, 10), connectedMinterId)
 
     return Response.json(nfts)
   } catch (error) {

@@ -58,7 +58,8 @@ const config = {
         lime: "#b3ff80",
         dark: "#4a504d",
         medium: "#b7c8ba",
-        light: "#f5f5f5"
+        light: "#f5f5f5",
+        error: "#ff4d4f"
       },
       borderRadius: {
         lg: "var(--radius)",

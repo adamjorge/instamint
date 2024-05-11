@@ -18,4 +18,6 @@ export const nftFeedSchema = z.object({
   originalContent: originalContentFeedSchema
 })
 
+export type NftFeedType = z.infer<typeof nftFeedSchema>
+
 export const feedSchema = z.array(nftFeedSchema)
