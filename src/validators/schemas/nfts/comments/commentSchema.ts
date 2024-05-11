@@ -5,6 +5,9 @@ const minterSchema = z.object({
   username: z.string(),
   avatarUrl: z.string()
 })
+
+export type MinterType = z.infer<typeof minterSchema>
+
 const originalContentSchema = z.object({
   minter: minterSchema
 })
