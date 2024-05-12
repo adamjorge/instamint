@@ -1,4 +1,4 @@
-import { SignUpFormData } from "@/components/custom/signup/submit-handler"
+import { SignUpFormData } from "@/components/custom/sign-up/submit-handler"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Control } from "react-hook-form"

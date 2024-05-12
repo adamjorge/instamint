@@ -1,15 +1,18 @@
 {
   "global": {
-    "check": "確認",
+    "check": "チェック",
     "loading": "読み込み中...",
-    "noResults": "結果が見つかりませんでした。",
-    "resultsFor": "検索結果：",
-    "noResultsFor": "検索結果が見つかりませんでした：",
-    "noResultsSentence": "検索語句に一致する結果が見つかりませんでした。",
-    "error": "エラーが発生しました。後でもう一度お試しください。",
-    "searchWelcome": "検索ページへようこそ。ここではNFTや作成者を検索できます。",
-    "nftPrice": "価格：${price}",
-    "signOut": "ログアウト"
+    "noResults": "結果が見つかりません。",
+    "resultsFor": "検索結果:",
+    "noResultsFor": "該当する結果が見つかりません:",
+    "noResultsSentence": "検索語に対する結果が見つかりません。",
+    "error": "エラーが発生しました。後ほど再試行してください。",
+    "searchWelcome": "検索ページへようこそ。ここでNFTやミンターを検索できます。",
+    "nftPrice": "価格: ${price}",
+    "signOut": "サインアウト",
+    "moreDetails": "詳細",
+    "forYouFeed": "あなたのために",
+    "followedFeed": "フォロー中"
   },
   "search": {
     "cancel": "キャンセル",
@@ -17,27 +20,27 @@
     "maxPrice": "最高価格",
     "noSearchResultsFor": "{type}が見つかりません",
     "search": "検索",
-    "searchSentence": "NFTや作成者を検索します。",
+    "searchSentence": "NFTまたはミンターを検索します。",
     "searchPlaceholder": "検索...",
-    "submit": "送信"
+    "submit": "提出"
   },
   "login": {
     "mail": "メール",
-    "connectionInfo": "これは登録に使用したメールアドレスです。",
+    "connectionInfo": "これは登録時に使用したメールです。",
     "password": "パスワード",
-    "submit": "送信",
+    "submit": "提出",
     "login": "ログイン",
-    "accountQuestion": "アカウントをお持ちでないですか？",
+    "accountQuestion": "アカウントを持っていませんか？",
     "signUp": "サインアップ",
-    "rights": "© 2024 Instamint. All rights reserved."
+    "rights": "© 2024 Instamint。すべての権利が保護されています。"
   },
   "howToMenu": {
     "howTo": "Instamintの使い方",
-    "changeProfile": "プロフィールを変更",
+    "changeProfile": "プロファイルを編集",
     "notifications": "通知"
   },
   "privacyMenu": {
-    "whoCanSee": "プロフィールを見ることができる人は？",
+    "whoCanSee": "誰が私のプロファイルを見ることができますか？",
     "privacy": "プライバシー"
   },
   "applicationMenu": {
@@ -45,11 +48,11 @@
     "language": "言語"
   },
   "profileChanges": {
-    "changeProfile": "プロフィールを変更",
-    "bio": "自己紹介",
-    "bioWIP": "この機能はまだ開発中です。",
-    "deleteAccount": "アカウントを削除",
+    "changeProfile": "プロファイルを編集",
+    "bio": "バイオ",
+    "bioWIP": "この機能は現在開発中です。",
+    "deleteAccount": "アカウントを削除する",
     "deleteAccountConfirmation": "本当にアカウントを削除しますか？",
-    "deleteAccountDescription": "この操作は取り消せず、すべてのデータが削除されます。続行する前にご確認ください。"
+    "deleteAccountDescription": "この操作は取り消し不能で、すべてのデータが削除されます。進行する前に確認してください。"
   }
 }

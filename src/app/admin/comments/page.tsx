@@ -8,6 +8,7 @@ import type { Comments } from "@/validators/schemas/commentSchema"
 import { useQuery } from "@tanstack/react-query"
 import type { ColumnDef } from "@tanstack/react-table"
 import { useState } from "react"
+import Spinner from "@/components/custom/spinner"
 
 export default function Comments() {
   const [page, setPage] = useState(1)
@@ -17,7 +18,7 @@ export default function Comments() {
   })
 
   if (isPending) {
-    return <div>Loading...</div>
+    return <Spinner />
   }
 
   if (error) {

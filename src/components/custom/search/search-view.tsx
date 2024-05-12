@@ -1,6 +1,7 @@
 "use client"
 
 import SearchResults from "@/components/custom/search/search-results"
+import Spinner from "@/components/custom/spinner"
 import { fetchSearch } from "@/lib/query/search/search"
 import { useQuery } from "@tanstack/react-query"
 import type { Session } from "next-auth"
@@ -34,7 +35,7 @@ export default function SearchView({ session }: { session: Session }) {
   }
 
   if (isPending) {
-    return <div className="text-center">{t("loading")}</div>
+    return <Spinner />
   }
 
   if (error) {

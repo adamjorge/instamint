@@ -2,37 +2,29 @@
 
 import FeedList from "@/components/custom/feed/feed-list"
 import Spinner from "@/components/custom/spinner"
-import { fetchNftsFeed } from "@/lib/query/nfts/fetchNftsFeed"
-import { useInfiniteQuery } from "@tanstack/react-query"
+import { useInfiniteScroll } from "@/hooks/useInfiniteScroll"
 import { useTranslations } from "next-intl"
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
+import { useInView } from "react-intersection-observer"
 
 export default function Feed({ minterId }: { minterId: number }) {
   const t = useTranslations("global")
+  const { ref, inView } = useInView()
   const [fyp, setFyp] = useState(true)
   const iconSize = 25
-  const { data, error, isPending, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery({
-    queryKey: ["feed", fyp],
-    queryFn: async ({ pageParam }: { pageParam: number }) => {
-      const cursor = Math.floor(pageParam / 5)
-
-      if (fyp) {
-        return await fetchNftsFeed(cursor)
-      }
-
-      return await fetchNftsFeed(cursor, minterId)
-    },
-    initialPageParam: 0,
-    getNextPageParam: (allPages) => allPages.length + 1
-  })
+  const { data, error, isPending, isFetchingNextPage, fetchNextPage, hasNextPage } =
+    useInfiniteScroll(fyp, minterId)
   const handleClickOnFypButton = useCallback(() => {
     setFyp(!fyp)
   }, [fyp])
-  const handleScroll = useCallback(async () => {
-    await fetchNextPage()
-  }, [fetchNextPage])
 
-  if (isPending || isFetching) {
+  useEffect(() => {
+    if (inView && hasNextPage) {
+      fetchNextPage().catch((err: unknown) => <>{err as string}</>)
+    }
+  }, [inView, fetchNextPage, hasNextPage])
+
+  if (isPending || !data) {
     return <Spinner />
   }
 
@@ -41,7 +33,6 @@ export default function Feed({ minterId }: { minterId: number }) {
   }
 
   const feedListProps = {
-    handleScroll,
     hasNextPage,
     fyp,
     data,
@@ -49,5 +40,12 @@ export default function Feed({ minterId }: { minterId: number }) {
     handleClickOnFypButton
   }
 
-  return <FeedList {...feedListProps} />
+  return (
+    <>
+      <FeedList {...feedListProps} />
+      <div ref={ref} className="pb-80">
+        {isFetchingNextPage && <Spinner />}
+      </div>
+    </>
+  )
 }

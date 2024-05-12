@@ -9,7 +9,10 @@
     "error": "An error occurred, please try again later.",
     "searchWelcome": "Welcome to your search page. This is where you can search for NFTs or minters.",
     "nftPrice": "Price: ${price}",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "moreDetails": "More details",
+    "forYouFeed": "For you",
+    "followedFeed": "Followed"
   },
   "search": {
     "cancel": "Cancel",

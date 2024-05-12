@@ -14,7 +14,7 @@ export default function PortalLayout({
 
   return (
     <div>
-      <div className="flex w-full justify-between border-b pb-8" aria-label="header">
+      <div className="flex w-full justify-between border-b pb-8 mb-10" aria-label="header">
         <form
           action={async () => {
             "use server"

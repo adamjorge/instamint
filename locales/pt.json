@@ -3,32 +3,35 @@
     "check": "Verificar",
     "loading": "Carregando...",
     "noResults": "Nenhum resultado encontrado.",
-    "resultsFor": "Resultados da busca para:",
+    "resultsFor": "Resultados da pesquisa por:",
     "noResultsFor": "Nenhum resultado encontrado para:",
-    "noResultsSentence": "Nenhum resultado encontrado para o termo de busca.",
-    "error": "Ocorreu um erro, por favor, tente novamente mais tarde.",
-    "searchWelcome": "Bem-vindo à sua página de busca. Aqui é onde você pode procurar NFTs ou criadores.",
+    "noResultsSentence": "Nenhum resultado encontrado para o termo de pesquisa.",
+    "error": "Ocorreu um erro, tente novamente mais tarde.",
+    "searchWelcome": "Bem-vindo à sua página de pesquisa. Aqui você pode buscar por NFTs ou minters.",
     "nftPrice": "Preço: ${price}",
-    "signOut": "Sair"
+    "signOut": "Sair",
+    "moreDetails": "Mais detalhes",
+    "forYouFeed": "Para você",
+    "followedFeed": "Seguidos"
   },
   "search": {
     "cancel": "Cancelar",
-    "minPrice": "Preço mínimo",
-    "maxPrice": "Preço máximo",
+    "minPrice": "Preço mín.",
+    "maxPrice": "Preço máx.",
     "noSearchResultsFor": "Nenhum {type} encontrado",
-    "search": "Buscar",
-    "searchSentence": "Buscar um NFT ou um criador.",
-    "searchPlaceholder": "Buscar...",
+    "search": "Pesquisar",
+    "searchSentence": "Pesquise um NFT ou um minter.",
+    "searchPlaceholder": "Pesquisar...",
     "submit": "Enviar"
   },
   "login": {
-    "mail": "E-mail",
-    "connectionInfo": "Este é o e-mail que você usou para se registrar.",
+    "mail": "Email",
+    "connectionInfo": "Este é o email que você usou para se registrar.",
     "password": "Senha",
     "submit": "Enviar",
-    "login": "Login",
+    "login": "Entrar",
     "accountQuestion": "Não tem uma conta?",
-    "signUp": "Cadastre-se",
+    "signUp": "Inscrever-se",
     "rights": "© 2024 Instamint. Todos os direitos reservados."
   },
   "howToMenu": {
@@ -50,6 +53,6 @@
     "bioWIP": "Esta funcionalidade ainda está em desenvolvimento.",
     "deleteAccount": "Excluir sua conta",
     "deleteAccountConfirmation": "Tem certeza de que deseja excluir sua conta?",
-    "deleteAccountDescription": "Esta ação é irreversível e excluirá todos os seus dados. Por favor, certifique-se antes de continuar."
+    "deleteAccountDescription": "Esta ação é irreversível e excluirá todos os seus dados. Por favor, tenha certeza antes de prosseguir."
   }
 }
