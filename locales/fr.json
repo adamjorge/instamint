@@ -51,5 +51,23 @@
     "deleteAccount": "Supprimer votre compte",
     "deleteAccountConfirmation": "Êtes-vous sûr de vouloir supprimer votre compte ?",
     "deleteAccountDescription": "Cette action est irréversible et supprimera toutes vos données. Veuillez vous assurer avant de continuer."
+  },
+  "signUp": {
+    "emailLabel": "Adresse e-mail",
+    "passwordLabel": "Mot de passe",
+    "password": "Mot de passe",
+    "nameLabel": "Nom",
+    "emailFieldPlaceholder": "Entrez votre adresse e-mail",
+    "passwordFieldPlaceholder": "Entrez votre mot de passe",
+    "nameFieldPlaceholder": "Entrez votre nom",
+    "signUpButton": "S'inscrire",
+    "loginButton": "Se connecter",
+    "loginQuestion": "Vous avez déjà un compte ?",
+    "invalidEmail": "Adresse e-mail invalide",
+    "minimumEmailError": "L'e-mail doit comporter au moins 3 caractères",
+    "minimumPasswordError": "Le mot de passe doit comporter au moins 6 caractères",
+    "minimumnameError": "Le mot de passe doit comporter au moins 6 caractères",
+    "backToLoginButton": "Retour à la connexion",
+    "emailVerificationText": "Un lien de vérification a été envoyé à votre adresse e-mail."
   }
 }
