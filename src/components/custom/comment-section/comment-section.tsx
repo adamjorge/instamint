@@ -2,6 +2,7 @@ import Comment from "@/components/custom/comment-section/comment"
 import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import fetchNftComments from "@/lib/query/nfts/fetchNftComments"
+import getNftCommentsCount from "@/lib/query/nfts/getNftCommentsCount"
 import { useQuery } from "@tanstack/react-query"
 import { useCallback, useEffect, useState } from "react"
 
@@ -30,18 +31,19 @@ export default function CommentSection({ nftId }: { nftId: number }) {
     return <div>Error {error.message}</div>
   }
 
+  const commentsCount = getNftCommentsCount(data)
   const visibleComments = showAllComments ? data.slice(0, numDisplayedComments) : []
 
   return (
-    <div className="px-4 py-6 md:px-6 md:py-12 lg:py-16">
-      <div className="prose prose-gray mx-auto max-w-6xl dark:prose-invert">
+    <div className="mb-4">
+      <div className="prose prose-gray mx-auto dark:prose-invert">
         <div className="grid gap-6">
-          <h2 className="font-semibold text-xl">{data.length} Comments</h2>
+          <h2 className="font-semibold text-xl">{commentsCount} Comments</h2>
           {data.length > 0 && (
             <Collapsible className="space-y-4">
               <CollapsibleContent className="space-y-4">
                 {visibleComments.map((comment) => (
-                  <Comment key={comment.id} comment={comment} />
+                  <Comment key={comment.id} nftId={nftId} comment={comment} />
                 ))}
               </CollapsibleContent>
               <CollapsibleTrigger asChild>
