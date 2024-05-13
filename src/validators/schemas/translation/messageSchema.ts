@@ -14,7 +14,9 @@ export const MessageSchema = z.object({
     signOut: z.string(),
     moreDetails: z.string(),
     forYouFeed: z.string(),
-    followedFeed: z.string()
+    followedFeed: z.string(),
+    invalidCredentials: z.string(),
+    deletedAccount: z.string()
   }),
   search: z.object({
     cancel: z.string(),

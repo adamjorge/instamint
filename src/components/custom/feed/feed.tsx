@@ -20,7 +20,7 @@ export default function Feed({ minterId }: { minterId: number }) {
 
   useEffect(() => {
     if (inView && hasNextPage) {
-      fetchNextPage().catch((err: unknown) => <>{err as string}</>)
+      void fetchNextPage()
     }
   }, [inView, fetchNextPage, hasNextPage])
 

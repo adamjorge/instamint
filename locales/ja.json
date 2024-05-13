@@ -12,7 +12,9 @@
     "signOut": "サインアウト",
     "moreDetails": "詳細",
     "forYouFeed": "あなたのために",
-    "followedFeed": "フォロー中"
+    "followedFeed": "フォロー中",
+    "invalidCredentials": "無効な認証情報",
+    "deletedAccount": "アカウント削除のリクエストが正常に受け付けられました。またお会いしましょう！"
   },
   "search": {
     "cancel": "キャンセル",

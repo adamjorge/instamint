@@ -12,7 +12,9 @@
     "signOut": "Sair",
     "moreDetails": "Mais detalhes",
     "forYouFeed": "Para você",
-    "followedFeed": "Seguidos"
+    "followedFeed": "Seguidos",
+    "invalidCredentials": "Credenciais inválidas",
+    "deletedAccount": "Seu pedido para deletar sua conta foi recebido com sucesso. Até logo!"
   },
   "search": {
     "cancel": "Cancelar",

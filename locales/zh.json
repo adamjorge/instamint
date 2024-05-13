@@ -12,7 +12,9 @@
     "signOut": "登出",
     "moreDetails": "更多详情",
     "forYouFeed": "为你",
-    "followedFeed": "已关注"
+    "followedFeed": "已关注",
+    "invalidCredentials": "凭证无效",
+    "deletedAccount": "您的账户删除请求已成功接收。再见！"
   },
   "search": {
     "cancel": "取消",

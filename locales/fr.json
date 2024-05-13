@@ -12,7 +12,9 @@
     "signOut": "Déconnexion",
     "moreDetails": "Plus de détails",
     "forYouFeed": "Pour vous",
-    "followedFeed": "Suivis"
+    "followedFeed": "Suivis",
+    "invalidCredentials": "Identifiants invalides",
+    "deletedAccount": "Votre demande de suppression de compte a été reçue avec succès. À bientôt !"
   },
   "search": {
     "cancel": "Annuler",

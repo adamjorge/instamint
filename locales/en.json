@@ -12,7 +12,9 @@
     "signOut": "Sign out",
     "moreDetails": "More details",
     "forYouFeed": "For you",
-    "followedFeed": "Followed"
+    "followedFeed": "Followed",
+    "invalidCredentials": "Invalid credentials",
+    "deletedAccount": "Your request to delete your account has been successfully received. See you soon!"
   },
   "search": {
     "cancel": "Cancel",

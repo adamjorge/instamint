@@ -12,7 +12,9 @@
     "signOut": "Cerrar sesión",
     "moreDetails": "Más detalles",
     "forYouFeed": "Para ti",
-    "followedFeed": "Seguidos"
+    "followedFeed": "Seguidos",
+    "invalidCredentials": "Credenciales inválidas",
+    "deletedAccount": "Tu solicitud para eliminar tu cuenta ha sido recibida exitosamente. ¡Hasta pronto!"
   },
   "search": {
     "cancel": "Cancelar",

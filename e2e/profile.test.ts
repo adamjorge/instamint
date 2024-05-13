@@ -24,11 +24,11 @@ test("profile view is accessible as expected", async ({ browser }) => {
   await page.fill("input[name=email]", user.email)
   await page.fill("input[name=password]", user.password)
 
-  await page.click("button[type=submit]")
-
-  await page.waitForURL("http://localhost:3000/en")
+  await page.getByLabel("sign in").click()
 
   await page.getByLabel("profile").click()
+
+  await page.waitForURL("**/profile/changes")
 
   const visiblePromises = []
   for (const item of howTo) {
@@ -45,5 +45,7 @@ test("profile view is accessible as expected", async ({ browser }) => {
   }
   await Promise.all(visiblePromises)
 
-  await page.getByText("Sign out").click()
+  await page.getByLabel("sign out").click()
+
+  await expect(page).toHaveTitle(/Instamint/u)
 })

@@ -3,12 +3,12 @@
 import { columns } from "@/components/custom/comments/columns"
 import { CommentsTable } from "@/components/custom/comments/comments-table"
 import { CommentsPagination } from "@/components/custom/comments/pagination/comments-pagination"
+import Spinner from "@/components/custom/spinner"
 import { fetchComments } from "@/lib/query/comments/fetchComments"
 import type { Comments } from "@/validators/schemas/commentSchema"
 import { useQuery } from "@tanstack/react-query"
 import type { ColumnDef } from "@tanstack/react-table"
 import { useState } from "react"
-import Spinner from "@/components/custom/spinner"
 
 export default function Comments() {
   const [page, setPage] = useState(1)

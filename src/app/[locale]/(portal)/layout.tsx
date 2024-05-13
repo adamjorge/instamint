@@ -22,7 +22,7 @@ export default function PortalLayout({
           }}
           className="mt-5 ml-5"
         >
-          <Button type="submit" className="bg-error">
+          <Button type="submit" className="bg-error" aria-label="sign out">
             {t("signOut")}
           </Button>
         </form>

@@ -1,5 +1,5 @@
 import MinterCard from "@/components/custom/minters/minter-card"
-import SearchNftCard from "@/components/custom/search/nfts/search-nft-card"
+import SearchNftCard from "@/components/custom/nfts/nft-card"
 import TeaBagCard from "@/components/custom/teabags/teabag-card"
 import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
 import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
@@ -48,7 +48,16 @@ async function testNftRender(nft: NftSearchNftSchemaType) {
 }
 
 async function testMinterRender(minter: MinterSearchMinterSchemaType) {
-  const { getByText, getByAltText } = render(<MinterCard {...minter} />)
+  const fakeHandleClickOnFollowButton = () => null
+  const fakeFollow = true
+  const fakeMinter = { ...minter, isFollowed: fakeFollow }
+  const { getByText, getByAltText } = render(
+    <MinterCard
+      minter={fakeMinter}
+      handleClickOnFollowButton={fakeHandleClickOnFollowButton}
+      {...minter}
+    />
+  )
 
   expect(getByText(`@${minter.username}`)).toBeDefined()
   expect(getByText(minter.bio)).toBeDefined()

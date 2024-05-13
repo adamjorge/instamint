@@ -24,7 +24,8 @@
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true
+          "isSearchableByEmail": true,
+          "isFollowed": true
         }
       },
       "hashtags": []
@@ -53,7 +54,8 @@
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true
+          "isSearchableByEmail": true,
+          "isFollowed": true
         }
       },
       "hashtags": []
@@ -82,7 +84,8 @@
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true
+          "isSearchableByEmail": true,
+          "isFollowed": true
         }
       },
       "hashtags": []
@@ -111,7 +114,8 @@
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true
+          "isSearchableByEmail": true,
+          "isFollowed": true
         }
       },
       "hashtags": []
@@ -128,7 +132,8 @@
       "bio": "first bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true
+      "isSearchableByEmail": true,
+      "isFollowed": true
     },
     {
       "id": 2,
@@ -140,7 +145,8 @@
       "bio": "second bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true
+      "isSearchableByEmail": true,
+      "isFollowed": true
     },
     {
       "id": 4,
@@ -152,7 +158,8 @@
       "bio": "third bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true
+      "isSearchableByEmail": true,
+      "isFollowed": true
     },
     {
       "id": 5,
@@ -164,7 +171,8 @@
       "bio": "fourth bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true
+      "isSearchableByEmail": true,
+      "isFollowed": false
     }
   ],
   "teabags": [
