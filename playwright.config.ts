@@ -22,7 +22,7 @@ export default defineConfig({
     }
   ],
   webServer: {
-    command: "npm run build && npm run start",
+    command: "npm run dev",
     url: "http://127.0.0.1:3000",
     timeout: 50000
   }
