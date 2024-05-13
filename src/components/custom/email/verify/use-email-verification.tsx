@@ -14,36 +14,42 @@ export default function useEmailVerification() {
   const [errorMessage, setErrorMessage] = useState("")
 
   useEffect(() => {
-    const emailVerification = async (email: string): Promise<void> => {
+    const emailVerification = async (email: string) => {
       if (!email || !token) {
         setErrorMessage("Missing required fields")
 
         return
       }
 
-      const user = await findUserByEmail(email)
+      try {
+        const user = await findUserByEmail(email)
 
-      if (!user || token !== user.emailVerifyToken) {
-        setErrorMessage("Invalid verification token")
+        if (!user || token !== user.emailVerifyToken) {
+          setErrorMessage("Invalid verification token")
 
-        return
+          return
+        }
+
+        await verifyEmail(email)
+        setResult("Email verified successfully. Please login.")
+      } catch (error) {
+        setErrorMessage("Error occurred")
+      } finally {
+        setIsLoading(false)
       }
-
-      await verifyEmail(email)
-      setResult("Email verified successfully. Please login.")
+    }
+    const verify = async () => {
+      if (userEmail && token) {
+        await emailVerification(userEmail)
+      } else {
+        setIsLoading(false)
+      }
     }
 
-    if (userEmail && token) {
-      emailVerification(userEmail)
-        .catch(() => {
-          setErrorMessage("Error occurred")
-        })
-        .finally(() => {
-          setIsLoading(false)
-        })
-    } else {
+    verify().catch(() => {
+      setErrorMessage("Error occurred")
       setIsLoading(false)
-    }
+    })
   }, [userEmail, token])
 
   return { isLoading, result, errorMessage }
