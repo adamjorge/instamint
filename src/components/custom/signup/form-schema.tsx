@@ -1,10 +1,13 @@
 import * as z from "zod"
 
-export const formSchema = z.object({
-  email: z
-    .string()
-    .email({ message: "Invalid email address" })
-    .min(3, { message: "Email must be at least 3 characters" }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters" }),
-  name: z.string().min(6, { message: "Name must be at least 6 characters" })
-})
+type TranslationFunction = (key: string) => string
+
+export const formSchema = (t: TranslationFunction) =>
+  z.object({
+    email: z
+      .string()
+      .email({ message: t("invalidEmail") })
+      .min(3, { message: t("minimumEmailError") }),
+    password: z.string().min(6, { message: t("minimumPasswordError") }),
+    name: z.string().min(6, { message: t("minimumnameError") })
+  })

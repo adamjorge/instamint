@@ -69,22 +69,22 @@ model Hashtag {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  phoneNumber   String?
-  password      String?
-  emailVerifyToken String?   @db.VarChar(255)
-  is2FAEnabled  Boolean   @default(false)
-  isAdmin       Boolean   @default(false)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  deletedAt     DateTime?
-  accounts      Account[]
-  sessions      Session[]
-  minterId      Int
-  minter        Minter    @relation(fields: [minterId], references: [id], onDelete: Cascade)
+  id               String    @id @default(cuid())
+  name             String?
+  email            String?   @unique
+  emailVerified    DateTime?
+  phoneNumber      String?
+  password         String?
+  emailVerifyToken String?   @db.Text
+  is2FAEnabled     Boolean   @default(false)
+  isAdmin          Boolean   @default(false)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  deletedAt        DateTime?
+  accounts         Account[]
+  sessions         Session[]
+  minterId         Int
+  minter           Minter    @relation(fields: [minterId], references: [id], onDelete: Cascade)
 }
 
 model Minter {
