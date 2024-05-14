@@ -1,20 +1,16 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { useSearchParams } from "next/navigation"
 
 export default function Form() {
+  const t = useTranslations("signUp")
   const searchParams = useSearchParams()
-  const verificationSent = Boolean(searchParams.get("verification_sent"))
+  const verificationSent = searchParams.get("verification_sent") === "true"
 
   return (
-    <>
-      <div>
-        {Boolean(verificationSent) && (
-          <div className="text-green-500 mb-4">
-            A verification link has been sent to your email.
-          </div>
-        )}
-      </div>
-    </>
+    <div>
+      {verificationSent && <div className="text-green-500 mb-4">{t("emailVerificationText")}</div>}
+    </div>
   )
 }

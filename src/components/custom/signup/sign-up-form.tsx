@@ -12,9 +12,9 @@ import { useForm } from "react-hook-form"
 
 export default function SignUpForm() {
   type FieldValues = SignUpFormData
-  const t = useTranslations("login")
+  const t = useTranslations("signUp")
   const form = useForm<FieldValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema(t)),
     defaultValues: {
       email: "",
       password: "",
@@ -36,12 +36,12 @@ export default function SignUpForm() {
           <PasswordField control={form.control} />
           <NameField control={form.control} />
           <Button type="submit" className="w-full">
-            {t("signUp")}
+            {t("signUpButton")}
           </Button>
           <div className="mt-4 text-center">
-            <span style={{ marginRight: "0.5em" }}>Already have an account?</span>
+            <span style={{ marginRight: "0.5em" }}>{t("loginQuestion")}</span>
             <LinkButton withLocale href="/login">
-              Login
+              {t("loginButton")}
             </LinkButton>
           </div>
         </form>
