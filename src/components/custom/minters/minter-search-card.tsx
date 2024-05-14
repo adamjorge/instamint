@@ -7,7 +7,7 @@ import { clsx } from "clsx"
 import Image from "next/image"
 import { AiOutlineCheck } from "react-icons/ai"
 
-export default function MinterCard({ ...props }: MinterCardProps) {
+export default function MinterSearchCard({ ...props }: MinterCardProps) {
   const { minter, isFollowed, handleClickOnFollowButton } = props
 
   return (

@@ -3,7 +3,7 @@ import { MinterSearchMintersSchemaType } from "@/validators/schemas/search/minte
 import type { Session } from "next-auth"
 import { useTranslations } from "next-intl"
 
-export default function MinterList({ minters, session }: MinterListProps) {
+export default function MinterSearchList({ minters, session }: MinterListProps) {
   const t = useTranslations("search")
 
   return (

@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes"
 
-function isNonEmptyString(value: string | null): value is string {
+function isNonEmptyString(value: string | null | undefined) {
   return value !== null && value !== ""
 }
 

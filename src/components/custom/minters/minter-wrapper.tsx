@@ -1,6 +1,6 @@
 "use client"
 
-import MinterCard from "@/components/custom/minters/minter-card"
+import MinterSearchCard from "@/components/custom/minters/minter-search-card"
 import { follow } from "@/lib/query/minters/followAction"
 import { unfollow } from "@/lib/query/minters/unfollowAction"
 import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
@@ -41,5 +41,5 @@ export default function MinterWrapper({
     handleClickOnFollowButton
   }
 
-  return <MinterCard {...cardProps} />
+  return <MinterSearchCard {...cardProps} />
 }

@@ -19,8 +19,7 @@ export async function POST(req: Request) {
 }
 
 export async function DELETE(req: Request) {
-  const dataToDelete = (await req.json()) as Payload
-  const { followerId, followingId } = dataToDelete
+  const { followerId, followingId } = (await req.json()) as Payload
   const followingIdNumber = parseInt(followingId, 10)
 
   try {

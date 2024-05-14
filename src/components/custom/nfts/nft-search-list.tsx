@@ -1,9 +1,9 @@
-import NftCard from "@/components/custom/nfts/nft-card"
+import NftCard from "@/components/custom/nfts/nft-search-card"
 import { Link } from "@/config/i18n/locales"
 import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { useTranslations } from "next-intl"
 
-export default function NftList({ nfts }: NftListProps) {
+export default function NftSearchList({ nfts }: NftListProps) {
   const t = useTranslations("search")
 
   return (

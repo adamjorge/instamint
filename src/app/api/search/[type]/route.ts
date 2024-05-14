@@ -7,9 +7,9 @@ export async function GET(req: Request, { params }: { params: { type: SearchType
   const { type } = params
   const { searchParams } = new URL(req.url)
   const search = searchParams.get("search")
+  const userId = searchParams.get("currentUserId")
   const minPrice = searchParams.get("min") || ""
   const maxPrice = searchParams.get("max") || ""
-  const userId = searchParams.get("currentUserId")
   const checkProps = { type, search, userId }
   const checkResponse = checkSearchParams({ ...checkProps })
 
