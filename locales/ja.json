@@ -55,6 +55,24 @@
     "bioWIP": "この機能は現在開発中です。",
     "deleteAccount": "アカウントを削除する",
     "deleteAccountConfirmation": "本当にアカウントを削除しますか？",
-    "deleteAccountDescription": "この操作は取り消し不能で、すべてのデータが削除されます。進行する前に確認してください。"
+    "deleteAccountDescription": "この操作は取り消せず、すべてのデータが削除されます。続行する前にご確認ください。"
+  },
+  "signUp": {
+    "emailLabel": "メールアドレス",
+    "passwordLabel": "パスワード",
+    "password": "パスワード",
+    "nameLabel": "名前",
+    "emailFieldPlaceholder": "メールアドレスを入力してください",
+    "passwordFieldPlaceholder": "パスワードを入力してください",
+    "nameFieldPlaceholder": "名前を入力してください",
+    "signUpButton": "登録",
+    "loginButton": "ログイン",
+    "loginQuestion": "すでにアカウントをお持ちですか？",
+    "invalidEmail": "無効なメールアドレス",
+    "minimumEmailError": "メールアドレスは少なくとも3文字必要です",
+    "minimumPasswordError": "パスワードは少なくとも6文字必要です",
+    "minimumnameError": "パスワードは少なくとも6文字必要です",
+    "backToLoginButton": "ログインに戻る",
+    "emailVerificationText": "確認用リンクがメールアドレスに送信されました。"
   }
 }

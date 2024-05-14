@@ -55,6 +55,24 @@
     "bioWIP": "Esta funcionalidade ainda está em desenvolvimento.",
     "deleteAccount": "Excluir sua conta",
     "deleteAccountConfirmation": "Tem certeza de que deseja excluir sua conta?",
-    "deleteAccountDescription": "Esta ação é irreversível e excluirá todos os seus dados. Por favor, tenha certeza antes de prosseguir."
+    "deleteAccountDescription": "Esta ação é irreversível e excluirá todos os seus dados. Por favor, certifique-se antes de continuar."
+  },
+  "signUp": {
+    "emailLabel": "E-mail",
+    "passwordLabel": "Senha",
+    "password": "Senha",
+    "nameLabel": "Nome",
+    "emailFieldPlaceholder": "Digite seu e-mail",
+    "passwordFieldPlaceholder": "Digite sua senha",
+    "nameFieldPlaceholder": "Digite seu nome",
+    "signUpButton": "Cadastrar",
+    "loginButton": "Entrar",
+    "loginQuestion": "Já tem uma conta?",
+    "invalidEmail": "Endereço de e-mail inválido",
+    "minimumEmailError": "O e-mail deve ter pelo menos 3 caracteres",
+    "minimumPasswordError": "A senha deve ter pelo menos 6 caracteres",
+    "minimumnameError": "A senha deve ter pelo menos 6 caracteres",
+    "backToLoginButton": "Voltar para o Login",
+    "emailVerificationText": "Um link de verificação foi enviado para o seu e-mail."
   }
 }

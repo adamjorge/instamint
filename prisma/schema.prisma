@@ -75,7 +75,7 @@ model User {
   emailVerified    DateTime?
   phoneNumber      String?
   password         String?
-  emailVerifyToken String?   @db.VarChar(255)
+  emailVerifyToken String?   @db.Text
   is2FAEnabled     Boolean   @default(false)
   isAdmin          Boolean   @default(false)
   createdAt        DateTime  @default(now())

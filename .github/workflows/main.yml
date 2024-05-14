@@ -2,7 +2,7 @@ name: Main workflow with Vercel deployment
 
 on:
   push:
-    branches: ["main", "develop", "feature/*", "hotfix/*"]
+    branches: ["main", "develop", "feature/*", "hotfix/*", "refactor/*"]
   pull_request:
     branches: ["main"]
 

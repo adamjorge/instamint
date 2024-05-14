@@ -53,8 +53,26 @@
     "changeProfile": "编辑资料",
     "bio": "简介",
     "bioWIP": "此功能仍在开发中。",
-    "deleteAccount": "删除您的账户",
-    "deleteAccountConfirmation": "您确定要删除账户吗？",
-    "deleteAccountDescription": "此操作不可逆，将删除所有您的数据。请在进行前确定。"
+    "deleteAccount": "删除您的账号",
+    "deleteAccountConfirmation": "您确定要删除您的账号吗？",
+    "deleteAccountDescription": "此操作是不可逆的，将删除所有您的数据。请在继续之前确认。"
+  },
+  "signUp": {
+    "emailLabel": "电子邮件",
+    "passwordLabel": "密码",
+    "password": "密码",
+    "nameLabel": "姓名",
+    "emailFieldPlaceholder": "请输入您的电子邮件",
+    "passwordFieldPlaceholder": "请输入您的密码",
+    "nameFieldPlaceholder": "请输入您的姓名",
+    "signUpButton": "注册",
+    "loginButton": "登录",
+    "loginQuestion": "已经有账号了吗？",
+    "invalidEmail": "无效的电子邮件地址",
+    "minimumEmailError": "电子邮件至少必须包含3个字符",
+    "minimumPasswordError": "密码必须至少为6个字符",
+    "minimumnameError": "密码必须至少为6个字符",
+    "backToLoginButton": "返回登录",
+    "emailVerificationText": "验证链接已发送到您的电子邮件。"
   }
 }
