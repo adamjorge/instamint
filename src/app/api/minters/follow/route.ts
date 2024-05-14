@@ -3,8 +3,7 @@ import { unfollowMinter } from "@/lib/query/minters/unfollow"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function POST(req: Request) {
-  const data = (await req.json()) as Payload
-  const { followerId, followingId } = data
+  const { followerId, followingId } = (await req.json()) as Payload
   const followingIdNumber = parseInt(followingId, 10)
 
   try {

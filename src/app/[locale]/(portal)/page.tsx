@@ -16,7 +16,5 @@ export default async function HomePage() {
     redirect("/login")
   }
 
-  const minterId = currentUser.minter.id
-
-  return <Feed minterId={minterId} />
+  return <Feed minterId={currentUser.minter.id} />
 }
