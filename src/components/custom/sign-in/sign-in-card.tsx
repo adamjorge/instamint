@@ -6,6 +6,7 @@ import LinkButton from "@/components/ui/custom/link-button"
 import { useTranslations } from "next-intl"
 import { Lora } from "next/font/google"
 import Image from "next/image"
+import { FaSadCry } from "react-icons/fa"
 
 // eslint-disable-next-line new-cap
 const lora = Lora({ subsets: ["latin"], weight: "700" })
@@ -14,7 +15,7 @@ export default function SignInCard() {
   const t = useTranslations("login")
 
   return (
-    <Card className="mx-10 mt-5 space-y-5 p-10">
+    <Card className="mx-10 mt-5 space-y-5 p-10 xl:w-1/2">
       <CardHeader>
         <CardTitle className="flex space-x-5 items-center justify-center">
           <Image src="/instamint.svg" alt="Instamint Logo" width={60} height={25} priority />
@@ -25,8 +26,20 @@ export default function SignInCard() {
         <SignInWrapper />
       </CardContent>
       <CardFooter className="flex flex-col text-sm space-y-6">
+        <LinkButton
+          withLocale
+          href="/forgot-password"
+          className="flex space-x-2 hover:scale-105 transition-all ease-in-out"
+          aria-label="change password"
+        >
+          <span>Forgot password?</span> <FaSadCry />
+        </LinkButton>
         <p>{t("accountQuestion")}</p>
-        <LinkButton withLocale href="/signup">
+        <LinkButton
+          withLocale
+          href="/signup"
+          className="flex space-x-2 hover:scale-105 transition-all ease-in-out"
+        >
           {t("signUp")}
         </LinkButton>
         <p className="text-gray-500">{t("rights")}</p>
