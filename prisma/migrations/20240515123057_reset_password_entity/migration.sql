@@ -2,7 +2,7 @@
 CREATE TABLE "PasswordReset" (
     "id" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "expiresAt" TIMESTAMP(3) NOT NULL,
+    "expires" TIMESTAMP(3) NOT NULL,
     "token" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
 

@@ -71,7 +71,7 @@ model Hashtag {
 model PasswordReset {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
-  expiresAt DateTime
+  expires DateTime
   token     String   @db.Text
   userId    String
   user      User     @relation(fields: [userId], references: [id])
