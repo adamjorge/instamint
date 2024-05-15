@@ -1,6 +1,6 @@
-import MinterCard from "@/components/custom/minters/minter-card"
-import SearchNftCard from "@/components/custom/search/nfts/search-nft-card"
-import TeaBagCard from "@/components/custom/teabags/teabag-card"
+import MinterSearchCard from "@/components/custom/minters/minter-search-card"
+import NftSearchCard from "@/components/custom/nfts/nft-search-card"
+import TeaBagSearchCard from "@/components/custom/teabags/teabag-search-card"
 import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
 import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
@@ -26,7 +26,7 @@ describe("Search", () => {
     const { teabags } = searchSchema.parse(mockedSearchResult)
 
     teabags.forEach((teabag) => {
-      const { getByText } = render(<TeaBagCard {...teabag} />)
+      const { getByText } = render(<TeaBagSearchCard {...teabag} />)
 
       expect(getByText(`@${teabag.name}`)).toBeDefined()
       expect(getByText(teabag.bio)).toBeDefined()
@@ -35,7 +35,7 @@ describe("Search", () => {
 })
 
 async function testNftRender(nft: NftSearchNftSchemaType) {
-  const { getByText, getByAltText } = render(<SearchNftCard {...nft} />)
+  const { getByText, getByAltText } = render(<NftSearchCard {...nft} />)
 
   expect(getByText(`@${nft.originalContent.minter.username}`)).toBeDefined()
   expect(getByText(nft.description)).toBeDefined()
@@ -48,7 +48,16 @@ async function testNftRender(nft: NftSearchNftSchemaType) {
 }
 
 async function testMinterRender(minter: MinterSearchMinterSchemaType) {
-  const { getByText, getByAltText } = render(<MinterCard {...minter} />)
+  const fakeHandleClickOnFollowButton = () => null
+  const fakeFollow = true
+  const fakeMinter = { ...minter, isFollowed: fakeFollow }
+  const { getByText, getByAltText } = render(
+    <MinterSearchCard
+      minter={fakeMinter}
+      handleClickOnFollowButton={fakeHandleClickOnFollowButton}
+      {...minter}
+    />
+  )
 
   expect(getByText(`@${minter.username}`)).toBeDefined()
   expect(getByText(minter.bio)).toBeDefined()

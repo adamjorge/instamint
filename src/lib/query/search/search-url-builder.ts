@@ -45,4 +45,10 @@ export default class SearchUrlBuilder {
 
     return this
   }
+
+  setCurrentUserId(currentUserId: string) {
+    this.params.set("currentUserId", currentUserId)
+
+    return this
+  }
 }

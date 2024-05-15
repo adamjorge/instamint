@@ -1,8 +1,9 @@
-import MinterCard from "@/components/custom/minters/minter-card"
+import MinterWrapper from "@/components/custom/minters/minter-wrapper"
 import { MinterSearchMintersSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
+import type { Session } from "next-auth"
 import { useTranslations } from "next-intl"
 
-export default function MinterList({ minters }: MinterListProps) {
+export default function MinterSearchList({ minters, session }: MinterListProps) {
   const t = useTranslations("search")
 
   return (
@@ -11,9 +12,9 @@ export default function MinterList({ minters }: MinterListProps) {
       {minters.length === 0 ? (
         <p className="text-center">{t("noSearchResultsFor", { type: "Minters" })}</p>
       ) : (
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-8">
           {minters.map((minter) => (
-            <MinterCard key={minter.id} {...minter} />
+            <MinterWrapper key={minter.id} session={session} minter={minter} />
           ))}
         </div>
       )}
@@ -23,4 +24,5 @@ export default function MinterList({ minters }: MinterListProps) {
 
 type MinterListProps = {
   minters: MinterSearchMintersSchemaType
+  session: Session
 }

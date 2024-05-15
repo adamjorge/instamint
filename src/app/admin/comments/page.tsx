@@ -3,6 +3,7 @@
 import { columns } from "@/components/custom/comments/columns"
 import { CommentsTable } from "@/components/custom/comments/comments-table"
 import { CommentsPagination } from "@/components/custom/comments/pagination/comments-pagination"
+import Spinner from "@/components/custom/spinner"
 import { fetchComments } from "@/lib/query/comments/fetchComments"
 import type { Comments } from "@/validators/schemas/commentSchema"
 import { useQuery } from "@tanstack/react-query"
@@ -17,7 +18,7 @@ export default function Comments() {
   })
 
   if (isPending) {
-    return <div>Loading...</div>
+    return <Spinner />
   }
 
   if (error) {

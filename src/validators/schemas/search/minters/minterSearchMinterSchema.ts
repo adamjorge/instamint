@@ -6,7 +6,8 @@ export const minterSearchMinterSchema = z.object({
   profileUrl: z.string(),
   avatarUrl: z.string(),
   bio: z.string(),
-  location: z.string().nullable()
+  location: z.string().nullable(),
+  isFollowed: z.boolean()
 })
 
 export type MinterSearchMinterSchemaType = z.infer<typeof minterSearchMinterSchema>

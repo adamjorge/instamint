@@ -1,4 +1,5 @@
 import Comment from "@/components/custom/comment-section/comment"
+import Spinner from "@/components/custom/spinner"
 import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import fetchNftComments from "@/lib/query/nfts/fetchNftComments"
@@ -24,7 +25,7 @@ export default function CommentSection({ nftId }: { nftId: number }) {
   }, [showAllComments])
 
   if (isPending) {
-    return <div>Loading...</div>
+    return <Spinner />
   }
 
   if (error) {

@@ -3,32 +3,37 @@
     "check": "Verificar",
     "loading": "Cargando...",
     "noResults": "No se encontraron resultados.",
-    "resultsFor": "Resultados de la búsqueda para:",
+    "resultsFor": "Resultados de búsqueda para:",
     "noResultsFor": "No se encontraron resultados para:",
     "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
-    "error": "Se produjo un error, por favor inténtalo de nuevo más tarde.",
-    "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí es donde puedes buscar NFTs o creadores.",
+    "error": "Ocurrió un error, por favor intente de nuevo más tarde.",
+    "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí puedes buscar NFTs o minters.",
     "nftPrice": "Precio: ${price}",
-    "signOut": "Cerrar sesión"
+    "signOut": "Cerrar sesión",
+    "moreDetails": "Más detalles",
+    "forYouFeed": "Para ti",
+    "followedFeed": "Seguidos",
+    "invalidCredentials": "Credenciales inválidas",
+    "deletedAccount": "Tu solicitud para eliminar tu cuenta ha sido recibida exitosamente. ¡Hasta pronto!"
   },
   "search": {
     "cancel": "Cancelar",
-    "minPrice": "Precio mínimo",
-    "maxPrice": "Precio máximo",
-    "noSearchResultsFor": "No se encontraron {type}",
+    "minPrice": "Precio mín.",
+    "maxPrice": "Precio máx.",
+    "noSearchResultsFor": "No se encontró {type}",
     "search": "Buscar",
-    "searchSentence": "Buscar un NFT o un creador.",
+    "searchSentence": "Buscar un NFT o un minter.",
     "searchPlaceholder": "Buscar...",
     "submit": "Enviar"
   },
   "login": {
-    "mail": "Correo electrónico",
-    "connectionInfo": "Este es el correo electrónico que utilizaste para registrarte.",
+    "mail": "Correo",
+    "connectionInfo": "Este es el correo que usaste para registrarte.",
     "password": "Contraseña",
     "submit": "Enviar",
     "login": "Iniciar sesión",
     "accountQuestion": "¿No tienes una cuenta?",
-    "signUp": "Regístrate",
+    "signUp": "Registrarse",
     "rights": "© 2024 Instamint. Todos los derechos reservados."
   },
   "howToMenu": {
@@ -46,11 +51,11 @@
   },
   "profileChanges": {
     "changeProfile": "Editar perfil",
-    "bio": "Biografía",
+    "bio": "Bio",
     "bioWIP": "Esta función aún está en desarrollo.",
     "deleteAccount": "Eliminar tu cuenta",
     "deleteAccountConfirmation": "¿Estás seguro de que quieres eliminar tu cuenta?",
-    "deleteAccountDescription": "Esta acción es irreversible y eliminará todos tus datos. Por favor, asegúrate antes de continuar."
+    "deleteAccountDescription": "Esta acción es irreversible y eliminará todos tus datos. Por favor, asegúrate antes de proceder."
   },
   "signUp": {
     "emailLabel": "Correo electrónico",
