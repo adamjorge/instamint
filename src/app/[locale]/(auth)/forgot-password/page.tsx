@@ -25,18 +25,6 @@ import { z } from "zod"
 
 /* eslint-disable */
 
-/* eslint-disable */
-
-/* eslint-disable */
-
-/* eslint-disable */
-
-/* eslint-disable */
-
-/* eslint-disable */
-
-/* eslint-disable */
-
 export default function ForgotPasswordPage() {
   const locale = useLocale()
   const router = useRouter()
@@ -59,7 +47,7 @@ export default function ForgotPasswordPage() {
 
   const onSubmit = async (values: z.infer<typeof forgotPasswordSchema>) => {
     try {
-      await createResetPassword(values.email)
+      await createResetPassword(values.email, locale)
       router.push(`/${locale}/forgot-password?email-sent=true`)
     } catch (error) {
       router.push(`/${locale}/forgot-password?email-not-sent=true`)

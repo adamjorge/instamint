@@ -1,8 +1,9 @@
 import axios, { isAxiosError } from "axios"
 
-export async function createResetPassword(email: string) {
+export async function createResetPassword(email: string, locale: string) {
   const data = {
-    email
+    email,
+    locale
   }
 
   try {
