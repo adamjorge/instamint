@@ -1,31 +1,26 @@
-import { SignUpFormData } from "@/components/custom/signup/submit-handler"
+import { SignUpFormData } from "@/components/custom/sign-up/submit-handler"
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useTranslations } from "next-intl"
 import { Control } from "react-hook-form"
 
-interface PasswordFieldProps {
+interface NameFieldProps {
   control: Control<SignUpFormData>
   error?: string | null
 }
 
-export default function PasswordField({ control }: PasswordFieldProps) {
+export default function NameField({ control }: NameFieldProps) {
   const t = useTranslations("signUp")
 
   return (
     <FormField
       control={control}
-      name="password"
+      name="name"
       render={({ field }) => (
         <FormItem>
-          <FormLabel>{t("passwordLabel")}</FormLabel>
+          <FormLabel>{t("nameLabel")}</FormLabel>
           <FormControl>
-            <Input
-              placeholder={t("passwordFieldPlaceholder")}
-              type="password"
-              id="password"
-              {...field}
-            />
+            <Input placeholder={t("nameFieldPlaceholder")} type="text" id="name" {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>

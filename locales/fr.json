@@ -1,15 +1,20 @@
 {
   "global": {
     "check": "Vérifier",
-    "loading": "Chargement...",
+    "loading": "Chargement en cours...",
     "noResults": "Aucun résultat trouvé.",
-    "resultsFor": "Résultats de la recherche pour :",
+    "resultsFor": "Résultats de recherche pour :",
     "noResultsFor": "Aucun résultat trouvé pour :",
     "noResultsSentence": "Aucun résultat trouvé pour le terme de recherche.",
     "error": "Une erreur s'est produite, veuillez réessayer plus tard.",
-    "searchWelcome": "Bienvenue sur votre page de recherche. C'est ici que vous pouvez rechercher des NFTs ou des créateurs.",
+    "searchWelcome": "Bienvenue sur votre page de recherche. Ici, vous pouvez rechercher des NFTs ou des créateurs.",
     "nftPrice": "Prix : ${price}",
-    "signOut": "Déconnexion"
+    "signOut": "Déconnexion",
+    "moreDetails": "Plus de détails",
+    "forYouFeed": "Pour vous",
+    "followedFeed": "Suivis",
+    "invalidCredentials": "Identifiants invalides",
+    "deletedAccount": "Votre demande de suppression de compte a été reçue avec succès. À bientôt !"
   },
   "search": {
     "cancel": "Annuler",
@@ -17,18 +22,18 @@
     "maxPrice": "Prix max.",
     "noSearchResultsFor": "Aucun {type} trouvé",
     "search": "Rechercher",
-    "searchSentence": "Rechercher un NFT ou un créateur.",
-    "searchPlaceholder": "Rechercher...",
+    "searchSentence": "Recherchez un NFT ou un créateur.",
+    "searchPlaceholder": "Recherche...",
     "submit": "Soumettre"
   },
   "login": {
-    "mail": "E-mail",
-    "connectionInfo": "Il s'agit de l'e-mail que vous avez utilisé pour vous inscrire.",
+    "mail": "Mail",
+    "connectionInfo": "Ceci est l'e-mail que vous avez utilisé pour vous inscrire.",
     "password": "Mot de passe",
     "submit": "Soumettre",
     "login": "Connexion",
     "accountQuestion": "Vous n'avez pas de compte ?",
-    "signUp": "S'inscrire",
+    "signUp": "Inscription",
     "rights": "© 2024 Instamint. Tous droits réservés."
   },
   "howToMenu": {
@@ -46,11 +51,11 @@
   },
   "profileChanges": {
     "changeProfile": "Modifier le profil",
-    "bio": "Biographie",
+    "bio": "Bio",
     "bioWIP": "Cette fonctionnalité est encore en développement.",
     "deleteAccount": "Supprimer votre compte",
     "deleteAccountConfirmation": "Êtes-vous sûr de vouloir supprimer votre compte ?",
-    "deleteAccountDescription": "Cette action est irréversible et supprimera toutes vos données. Veuillez vous assurer avant de continuer."
+    "deleteAccountDescription": "Cette action est irréversible et supprimera toutes vos données. Veuillez être sûr avant de procéder."
   },
   "signUp": {
     "emailLabel": "Adresse e-mail",

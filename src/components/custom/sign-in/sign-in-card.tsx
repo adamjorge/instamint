@@ -17,14 +17,7 @@ export default function SignInCard() {
     <Card className="mx-10 mt-5 space-y-5 p-10">
       <CardHeader>
         <CardTitle className="flex space-x-5 items-center justify-center">
-          <Image
-            src="/instamint.svg"
-            alt="Instamint Logo"
-            className="dark:invert"
-            width={60}
-            height={25}
-            priority
-          />
+          <Image src="/instamint.svg" alt="Instamint Logo" width={60} height={25} priority />
           <span className={lora.className}>Instamint</span>
         </CardTitle>
       </CardHeader>

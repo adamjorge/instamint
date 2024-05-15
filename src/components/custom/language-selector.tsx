@@ -32,6 +32,7 @@ export default function LanguageSelector() {
         onValueChange={(value) => {
           handleLocaleChange(value)
         }}
+        aria-label="Language Selector"
       >
         <SelectTrigger className="w-32">
           <SelectValue placeholder="Language" />

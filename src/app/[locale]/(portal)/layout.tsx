@@ -2,6 +2,7 @@ import Footer from "@/components/custom/footer"
 import { Button } from "@/components/ui/button"
 import { signOut } from "@/lib/auth"
 import { useTranslations } from "next-intl"
+import Image from "next/image"
 import React from "react"
 
 export default function PortalLayout({
@@ -13,16 +14,27 @@ export default function PortalLayout({
 
   return (
     <div>
-      <form
-        action={async () => {
-          "use server"
-          await signOut()
-        }}
-      >
-        <Button type="submit" className="bg-red-500">
-          {t("signOut")}
-        </Button>
-      </form>
+      <div className="flex w-full justify-between border-b pb-8 mb-10" aria-label="header">
+        <form
+          action={async () => {
+            "use server"
+            await signOut()
+          }}
+          className="mt-5 ml-5"
+        >
+          <Button type="submit" className="bg-error" aria-label="sign out">
+            {t("signOut")}
+          </Button>
+        </form>
+        <Image
+          src="/instamint.svg"
+          alt="Instamint Logo"
+          width={60}
+          height={25}
+          priority
+          className="mr-5 -mt-8"
+        />
+      </div>
       <div>{children}</div>
       <Footer />
     </div>
