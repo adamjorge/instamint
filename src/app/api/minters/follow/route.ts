@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   try {
     const followResponse = await followMinter(followerId, followingIdNumber)
 
-    return Response.json({ followResponse })
+    return Response.json(followResponse)
   } catch (error) {
     return Response.json(
       { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
@@ -25,7 +25,7 @@ export async function DELETE(req: Request) {
   try {
     const unfollowResponse = await unfollowMinter(followerId, followingIdNumber)
 
-    return Response.json({ unfollowResponse })
+    return Response.json(unfollowResponse)
   } catch (error) {
     return Response.json(
       { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
