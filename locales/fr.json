@@ -33,7 +33,8 @@
     "submit": "Soumettre",
     "login": "Connexion",
     "accountQuestion": "Vous n'avez pas de compte ?",
-    "signUp": "Inscription",
+    "forgetPassword": "mot de passe oublié ?",
+    "signUp": "S'inscrire",
     "rights": "© 2024 Instamint. Tous droits réservés."
   },
   "howToMenu": {
@@ -74,5 +75,18 @@
     "minimumnameError": "Le mot de passe doit comporter au moins 6 caractères",
     "backToLoginButton": "Retour à la connexion",
     "emailVerificationText": "Un lien de vérification a été envoyé à votre adresse e-mail."
+  },
+  "resetPassword": {
+    "mail": "Courrier électronique",
+    "emailPlaceholder": "Veuillez saisir votre adresse e-mail",
+    "connectionInfo": "Ceci est l'e-mail que vous avez utilisé pour vous inscrire.",
+    "resetButton": "Réinitialiser le mot de passe"
+  },
+  "updatePassword": {
+    "newPasswordLabel": "Nouveau mot de passe",
+    "newPasswordPlaceholder": "Veuillez saisir le nouveau mot de passe",
+    "confirmPasswordLabel": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Veuillez confirmer le mot de passe",
+    "updateButton": "Mettre à jour le mot de passe"
   }
 }

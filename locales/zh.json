@@ -32,7 +32,8 @@
     "password": "密码",
     "submit": "提交",
     "login": "登录",
-    "accountQuestion": "还没有账户？",
+    "accountQuestion": "还没有账号？",
+    "forgetPassword": "忘记密码",
     "signUp": "注册",
     "rights": "© 2024 Instamint。保留所有权利。"
   },
@@ -74,5 +75,18 @@
     "minimumnameError": "密码必须至少为6个字符",
     "backToLoginButton": "返回登录",
     "emailVerificationText": "验证链接已发送到您的电子邮件。"
+  },
+  "resetPassword": {
+    "mail": "邮件",
+    "emailPlaceholder": "请输入您的电子邮件",
+    "connectionInfo": "这是您用来注册的电子邮件。",
+    "resetButton": "重设密码"
+  },
+  "updatePassword": {
+    "newPasswordLabel": "新密码",
+    "newPasswordPlaceholder": "请输入新密码",
+    "confirmPasswordLabel": "确认密码",
+    "confirmPasswordPlaceholder": "请确认密码",
+    "updateButton": "更新密码"
   }
 }

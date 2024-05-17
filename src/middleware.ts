@@ -33,7 +33,7 @@ export const config = {
 }
 
 function isRedirecting(url: string) {
-  const routeNames = ["login", "signup", "email"]
+  const routeNames = ["login", "signup", "email", "reset-password", "update-password"]
 
   return routeNames.some((name) => url.includes(name))
 }

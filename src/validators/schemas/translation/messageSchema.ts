@@ -35,6 +35,7 @@ export const MessageSchema = z.object({
     submit: z.string(),
     login: z.string(),
     accountQuestion: z.string(),
+    forgetPassword: z.string(),
     signUp: z.string(),
     rights: z.string()
   }),
@@ -76,5 +77,18 @@ export const MessageSchema = z.object({
     minimumnameError: z.string(),
     backToLoginButton: z.string(),
     emailVerificationText: z.string()
+  }),
+  resetPassword: z.object({
+    mail: z.string(),
+    emailPlaceholder: z.string(),
+    connectionInfo: z.string(),
+    resetButton: z.string()
+  }),
+  updatePassword: z.object({
+    newPasswordLabel: z.string(),
+    newPasswordPlaceholder: z.string(),
+    confirmPasswordLabel: z.string(),
+    confirmPasswordPlaceholder: z.string(),
+    updateButton: z.string()
   })
 })

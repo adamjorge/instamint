@@ -32,7 +32,8 @@
     "password": "パスワード",
     "submit": "提出",
     "login": "ログイン",
-    "accountQuestion": "アカウントを持っていませんか？",
+    "accountQuestion": "アカウントをお持ちでないですか？",
+    "forgetPassword": "パスワードをお忘れですか？",
     "signUp": "サインアップ",
     "rights": "© 2024 Instamint。すべての権利が保護されています。"
   },
@@ -55,7 +56,8 @@
     "bioWIP": "この機能は現在開発中です。",
     "deleteAccount": "アカウントを削除する",
     "deleteAccountConfirmation": "本当にアカウントを削除しますか？",
-    "deleteAccountDescription": "この操作は取り消せず、すべてのデータが削除されます。続行する前にご確認ください。"
+    "deleteAccountDescription": "この操作は取り消せず、すべてのデータが削除されます。続行する前にご確認ください。",
+    "rights": "© 2024 Instamint. 全著作権所有。"
   },
   "signUp": {
     "emailLabel": "メールアドレス",
@@ -73,6 +75,21 @@
     "minimumPasswordError": "パスワードは少なくとも6文字必要です",
     "minimumnameError": "パスワードは少なくとも6文字必要です",
     "backToLoginButton": "ログインに戻る",
-    "emailVerificationText": "確認用リンクがメールアドレスに送信されました。"
+    "emailVerificationText": "確認用リンクがメールアドレスに送信されました。",
+    "deleteAccountDescription": "この操作は取り消せず、すべてのデータが削除されます。続行する前にご確認ください。",
+    "rights": "© 2024 Instamint. 全著作権所有。"
+  },
+  "resetPassword": {
+    "mail": "メール",
+    "emailPlaceholder": "メールアドレスを入力してください",
+    "connectionInfo": "これは登録に使用したメールアドレスです。",
+    "resetButton": "パスワードをリセットする"
+  },
+  "updatePassword": {
+    "newPasswordLabel": "新しいパスワード",
+    "newPasswordPlaceholder": "新しいパスワードを入力してください",
+    "confirmPasswordLabel": "パスワードを確認",
+    "confirmPasswordPlaceholder": "パスワードを確認してください",
+    "updateButton": "パスワードを更新する"
   }
 }

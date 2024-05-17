@@ -24,7 +24,8 @@
     "search": "Buscar",
     "searchSentence": "Buscar un NFT o un minter.",
     "searchPlaceholder": "Buscar...",
-    "submit": "Enviar"
+    "submit": "Enviar",
+    "emailFieldPlaceHolder": "Ingresa tu correo electrónico"
   },
   "login": {
     "mail": "Correo",
@@ -33,7 +34,8 @@
     "submit": "Enviar",
     "login": "Iniciar sesión",
     "accountQuestion": "¿No tienes una cuenta?",
-    "signUp": "Registrarse",
+    "forgetPassword": "¿Olvidaste la contraseña?",
+    "signUp": "Regístrate",
     "rights": "© 2024 Instamint. Todos los derechos reservados."
   },
   "howToMenu": {
@@ -74,5 +76,18 @@
     "minimumnameError": "La contraseña debe tener al menos 6 caracteres",
     "backToLoginButton": "Volver a Iniciar sesión",
     "emailVerificationText": "Se ha enviado un enlace de verificación a su correo electrónico."
+  },
+  "resetPassword": {
+    "mail": "Correo electrónico",
+    "emailPlaceholder": "Por favor, ingrese su correo electrónico",
+    "connectionInfo": "Este es el correo electrónico que utilizaste para registrarte.",
+    "resetButton": "Restablecer contraseña"
+  },
+  "updatePassword": {
+    "newPasswordLabel": "Nueva contraseña",
+    "newPasswordPlaceholder": "Por favor ingrese la nueva contraseña",
+    "confirmPasswordLabel": "Confirmar contraseña",
+    "confirmPasswordPlaceholder": "Por favor confirme la contraseña",
+    "updateButton": "Actualizar contraseña"
   }
 }

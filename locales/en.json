@@ -33,6 +33,7 @@
     "submit": "Submit",
     "login": "Login",
     "accountQuestion": "Don't have an account?",
+    "forgetPassword": "forget password？",
     "signUp": "Sign up",
     "rights": "© 2024 Instamint. All rights reserved."
   },
@@ -74,5 +75,18 @@
     "minimumnameError": "Password must be at least 6 characters",
     "backToLoginButton": "Back to Login",
     "emailVerificationText": "A verification link has been sent to your email."
+  },
+  "resetPassword": {
+    "mail": "Mail",
+    "emailPlaceholder": "Please enter new password",
+    "connectionInfo": "This is the email you used to register.",
+    "resetButton": "Reset password"
+  },
+  "updatePassword": {
+    "newPasswordLabel": "New password",
+    "newPasswordPlaceholder": "Please enter new password",
+    "confirmPasswordLabel": "Confirm password",
+    "confirmPasswordPlaceholder": "Please confirm password",
+    "updateButton": "Update password"
   }
 }
