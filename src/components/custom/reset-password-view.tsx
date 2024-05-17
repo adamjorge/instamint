@@ -1,25 +1,57 @@
 "use client"
 
-import LinkButton from "@/components/ui/custom/link-button"
+import { Button } from "@/components/ui/button"
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage
+} from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import findResetToken from "@/lib/query/users/findResetToken"
-import { useQuery } from "@tanstack/react-query"
+import findChangeToken from "@/lib/query/users/findChangeToken"
+import { changePasswordSchema } from "@/validators/schemas/changePasswordSchema"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useMutation, useQuery } from "@tanstack/react-query"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
 
-export default function ResetPasswordView(props: ResetPasswordViewProps) {
+/* eslint-disable */
+
+export default function ChangePasswordView(props: ChangePasswordViewProps) {
+  const router = useRouter()
   const { token } = props
-  const { isPending, isError } = useQuery({
+  const mutation = useMutation({})
+  const form = useForm({
+    resolver: zodResolver(changePasswordSchema),
+    defaultValues: {
+      currentPassword: "",
+      newPassword: "",
+      confirmPassword: ""
+    }
+  })
+  async function onSubmit(values: z.infer<typeof changePasswordSchema>) {
+    console.log(values)
+  }
+  const { data, error, isPending } = useQuery({
     queryKey: ["resetToken", token],
-    queryFn: () => findResetToken(token)
+    queryFn: () => findChangeToken(token)
   })
 
   if (isPending) {
-    return <div>Loading...</div>
+    return <div className="text-center">Loading...</div>
   }
 
-  if (isError) {
-    return <div>Error</div>
+  if (error) {
+    return <div className="text-center">Error</div>
+  }
+
+  if (!data.tokenVerified) {
+    router.push("/login?error=failedTokenVerification")
   }
 
   return (
@@ -33,23 +65,64 @@ export default function ResetPasswordView(props: ResetPasswordViewProps) {
           height={25}
           priority
         />
-        <h2 className="font-bold text-2xl">Change your password</h2>
-        <div className="w-full flex flex-col space-y-2">
-          <Label htmlFor="password">New password</Label>
-          <Input type="password" />
-        </div>
-        <div className="w-full flex flex-col space-y-2">
-          <Label htmlFor="password-confirmation">Confirm new password</Label>
-          <Input type="password" />
-        </div>
-        <LinkButton withLocale href="/" className="w-full bg-sea hover:bg-spruce">
-          Change my password
-        </LinkButton>
+        <h2 className="font-bold text-2xl">Change my password</h2>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex flex-col justify-center space-y-8 w-full"
+          >
+            <FormField
+              control={form.control}
+              name="currentPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Current password</FormLabel>
+                  <FormControl>
+                    <Input {...field} type="password" />
+                  </FormControl>
+                  <FormDescription>
+                    The current password you're using to connect yourself to Instamint
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="newPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>New password</FormLabel>
+                  <FormControl>
+                    <Input {...field} type="password" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>New password</FormLabel>
+                  <FormControl>
+                    <Input {...field} type="password" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button className="bg-sea hover:bg-spruce" type="submit">
+              Change my password
+            </Button>
+          </form>
+        </Form>
       </div>
     </div>
   )
 }
 
-type ResetPasswordViewProps = {
+type ChangePasswordViewProps = {
   token: string
 }

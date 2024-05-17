@@ -1,4 +1,4 @@
-import { findResetPasswordQuery } from "@/lib/query/users/findResetPasswordQuery"
+import { findChangePasswordQuery } from "@/lib/query/users/findChangePasswordQuery"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request) {
@@ -10,7 +10,7 @@ export async function GET(req: Request) {
   }
 
   try {
-    const resetQuery = await findResetPasswordQuery(token)
+    const resetQuery = await findChangePasswordQuery(token)
 
     if (!resetQuery) {
       return Response.json({ message: "Invalid token" }, { status: StatusCodes.NOT_FOUND })

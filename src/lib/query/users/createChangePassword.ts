@@ -1,13 +1,13 @@
 import axios, { isAxiosError } from "axios"
 
-export async function createResetPassword(email: string, locale: string) {
+export async function createChangePassword(email: string, locale: string) {
   const data = {
     email,
     locale
   }
 
   try {
-    const response = await axios.post(`/api/auth/reset-password`, data)
+    const response = await axios.post(`/api/auth/change-password`, data)
 
     return response
   } catch (error) {

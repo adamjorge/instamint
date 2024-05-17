@@ -68,33 +68,33 @@ model Hashtag {
   nfts      Nft[]
 }
 
-model PasswordReset {
+model PasswordChange {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
-  expires DateTime
+  expires   DateTime
   token     String   @db.Text
   userId    String
   user      User     @relation(fields: [userId], references: [id])
 }
 
 model User {
-  id               String          @id @default(cuid())
+  id               String           @id @default(cuid())
   name             String?
-  email            String?         @unique
+  email            String?          @unique
   emailVerified    DateTime?
   phoneNumber      String?
   password         String?
-  emailVerifyToken String?         @db.VarChar(255)
-  is2FAEnabled     Boolean         @default(false)
-  isAdmin          Boolean         @default(false)
-  createdAt        DateTime        @default(now())
-  updatedAt        DateTime        @updatedAt
+  emailVerifyToken String?          @db.VarChar(255)
+  is2FAEnabled     Boolean          @default(false)
+  isAdmin          Boolean          @default(false)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
   deletedAt        DateTime?
   accounts         Account[]
   sessions         Session[]
-  passwordResets   PasswordReset[]
+  passwordChanges   PasswordChange[]
   minterId         Int
-  minter           Minter          @relation(fields: [minterId], references: [id], onDelete: Cascade)
+  minter           Minter           @relation(fields: [minterId], references: [id], onDelete: Cascade)
 }
 
 model Minter {

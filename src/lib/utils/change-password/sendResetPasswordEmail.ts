@@ -20,10 +20,10 @@ export async function sendResetPasswordEmail(email: string, token: string, local
   const emailData = {
     from: '"Instamint, your social network for minting NFTs" <instamint.deva.noreply@gmail.com>',
     to: email,
-    subject: "Reset your password",
+    subject: "Change your password",
     html: `
       <p>Click the link below to reset your password:</p>
-      <a href="${url}/${locale}/reset-password?token=${token}">Reset Password</a>
+      <a href="${url}/${locale}/change-password?token=${token}">Reset Password</a>
     `
   }
 
