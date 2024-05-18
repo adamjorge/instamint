@@ -29,9 +29,7 @@ export default function SignInCard() {
         <LinkButton withLocale href="/signup">
           {t("signUp")}
         </LinkButton>
-        <p className="text-gray-500">
-          {t("rights")}
-        </p>
+        <p className="text-gray-500">{t("rights")}</p>
         <LinkButton withLocale href="/reset-password">
           {t("forgetPassword")}
         </LinkButton>
