@@ -39,8 +39,11 @@ export const sendResetEmail = async (email: string, token: string) => {
     to: email,
     subject: "Password Reset",
     html: `
-      <p>You have requested to reset your password. Click the link below to reset it:</p>
+      <p>You have requested to reset your password. This token will expire in 60 minutes (1 hour). Please use the link below to reset your password:</p>
       <a href="${url}/${locale}/update-password?token=${token}">Reset Password</a>
+      <p>Best Regards,</p>
+      <p>Instamint</p>
+      
     `
   }
 

@@ -43,6 +43,8 @@ export const sendVerificationEmail = async (email: string, token: string) => {
     html: `
       <p>Click the link below to verify your email:</p>
       <a href="${url}/${locale}/email/verify?email=${email}&token=${token}">Verify Email</a>
+      <p>Best Regards,</p>
+      <p>Instamint</p>
     `
   }
 

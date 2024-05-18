@@ -27,7 +27,7 @@ interface RequestBody {
   formData: UpdatePasswordFormData
 }
 
-function validateFormData(formData: UpdatePasswordFormData) {
+function validateFormData(formData: UpdatePasswordFormData): UpdatePasswordFormState {
   const result = updatePasswordSchema.safeParse(formData)
 
   if (!result.success) {
@@ -74,7 +74,7 @@ async function updateUserPassword(email: string, hashedPassword: string) {
   })
 }
 
-export async function updatePassword(
+async function updatePassword(
   token: string,
   formData: UpdatePasswordFormData
 ): Promise<UpdatePasswordFormState> {
