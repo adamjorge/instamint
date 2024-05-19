@@ -1,4 +1,4 @@
-import ChangePasswordView from "@/components/custom/reset-password-view"
+import ChangePasswordView from "@/components/custom/change-password/change-password-view"
 import { redirect } from "next/navigation"
 
 export default function ChangePasswordPage(params: resetPasswordParams) {

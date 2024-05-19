@@ -69,12 +69,13 @@ model Hashtag {
 }
 
 model PasswordChange {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
+  id        String    @id @default(cuid())
+  createdAt DateTime  @default(now())
   expires   DateTime
-  token     String   @db.Text
+  token     String    @db.Text @unique
+  usedAt    DateTime?
   userId    String
-  user      User     @relation(fields: [userId], references: [id])
+  user      User      @relation(fields: [userId], references: [id])
 }
 
 model User {
@@ -92,7 +93,7 @@ model User {
   deletedAt        DateTime?
   accounts         Account[]
   sessions         Session[]
-  passwordChanges   PasswordChange[]
+  passwordChanges  PasswordChange[]
   minterId         Int
   minter           Minter           @relation(fields: [minterId], references: [id], onDelete: Cascade)
 }

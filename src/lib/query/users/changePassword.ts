@@ -26,10 +26,13 @@ export async function changePasswordQuery(email: string, locale: string) {
     throw new Error("Error sending email")
   }
 
+  const expiresAt = new Date()
+  expiresAt.setMinutes(expiresAt.getMinutes() + 5)
+
   return await prisma.passwordChange.create({
     data: {
       createdAt: new Date(),
-      expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
+      expires: expiresAt,
       token: resetToken,
       userId: user.id
     }
@@ -42,7 +45,11 @@ export async function isLegit(token: string, currentPassword: string) {
       user: true
     },
     where: {
-      token
+      token,
+      expires: {
+        gte: new Date()
+      },
+      usedAt: null
     }
   })
 
@@ -59,8 +66,17 @@ export async function isLegit(token: string, currentPassword: string) {
   return changeQuery.userId
 }
 
-export async function changePassword(userId: string, newPassword: string) {
+export async function changePassword(token: string, userId: string, newPassword: string) {
   const hash = await generatePasswordHash(newPassword)
+
+  await prisma.passwordChange.update({
+    where: {
+      token
+    },
+    data: {
+      usedAt: new Date()
+    }
+  })
 
   return await prisma.user.update({
     where: {
