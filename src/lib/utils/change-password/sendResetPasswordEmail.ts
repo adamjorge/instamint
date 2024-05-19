@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server"
 import nodemailer from "nodemailer"
 
 export async function sendResetPasswordEmail(email: string, token: string, locale: string) {
@@ -9,6 +10,7 @@ export async function sendResetPasswordEmail(email: string, token: string, local
     throw new Error("BASE_URL environment variable is missing.")
   }
 
+  const t = await getTranslations({ locale })
   const transporter = nodemailer.createTransport({
     service: process.env.SMTP_SERVICE,
     auth: {
@@ -18,12 +20,12 @@ export async function sendResetPasswordEmail(email: string, token: string, local
   })
   const url = process.env.BASE_URL || "http://localhost:3000"
   const emailData = {
-    from: '"Instamint, your social network for minting NFTs" <instamint.deva.noreply@gmail.com>',
+    from: `${t("changePassword.appDescription")} <instamint.deva.noreply@gmail.com>`,
     to: email,
-    subject: "Change your password",
+    subject: t("changePassword.changePasswordTitle"),
     html: `
-      <p>Click the link below to change your password:</p>
-      <a href="${url}/${locale}/change-password?token=${token}">Change Password</a>
+      <p>${t("changePassword.changePasswordInstructions")}</p>
+      <a href="${url}/${locale}/change-password?token=${token}">${t("changePassword.changePassword")}</a>
     `
   }
 

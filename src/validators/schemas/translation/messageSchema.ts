@@ -18,7 +18,8 @@ export const MessageSchema = z.object({
     invalidCredentials: z.string(),
     deletedAccount: z.string(),
     appDescription: z.string(),
-    greeting: z.string()
+    greeting: z.string(),
+    changePasswordMail: z.string()
   }),
   search: z.object({
     cancel: z.string(),
@@ -103,6 +104,20 @@ export const MessageSchema = z.object({
     confirmPasswordPlaceholder: z.string(),
     passwordNotMatch: z.string(),
     updateButton: z.string(),
-    successMessage: z.string()
+    successMessage: z.string(),
+    deleteAccountDescription: z.string(),
+    changeMyPassword: z.string()
+  }),
+  changePassword: z.object({
+    changePasswordTitle: z.string(),
+    changePassword: z.string(),
+    changeMyPassword: z.string(),
+    currentPassword: z.string(),
+    currentPasswordDescription: z.string(),
+    newPassword: z.string(),
+    confirmPassword: z.string(),
+    backToLogin: z.string(),
+    appDescription: z.string(),
+    changePasswordInstructions: z.string()
   })
 })

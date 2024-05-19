@@ -4,11 +4,13 @@ import { Form } from "@/components/ui/form"
 import { changePasswordSchema } from "@/validators/schemas/changePasswordSchema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { UseMutationResult } from "@tanstack/react-query"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
 export default function ChangePasswordForm(props: ChangePasswordFormProps) {
+  const t = useTranslations("changePassword")
   const form = useForm({
     resolver: zodResolver(changePasswordSchema),
     defaultValues: {
@@ -32,7 +34,7 @@ export default function ChangePasswordForm(props: ChangePasswordFormProps) {
           height={25}
           priority
         />
-        <h2 className="font-bold text-2xl">Change my password</h2>
+        <h2 className="font-bold text-2xl">{t("changePasswordTitle")}</h2>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -41,18 +43,18 @@ export default function ChangePasswordForm(props: ChangePasswordFormProps) {
             <ChangePasswordField
               form={form}
               name="currentPassword"
-              label="Current password"
-              description="The current password you're using to connect yourself to Instamint"
+              label={t("currentPassword")}
+              description={t("currentPasswordDescription")}
             />
-            <ChangePasswordField form={form} name="newPassword" label="New password" />
-            <ChangePasswordField form={form} name="confirmPassword" label="Confirm password" />
+            <ChangePasswordField form={form} name="newPassword" label={t("newPassword")} />
+            <ChangePasswordField form={form} name="confirmPassword" label={t("confirmPassword")} />
             <Button className="bg-sea hover:bg-spruce" type="submit">
-              Change my password
+              {t("changePasswordTitle")}
             </Button>
           </form>
         </Form>
         <Button className="bg-sea hover:bg-spruce" onClick={props.handleClickOnLoginButton}>
-          Back to login
+          {t("backToLogin")}
         </Button>
       </div>
     </div>

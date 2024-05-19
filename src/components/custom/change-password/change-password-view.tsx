@@ -45,7 +45,12 @@ export default function ChangePasswordView(props: ChangePasswordViewProps) {
     router.push("/login?error=failedTokenVerification")
   }
 
-  return <ChangePasswordForm mutation={mutation} handleClickOnLoginButton={handleClickOnLoginButton} />
+  const changePasswordProps = {
+    mutation,
+    handleClickOnLoginButton
+  }
+
+  return <ChangePasswordForm {...changePasswordProps} />
 }
 
 type ChangePasswordViewProps = {

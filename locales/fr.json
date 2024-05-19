@@ -16,7 +16,8 @@
     "invalidCredentials": "Identifiants invalides",
     "deletedAccount": "Votre demande de suppression de compte a bien été reçue. À bientôt !",
     "appDescription": "Instamint est votre réseau social pour créer des NFTs.",
-    "greeting": "Meilleures salutations"
+    "greeting": "Meilleures salutations",
+    "changePasswordMail": "Vous recevrez un email pour changer votre mot de passe."
   },
   "search": {
     "cancel": "Annuler",
@@ -101,6 +102,20 @@
     "confirmPasswordPlaceholder": "Veuillez confirmer votre mot de passe",
     "passwordNotMatch": "Les mots de passe ne correspondent pas",
     "updateButton": "Mettre à jour le mot de passe",
-    "successMessage": "Mot de passe mis à jour avec succès"
+    "successMessage": "Mot de passe mis à jour avec succès",
+    "deleteAccountDescription": "Cette action est irréversible et supprimera toutes vos données. Veuillez vous assurer avant de continuer.",
+    "changeMyPassword": "Changer mon mot de passe"
+  },
+  "changePassword": {
+    "changePasswordTitle": "Changer mon mot de passe",
+    "changePassword": "Changer le mot de passe",
+    "changeMyPassword": "Changer mon mot de passe",
+    "currentPassword": "Mot de passe actuel",
+    "currentPasswordDescription": "Le mot de passe actuel que vous utilisez pour vous connecter à Instamint",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmer le nouveau mot de passe",
+    "backToLogin": "Retour à la connexion",
+    "appDescription": "Instamint est votre réseau social pour la création de NFTs",
+    "changePasswordInstructions": "Cliquez sur le lien ci-dessous pour changer votre mot de passe :"
   }
 }

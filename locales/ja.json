@@ -9,14 +9,15 @@
     "error": "エラーが発生しました。後でもう一度お試しください。",
     "searchWelcome": "検索ページへようこそ。ここではNFTやミンターを検索することができます。",
     "nftPrice": "価格：${price}",
-    "signOut": "サインアウト",
     "moreDetails": "詳細",
     "forYouFeed": "あなたへのおすすめ",
     "followedFeed": "フォロー中",
     "invalidCredentials": "認証情報が無効です",
     "deletedAccount": "アカウント削除のリクエストを受け付けました。またのご利用をお待ちしております！",
     "appDescription": "InstamintはNFTを作成するためのソーシャルネットワークです",
-    "greeting": "敬具"
+    "greeting": "敬具",
+    "signOut": "ログアウト",
+    "changePasswordMail": "パスワードをかえるためのメールをうけとります。"
   },
   "search": {
     "cancel": "キャンセル",
@@ -101,6 +102,20 @@
     "confirmPasswordPlaceholder": "パスワードを確認してください",
     "passwordNotMatch": "パスワードが一致しません",
     "updateButton": "パスワードを更新",
-    "successMessage": "パスワードが正常に更新されました"
+    "successMessage": "パスワードが正常に更新されました",
+    "deleteAccountDescription": "この操作は取り消せず、すべてのデータが削除されます。続行する前にご確認ください。",
+    "changeMyPassword": "わたしのパスワードをかえる"
+  },
+  "changePassword": {
+    "changePasswordTitle": "わたしのパスワードをかえる",
+    "changePassword": "パスワードをかえる",
+    "changeMyPassword": "わたしのパスワードをかえる",
+    "currentPassword": "げんざいのパスワード",
+    "currentPasswordDescription": "Instamintにせつぞくするためにりようしているげんざいのパスワード",
+    "newPassword": "あたらしいパスワード",
+    "confirmPassword": "あたらしいパスワードをかくにんする",
+    "backToLogin": "ログインにもどる",
+    "appDescription": "InstamintはNFTをつくるためのソーシャルネットワークです",
+    "changePasswordInstructions": "パスワードをかえるには、したのリンクをクリックしてください："
   }
 }

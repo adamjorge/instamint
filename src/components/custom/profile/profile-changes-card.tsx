@@ -43,7 +43,7 @@ export default function ProfileChangesCard(props: ProfileChangesProps) {
         </DialogContent>
       </Dialog>
       <Button className="bg-sea text-white hover:bg-spruce text-md" onClick={handleClickOnChange}>
-        Change my password
+        {t("changeMyPassword")}
       </Button>
     </div>
   )
