@@ -1,7 +1,7 @@
 "use server"
 
 import { randomBytes } from "crypto"
-import { getLocale } from "next-intl/server"
+import { getLocale, getTranslations } from "next-intl/server"
 import nodemailer from "nodemailer"
 
 export const generateResetToken = () =>
@@ -33,15 +33,16 @@ export const sendResetEmail = async (email: string, token: string) => {
     }
   })
   const locale = await getLocale()
+  const t = await getTranslations({ locale })
   const url = process.env.BASE_URL || "http://localhost:3000"
   const emailData = {
-    from: '"Instamint" <instamint.deva.noreply@gmail.com>',
+    from: `${t("global.appDescription")} <instamint.deva.noreply@gmail.com>`,
     to: email,
-    subject: "Password Reset",
+    subject: t("resetPassword.resetPasswordTitle"),
     html: `
-      <p>You have requested to reset your password. This token will expire in 60 minutes (1 hour). Please use the link below to reset your password:</p>
-      <a href="${url}/${locale}/update-password?token=${token}">Reset Password</a>
-      <p>Best Regards,</p>
+      <p>${t("resetPassword.resetPasswordInstruction")}</p>
+      <a href="${url}/${locale}/update-password?token=${token}">${t("resetPassword.resetMainTitle")}</a>
+      <p>${t("global.greeting")},</p>
       <p>Instamint</p>
       
     `

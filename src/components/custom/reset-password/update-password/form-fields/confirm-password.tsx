@@ -33,7 +33,7 @@ export default function ConfirmPasswordField({
             />
           </FormControl>
           {newPassword && field.value !== newPassword && (
-            <FormMessage>Passwords do not match</FormMessage>
+            <FormMessage>{t("passwordNotMatch")}</FormMessage>
           )}
           <FormMessage>{error}</FormMessage>
         </FormItem>

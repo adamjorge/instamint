@@ -4,8 +4,8 @@ import UpdatePasswordForm from "@/components/custom/reset-password/update-passwo
 
 export default function UpdatePasswordPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div>
       <UpdatePasswordForm />
-    </main>
+    </div>
   )
 }

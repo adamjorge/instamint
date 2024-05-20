@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -13,7 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useTranslations } from "next-intl"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
-import * as z from "zod"
+import { z } from "zod"
 
 export interface ResetFormData {
   email: string
@@ -28,6 +30,7 @@ export const formSchema = z.object({
 
 export default function ResetPasswordForm() {
   const t = useTranslations("resetPassword")
+  const g = useTranslations("global")
   const form = useForm<ResetFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -39,12 +42,12 @@ export default function ResetPasswordForm() {
       const { success } = await requestPasswordReset(values.email)
 
       if (success) {
-        toast.success("A verification link has been sent to your email.")
+        toast.success(t("successEmailMessage"))
       } else {
-        toast.error("Oops! email doesn't exist")
+        toast.error(t("emailNotExistMessage"))
       }
     } catch (e) {
-      toast.error("Oops! something went wrong")
+      toast.error(g("error"))
     }
   }
 

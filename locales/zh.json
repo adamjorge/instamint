@@ -78,15 +78,22 @@
   },
   "resetPassword": {
     "mail": "邮件",
-    "emailPlaceholder": "请输入您的电子邮件",
-    "connectionInfo": "这是您用来注册的电子邮件。",
-    "resetButton": "重设密码"
+    "emailPlaceholder": "请输入新密码",
+    "connectionInfo": "这是您注册时使用的电子邮件。",
+    "resetButton": "重置密码",
+    "successEmailMessage": "验证链接已发送到您的电子邮件。",
+    "emailNotExistMessage": "哎呀！电子邮件不存在。",
+    "resetPasswordTitle": "重置密码",
+    "resetMainTitle": "重置密码",
+    "resetPasswordInstruction": "您已请求重置密码。此令牌将在60分钟（1小时）内过期。请使用以下链接重置您的密码："
   },
   "updatePassword": {
     "newPasswordLabel": "新密码",
     "newPasswordPlaceholder": "请输入新密码",
     "confirmPasswordLabel": "确认密码",
     "confirmPasswordPlaceholder": "请确认密码",
-    "updateButton": "更新密码"
+    "passwordNotMatch": "密码不匹配",
+    "updateButton": "更新密码",
+    "successMessage": "密码更新成功"
   }
 }

@@ -14,7 +14,9 @@
     "forYouFeed": "For you",
     "followedFeed": "Followed",
     "invalidCredentials": "Invalid credentials",
-    "deletedAccount": "Your request to delete your account has been successfully received. See you soon!"
+    "deletedAccount": "Your request to delete your account has been successfully received. See you soon!",
+    "appDescription": "Instamint is your social network for minting NFTs",
+    "greeting": "Best Regards"
   },
   "search": {
     "cancel": "Cancel",
@@ -74,19 +76,27 @@
     "minimumPasswordError": "Password must be at least 6 characters",
     "minimumnameError": "Password must be at least 6 characters",
     "backToLoginButton": "Back to Login",
-    "emailVerificationText": "A verification link has been sent to your email."
+    "emailVerificationText": "A verification link has been sent to your email.",
+    "conformEmailInstruction": "Click the link below to conform your account:"
   },
   "resetPassword": {
     "mail": "Mail",
     "emailPlaceholder": "Please enter new password",
     "connectionInfo": "This is the email you used to register.",
-    "resetButton": "Reset password"
+    "resetButton": "Reset password",
+    "successEmailMessage": "A verification link has been sent to your email.",
+    "emailNotExistMessage": "Oops! email doesn't exist.",
+    "resetPasswordTitle": "Reset Password",
+    "resetMainTitle": "Reset Password",
+    "resetPasswordInstruction": "You have requested to reset your password. This token will expire in 60 minutes (1 hour). Please use the link below to reset your password:"
   },
   "updatePassword": {
     "newPasswordLabel": "New password",
     "newPasswordPlaceholder": "Please enter new password",
     "confirmPasswordLabel": "Confirm password",
     "confirmPasswordPlaceholder": "Please confirm password",
-    "updateButton": "Update password"
+    "passwordNotMatch": "Passwords do not match",
+    "updateButton": "Update password",
+    "successMessage": "Password updated successfully"
   }
 }

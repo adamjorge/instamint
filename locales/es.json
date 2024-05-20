@@ -1,12 +1,12 @@
 {
   "global": {
-    "check": "Verificar",
+    "check": "Comprobar",
     "loading": "Cargando...",
     "noResults": "No se encontraron resultados.",
     "resultsFor": "Resultados de búsqueda para:",
     "noResultsFor": "No se encontraron resultados para:",
     "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
-    "error": "Ocurrió un error, por favor intente de nuevo más tarde.",
+    "error": "Ocurrió un error, por favor inténtalo nuevamente más tarde.",
     "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí puedes buscar NFTs o minters.",
     "nftPrice": "Precio: ${price}",
     "signOut": "Cerrar sesión",
@@ -14,28 +14,29 @@
     "forYouFeed": "Para ti",
     "followedFeed": "Seguidos",
     "invalidCredentials": "Credenciales inválidas",
-    "deletedAccount": "Tu solicitud para eliminar tu cuenta ha sido recibida exitosamente. ¡Hasta pronto!"
+    "deletedAccount": "Tu solicitud para eliminar tu cuenta ha sido recibida exitosamente. ¡Hasta pronto!",
+    "appDescription": "Instamint es tu red social para crear NFTs",
+    "greeting": "Saludos cordiales"
   },
   "search": {
     "cancel": "Cancelar",
-    "minPrice": "Precio mín.",
-    "maxPrice": "Precio máx.",
-    "noSearchResultsFor": "No se encontró {type}",
+    "minPrice": "Precio mínimo",
+    "maxPrice": "Precio máximo",
+    "noSearchResultsFor": "No se encontraron {type}",
     "search": "Buscar",
     "searchSentence": "Buscar un NFT o un minter.",
     "searchPlaceholder": "Buscar...",
-    "submit": "Enviar",
-    "emailFieldPlaceHolder": "Ingresa tu correo electrónico"
+    "submit": "Enviar"
   },
   "login": {
-    "mail": "Correo",
-    "connectionInfo": "Este es el correo que usaste para registrarte.",
+    "mail": "Correo electrónico",
+    "connectionInfo": "Este es el correo electrónico que usaste para registrarte.",
     "password": "Contraseña",
     "submit": "Enviar",
     "login": "Iniciar sesión",
     "accountQuestion": "¿No tienes una cuenta?",
-    "forgetPassword": "¿Olvidaste la contraseña?",
-    "signUp": "Regístrate",
+    "forgetPassword": "¿Olvidaste tu contraseña?",
+    "signUp": "Registrarse",
     "rights": "© 2024 Instamint. Todos los derechos reservados."
   },
   "howToMenu": {
@@ -44,7 +45,7 @@
     "notifications": "Notificaciones"
   },
   "privacyMenu": {
-    "whoCanSee": "¿Quién puede ver mi perfil?",
+    "whoCanSee": "Quién puede ver mi perfil",
     "privacy": "Privacidad"
   },
   "applicationMenu": {
@@ -53,7 +54,7 @@
   },
   "profileChanges": {
     "changeProfile": "Editar perfil",
-    "bio": "Bio",
+    "bio": "Biografía",
     "bioWIP": "Esta función aún está en desarrollo.",
     "deleteAccount": "Eliminar tu cuenta",
     "deleteAccountConfirmation": "¿Estás seguro de que quieres eliminar tu cuenta?",
@@ -64,9 +65,9 @@
     "passwordLabel": "Contraseña",
     "password": "Contraseña",
     "nameLabel": "Nombre",
-    "emailFieldPlaceholder": "Ingrese su correo electrónico",
-    "passwordFieldPlaceholder": "Ingrese su contraseña",
-    "nameFieldPlaceholder": "Ingrese su nombre",
+    "emailFieldPlaceholder": "Ingresa tu correo electrónico",
+    "passwordFieldPlaceholder": "Ingresa tu contraseña",
+    "nameFieldPlaceholder": "Ingresa tu nombre",
     "signUpButton": "Registrarse",
     "loginButton": "Iniciar sesión",
     "loginQuestion": "¿Ya tienes una cuenta?",
@@ -74,20 +75,28 @@
     "minimumEmailError": "El correo electrónico debe tener al menos 3 caracteres",
     "minimumPasswordError": "La contraseña debe tener al menos 6 caracteres",
     "minimumnameError": "La contraseña debe tener al menos 6 caracteres",
-    "backToLoginButton": "Volver a Iniciar sesión",
-    "emailVerificationText": "Se ha enviado un enlace de verificación a su correo electrónico."
+    "backToLoginButton": "Volver a iniciar sesión",
+    "emailVerificationText": "Se ha enviado un enlace de verificación a tu correo electrónico.",
+    "conformEmailInstruction": "Haz clic en el enlace a continuación para confirmar tu cuenta:"
   },
   "resetPassword": {
-    "mail": "Correo electrónico",
-    "emailPlaceholder": "Por favor, ingrese su correo electrónico",
-    "connectionInfo": "Este es el correo electrónico que utilizaste para registrarte.",
-    "resetButton": "Restablecer contraseña"
+    "mail": "Correo",
+    "emailPlaceholder": "Por favor, ingrese una nueva contraseña",
+    "connectionInfo": "Este es el correo electrónico que utilizó para registrarse.",
+    "resetButton": "Restablecer contraseña",
+    "successEmailMessage": "Se ha enviado un enlace de verificación a su correo electrónico.",
+    "emailNotExistMessage": "¡Ups! el correo electrónico no existe.",
+    "resetPasswordTitle": "Restablecer Contraseña",
+    "resetMainTitle": "Restablecer Contraseña",
+    "resetPasswordInstruction": "Ha solicitado restablecer su contraseña. Este token caducará en 60 minutos (1 hora). Utilice el enlace a continuación para restablecer su contraseña:"
   },
   "updatePassword": {
     "newPasswordLabel": "Nueva contraseña",
-    "newPasswordPlaceholder": "Por favor ingrese la nueva contraseña",
+    "newPasswordPlaceholder": "Por favor ingresa la nueva contraseña",
     "confirmPasswordLabel": "Confirmar contraseña",
-    "confirmPasswordPlaceholder": "Por favor confirme la contraseña",
-    "updateButton": "Actualizar contraseña"
+    "confirmPasswordPlaceholder": "Por favor confirma la contraseña",
+    "passwordNotMatch": "Las contraseñas no coinciden",
+    "updateButton": "Actualizar contraseña",
+    "successMessage": "Contraseña actualizada correctamente"
   }
 }

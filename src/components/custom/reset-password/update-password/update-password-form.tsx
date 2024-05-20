@@ -5,18 +5,18 @@ import NewPasswordField from "@/components/custom/reset-password/update-password
 import { formSchema } from "@/components/custom/reset-password/update-password/form-schema"
 import {
   UpdatePasswordFormData,
-  handleSubmit
+  useUpdatePassword
 } from "@/components/custom/reset-password/update-password/handle-submit"
 import { Button } from "@/components/ui/button"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useTranslations } from "next-intl"
 import { useRouter } from "next/navigation"
+import React from "react"
 import { FormProvider, useForm } from "react-hook-form"
 
-export default function UpdatePasswordForm() {
-  type FieldValues = UpdatePasswordFormData
+const UpdatePasswordForm: React.FC = () => {
   const t = useTranslations("updatePassword")
-  const form = useForm<FieldValues>({
+  const form = useForm<UpdatePasswordFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       newPassword: "",
@@ -24,7 +24,8 @@ export default function UpdatePasswordForm() {
     }
   })
   const router = useRouter()
-  const submitData = async (values: UpdatePasswordFormData) => {
+  const { handleSubmit } = useUpdatePassword()
+  const onSubmit = async (values: UpdatePasswordFormData) => {
     const success = await handleSubmit(values)
 
     if (success) {
@@ -37,7 +38,7 @@ export default function UpdatePasswordForm() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <FormProvider {...form}>
         <form
-          onSubmit={form.handleSubmit(submitData)}
+          onSubmit={form.handleSubmit(onSubmit)}
           className="max-w-md w-full flex flex-col gap-4"
         >
           <NewPasswordField control={form.control} />
@@ -50,3 +51,5 @@ export default function UpdatePasswordForm() {
     </main>
   )
 }
+
+export default UpdatePasswordForm
