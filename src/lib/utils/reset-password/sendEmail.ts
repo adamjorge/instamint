@@ -1,11 +1,10 @@
 "use server"
 
-import prisma from "@/lib/db"
 import { randomBytes } from "crypto"
 import { getLocale, getTranslations } from "next-intl/server"
 import nodemailer from "nodemailer"
 
-export const generateEmailVerificationToken = () =>
+export const generateResetToken = () =>
   new Promise<string>((resolve, reject) => {
     try {
       const token = randomBytes(32).toString("hex")
@@ -19,15 +18,14 @@ export const generateEmailVerificationToken = () =>
     }
   })
 
-export const sendVerificationEmail = async (email: string, token: string) => {
+export const sendResetEmail = async (email: string, token: string) => {
   const requiredEnvVariables = ["SMTP_SERVICE", "SMTP_EMAIL", "SMTP_PASSWORD"]
   for (const envVar of requiredEnvVariables) {
     if (!process.env[envVar]) {
       throw new Error(`Environment variable ${envVar} is missing.`)
     }
   }
-
-  const transporter: nodemailer.Transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     service: process.env.SMTP_SERVICE,
     auth: {
       user: process.env.SMTP_EMAIL,
@@ -40,23 +38,15 @@ export const sendVerificationEmail = async (email: string, token: string) => {
   const emailData = {
     from: `${t("global.appDescription")} <instamint.deva.noreply@gmail.com>`,
     to: email,
-    subject: t("signUp.signupSubjectTitle"),
+    subject: t("resetPassword.resetPasswordTitle"),
     html: `
-      <p>${t("signUp.signupInstruction")}</p>
-      <a href="${url}/${locale}/email/verify?email=${email}&token=${token}">${t("signUp.signupVerifyTitle")}</a>
+      <p>${t("resetPassword.resetPasswordInstruction")}</p>
+      <a href="${url}/${locale}/update-password?token=${token}">${t("resetPassword.resetMainTitle")}</a>
       <p>${t("global.greeting")},</p>
       <p>Instamint</p>
+      
     `
   }
 
   await transporter.sendMail(emailData)
 }
-
-export const verifyEmail = (email: string) =>
-  prisma.user.update({
-    where: { email },
-    data: {
-      emailVerified: new Date(),
-      emailVerifyToken: null
-    }
-  })
