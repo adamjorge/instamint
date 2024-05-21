@@ -35,7 +35,7 @@ const UpdatePasswordForm: React.FC = () => {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="flex min-h-screen flex-col items-center justify-between p-24">
       <FormProvider {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -48,7 +48,7 @@ const UpdatePasswordForm: React.FC = () => {
           </Button>
         </form>
       </FormProvider>
-    </main>
+    </div>
   )
 }
 

@@ -1,21 +1,23 @@
 import { z } from "zod"
 
-const updatePasswordSchema = z.object({
-  newPassword: z.string().min(6).max(255),
-  confirmPassword: z.string().min(6).max(255)
-})
+export const updatePasswordSchema = z
+  .object({
+    newPassword: z.string().min(6).max(255),
+    confirmPassword: z.string().min(6).max(255)
+  })
+  .refine((data) => data.newPassword === data.confirmPassword, {
+    path: ["confirmPassword"],
+    message: "New Password and Confirm Password must match"
+  })
 
-interface UpdatePasswordFormState {
+export type UpdatePasswordFormData = z.infer<typeof updatePasswordSchema>
+
+export interface UpdatePasswordFormState {
   errors: {
     newPassword?: string[]
     confirmPassword?: string[]
     _form?: string[]
   }
-}
-
-interface UpdatePasswordFormData {
-  newPassword: string
-  confirmPassword: string
 }
 
 export function validateFormData(formData: UpdatePasswordFormData): UpdatePasswordFormState {
@@ -27,15 +29,5 @@ export function validateFormData(formData: UpdatePasswordFormData): UpdatePasswo
     }
   }
 
-  if (formData.newPassword !== formData.confirmPassword) {
-    return {
-      errors: {
-        confirmPassword: ["New Password and confirm password must match"]
-      }
-    }
-  }
-
   return { errors: {} }
 }
-
-export type { UpdatePasswordFormData, UpdatePasswordFormState }

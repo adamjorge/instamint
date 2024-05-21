@@ -79,7 +79,11 @@ export const MessageSchema = z.object({
     minimumnameError: z.string(),
     backToLoginButton: z.string(),
     emailVerificationText: z.string(),
-    conformEmailInstruction: z.string()
+    conformEmailInstruction: z.string(),
+    signupSubjectTitle: z.string(),
+    signupVerifyTitle: z.string(),
+    signupInstruction: z.string(),
+    successVerification: z.string()
   }),
   resetPassword: z.object({
     mail: z.string(),

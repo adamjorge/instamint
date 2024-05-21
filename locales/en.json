@@ -77,7 +77,11 @@
     "minimumnameError": "Password must be at least 6 characters",
     "backToLoginButton": "Back to Login",
     "emailVerificationText": "A verification link has been sent to your email.",
-    "conformEmailInstruction": "Click the link below to conform your account:"
+    "conformEmailInstruction": "Click the link below to conform your account:",
+    "signupSubjectTitle": "Account creation email verification",
+    "signupVerifyTitle": "Verify Email",
+    "signupInstruction": "Click the link below to verify your email:",
+    "successVerification": "Email verified successfully. Please login."
   },
   "resetPassword": {
     "mail": "Mail",

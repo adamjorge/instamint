@@ -61,23 +61,27 @@
     "deleteAccountDescription": "Cette action est irréversible et supprimera toutes vos données. Veuillez être sûr avant de continuer."
   },
   "signUp": {
-    "emailLabel": "Email",
+    "emailLabel": "Adresse email",
     "passwordLabel": "Mot de passe",
     "password": "Mot de passe",
     "nameLabel": "Nom",
-    "emailFieldPlaceholder": "Entrez votre email",
+    "emailFieldPlaceholder": "Entrez votre adresse email",
     "passwordFieldPlaceholder": "Entrez votre mot de passe",
     "nameFieldPlaceholder": "Entrez votre nom",
     "signUpButton": "S'inscrire",
-    "loginButton": "Connexion",
+    "loginButton": "Se connecter",
     "loginQuestion": "Vous avez déjà un compte ?",
     "invalidEmail": "Adresse email invalide",
-    "minimumEmailError": "L'email doit comporter au moins 3 caractères",
+    "minimumEmailError": "L'adresse email doit comporter au moins 3 caractères",
     "minimumPasswordError": "Le mot de passe doit comporter au moins 6 caractères",
-    "minimumnameError": "Le nom doit comporter au moins 6 caractères",
+    "minimumnameError": "Le nom doit comporter au moins 3 caractères",
     "backToLoginButton": "Retour à la connexion",
     "emailVerificationText": "Un lien de vérification a été envoyé à votre adresse email.",
-    "conformEmailInstruction": "Cliquez sur le lien ci-dessous pour confirmer votre compte :"
+    "conformEmailInstruction": "Cliquez sur le lien ci-dessous pour confirmer votre compte :",
+    "signupSubjectTitle": "Vérification par email de la création du compte",
+    "signupVerifyTitle": "Vérification de l'email",
+    "signupInstruction": "Cliquez sur le lien ci-dessous pour vérifier votre adresse email :",
+    "successVerification": "Adresse email vérifiée avec succès. Veuillez vous connecter."
   },
   "resetPassword": {
     "mail": "Courriel",

@@ -70,11 +70,16 @@
     "loginButton": "登录",
     "loginQuestion": "已经有账号了吗？",
     "invalidEmail": "无效的电子邮件地址",
-    "minimumEmailError": "电子邮件至少必须包含3个字符",
+    "minimumEmailError": "电子邮件必须至少为3个字符",
     "minimumPasswordError": "密码必须至少为6个字符",
-    "minimumnameError": "密码必须至少为6个字符",
+    "minimumnameError": "姓名必须至少为3个字符",
     "backToLoginButton": "返回登录",
-    "emailVerificationText": "验证链接已发送到您的电子邮件。"
+    "emailVerificationText": "已向您的电子邮件发送了验证链接。",
+    "conformEmailInstruction": "点击下面的链接确认您的账号：",
+    "signupSubjectTitle": "账号创建电子邮件验证",
+    "signupVerifyTitle": "验证电子邮件",
+    "signupInstruction": "点击下面的链接验证您的电子邮件：",
+    "successVerification": "电子邮件验证成功，请登录。"
   },
   "resetPassword": {
     "mail": "邮件",
