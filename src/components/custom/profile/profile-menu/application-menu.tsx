@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
+import LinkButton from "@/components/ui/custom/link-button"
 import { useTranslations } from "next-intl"
 import { FaLanguage } from "react-icons/fa6"
+import { MdPolicy } from "react-icons/md"
 
 export default function ApplicationMenu() {
   const t = useTranslations("applicationMenu")
@@ -13,6 +15,14 @@ export default function ApplicationMenu() {
           <FaLanguage size={20} />
           <span className="ml-3">{t("language")}</span>
         </Button>
+        <LinkButton
+          withLocale
+          href="/profile/privacy-policy"
+          className="bg-white text-black hover:bg-light w-full flex justify-start"
+        >
+          <MdPolicy size={20} />
+          <span className="ml-3">{t("privacyPolicy")}</span>
+        </LinkButton>
       </div>
     </div>
   )

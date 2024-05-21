@@ -50,7 +50,8 @@
   },
   "applicationMenu": {
     "yourApplication": "您的应用",
-    "language": "语言"
+    "language": "语言",
+    "privacyPolicy": "隐私政策"
   },
   "profileChanges": {
     "changeMyPassword": "更改我的密码",

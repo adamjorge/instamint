@@ -54,7 +54,8 @@ export const MessageSchema = z.object({
   }),
   applicationMenu: z.object({
     yourApplication: z.string(),
-    language: z.string()
+    language: z.string(),
+    privacyPolicy: z.string()
   }),
   profileChanges: z.object({
     changeMyPassword: z.string(),

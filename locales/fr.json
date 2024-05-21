@@ -52,7 +52,8 @@
   },
   "applicationMenu": {
     "yourApplication": "Votre application",
-    "language": "Langue"
+    "language": "Langue",
+    "privacyPolicy": "Politique de confidentialité"
   },
   "profileChanges": {
     "changeMyPassword": "Changer mon mot de passe",

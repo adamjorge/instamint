@@ -52,7 +52,8 @@
   },
   "applicationMenu": {
     "yourApplication": "あなたのアプリケーション",
-    "language": "言語"
+    "language": "言語",
+    "privacyPolicy": "プライバシーポリシー"
   },
   "profileChanges": {
     "changeMyPassword": "パスワードをかえる",
