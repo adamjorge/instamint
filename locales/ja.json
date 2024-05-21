@@ -1,48 +1,51 @@
 {
   "global": {
-    "check": "チェック",
+    "check": "確認する",
     "loading": "読み込み中...",
-    "noResults": "結果が見つかりません。",
-    "resultsFor": "検索結果:",
-    "noResultsFor": "該当する結果が見つかりません:",
-    "noResultsSentence": "検索語に対する結果が見つかりません。",
-    "error": "エラーが発生しました。後ほど再試行してください。",
-    "searchWelcome": "検索ページへようこそ。ここでNFTやミンターを検索できます。",
-    "nftPrice": "価格: ${price}",
+    "noResults": "結果が見つかりませんでした。",
+    "resultsFor": "の検索結果：",
+    "noResultsFor": "の結果は見つかりませんでした：",
+    "noResultsSentence": "検索語句に一致する結果が見つかりませんでした。",
+    "error": "エラーが発生しました。後でもう一度お試しください。",
+    "searchWelcome": "検索ページへようこそ。ここではNFTやミンターを検索することができます。",
+    "nftPrice": "価格：${price}",
     "signOut": "サインアウト",
     "moreDetails": "詳細",
-    "forYouFeed": "あなたのために",
+    "forYouFeed": "あなたへのおすすめ",
     "followedFeed": "フォロー中",
-    "invalidCredentials": "無効な認証情報",
-    "deletedAccount": "アカウント削除のリクエストが正常に受け付けられました。またお会いしましょう！"
+    "invalidCredentials": "認証情報が無効です",
+    "deletedAccount": "アカウント削除のリクエストを受け付けました。またのご利用をお待ちしております！",
+    "appDescription": "InstamintはNFTを作成するためのソーシャルネットワークです",
+    "greeting": "敬具"
   },
   "search": {
     "cancel": "キャンセル",
     "minPrice": "最低価格",
     "maxPrice": "最高価格",
-    "noSearchResultsFor": "{type}が見つかりません",
+    "noSearchResultsFor": "{type}が見つかりませんでした",
     "search": "検索",
-    "searchSentence": "NFTまたはミンターを検索します。",
+    "searchSentence": "NFTやミンターを検索してください。",
     "searchPlaceholder": "検索...",
-    "submit": "提出"
+    "submit": "送信"
   },
   "login": {
     "mail": "メール",
-    "connectionInfo": "これは登録時に使用したメールです。",
+    "connectionInfo": "これはあなたが登録に使用したメールアドレスです。",
     "password": "パスワード",
-    "submit": "提出",
+    "submit": "送信",
     "login": "ログイン",
-    "accountQuestion": "アカウントを持っていませんか？",
-    "signUp": "サインアップ",
-    "rights": "© 2024 Instamint。すべての権利が保護されています。"
+    "accountQuestion": "アカウントをお持ちでないですか？",
+    "forgetPassword": "パスワードをお忘れですか？",
+    "signUp": "登録",
+    "rights": "© 2024 Instamint. All rights reserved."
   },
   "howToMenu": {
     "howTo": "Instamintの使い方",
-    "changeProfile": "プロファイルを編集",
+    "changeProfile": "プロフィールの編集",
     "notifications": "通知"
   },
   "privacyMenu": {
-    "whoCanSee": "誰が私のプロファイルを見ることができますか？",
+    "whoCanSee": "誰が私のプロフィールを見ることができますか？",
     "privacy": "プライバシー"
   },
   "applicationMenu": {
@@ -50,29 +53,54 @@
     "language": "言語"
   },
   "profileChanges": {
-    "changeProfile": "プロファイルを編集",
+    "changeProfile": "プロフィールの編集",
     "bio": "バイオ",
-    "bioWIP": "この機能は現在開発中です。",
-    "deleteAccount": "アカウントを削除する",
+    "bioWIP": "この機能はまだ開発中です。",
+    "deleteAccount": "アカウントの削除",
     "deleteAccountConfirmation": "本当にアカウントを削除しますか？",
-    "deleteAccountDescription": "この操作は取り消せず、すべてのデータが削除されます。続行する前にご確認ください。"
+    "deleteAccountDescription": "この操作は取り消せません。すべてのデータが削除されますので、慎重にお願いします。"
   },
   "signUp": {
     "emailLabel": "メールアドレス",
     "passwordLabel": "パスワード",
     "password": "パスワード",
     "nameLabel": "名前",
-    "emailFieldPlaceholder": "メールアドレスを入力してください",
-    "passwordFieldPlaceholder": "パスワードを入力してください",
-    "nameFieldPlaceholder": "名前を入力してください",
-    "signUpButton": "登録",
+    "emailFieldPlaceholder": "メールアドレスを入力",
+    "passwordFieldPlaceholder": "パスワードを入力",
+    "nameFieldPlaceholder": "名前を入力",
+    "signUpButton": "登録する",
     "loginButton": "ログイン",
     "loginQuestion": "すでにアカウントをお持ちですか？",
     "invalidEmail": "無効なメールアドレス",
     "minimumEmailError": "メールアドレスは少なくとも3文字必要です",
     "minimumPasswordError": "パスワードは少なくとも6文字必要です",
-    "minimumnameError": "パスワードは少なくとも6文字必要です",
-    "backToLoginButton": "ログインに戻る",
-    "emailVerificationText": "確認用リンクがメールアドレスに送信されました。"
+    "minimumnameError": "名前は少なくとも3文字必要です",
+    "backToLoginButton": "ログイン画面に戻る",
+    "emailVerificationText": "確認リンクがメールアドレスに送信されました。",
+    "conformEmailInstruction": "以下のリンクをクリックしてアカウントを確認してください：",
+    "signupSubjectTitle": "アカウント作成のメール認証",
+    "signupVerifyTitle": "メールアドレスを確認する",
+    "signupInstruction": "以下のリンクをクリックしてメールアドレスを確認してください：",
+    "successVerification": "メールアドレスが正常に確認されました。ログインしてください。"
+  },
+  "resetPassword": {
+    "mail": "メール",
+    "emailPlaceholder": "新しいパスワードを入力してください",
+    "connectionInfo": "これは、登録時に使用したメールアドレスです。",
+    "resetButton": "パスワードをリセット",
+    "successEmailMessage": "確認リンクがメールに送信されました。",
+    "emailNotExistMessage": "おっと！メールが存在しません。",
+    "resetPasswordTitle": "パスワードをリセット",
+    "resetMainTitle": "パスワードをリセット",
+    "resetPasswordInstruction": "パスワードのリセットをリクエストしました。このトークンは60分（1時間）で期限切れになります。以下のリンクを使用してパスワードをリセットしてください："
+  },
+  "updatePassword": {
+    "newPasswordLabel": "新しいパスワード",
+    "newPasswordPlaceholder": "新しいパスワードを入力してください",
+    "confirmPasswordLabel": "パスワードを確認",
+    "confirmPasswordPlaceholder": "パスワードを確認してください",
+    "passwordNotMatch": "パスワードが一致しません",
+    "updateButton": "パスワードを更新",
+    "successMessage": "パスワードが正常に更新されました"
   }
 }

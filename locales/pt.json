@@ -1,78 +1,106 @@
 {
   "global": {
-    "check": "Verificar",
-    "loading": "Carregando...",
-    "noResults": "Nenhum resultado encontrado.",
-    "resultsFor": "Resultados da pesquisa por:",
-    "noResultsFor": "Nenhum resultado encontrado para:",
-    "noResultsSentence": "Nenhum resultado encontrado para o termo de pesquisa.",
-    "error": "Ocorreu um erro, tente novamente mais tarde.",
-    "searchWelcome": "Bem-vindo à sua página de pesquisa. Aqui você pode buscar por NFTs ou minters.",
-    "nftPrice": "Preço: ${price}",
-    "signOut": "Sair",
-    "moreDetails": "Mais detalhes",
-    "forYouFeed": "Para você",
-    "followedFeed": "Seguidos",
-    "invalidCredentials": "Credenciais inválidas",
-    "deletedAccount": "Seu pedido para deletar sua conta foi recebido com sucesso. Até logo!"
+    "check": "检查",
+    "loading": "加载中...",
+    "noResults": "未找到结果。",
+    "resultsFor": "搜索结果：",
+    "noResultsFor": "未找到结果：",
+    "noResultsSentence": "未找到与搜索词匹配的结果。",
+    "error": "发生错误，请稍后重试。",
+    "searchWelcome": "欢迎来到您的搜索页面。您可以在这里搜索NFT或创建者。",
+    "nftPrice": "价格：${price}",
+    "signOut": "退出登录",
+    "moreDetails": "更多详情",
+    "forYouFeed": "为您推荐",
+    "followedFeed": "已关注",
+    "invalidCredentials": "无效的凭据",
+    "deletedAccount": "您的帐户删除请求已成功接收。再见！",
+    "appDescription": "Instamint 是您用于创建NFT的社交网络。",
+    "greeting": "祝您一切顺利"
   },
   "search": {
-    "cancel": "Cancelar",
-    "minPrice": "Preço mín.",
-    "maxPrice": "Preço máx.",
-    "noSearchResultsFor": "Nenhum {type} encontrado",
-    "search": "Pesquisar",
-    "searchSentence": "Pesquise um NFT ou um minter.",
-    "searchPlaceholder": "Pesquisar...",
-    "submit": "Enviar"
+    "cancel": "取消",
+    "minPrice": "最低价格",
+    "maxPrice": "最高价格",
+    "noSearchResultsFor": "未找到 {type}",
+    "search": "搜索",
+    "searchSentence": "搜索NFT或创建者。",
+    "searchPlaceholder": "搜索...",
+    "submit": "提交"
   },
   "login": {
-    "mail": "Email",
-    "connectionInfo": "Este é o email que você usou para se registrar.",
-    "password": "Senha",
-    "submit": "Enviar",
-    "login": "Entrar",
-    "accountQuestion": "Não tem uma conta?",
-    "signUp": "Inscrever-se",
-    "rights": "© 2024 Instamint. Todos os direitos reservados."
+    "mail": "邮箱",
+    "connectionInfo": "这是您注册时使用的邮箱。",
+    "password": "密码",
+    "submit": "提交",
+    "login": "登录",
+    "accountQuestion": "还没有账户？",
+    "forgetPassword": "忘记密码？",
+    "signUp": "注册",
+    "rights": "© 2024 Instamint。保留所有权利。"
   },
   "howToMenu": {
-    "howTo": "Como usar o Instamint",
-    "changeProfile": "Editar perfil",
-    "notifications": "Notificações"
+    "howTo": "如何使用 Instamint",
+    "changeProfile": "编辑个人资料",
+    "notifications": "通知"
   },
   "privacyMenu": {
-    "whoCanSee": "Quem pode ver meu perfil?",
-    "privacy": "Privacidade"
+    "whoCanSee": "谁可以看到我的个人资料？",
+    "privacy": "隐私"
   },
   "applicationMenu": {
-    "yourApplication": "Sua aplicação",
-    "language": "Idioma"
+    "yourApplication": "您的应用程序",
+    "language": "语言"
   },
   "profileChanges": {
-    "changeProfile": "Editar perfil",
-    "bio": "Biografia",
-    "bioWIP": "Esta funcionalidade ainda está em desenvolvimento.",
-    "deleteAccount": "Excluir sua conta",
-    "deleteAccountConfirmation": "Tem certeza de que deseja excluir sua conta?",
-    "deleteAccountDescription": "Esta ação é irreversível e excluirá todos os seus dados. Por favor, certifique-se antes de continuar."
+    "changeProfile": "编辑个人资料",
+    "bio": "个人简介",
+    "bioWIP": "此功能仍在开发中。",
+    "deleteAccount": "删除您的账户",
+    "deleteAccountConfirmation": "您确定要删除您的账户吗？",
+    "deleteAccountDescription": "此操作是不可逆的，将删除所有您的数据。请在继续之前三思。"
   },
   "signUp": {
-    "emailLabel": "E-mail",
+    "emailLabel": "Email",
     "passwordLabel": "Senha",
     "password": "Senha",
     "nameLabel": "Nome",
-    "emailFieldPlaceholder": "Digite seu e-mail",
+    "emailFieldPlaceholder": "Digite seu email",
     "passwordFieldPlaceholder": "Digite sua senha",
     "nameFieldPlaceholder": "Digite seu nome",
-    "signUpButton": "Cadastrar",
+    "signUpButton": "Registrar",
     "loginButton": "Entrar",
     "loginQuestion": "Já tem uma conta?",
-    "invalidEmail": "Endereço de e-mail inválido",
-    "minimumEmailError": "O e-mail deve ter pelo menos 3 caracteres",
+    "invalidEmail": "Endereço de email inválido",
+    "minimumEmailError": "O email deve ter pelo menos 3 caracteres",
     "minimumPasswordError": "A senha deve ter pelo menos 6 caracteres",
-    "minimumnameError": "A senha deve ter pelo menos 6 caracteres",
-    "backToLoginButton": "Voltar para o Login",
-    "emailVerificationText": "Um link de verificação foi enviado para o seu e-mail."
+    "minimumnameError": "O nome deve ter pelo menos 3 caracteres",
+    "backToLoginButton": "Voltar para o login",
+    "emailVerificationText": "Um link de verificação foi enviado para o seu email.",
+    "conformEmailInstruction": "Clique no link abaixo para confirmar sua conta:",
+    "signupSubjectTitle": "Verificação de email para criação de conta",
+    "signupVerifyTitle": "Verificar Email",
+    "signupInstruction": "Clique no link abaixo para verificar seu email:",
+    "successVerification": "Email verificado com sucesso. Por favor, faça login."
+  },
+  "resetPassword": {
+    "mail": "Email",
+    "emailPlaceholder": "Por favor, insira uma nova senha",
+    "connectionInfo": "Este é o email que você usou para se registrar.",
+    "resetButton": "Redefinir senha",
+    "successEmailMessage": "Um link de verificação foi enviado para o seu email.",
+    "emailNotExistMessage": "Oops! o email não existe.",
+    "resetPasswordTitle": "Redefinir Senha",
+    "resetMainTitle": "Redefinir Senha",
+    "resetPasswordInstruction": "Você solicitou a redefinição da sua senha. Este token expirará em 60 minutos (1 hora). Utilize o link abaixo para redefinir sua senha:"
+  },
+  "updatePassword": {
+    "newPasswordLabel": "新密码",
+    "newPasswordPlaceholder": "请输入新密码",
+    "confirmPasswordLabel": "确认密码",
+    "confirmPasswordPlaceholder": "请确认密码",
+    "passwordNotMatch": "密码不匹配",
+    "updateButton": "更新密码",
+    "successMessage": "密码更新成功"
   }
 }

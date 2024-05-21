@@ -16,7 +16,9 @@ export const MessageSchema = z.object({
     forYouFeed: z.string(),
     followedFeed: z.string(),
     invalidCredentials: z.string(),
-    deletedAccount: z.string()
+    deletedAccount: z.string(),
+    appDescription: z.string(),
+    greeting: z.string()
   }),
   search: z.object({
     cancel: z.string(),
@@ -35,6 +37,7 @@ export const MessageSchema = z.object({
     submit: z.string(),
     login: z.string(),
     accountQuestion: z.string(),
+    forgetPassword: z.string(),
     signUp: z.string(),
     rights: z.string()
   }),
@@ -75,6 +78,31 @@ export const MessageSchema = z.object({
     minimumPasswordError: z.string(),
     minimumnameError: z.string(),
     backToLoginButton: z.string(),
-    emailVerificationText: z.string()
+    emailVerificationText: z.string(),
+    conformEmailInstruction: z.string(),
+    signupSubjectTitle: z.string(),
+    signupVerifyTitle: z.string(),
+    signupInstruction: z.string(),
+    successVerification: z.string()
+  }),
+  resetPassword: z.object({
+    mail: z.string(),
+    emailPlaceholder: z.string(),
+    connectionInfo: z.string(),
+    resetButton: z.string(),
+    successEmailMessage: z.string(),
+    emailNotExistMessage: z.string(),
+    resetPasswordTitle: z.string(),
+    resetMainTitle: z.string(),
+    resetPasswordInstruction: z.string()
+  }),
+  updatePassword: z.object({
+    newPasswordLabel: z.string(),
+    newPasswordPlaceholder: z.string(),
+    confirmPasswordLabel: z.string(),
+    confirmPasswordPlaceholder: z.string(),
+    passwordNotMatch: z.string(),
+    updateButton: z.string(),
+    successMessage: z.string()
   })
 })

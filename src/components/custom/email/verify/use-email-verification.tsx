@@ -2,10 +2,13 @@
 
 import { findUserByEmail } from "@/lib/utils/db"
 import { verifyEmail } from "@/lib/utils/email"
+import { useTranslations } from "next-intl"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
 export default function useEmailVerification() {
+  const t = useTranslations("signUp")
+  const g = useTranslations("global")
   const searchParams = useSearchParams()
   const userEmail = searchParams.get("email")
   const token = searchParams.get("token")
@@ -31,9 +34,9 @@ export default function useEmailVerification() {
         }
 
         await verifyEmail(email)
-        setResult("Email verified successfully. Please login.")
+        setResult(t("successVerification"))
       } catch (error) {
-        setErrorMessage("Error occurred")
+        setErrorMessage(g("error"))
       } finally {
         setIsLoading(false)
       }
@@ -47,10 +50,10 @@ export default function useEmailVerification() {
     }
 
     verify().catch(() => {
-      setErrorMessage("Error occurred")
+      setErrorMessage(g("error"))
       setIsLoading(false)
     })
-  }, [userEmail, token])
+  }, [userEmail, token, t, g])
 
   return { isLoading, result, errorMessage }
 }

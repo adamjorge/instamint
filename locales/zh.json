@@ -32,7 +32,8 @@
     "password": "密码",
     "submit": "提交",
     "login": "登录",
-    "accountQuestion": "还没有账户？",
+    "accountQuestion": "还没有账号？",
+    "forgetPassword": "忘记密码",
     "signUp": "注册",
     "rights": "© 2024 Instamint。保留所有权利。"
   },
@@ -69,10 +70,35 @@
     "loginButton": "登录",
     "loginQuestion": "已经有账号了吗？",
     "invalidEmail": "无效的电子邮件地址",
-    "minimumEmailError": "电子邮件至少必须包含3个字符",
+    "minimumEmailError": "电子邮件必须至少为3个字符",
     "minimumPasswordError": "密码必须至少为6个字符",
-    "minimumnameError": "密码必须至少为6个字符",
+    "minimumnameError": "姓名必须至少为3个字符",
     "backToLoginButton": "返回登录",
-    "emailVerificationText": "验证链接已发送到您的电子邮件。"
+    "emailVerificationText": "已向您的电子邮件发送了验证链接。",
+    "conformEmailInstruction": "点击下面的链接确认您的账号：",
+    "signupSubjectTitle": "账号创建电子邮件验证",
+    "signupVerifyTitle": "验证电子邮件",
+    "signupInstruction": "点击下面的链接验证您的电子邮件：",
+    "successVerification": "电子邮件验证成功，请登录。"
+  },
+  "resetPassword": {
+    "mail": "邮件",
+    "emailPlaceholder": "请输入新密码",
+    "connectionInfo": "这是您注册时使用的电子邮件。",
+    "resetButton": "重置密码",
+    "successEmailMessage": "验证链接已发送到您的电子邮件。",
+    "emailNotExistMessage": "哎呀！电子邮件不存在。",
+    "resetPasswordTitle": "重置密码",
+    "resetMainTitle": "重置密码",
+    "resetPasswordInstruction": "您已请求重置密码。此令牌将在60分钟（1小时）内过期。请使用以下链接重置您的密码："
+  },
+  "updatePassword": {
+    "newPasswordLabel": "新密码",
+    "newPasswordPlaceholder": "请输入新密码",
+    "confirmPasswordLabel": "确认密码",
+    "confirmPasswordPlaceholder": "请确认密码",
+    "passwordNotMatch": "密码不匹配",
+    "updateButton": "更新密码",
+    "successMessage": "密码更新成功"
   }
 }
