@@ -1,7 +1,7 @@
 import prisma from "@/lib/db"
 
 export async function findChangePasswordQuery(token: string) {
-  return await prisma.passwordChange.findFirst({
+  return await prisma.changePassword.findFirst({
     where: {
       token,
       expires: {

@@ -1,7 +1,7 @@
 import prisma from "@/lib/db"
-import { generateResetToken } from "@/lib/utils/change-password/generateResetToken"
+import { generateChangeToken } from "@/lib/utils/change-password/generateChangeToken"
 import { comparePassword, generatePasswordHash } from "@/lib/utils/change-password/password"
-import { sendResetPasswordEmail } from "@/lib/utils/change-password/sendResetPasswordEmail"
+import { sendChangePasswordEmail } from "@/lib/utils/change-password/sendChangePasswordEmail"
 
 export async function changePasswordQuery(email: string, locale: string) {
   const user = await prisma.user.findFirst({
@@ -18,10 +18,10 @@ export async function changePasswordQuery(email: string, locale: string) {
     throw new Error("Authentification without email is not supported yet")
   }
 
-  const resetToken = generateResetToken()
+  const changeToken = generateChangeToken()
 
   try {
-    await sendResetPasswordEmail(user.email, resetToken, locale)
+    await sendChangePasswordEmail(user.email, changeToken, locale)
   } catch (error) {
     throw new Error("Error sending email")
   }
@@ -29,18 +29,18 @@ export async function changePasswordQuery(email: string, locale: string) {
   const expiresAt = new Date()
   expiresAt.setMinutes(expiresAt.getMinutes() + 5)
 
-  return await prisma.passwordChange.create({
+  return await prisma.changePassword.create({
     data: {
       createdAt: new Date(),
       expires: expiresAt,
-      token: resetToken,
+      token: changeToken,
       userId: user.id
     }
   })
 }
 
 export async function isLegit(token: string, currentPassword: string) {
-  const changeQuery = await prisma.passwordChange.findFirst({
+  const changeQuery = await prisma.changePassword.findFirst({
     include: {
       user: true
     },
@@ -69,7 +69,7 @@ export async function isLegit(token: string, currentPassword: string) {
 export async function changePassword(token: string, userId: string, newPassword: string) {
   const hash = await generatePasswordHash(newPassword)
 
-  await prisma.passwordChange.update({
+  await prisma.changePassword.update({
     where: {
       token
     },

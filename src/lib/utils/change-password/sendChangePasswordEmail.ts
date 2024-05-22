@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server"
 import nodemailer from "nodemailer"
 
-export async function sendResetPasswordEmail(email: string, token: string, locale: string) {
+export async function sendChangePasswordEmail(email: string, token: string, locale: string) {
   if (!process.env.SMTP_SERVICE || !process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {
     throw new Error("SMTP environment variables are missing.")
   }
