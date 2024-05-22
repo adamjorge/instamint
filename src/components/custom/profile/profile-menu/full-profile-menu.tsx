@@ -1,3 +1,5 @@
+"use client"
+
 import ApplicationMenu from "@/components/custom/profile/profile-menu/application-menu"
 import HowToMenu from "@/components/custom/profile/profile-menu/how-to-menu"
 import PrivacyMenu from "@/components/custom/profile/profile-menu/privacy-menu"
@@ -21,7 +23,7 @@ export default function ProfileMenu() {
       </div>
 
       <div
-        className={clsx("space-y-5 border-r h-full ml-3 pr-3 transition-all duration-500", {
+        className={clsx("space-y-5 border-r h-screen ml-3 pr-3 transition-all duration-500", {
           "opacity-100": isOpen,
           "w-0 opacity-0": !isOpen
         })}

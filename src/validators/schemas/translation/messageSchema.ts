@@ -1,3 +1,4 @@
+import { ProfilePrivacyPolicySchema } from "@/validators/schemas/translation/fragments/profilePrivacyPolicySchema"
 import { z } from "zod"
 
 export const MessageSchema = z.object({
@@ -66,6 +67,7 @@ export const MessageSchema = z.object({
     deleteAccountConfirmation: z.string(),
     deleteAccountDescription: z.string()
   }),
+  profilePrivacyPolicy: ProfilePrivacyPolicySchema,
   signUp: z.object({
     emailLabel: z.string(),
     passwordLabel: z.string(),
