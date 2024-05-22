@@ -16,11 +16,14 @@ export default function ApplicationMenu() {
 
   return (
     <div className="w-full space-y-5 flex flex-col items-center">
-      <p className="text-medium text-sm">{t("yourApplication")}</p>
+      <p className="text-medium text-sm" aria-label="your application">
+        {t("yourApplication")}
+      </p>
       <div className="mt-3 w-full flex flex-col items-start">
         <Button
           className="bg-white text-black hover:bg-light w-full flex justify-start"
           onClick={handleClickOnWIP}
+          aria-label="language"
         >
           <FaLanguage size={20} />
           <span className="ml-3">{t("language")}</span>
@@ -29,6 +32,7 @@ export default function ApplicationMenu() {
           withLocale
           href="/profile/privacy-policy"
           className="bg-white text-black hover:bg-light w-full flex justify-start"
+          aria-label="privacy policy"
         >
           <MdPolicy size={20} />
           <span className="ml-3">{t("privacyPolicy")}</span>
