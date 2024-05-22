@@ -52,7 +52,7 @@ export default function SignInForm({ ...props }: SignInFormProps) {
             </FormItem>
           )}
         />
-        <Button type="submit" aria-label="sign in">
+        <Button className="bg-sea hover:bg-spruce" type="submit" aria-label="sign in">
           {t("submit")}
         </Button>
       </form>

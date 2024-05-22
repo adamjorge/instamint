@@ -68,25 +68,36 @@ model Hashtag {
   nfts      Nft[]
 }
 
+model ChangePassword {
+  id        String    @id @default(cuid())
+  createdAt DateTime  @default(now())
+  expires   DateTime
+  token     String    @unique @db.Text
+  usedAt    DateTime?
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+}
+
 model User {
-  id                        String    @id @default(cuid())
+  id                        String           @id @default(cuid())
   name                      String?
-  email                     String?   @unique
+  email                     String?          @unique
   emailVerified             DateTime?
   phoneNumber               String?
   password                  String?
-  emailVerifyToken          String?   @db.Text
-  passwordResetToken        String?   @db.Text
+  emailVerifyToken          String?          @db.Text
+  passwordResetToken        String?          @db.Text
   passwordResetTokenExpires DateTime?
-  is2FAEnabled              Boolean   @default(false)
-  isAdmin                   Boolean   @default(false)
-  createdAt                 DateTime  @default(now())
-  updatedAt                 DateTime  @updatedAt
+  is2FAEnabled              Boolean          @default(false)
+  isAdmin                   Boolean          @default(false)
+  createdAt                 DateTime         @default(now())
+  updatedAt                 DateTime         @updatedAt
   deletedAt                 DateTime?
   accounts                  Account[]
   sessions                  Session[]
+  passwordChanges           ChangePassword[]
   minterId                  Int
-  minter                    Minter    @relation(fields: [minterId], references: [id], onDelete: Cascade)
+  minter                    Minter           @relation(fields: [minterId], references: [id], onDelete: Cascade)
 }
 
 model Minter {
@@ -113,7 +124,7 @@ model Follow {
   follower    Minter @relation("follower", fields: [followerId], references: [id])
   followingId Int
   following   Minter @relation("following", fields: [followingId], references: [id])
- 
+
   @@id(name: "followId", [followerId, followingId])
 }
 

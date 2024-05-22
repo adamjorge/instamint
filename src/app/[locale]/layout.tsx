@@ -2,14 +2,14 @@ import LanguageSelector from "@/components/custom/language-selector"
 import Providers from "@/providers/portalProviders"
 import "@/styles/globals.css"
 import { useLocale, useMessages, useTimeZone } from "next-intl"
-import { Inter } from "next/font/google"
+import { Roboto } from "next/font/google"
 import React from "react"
 import { Toaster } from "sonner"
 
 export { metadata } from "@/config/metadata"
 
 // eslint-disable-next-line new-cap
-const inter = Inter({ subsets: ["latin"] })
+const roboto = Roboto({ subsets: ["latin"], weight: "500" })
 
 export default function PortalLayout({
   children
@@ -28,7 +28,7 @@ export default function PortalLayout({
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <main className="min-h-screen">
           <Providers {...i18nProps}>
             <div className="flex flex-col w-full mt-5">

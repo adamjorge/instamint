@@ -14,7 +14,9 @@
     "forYouFeed": "为你",
     "followedFeed": "已关注",
     "invalidCredentials": "凭证无效",
-    "deletedAccount": "您的账户删除请求已成功接收。再见！"
+    "deletedAccount": "您的账户删除请求已成功接收。再见！",
+    "changePasswordMail": "您将收到一封电子邮件来更改您的密码。",
+    "successChangePassword": "密码修改成功"
   },
   "search": {
     "cancel": "取消",
@@ -51,6 +53,7 @@
     "language": "语言"
   },
   "profileChanges": {
+    "changeMyPassword": "更改我的密码",
     "changeProfile": "编辑资料",
     "bio": "简介",
     "bioWIP": "此功能仍在开发中。",
@@ -99,6 +102,20 @@
     "confirmPasswordPlaceholder": "请确认密码",
     "passwordNotMatch": "密码不匹配",
     "updateButton": "更新密码",
-    "successMessage": "密码更新成功"
+    "successMessage": "密码更新成功",
+    "deleteAccountDescription": "此操作是不可逆的，将删除所有您的数据。请在继续之前确认。",
+    "changeMyPassword": "更改我的密码"
+  },
+  "changePassword": {
+    "changePasswordTitle": "更改我的密码",
+    "changePassword": "更改密码",
+    "changeMyPassword": "更改我的密码",
+    "currentPassword": "当前密码",
+    "currentPasswordDescription": "您用于连接Instamint的当前密码",
+    "newPassword": "新密码",
+    "confirmPassword": "确认新密码",
+    "backToHome": "回到家",
+    "appDescription": "Instamint是您的铸造NFT的社交网络",
+    "changePasswordInstructions": "点击下面的链接更改您的密码："
   }
 }
