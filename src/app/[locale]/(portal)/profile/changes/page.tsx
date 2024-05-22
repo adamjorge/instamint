@@ -5,9 +5,14 @@ import { redirect } from "next/navigation"
 export default async function ProfilePage() {
   const session = await auth()
 
-  if (!session?.user.id) {
+  if (!session?.user.id || !session.user.email) {
     redirect("/")
   }
 
-  return <ProfileChanges userId={session.user.id} />
+  const profileChangesProps = {
+    userId: session.user.id,
+    email: session.user.email
+  }
+
+  return <ProfileChanges {...profileChangesProps} />
 }

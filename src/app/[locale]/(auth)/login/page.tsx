@@ -11,5 +11,9 @@ export default async function LoginPage() {
     redirect(`/${locale}`)
   }
 
-  return <SignInCard />
+  return (
+    <div className="flex justify-center w-full">
+      <SignInCard />
+    </div>
+  )
 }
