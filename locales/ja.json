@@ -54,6 +54,7 @@
     "language": "言語"
   },
   "profileChanges": {
+    "changeMyPassword": "パスワードをかえる",
     "changeProfile": "プロフィールの編集",
     "bio": "バイオ",
     "bioWIP": "この機能はまだ開発中です。",

@@ -56,6 +56,7 @@ export const MessageSchema = z.object({
     language: z.string()
   }),
   profileChanges: z.object({
+    changeMyPassword: z.string(),
     changeProfile: z.string(),
     bio: z.string(),
     bioWIP: z.string(),

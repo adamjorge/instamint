@@ -52,6 +52,7 @@
     "language": "语言"
   },
   "profileChanges": {
+    "changeMyPassword": "更改我的密码",
     "changeProfile": "编辑资料",
     "bio": "简介",
     "bioWIP": "此功能仍在开发中。",

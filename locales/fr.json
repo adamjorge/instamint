@@ -54,6 +54,7 @@
     "language": "Langue"
   },
   "profileChanges": {
+    "changeMyPassword": "Changer mon mot de passe",
     "changeProfile": "Modifier le profil",
     "bio": "Bio",
     "bioWIP": "Cette fonctionnalité est toujours en développement.",
