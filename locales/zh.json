@@ -15,7 +15,8 @@
     "followedFeed": "已关注",
     "invalidCredentials": "凭证无效",
     "deletedAccount": "您的账户删除请求已成功接收。再见！",
-    "changePasswordMail": "您将收到一封电子邮件来更改您的密码。"
+    "changePasswordMail": "您将收到一封电子邮件来更改您的密码。",
+    "successChangePassword": "密码修改成功"
   },
   "search": {
     "cancel": "取消",
@@ -113,7 +114,7 @@
     "currentPasswordDescription": "您用于连接Instamint的当前密码",
     "newPassword": "新密码",
     "confirmPassword": "确认新密码",
-    "backToLogin": "返回登录",
+    "backToHome": "回到家",
     "appDescription": "Instamint是您的铸造NFT的社交网络",
     "changePasswordInstructions": "点击下面的链接更改您的密码："
   }

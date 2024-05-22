@@ -17,7 +17,8 @@
     "searchWelcome": "Bem-vindo à sua página de busca. Aqui é onde você pode procurar NFTs ou criadores.",
     "nftPrice": "Preço: ${price}",
     "signOut": "Sair",
-    "changePasswordMail": "Você receberá um email para mudar sua senha."
+    "changePasswordMail": "Você receberá um email para mudar sua senha.",
+    "successChangePassword": "Senha alterada com sucesso"
   },
   "search": {
     "cancel": "Cancelar",
@@ -120,7 +121,7 @@
     "currentPasswordDescription": "A senha atual que você está usando para se conectar ao Instamint",
     "newPassword": "Nova senha",
     "confirmPassword": "Confirmar nova senha",
-    "backToLogin": "Voltar ao login",
+    "backToHome": "De volta para casa principal",
     "appDescription": "Instamint é sua rede social para cunhar NFTs",
     "changePasswordInstructions": "Clique no link abaixo para mudar sua senha:"
   }

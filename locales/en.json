@@ -17,7 +17,8 @@
     "deletedAccount": "Your request to delete your account has been successfully received. See you soon!",
     "appDescription": "Instamint, your social network for minting NFTs",
     "greeting": "Best Regards",
-    "changePasswordMail": "You will receive an email to change your password."
+    "changePasswordMail": "You will receive an email to change your password.",
+    "successChangePassword": "Password changed successfully"
   },
   "search": {
     "cancel": "Cancel",
@@ -115,7 +116,7 @@
     "currentPasswordDescription": "The current password you're using to connect yourself to Instamint",
     "newPassword": "New password",
     "confirmPassword": "Confirm new password",
-    "backToLogin": "Back to login",
+    "backToHome": "Back to home page",
     "appDescription": "Instamint is your social network for minting NFTs",
     "changePasswordInstructions": "Click the link below to change your password:"
   }

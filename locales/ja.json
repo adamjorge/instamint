@@ -17,7 +17,8 @@
     "appDescription": "InstamintはNFTを作成するためのソーシャルネットワークです",
     "greeting": "敬具",
     "signOut": "ログアウト",
-    "changePasswordMail": "パスワードをかえるためのメールをうけとります。"
+    "changePasswordMail": "パスワードをかえるためのメールをうけとります。",
+    "successChangePassword": "パスワードは正常に変更されました"
   },
   "search": {
     "cancel": "キャンセル",
@@ -115,7 +116,7 @@
     "currentPasswordDescription": "Instamintにせつぞくするためにりようしているげんざいのパスワード",
     "newPassword": "あたらしいパスワード",
     "confirmPassword": "あたらしいパスワードをかくにんする",
-    "backToLogin": "ログインにもどる",
+    "backToHome": "家に帰る",
     "appDescription": "InstamintはNFTをつくるためのソーシャルネットワークです",
     "changePasswordInstructions": "パスワードをかえるには、したのリンクをクリックしてください："
   }

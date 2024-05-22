@@ -23,14 +23,14 @@ export default function ChangePasswordView(props: ChangePasswordViewProps) {
       newPassword: string
     }) => confirmChangePassword(token, currentPassword, newPassword),
     onSuccess: () => {
-      toast.success("Password changed successfully")
+      toast.success(t("successChangePassword"))
     },
     onError: () => {
-      toast.error("An error occurred while changing your password")
+      toast.error(t("error"))
     }
   })
   const handleClickOnLoginButton = () => {
-    router.push("/login")
+    router.push("/")
   }
   const { data, error, isPending } = useQuery({
     queryKey: ["resetToken", token],

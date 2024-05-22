@@ -19,7 +19,8 @@ export const MessageSchema = z.object({
     deletedAccount: z.string(),
     appDescription: z.string(),
     greeting: z.string(),
-    changePasswordMail: z.string()
+    changePasswordMail: z.string(),
+    successChangePassword: z.string()
   }),
   search: z.object({
     cancel: z.string(),
@@ -117,7 +118,7 @@ export const MessageSchema = z.object({
     currentPasswordDescription: z.string(),
     newPassword: z.string(),
     confirmPassword: z.string(),
-    backToLogin: z.string(),
+    backToHome: z.string(),
     appDescription: z.string(),
     changePasswordInstructions: z.string()
   })

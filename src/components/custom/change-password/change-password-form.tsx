@@ -54,7 +54,7 @@ export default function ChangePasswordForm(props: ChangePasswordFormProps) {
           </form>
         </Form>
         <Button className="bg-sea hover:bg-spruce" onClick={props.handleClickOnLoginButton}>
-          {t("backToLogin")}
+          {t("backToHome")}
         </Button>
       </div>
     </div>
