@@ -1,3 +1,6 @@
+"use client"
+
+import ImageUploadFrom from "@/components/custom/profile/image-upload-form"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
@@ -23,6 +26,7 @@ export default function ProfileChangesCard(props: ProfileChangesProps) {
         <AvatarFallback>IN</AvatarFallback>
       </Avatar>
       <p>{email}</p>
+      <ImageUploadFrom />
       <div className="self-stretch mr-3">
         <Label htmlFor="bio" className="font-bold text-lg">
           {t("bio")}
