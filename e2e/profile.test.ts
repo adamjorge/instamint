@@ -8,9 +8,9 @@ if (!process.env.NOTADMIN_EMAIL || !process.env.NOTADMIN_PASSWORD) {
 }
 
 const user = { email: process.env.NOTADMIN_EMAIL, password: process.env.NOTADMIN_PASSWORD }
-const howTo = ["How to use Instamint", "Notifications"]
-const privacy = ["Who can see my profile?", "Privacy"]
-const application = ["Your application", "Language"]
+const howTo = ["how to use Instamint", "edit profile", "notifications"]
+const privacy = ["who can see my profile", "privacy details"]
+const application = ["your application", "language", "privacy policy"]
 
 test("profile view is accessible as expected", async ({ browser }) => {
   // Don't remove the next two lines because it simulates incognito mode
@@ -32,15 +32,15 @@ test("profile view is accessible as expected", async ({ browser }) => {
 
   const visiblePromises = []
   for (const item of howTo) {
-    const visiblePromise = expect(page.getByText(item)).toBeVisible()
+    const visiblePromise = expect(page.getByLabel(item)).toBeVisible()
     visiblePromises.push(visiblePromise)
   }
   for (const item of privacy) {
-    const visiblePromise = expect(page.getByText(item)).toBeVisible()
+    const visiblePromise = expect(page.getByLabel(item)).toBeVisible()
     visiblePromises.push(visiblePromise)
   }
   for (const item of application) {
-    const visiblePromise = expect(page.getByText(item)).toBeVisible()
+    const visiblePromise = expect(page.getByLabel(item)).toBeVisible()
     visiblePromises.push(visiblePromise)
   }
   await Promise.all(visiblePromises)

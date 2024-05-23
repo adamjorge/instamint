@@ -1,3 +1,4 @@
+import { ProfilePrivacyPolicySchema } from "@/validators/schemas/translation/fragments/profilePrivacyPolicySchema"
 import { z } from "zod"
 
 export const MessageSchema = z.object({
@@ -54,7 +55,8 @@ export const MessageSchema = z.object({
   }),
   applicationMenu: z.object({
     yourApplication: z.string(),
-    language: z.string()
+    language: z.string(),
+    privacyPolicy: z.string()
   }),
   profileChanges: z.object({
     changeMyPassword: z.string(),
@@ -65,6 +67,7 @@ export const MessageSchema = z.object({
     deleteAccountConfirmation: z.string(),
     deleteAccountDescription: z.string()
   }),
+  profilePrivacyPolicy: ProfilePrivacyPolicySchema,
   signUp: z.object({
     emailLabel: z.string(),
     passwordLabel: z.string(),
