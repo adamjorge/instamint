@@ -53,6 +53,9 @@
     "language": "语言",
     "privacyPolicy": "隐私政策"
   },
+  "privacy": {
+    "authorizeSearchByEmail": "允许用户使用我的电子邮件地址找到我"
+  },
   "profileChanges": {
     "changeMyPassword": "更改我的密码",
     "changeProfile": "编辑资料",

@@ -55,6 +55,9 @@
     "language": "Idioma",
     "privacyPolicy": "Política de Privacidad"
   },
+  "privacy": {
+    "authorizeSearchByEmail": "Autorizar a los usuarios a encontrarme con mi correo electrónico"
+  },
   "profileChanges": {
     "changeMyPassword": "Cambiar mi contraseña",
     "changeProfile": "Editar perfil",
