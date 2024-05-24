@@ -1,5 +1,6 @@
 import ProfileChanges from "@/components/custom/profile/profile-changes"
 import { auth } from "@/lib/auth"
+import { getMinterByUserId } from "@/lib/query/minters/getMinterByUserId"
 import { redirect } from "next/navigation"
 
 export default async function ProfilePage() {
@@ -9,8 +10,10 @@ export default async function ProfilePage() {
     redirect("/")
   }
 
+  const currentUser = await getMinterByUserId(session.user.id)
   const profileChangesProps = {
     userId: session.user.id,
+    minterId: currentUser?.minterId,
     email: session.user.email
   }
 

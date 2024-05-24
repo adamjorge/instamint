@@ -1,7 +1,7 @@
 "use client"
 
 import ImageUploadFrom from "@/components/custom/profile/image-upload-form"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -13,16 +13,31 @@ import {
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { getAvatarUrl } from "@/lib/query/minters/getAvatarUrl"
+import { useQuery } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
 
 export default function ProfileChangesCard(props: ProfileChangesProps) {
   const { email, handleClickOnDelete, handleClickOnChange } = props
   const t = useTranslations("profileChanges")
+  const { data, error, isPending } = useQuery({
+    queryKey: ["avatar"],
+    queryFn: () => getAvatarUrl(props.minterId.toString())
+  })
+
+  if (isPending) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>Error...</div>
+  }
 
   return (
     <div className="flex flex-col items-center ml-5 mr-5 mt-10 space-y-5 w-full">
       <h2 className="font-bold text-xl">{t("changeProfile")}</h2>
       <Avatar>
+        <AvatarImage src={data.signedUrl} alt="avatar" />
         <AvatarFallback>IN</AvatarFallback>
       </Avatar>
       <p>{email}</p>
@@ -56,6 +71,7 @@ export default function ProfileChangesCard(props: ProfileChangesProps) {
 
 type ProfileChangesProps = {
   email: string
+  minterId: number
   handleClickOnDelete: () => void
   handleClickOnChange: () => void
 }

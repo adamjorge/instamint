@@ -3,70 +3,70 @@
     "username": "minter1",
     "location": "Paris",
     "profileUrl": "",
-    "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=1&random=1",
+    "avatarKey": "https://loremflickr.com/320/240/brazil,rio?lock=1&random=1",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim ut sem viverra aliquet eget."
   },
   {
     "username": "minter2",
     "location": "Rio de Janeiro, Brazil",
     "profileUrl": "",
-    "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=2&random=2",
+    "avatarKey": "https://loremflickr.com/320/240/brazil,rio?lock=2&random=2",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et. Sed vulputate odio ut enim blandit volutpat."
   },
   {
     "username": "minter3",
     "location": "Atlanta, United States",
     "profileUrl": "",
-    "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=3&random=3",
+    "avatarKey": "https://loremflickr.com/320/240/brazil,rio?lock=3&random=3",
     "bio": ""
   },
   {
     "username": "minter4",
     "location": "London, United Kingdom",
     "profileUrl": "",
-    "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=4&random=4",
+    "avatarKey": "https://loremflickr.com/320/240/brazil,rio?lock=4&random=4",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit massa enim nec dui nunc. Nisl condimentum id venenatis a condimentum vitae sapien pellentesque."
   },
   {
     "username": "minter5",
     "location": "Rio de Janeiro, Brazil",
     "profileUrl": "",
-    "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=5&random=5",
+    "avatarKey": "https://loremflickr.com/320/240/brazil,rio?lock=5&random=5",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   {
     "username": "minter6",
     "location": "Paris, France",
     "profileUrl": "",
-    "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=6&random=6",
+    "avatarKey": "https://loremflickr.com/320/240/brazil,rio?lock=6&random=6",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, eiusmod tempor incididunt."
   },
   {
     "username": "minter7",
     "location": "Toronto, Canada",
     "profileUrl": "",
-    "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=7&random=7",
+    "avatarKey": "https://loremflickr.com/320/240/brazil,rio?lock=7&random=7",
     "bio": ""
   },
   {
     "username": "minter8",
     "location": "Vancouver, Canada",
     "profileUrl": "",
-    "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=8&random=8",
+    "avatarKey": "https://loremflickr.com/320/240/brazil,rio?lock=8&random=8",
     "bio": ""
   },
   {
     "username": "minter9",
     "location": "Geneva, Switzerland",
     "profileUrl": "",
-    "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=9&random=9",
+    "avatarKey": "https://loremflickr.com/320/240/brazil,rio?lock=9&random=9",
     "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At in tellus integer feugiat. In hac habitasse platea dictumst. Aliquet nec ullamcorper sit amet."
   },
   {
     "username": "minter10",
     "location": "Bern, Switzerland",
     "profileUrl": "",
-    "avatarUrl": "https://loremflickr.com/320/240/brazil,rio?lock=10&random=10",
+    "avatarKey": "https://loremflickr.com/320/240/brazil,rio?lock=10&random=10",
     "bio": ""
   }
 ]
