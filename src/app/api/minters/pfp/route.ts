@@ -1,0 +1,34 @@
+import { uploadFileToS3 } from "@/lib/aws/uploadFileToS3"
+import { updateAvatarUrl } from "@/lib/query/minters/updateAvatarUrl"
+import { ReasonPhrases, StatusCodes } from "http-status-codes"
+
+export async function POST(req: Request) {
+  if (!process.env.AWS_S3_BUCKET_URL) {
+    return Response.json({ error: "AWS S3 bucket URL is missing." }, { status: 400 })
+  }
+
+  try {
+    const formData = await req.formData()
+    const minterId = formData.get("minterId") as string
+    const file = formData.get("file") as File
+    const encodedFileName = encodeURI(file.name)
+
+    if (file.size === 0) {
+      return Response.json({ error: "File is required." }, { status: 400 })
+    }
+
+    const buffer = Buffer.from(await file.arrayBuffer())
+    await uploadFileToS3(buffer, encodedFileName)
+
+    const avatarUrl = `${process.env.AWS_S3_BUCKET_URL}/${encodedFileName}`
+
+    await updateAvatarUrl(minterId, avatarUrl)
+
+    return Response.json({ uploadedFile: encodedFileName, avatarUrl })
+  } catch (error) {
+    return Response.json(
+      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
+      { status: StatusCodes.INTERNAL_SERVER_ERROR }
+    )
+  }
+}

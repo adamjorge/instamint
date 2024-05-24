@@ -33,7 +33,10 @@ export default function ImageUploadForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex flex-col justify-center space-y-3"
+      >
         <FormField
           control={form.control}
           name="image"
@@ -41,7 +44,18 @@ export default function ImageUploadForm() {
             <FormItem>
               <FormLabel>Profile picture</FormLabel>
               <FormControl>
-                <Input type="file" id="image" {...field} />
+                <Input
+                  type="file"
+                  id="image"
+                  accept="image/*, application/pdf"
+                  onChange={(e) => {
+                    if (e.target.files) {
+                      field.onChange(e.target.files[0])
+                    }
+                  }}
+                  onBlur={field.onBlur}
+                  ref={field.ref}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
