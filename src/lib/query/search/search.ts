@@ -7,7 +7,7 @@ import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSea
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
 import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
 import { SearchType } from "@/validators/types/searchType"
-import axios, { isAxiosError } from "axios"
+import axios from "axios"
 
 export async function fetchSearch(searchParameters: SearchParameters) {
   const { searchTerm, minPrice, maxPrice, currentUserId } = searchParameters
@@ -42,10 +42,6 @@ export async function fetchSearch(searchParameters: SearchParameters) {
       teabags: teabags.data
     })
   } catch (err) {
-    if (isAxiosError(err)) {
-      throw new Error(err.message)
-    }
-
     throw new Error(err as string)
   }
 }

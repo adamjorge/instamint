@@ -5,7 +5,7 @@ import { CommentType } from "@/validators/schemas/nfts/comments/commentSchema"
 
 export default function Comment({ comment, nftId }: CommentProps) {
   return (
-    <div className="flex">
+    <article className="flex">
       <CommentAvatar author={comment.author} />
       <div>
         <CommentDetails comment={comment} nftId={nftId} parentId={comment.id} />
@@ -17,7 +17,7 @@ export default function Comment({ comment, nftId }: CommentProps) {
           </div>
         )}
       </div>
-    </div>
+    </article>
   )
 }
 

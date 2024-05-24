@@ -2,6 +2,7 @@
 
 import ReportCard from "@/components/custom/admin/reports/report-card"
 import Spinner from "@/components/custom/spinner"
+import ErrorMessage from "@/components/ui/custom/error-message"
 import { fetchReports } from "@/lib/query/reports/fetchReports"
 import type { ReportType } from "@/validators/types/reportType"
 import { useQuery } from "@tanstack/react-query"
@@ -22,7 +23,7 @@ export default function Reports({
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <ErrorMessage message={error.message} />
   }
 
   return (

@@ -1,5 +1,5 @@
 import { nftSchema } from "@/validators/schemas/nfts/nftSchema"
-import axios, { isAxiosError } from "axios"
+import axios from "axios"
 
 export default async function fetchNft(id: number) {
   try {
@@ -8,10 +8,6 @@ export default async function fetchNft(id: number) {
 
     return nft
   } catch (error) {
-    if (isAxiosError(error)) {
-      throw new Error(error.message)
-    }
-
     throw new Error(error as string)
   }
 }
