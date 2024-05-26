@@ -1,4 +1,4 @@
-import axios, { isAxiosError } from "axios"
+import axios from "axios"
 
 export async function createChangePassword(email: string, locale: string) {
   const data = {
@@ -11,10 +11,6 @@ export async function createChangePassword(email: string, locale: string) {
 
     return response
   } catch (error) {
-    if (isAxiosError(error)) {
-      throw new Error(error.message)
-    }
-
     throw new Error(error as string)
   }
 }

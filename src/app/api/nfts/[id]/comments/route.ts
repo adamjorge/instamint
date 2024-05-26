@@ -1,7 +1,6 @@
 import { auth } from "@/lib/auth"
 import createNftComment from "@/lib/query/nfts/createNftComment"
 import searchNftComments from "@/lib/query/nfts/searchNftComments"
-import { isValidRequest } from "@/lib/query/nfts/validate-request"
 import moderation from "@/lib/utils/moderation/moderate"
 import {
   CreateNftCommentType,
@@ -12,7 +11,7 @@ import { ReasonPhrases, StatusCodes } from "http-status-codes"
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   const { id } = params
 
-  if (!isValidRequest(id)) {
+  if (!id) {
     return Response.json({ message: "Invalid/missing NFT ID" }, { status: StatusCodes.BAD_REQUEST })
   }
 
@@ -33,7 +32,7 @@ export async function POST(req: Request, { params }: { params: { id: string } })
   const session = await auth()
   const authorId = Number(session?.user.id)
 
-  if (!isValidRequest(id)) {
+  if (!id) {
     return Response.json({ message: "Invalid/missing NFT ID" }, { status: StatusCodes.BAD_REQUEST })
   }
 

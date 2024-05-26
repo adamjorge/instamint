@@ -1,4 +1,4 @@
-import axios, { isAxiosError } from "axios"
+import axios from "axios"
 
 export async function follow(followerId: string, followingId: string) {
   try {
@@ -9,10 +9,6 @@ export async function follow(followerId: string, followingId: string) {
 
     return response
   } catch (error) {
-    if (isAxiosError(error)) {
-      throw new Error(error.message)
-    }
-
     throw new Error(error as string)
   }
 }

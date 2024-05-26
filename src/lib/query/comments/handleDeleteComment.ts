@@ -1,14 +1,10 @@
-import axios, { isAxiosError } from "axios"
+import axios from "axios"
 
 export async function handleDeleteComment(commentId: string) {
   await axios
     .delete(`/api/comments/${commentId}`)
     .then((res) => res)
     .catch((err: unknown) => {
-      if (isAxiosError(err)) {
-        throw new Error(err.message)
-      }
-
       throw new Error(err as string)
     })
 }
