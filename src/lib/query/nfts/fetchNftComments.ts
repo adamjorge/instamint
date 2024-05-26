@@ -1,5 +1,5 @@
 import { commentListSchema } from "@/validators/schemas/nfts/comments/commentSchema"
-import axios, { isAxiosError } from "axios"
+import axios from "axios"
 
 export default async function fetchNftComments(nftId: number) {
   try {
@@ -8,10 +8,6 @@ export default async function fetchNftComments(nftId: number) {
 
     return comments
   } catch (error) {
-    if (isAxiosError(error)) {
-      throw new Error(error.message)
-    }
-
     throw new Error(error as string)
   }
 }

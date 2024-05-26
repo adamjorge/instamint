@@ -4,10 +4,10 @@ import { ChildCommentType } from "@/validators/schemas/nfts/comments/commentSche
 
 export default function ChildComment({ comment, nftId, parentId }: ChildCommentProps) {
   return (
-    <div className="flex">
+    <article className="flex">
       <CommentAvatar author={comment.author} />
       <CommentDetails comment={comment} nftId={nftId} parentId={parentId} />
-    </div>
+    </article>
   )
 }
 

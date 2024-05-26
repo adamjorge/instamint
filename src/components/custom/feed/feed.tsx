@@ -2,6 +2,7 @@
 
 import FeedList from "@/components/custom/feed/feed-list"
 import Spinner from "@/components/custom/spinner"
+import ErrorMessage from "@/components/ui/custom/error-message"
 import { useInfiniteScroll } from "@/hooks/useInfiniteScroll"
 import { useTranslations } from "next-intl"
 import { useCallback, useEffect, useState } from "react"
@@ -29,7 +30,7 @@ export default function Feed({ minterId }: { minterId: number }) {
   }
 
   if (error) {
-    return <div className="text-center">{t("error")}</div>
+    return <ErrorMessage message={t("error")} />
   }
 
   const feedListProps = {

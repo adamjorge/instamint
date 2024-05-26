@@ -1,5 +1,5 @@
 import { PaginatedCommentsValidationSchema } from "@/validators/schemas/commentSchema"
-import axios, { isAxiosError } from "axios"
+import axios from "axios"
 
 export const fetchComments = (page: number) =>
   axios
@@ -10,9 +10,5 @@ export const fetchComments = (page: number) =>
       return { comments: data.comments, totalPages: data.totalPages }
     })
     .catch((err: unknown) => {
-      if (isAxiosError(err)) {
-        throw new Error(err.message)
-      }
-
       throw new Error(err as string)
     })

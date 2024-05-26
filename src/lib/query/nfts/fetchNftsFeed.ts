@@ -1,5 +1,5 @@
 import { feedSchema } from "@/validators/schemas/nfts/feedSchema"
-import axios, { isAxiosError } from "axios"
+import axios from "axios"
 
 export async function fetchNftsFeed(cursor: number, minterId?: number) {
   try {
@@ -10,10 +10,6 @@ export async function fetchNftsFeed(cursor: number, minterId?: number) {
 
     return nfts
   } catch (error) {
-    if (isAxiosError(error)) {
-      throw new Error(error.message)
-    }
-
     throw new Error(error as string)
   }
 }

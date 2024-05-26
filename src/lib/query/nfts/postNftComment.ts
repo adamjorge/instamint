@@ -2,7 +2,7 @@ import {
   CreateNftCommentType,
   createNftCommentSchema
 } from "@/validators/schemas/nfts/comments/create/createCommentSchema"
-import axios, { isAxiosError } from "axios"
+import axios from "axios"
 
 export default async function postNftComment(data: CreateNftCommentType) {
   const { content, nftId } = data
@@ -17,10 +17,6 @@ export default async function postNftComment(data: CreateNftCommentType) {
 
     return comment
   } catch (error) {
-    if (isAxiosError(error)) {
-      throw new Error(error.message)
-    }
-
     throw new Error(error as string)
   }
 }

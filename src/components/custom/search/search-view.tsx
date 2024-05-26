@@ -2,6 +2,7 @@
 
 import SearchResults from "@/components/custom/search/search-results"
 import Spinner from "@/components/custom/spinner"
+import ErrorMessage from "@/components/ui/custom/error-message"
 import { fetchSearch } from "@/lib/query/search/search"
 import { useQuery } from "@tanstack/react-query"
 import type { Session } from "next-auth"
@@ -39,7 +40,7 @@ export default function SearchView({ session }: { session: Session }) {
   }
 
   if (error) {
-    return <div className="text-center">{t("error")}</div>
+    return <ErrorMessage message={t("error")} />
   }
 
   const resultProps = {

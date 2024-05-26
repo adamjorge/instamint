@@ -7,10 +7,10 @@ export default function CommentDetails({ comment, nftId, parentId }: CommentDeta
 
   return (
     <div>
-      <h4 className="text-sm font-semibold mb-1">
+      <h3 className="text-sm font-semibold mb-1">
         @{comment.author.username}
         <div className="text-xs">{relativeTime}</div>
-      </h4>
+      </h3>
       <p className="text-md leading-relaxed">{comment.content}</p>
       <ReplySection nftId={nftId} parentId={parentId} />
     </div>

@@ -2,6 +2,7 @@ import Comment from "@/components/custom/comment-section/comment"
 import Spinner from "@/components/custom/spinner"
 import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import ErrorMessage from "@/components/ui/custom/error-message"
 import fetchNftComments from "@/lib/query/nfts/fetchNftComments"
 import getNftCommentsCount from "@/lib/query/nfts/getNftCommentsCount"
 import { useQuery } from "@tanstack/react-query"
@@ -29,7 +30,7 @@ export default function CommentSection({ nftId }: { nftId: number }) {
   }
 
   if (error) {
-    return <div>Error {error.message}</div>
+    return <ErrorMessage message={error.message} />
   }
 
   const commentsCount = getNftCommentsCount(data)
