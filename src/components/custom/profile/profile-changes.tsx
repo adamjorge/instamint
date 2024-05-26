@@ -10,7 +10,6 @@ import { useCallback } from "react"
 import { toast } from "sonner"
 
 export default function ProfileChanges({ userId, minterId, email }: ChangesProps) {
-  //Cobazaenazdonad
   const locale = useLocale()
   const t = useTranslations("global")
   const deleteMutation = useMutation({

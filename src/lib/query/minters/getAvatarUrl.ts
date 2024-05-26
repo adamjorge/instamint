@@ -3,8 +3,8 @@ import axios, { isAxiosError } from "axios"
 
 export async function getAvatarUrl(minterId: string) {
   try {
-    const response = await axios.get(`/api/minters/avatar/${minterId}`)
-    const data = signedUrlSchema.parse(response)
+    const response = await axios.get(`/api/minters/pfp/${minterId}`)
+    const data = signedUrlSchema.parse(response.data)
 
     return data
   } catch (error) {

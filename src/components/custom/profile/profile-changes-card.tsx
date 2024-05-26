@@ -1,8 +1,10 @@
 "use client"
 
 import ImageUploadFrom from "@/components/custom/profile/image-upload-form"
+import Spinner from "@/components/custom/spinner"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import ErrorMessage from "@/components/ui/custom/error-message"
 import {
   Dialog,
   DialogContent,
@@ -18,7 +20,7 @@ import { useQuery } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
 
 export default function ProfileChangesCard(props: ProfileChangesProps) {
-  const { email, handleClickOnDelete, handleClickOnChange } = props
+  const { email, minterId, handleClickOnDelete, handleClickOnChange } = props
   const t = useTranslations("profileChanges")
   const { data, error, isPending } = useQuery({
     queryKey: ["avatar"],
@@ -26,11 +28,11 @@ export default function ProfileChangesCard(props: ProfileChangesProps) {
   })
 
   if (isPending) {
-    return <div>Loading...</div>
+    return <Spinner />
   }
 
   if (error) {
-    return <div>Error...</div>
+    return <ErrorMessage message={t("error")} />
   }
 
   return (
@@ -42,6 +44,7 @@ export default function ProfileChangesCard(props: ProfileChangesProps) {
       </Avatar>
       <p>{email}</p>
       <ImageUploadFrom />
+      <ImageUploadFrom minterId={minterId} />
       <div className="self-stretch mr-3">
         <Label htmlFor="bio" className="font-bold text-lg">
           {t("bio")}

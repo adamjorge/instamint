@@ -14,7 +14,7 @@ export async function GET(req: Request, { params }: { params: { minterId: string
 
     const signedUrl = await getImage(avatarKey)
 
-    return Response.json(signedUrl)
+    return Response.json({ signedUrl })
   } catch (error) {
     return Response.json(
       { message: ReasonPhrases.INTERNAL_SERVER_ERROR },

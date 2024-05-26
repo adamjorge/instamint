@@ -11,9 +11,14 @@ export default async function ProfilePage() {
   }
 
   const currentUser = await getMinterByUserId(session.user.id)
+
+  if (!currentUser?.minterId) {
+    redirect("/")
+  }
+
   const profileChangesProps = {
     userId: session.user.id,
-    minterId: currentUser?.minterId,
+    minterId: currentUser.minterId,
     email: session.user.email
   }
 

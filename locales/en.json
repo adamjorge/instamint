@@ -59,6 +59,7 @@
     "authorizeSearchByEmail": "Authorize users to find me with my email"
   },
   "profileChanges": {
+    "error": "An error occurred while updating your profile",
     "changeMyPassword": "Change my password",
     "changeProfile": "Edit profile",
     "bio": "Bio",

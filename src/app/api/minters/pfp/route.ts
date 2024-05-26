@@ -20,11 +20,11 @@ export async function POST(req: Request) {
     const buffer = Buffer.from(await file.arrayBuffer())
     await uploadFileToS3(buffer, encodedFileName)
 
-    const avatarUrl = `${process.env.AWS_S3_BUCKET_URL}/${encodedFileName}`
+    const avatarKey = encodedFileName
 
-    await updateAvatarUrl(minterId, avatarUrl)
+    await updateAvatarUrl(minterId, avatarKey)
 
-    return Response.json({ uploadedFile: encodedFileName, avatarUrl })
+    return Response.json({ uploadedFile: encodedFileName })
   } catch (error) {
     return Response.json(
       { message: ReasonPhrases.INTERNAL_SERVER_ERROR },

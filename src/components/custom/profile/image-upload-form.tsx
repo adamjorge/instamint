@@ -10,7 +10,9 @@ import {
   FormMessage
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { postAvatar } from "@/lib/query/minters/postAvatarAction"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { z } from "zod"
@@ -19,7 +21,21 @@ const formSchema = z.object({
   image: z.instanceof(File).refine((file) => file.size !== 0, "Please upload an image")
 })
 
-export default function ImageUploadForm() {
+/* eslint-disable */
+
+export default function ImageUploadForm(props: ImageUploadFormProps) {
+  const queryClient = useQueryClient()
+  const mutation = useMutation({
+    mutationFn: (data: z.infer<typeof formSchema>) =>
+      postAvatar(data.image, props.minterId.toString()),
+    onSuccess: () => {
+      toast.success("pfp uploaded successfully")
+      queryClient.invalidateQueries({ queryKey: ["avatar"] })
+    },
+    onError: () => {
+      toast.error("error uploading pfp")
+    }
+  })
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     mode: "onBlur",
@@ -28,7 +44,7 @@ export default function ImageUploadForm() {
     }
   })
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    toast.success(`pfp uploaded successfully ${values.image.name}`)
+    mutation.mutate(values)
   }
 
   return (
@@ -47,14 +63,13 @@ export default function ImageUploadForm() {
                 <Input
                   type="file"
                   id="image"
-                  accept="image/*, application/pdf"
+                  accept="image/*"
                   onChange={(e) => {
                     if (e.target.files) {
                       field.onChange(e.target.files[0])
                     }
                   }}
                   onBlur={field.onBlur}
-                  ref={field.ref}
                 />
               </FormControl>
               <FormMessage />
@@ -65,4 +80,8 @@ export default function ImageUploadForm() {
       </form>
     </Form>
   )
+}
+
+type ImageUploadFormProps = {
+  minterId: number
 }
