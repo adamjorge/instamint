@@ -11,7 +11,7 @@ export default async function searchNftComments(nftId: string) {
         select: {
           id: true,
           username: true,
-          avatarUrl: true
+          avatarKey: true
         }
       },
       children: {
@@ -24,7 +24,7 @@ export default async function searchNftComments(nftId: string) {
             select: {
               id: true,
               username: true,
-              avatarUrl: true
+              avatarKey: true
             }
           }
         }
@@ -37,7 +37,7 @@ export default async function searchNftComments(nftId: string) {
                 select: {
                   id: true,
                   username: true,
-                  avatarUrl: true
+                  avatarKey: true
                 }
               }
             }
