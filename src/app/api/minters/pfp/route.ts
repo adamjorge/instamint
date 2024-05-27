@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     const formData = await req.formData()
     const minterId = formData.get("minterId") as string
     const file = formData.get("file") as File
-    const encodedFileName = encodeURI(file.name)
+    const encodedFileName = crypto.randomUUID()
 
     if (file.size === 0) {
       return Response.json({ error: "File is required." }, { status: 400 })

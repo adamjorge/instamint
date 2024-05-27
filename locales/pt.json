@@ -65,7 +65,11 @@
     "bioWIP": "Esta funcionalidade ainda está em desenvolvimento.",
     "deleteAccount": "Excluir sua conta",
     "deleteAccountConfirmation": "Tem certeza de que deseja excluir sua conta?",
-    "deleteAccountDescription": "Esta ação é irreversível e excluirá todos os seus dados. Por favor, certifique-se antes de continuar."
+    "deleteAccountDescription": "Esta ação é irreversível e excluirá todos os seus dados. Por favor, certifique-se antes de continuar.",
+    "profilePicture": "Foto de perfil",
+    "uploadProfilePicture": "Carregar foto de perfil",
+    "uploadError": "Erro ao carregar a imagem",
+    "uploadSuccess": "Imagem carregada com sucesso"
   },
   "profilePrivacyPolicy": {
     "title": "Política de Privacidade da Instamint",

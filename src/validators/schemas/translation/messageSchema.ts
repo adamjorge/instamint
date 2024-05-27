@@ -68,7 +68,11 @@ export const MessageSchema = z.object({
     bioWIP: z.string(),
     deleteAccount: z.string(),
     deleteAccountConfirmation: z.string(),
-    deleteAccountDescription: z.string()
+    deleteAccountDescription: z.string(),
+    profilePicture: z.string(),
+    uploadProfilePicture: z.string(),
+    uploadError: z.string(),
+    uploadSuccess: z.string()
   }),
   profilePrivacyPolicy: ProfilePrivacyPolicySchema,
   signUp: z.object({

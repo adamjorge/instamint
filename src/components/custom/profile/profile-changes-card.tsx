@@ -1,6 +1,6 @@
 "use client"
 
-import ImageUploadFrom from "@/components/custom/profile/image-upload-form"
+import AvatarUploadFrom from "@/components/custom/profile/change-avatar/avatar-upload-form-wrapper"
 import Spinner from "@/components/custom/spinner"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
@@ -43,8 +43,7 @@ export default function ProfileChangesCard(props: ProfileChangesProps) {
         <AvatarFallback>IN</AvatarFallback>
       </Avatar>
       <p>{email}</p>
-      <ImageUploadFrom />
-      <ImageUploadFrom minterId={minterId} />
+      <AvatarUploadFrom minterId={minterId} />
       <div className="self-stretch mr-3">
         <Label htmlFor="bio" className="font-bold text-lg">
           {t("bio")}
