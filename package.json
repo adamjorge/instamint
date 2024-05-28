@@ -58,6 +58,7 @@
     "axios": "^1.6.8",
     "bad-words": "^3.0.4",
     "bcryptjs": "^2.4.3",
+    "chart.js": "^4.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "http-status-codes": "^2.3.0",
