@@ -58,6 +58,9 @@ export const MessageSchema = z.object({
     language: z.string(),
     privacyPolicy: z.string()
   }),
+  privacy: z.object({
+    authorizeSearchByEmail: z.string()
+  }),
   profileChanges: z.object({
     changeMyPassword: z.string(),
     changeProfile: z.string(),

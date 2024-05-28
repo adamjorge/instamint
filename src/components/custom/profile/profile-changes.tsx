@@ -32,6 +32,7 @@ export default function ProfileChanges({ userId, email }: ChangesProps) {
     changeMutation.mutate()
   }, [changeMutation, t])
   const profileChangesProps = {
+    email,
     handleClickOnDelete,
     handleClickOnChange
   }
