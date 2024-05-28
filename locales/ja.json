@@ -55,6 +55,9 @@
     "language": "言語",
     "privacyPolicy": "プライバシーポリシー"
   },
+  "privacy": {
+    "authorizeSearchByEmail": "ユーザーが私の電子メールで私を見つけることを許可する"
+  },
   "profileChanges": {
     "changeMyPassword": "パスワードをかえる",
     "changeProfile": "プロフィールの編集",

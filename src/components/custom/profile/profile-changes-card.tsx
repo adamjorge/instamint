@@ -13,7 +13,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { useTranslations } from "next-intl"
 
 export default function ProfileChangesCard(props: ProfileChangesProps) {
-  const { handleClickOnDelete, handleClickOnChange } = props
+  const { email, handleClickOnDelete, handleClickOnChange } = props
   const t = useTranslations("profileChanges")
 
   return (
@@ -22,6 +22,7 @@ export default function ProfileChangesCard(props: ProfileChangesProps) {
       <Avatar>
         <AvatarFallback>IN</AvatarFallback>
       </Avatar>
+      <p>{email}</p>
       <div className="self-stretch mr-3">
         <Label htmlFor="bio" className="font-bold text-lg">
           {t("bio")}
@@ -50,6 +51,7 @@ export default function ProfileChangesCard(props: ProfileChangesProps) {
 }
 
 type ProfileChangesProps = {
+  email: string
   handleClickOnDelete: () => void
   handleClickOnChange: () => void
 }
