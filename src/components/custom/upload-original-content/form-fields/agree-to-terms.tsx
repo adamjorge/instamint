@@ -25,7 +25,12 @@ export default function AgreeToTermsField<T extends FieldValues>({
                 ref={field.ref}
               />{" "}
               I agree to the{" "}
-              <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-blue-500">
+              <a
+                href="/upload-original-content/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500"
+              >
                 terms
               </a>
             </label>
