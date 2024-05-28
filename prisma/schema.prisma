@@ -105,7 +105,7 @@ model Minter {
   username            String            @unique
   defaultLanguage     String            @default("fr")
   profileUrl          String
-  avatarUrl           String
+  avatarKey           String
   bio                 String
   location            String?
   authorName          String?

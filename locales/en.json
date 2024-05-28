@@ -62,13 +62,18 @@
     "authorizeSearchByEmail": "Authorize users to find me with my email"
   },
   "profileChanges": {
+    "error": "An error occurred while updating your profile",
     "changeMyPassword": "Change my password",
     "changeProfile": "Edit profile",
     "bio": "Bio",
     "bioWIP": "This feature is still in development.",
     "deleteAccount": "Delete your account",
     "deleteAccountConfirmation": "Are you sure you want to delete your account?",
-    "deleteAccountDescription": "This action is irreversible and will delete all your data. Please be sure before proceeding."
+    "deleteAccountDescription": "This action is irreversible and will delete all your data. Please be sure before proceeding.",
+    "profilePicture": "Profile picture",
+    "uploadProfilePicture": "Upload profile picture",
+    "uploadError": "An error occurred while uploading your profile picture",
+    "uploadSuccess": "Profile picture uploaded successfully"
   },
   "profilePrivacyPolicy": {
     "title": "Instamint Privacy Policy",

@@ -55,7 +55,7 @@ export async function signUp(formData: SignUpFormData): Promise<SignUpFormState>
       data: {
         username: faker.internet.userName(),
         profileUrl: faker.image.urlLoremFlickr(),
-        avatarUrl: faker.image.avatar(),
+        avatarKey: faker.image.avatar(),
         bio: faker.lorem.paragraph()
       }
     })

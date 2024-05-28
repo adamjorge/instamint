@@ -5,7 +5,7 @@ const select: Prisma.MinterSelect = {
   id: true,
   username: true,
   profileUrl: true,
-  avatarUrl: true,
+  avatarKey: true,
   bio: true,
   location: true,
   isSearchableByEmail: true,

@@ -62,13 +62,18 @@
     "authorizeSearchByEmail": "Permitir que os utilizadores me encontrem utilizando o meu endereço de correio eletrónico"
   },
   "profileChanges": {
+    "error": "Ocorreu um erro, por favor, tente novamente mais tarde.",
     "changeMyPassword": "Mudar minha senha",
     "changeProfile": "Editar perfil",
     "bio": "Biografia",
     "bioWIP": "Esta funcionalidade ainda está em desenvolvimento.",
     "deleteAccount": "Excluir sua conta",
     "deleteAccountConfirmation": "Tem certeza de que deseja excluir sua conta?",
-    "deleteAccountDescription": "Esta ação é irreversível e excluirá todos os seus dados. Por favor, certifique-se antes de continuar."
+    "deleteAccountDescription": "Esta ação é irreversível e excluirá todos os seus dados. Por favor, certifique-se antes de continuar.",
+    "profilePicture": "Foto de perfil",
+    "uploadProfilePicture": "Carregar foto de perfil",
+    "uploadError": "Erro ao carregar a imagem",
+    "uploadSuccess": "Imagem carregada com sucesso"
   },
   "profilePrivacyPolicy": {
     "title": "Política de Privacidade da Instamint",
