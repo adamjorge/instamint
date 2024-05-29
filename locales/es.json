@@ -1,12 +1,12 @@
 {
   "global": {
-    "check": "Comprobar",
+    "check": "Verificar",
     "loading": "Cargando...",
     "noResults": "No se encontraron resultados.",
     "resultsFor": "Resultados de búsqueda para:",
     "noResultsFor": "No se encontraron resultados para:",
     "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
-    "error": "Ocurrió un error, por favor inténtalo nuevamente más tarde.",
+    "error": "Se produjo un error. Por favor, inténtelo de nuevo más tarde.",
     "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí puedes buscar NFTs o minters.",
     "nftPrice": "Precio: ${price}",
     "signOut": "Cerrar sesión",
@@ -14,11 +14,14 @@
     "forYouFeed": "Para ti",
     "followedFeed": "Seguidos",
     "invalidCredentials": "Credenciales inválidas",
-    "deletedAccount": "Tu solicitud para eliminar tu cuenta ha sido recibida exitosamente. ¡Hasta pronto!",
-    "appDescription": "Instamint, tu red social para crear NFTs",
+    "deletedAccount": "Se ha recibido correctamente tu solicitud para eliminar tu cuenta. ¡Hasta pronto!",
+    "appDescription": "Instamint, tu red social para la creación de NFTs",
     "greeting": "Saludos cordiales",
     "changePasswordMail": "Recibirás un correo electrónico para cambiar tu contraseña.",
-    "successChangePassword": "Contraseña cambiada con éxito"
+    "successChangePassword": "Contraseña cambiada con éxito",
+    "successFileUpload": "Archivo subido correctamente",
+    "failedFileUpload": "Error al subir el archivo",
+    "errorFileUpload": "Se produjo un error durante la carga del archivo"
   },
   "search": {
     "cancel": "Cancelar",
@@ -206,5 +209,17 @@
     "backToHome": "Regresar a la página principal",
     "appDescription": "Instamint es tu red social para acuñar NFTs",
     "changePasswordInstructions": "Haz clic en el enlace a continuación para cambiar tu contraseña:"
+  },
+  "uploadOriginalContent": {
+    "uploadLabel": "Subir contenido",
+    "agreeText": "Estoy de acuerdo con los",
+    "termsLink": "términos",
+    "uploadContentButton": "Subir contenido original"
+  },
+  "uploadOriginalContentTerms": {
+    "Title": "Términos de carga de contenido original",
+    "firstParagraph": "Instamint almacenará el contenido de los archivos que subas con el propósito de crear NFTs. Al subir archivos, aceptas que tienes derecho a utilizar y distribuir estos archivos. Instamint no utilizará tus archivos para ningún otro propósito que no sea la creación de NFTs sin tu consentimiento explícito.",
+    "secondParagraph": "Instamint se reserva el derecho de eliminar cualquier contenido que viole nuestros Términos de Servicio o infrinja los derechos de terceros. Asegúrate de que tus archivos cumplan con nuestras directrices de contenido antes de subirlos.",
+    "contactInfo": "Si tienes alguna pregunta sobre cómo se utilizará el contenido de tus archivos, revisa nuestra Política de Privacidad o contáctanos en"
   }
 }

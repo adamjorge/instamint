@@ -18,7 +18,10 @@
     "appDescription": "Instamint, your social network for minting NFTs",
     "greeting": "Best Regards",
     "changePasswordMail": "You will receive an email to change your password.",
-    "successChangePassword": "Password changed successfully"
+    "successChangePassword": "Password changed successfully",
+    "successFileUpload": "File uploaded successfully",
+    "failedFileUpload": "File upload failed",
+    "errorFileUpload": "An error occurred during file upload"
   },
   "search": {
     "cancel": "Cancel",
@@ -206,5 +209,17 @@
     "backToHome": "Back to home page",
     "appDescription": "Instamint is your social network for minting NFTs",
     "changePasswordInstructions": "Click the link below to change your password:"
+  },
+  "uploadOriginalContent": {
+    "uploadLabel": "Upload content",
+    "agreeText": "I agree to the",
+    "termsLink": "terms",
+    "uploadContentButton": "Upload original content"
+  },
+  "uploadOriginalContentTerms": {
+    "Title": "Terms of Original content Upload",
+    "firstParagraph": "Instamint will store your original uploaded files content for the purpose of creating NFTs. By uploading files, you agree that you have the right to use and distribute these files. Instamint will not use your files for any purpose other than NFT creation without your explicit consent.",
+    "secondParagraph": "Instamint reserves the right to remove any content that violates our Terms of Service or infringes on the rights of others. Please ensure your files meet our content guidelines before uploading.",
+    "contactInfo": "If you have any questions about how your files content will be used, please review our Privacy Policy or contact us at"
   }
 }

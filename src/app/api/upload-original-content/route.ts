@@ -11,11 +11,14 @@ export async function POST(req: Request) {
     const minterId = formData.get("minterId") as string
 
     if (file.size === 0) {
-      return Response.json({ error: "File is required." }, { status: 400 })
+      return Response.json({ error: "File is required." }, { status: StatusCodes.BAD_REQUEST })
     }
 
     if (file.size > 1 * 1024 * 1024 * 1024) {
-      return Response.json({ error: "File size must be between 0B and 1GB." }, { status: 400 })
+      return Response.json(
+        { error: "File size must be between 0B and 1GB." },
+        { status: StatusCodes.LENGTH_REQUIRED }
+      )
     }
 
     const existingContent = await prisma.originalContent.findUnique({
@@ -23,7 +26,7 @@ export async function POST(req: Request) {
     })
 
     if (existingContent) {
-      return Response.json({ error: "File already uploaded." }, { status: 400 })
+      return Response.json({ error: "File already uploaded." }, { status: StatusCodes.CONFLICT })
     }
 
     const buffer = Buffer.from(await file.arrayBuffer())

@@ -6,19 +6,22 @@
     "resultsFor": "Résultats de recherche pour :",
     "noResultsFor": "Aucun résultat trouvé pour :",
     "noResultsSentence": "Aucun résultat trouvé pour le terme de recherche.",
-    "error": "Une erreur s'est produite, veuillez réessayer plus tard.",
-    "searchWelcome": "Bienvenue sur votre page de recherche. C'est ici que vous pouvez rechercher des NFT ou des créateurs.",
+    "error": "Une erreur s'est produite. Veuillez réessayer plus tard.",
+    "searchWelcome": "Bienvenue sur votre page de recherche. C'est ici que vous pouvez rechercher des NFTs ou des créateurs.",
     "nftPrice": "Prix : ${price}",
-    "signOut": "Déconnexion",
+    "signOut": "Se déconnecter",
     "moreDetails": "Plus de détails",
     "forYouFeed": "Pour vous",
     "followedFeed": "Suivi",
-    "invalidCredentials": "Identifiants invalides",
-    "deletedAccount": "Votre demande de suppression de compte a bien été reçue. À bientôt !",
-    "appDescription": "Instamint, votre réseau social pour créer des NFTs.",
+    "invalidCredentials": "Informations d'identification invalides",
+    "deletedAccount": "Votre demande de suppression de compte a été reçue avec succès. À bientôt !",
+    "appDescription": "Instamint, votre réseau social pour la création de NFTs",
     "greeting": "Meilleures salutations",
     "changePasswordMail": "Vous recevrez un email pour changer votre mot de passe.",
-    "successChangePassword": "Le mot de passe a été changé avec succès"
+    "successChangePassword": "Mot de passe changé avec succès",
+    "successFileUpload": "Fichier téléchargé avec succès",
+    "failedFileUpload": "Échec du téléchargement du fichier",
+    "errorFileUpload": "Une erreur s'est produite lors du téléchargement du fichier"
   },
   "search": {
     "cancel": "Annuler",
@@ -206,5 +209,17 @@
     "backToHome": "Retour vers la page principale",
     "appDescription": "Instamint est votre réseau social pour la création de NFTs",
     "changePasswordInstructions": "Cliquez sur le lien ci-dessous pour changer votre mot de passe :"
+  },
+  "uploadOriginalContent": {
+    "uploadLabel": "Télécharger le contenu",
+    "agreeText": "J'accepte les",
+    "termsLink": "termes",
+    "uploadContentButton": "Télécharger un contenu original"
+  },
+  "uploadOriginalContentTerms": {
+    "Title": "Conditions de téléchargement de contenu original",
+    "firstParagraph": "Instamint stockera le contenu des fichiers que vous téléchargez dans le but de créer des NFTs. En téléchargeant des fichiers, vous acceptez d'avoir le droit d'utiliser et de distribuer ces fichiers. Instamint n'utilisera pas vos fichiers à d'autres fins que la création de NFTs sans votre consentement explicite.",
+    "secondParagraph": "Instamint se réserve le droit de supprimer tout contenu qui enfreint nos Conditions d'utilisation ou les droits d'autrui. Assurez-vous que vos fichiers respectent nos directives de contenu avant de les télécharger.",
+    "contactInfo": "Si vous avez des questions sur l'utilisation du contenu de vos fichiers, veuillez consulter notre Politique de confidentialité ou nous contacter à"
   }
 }

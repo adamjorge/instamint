@@ -1,24 +1,27 @@
 {
   "global": {
+    "check": "Verificar",
+    "loading": "Carregando...",
+    "noResults": "Nenhum resultado encontrado.",
+    "resultsFor": "Resultados da pesquisa para:",
+    "noResultsFor": "Nenhum resultado encontrado para:",
+    "noResultsSentence": "Nenhum resultado encontrado para o termo de pesquisa.",
+    "error": "Ocorreu um erro. Por favor, tente novamente mais tarde.",
+    "searchWelcome": "Bem-vindo à sua página de pesquisa. Aqui você pode pesquisar NFTs ou criadores.",
+    "nftPrice": "Preço: ${price}",
+    "signOut": "Sair",
     "moreDetails": "Mais detalhes",
     "forYouFeed": "Para você",
     "followedFeed": "Seguidos",
     "invalidCredentials": "Credenciais inválidas",
-    "deletedAccount": "Seu pedido de exclusão de conta foi recebido com sucesso. Adeus!",
-    "appDescription": "Instamint, sua rede social para criar NFTs.",
-    "greeting": "Desejando-lhe tudo de bom",
-    "check": "Verificar",
-    "loading": "Carregando...",
-    "noResults": "Nenhum resultado encontrado.",
-    "resultsFor": "Resultados da busca para:",
-    "noResultsFor": "Nenhum resultado encontrado para:",
-    "noResultsSentence": "Nenhum resultado encontrado para o termo de busca.",
-    "error": "Ocorreu um erro, por favor, tente novamente mais tarde.",
-    "searchWelcome": "Bem-vindo à sua página de busca. Aqui é onde você pode procurar NFTs ou criadores.",
-    "nftPrice": "Preço: ${price}",
-    "signOut": "Sair",
-    "changePasswordMail": "Você receberá um email para mudar sua senha.",
-    "successChangePassword": "Senha alterada com sucesso"
+    "deletedAccount": "Recebemos com sucesso sua solicitação para excluir sua conta. Até logo!",
+    "appDescription": "Instamint, sua rede social para criação de NFTs",
+    "greeting": "Atenciosamente",
+    "changePasswordMail": "Você receberá um email para alterar sua senha.",
+    "successChangePassword": "Senha alterada com sucesso",
+    "successFileUpload": "Arquivo enviado com sucesso",
+    "failedFileUpload": "Falha ao enviar o arquivo",
+    "errorFileUpload": "Ocorreu um erro durante o envio do arquivo"
   },
   "search": {
     "cancel": "Cancelar",
@@ -211,5 +214,17 @@
     "backToHome": "De volta para casa principal",
     "appDescription": "Instamint é sua rede social para cunhar NFTs",
     "changePasswordInstructions": "Clique no link abaixo para mudar sua senha:"
+  },
+  "uploadOriginalContent": {
+    "uploadLabel": "Enviar conteúdo",
+    "agreeText": "Eu concordo com os",
+    "termsLink": "termos",
+    "uploadContentButton": "Enviar conteúdo original"
+  },
+  "uploadOriginalContentTerms": {
+    "Title": "Termos de envio de conteúdo original",
+    "firstParagraph": "Instamint armazenará o conteúdo dos arquivos que você carregar com o propósito de criar NFTs. Ao carregar arquivos, você concorda que tem o direito de usar e distribuir esses arquivos. Instamint não usará seus arquivos para nenhum outro propósito que não seja a criação de NFTs sem seu consentimento explícito.",
+    "secondParagraph": "Instamint reserva-se o direito de remover qualquer conteúdo que viole nossos Termos de Serviço ou infrinja os direitos de terceiros. Certifique-se de que seus arquivos estejam de acordo com nossas diretrizes de conteúdo antes de carregá-los.",
+    "contactInfo": "Se você tiver alguma dúvida sobre como o conteúdo de seus arquivos será usado, consulte nossa Política de Privacidade ou entre em contato conosco em"
   }
 }

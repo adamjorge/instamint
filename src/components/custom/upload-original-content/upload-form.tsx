@@ -7,6 +7,7 @@ import { Form } from "@/components/ui/form"
 import { uploadContent } from "@/lib/query/minters/original-content/uploadContent"
 import { formSchema } from "@/validators/upload-original-content/upload-content"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useTranslations } from "next-intl"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { z } from "zod"
@@ -16,6 +17,8 @@ type ImageUploadFormProps = {
 }
 
 export default function ImageUploadForm(props: ImageUploadFormProps) {
+  const g = useTranslations("global")
+  const t = useTranslations("uploadOriginalContent")
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     mode: "onBlur",
@@ -28,13 +31,13 @@ export default function ImageUploadForm(props: ImageUploadFormProps) {
       const response = await uploadContent(values.file, props.minterId)
 
       if (response.status === 200) {
-        toast.success("File uploaded successfully")
+        toast.success(g("successFileUpload"))
         form.reset()
       } else {
-        toast.error("File upload failed")
+        toast.error(g("failedFileUpload"))
       }
     } catch (error) {
-      toast.error("An error occurred during file upload")
+      toast.error(g("errorFileUpload"))
     }
   }
 
@@ -47,7 +50,7 @@ export default function ImageUploadForm(props: ImageUploadFormProps) {
         >
           <FileUploadField control={form.control} name="file" />
           <AgreeToTermsField control={form.control} name="agreeToTerms" />
-          <Button type="submit">Upload original content</Button>
+          <Button type="submit">{t("uploadContentButton")}</Button>
         </form>
       </Form>
     </div>

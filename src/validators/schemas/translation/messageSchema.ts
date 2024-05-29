@@ -21,7 +21,10 @@ export const MessageSchema = z.object({
     appDescription: z.string(),
     greeting: z.string(),
     changePasswordMail: z.string(),
-    successChangePassword: z.string()
+    successChangePassword: z.string(),
+    successFileUpload: z.string(),
+    failedFileUpload: z.string(),
+    errorFileUpload: z.string()
   }),
   search: z.object({
     cancel: z.string(),
@@ -127,5 +130,17 @@ export const MessageSchema = z.object({
     backToHome: z.string(),
     appDescription: z.string(),
     changePasswordInstructions: z.string()
+  }),
+  uploadOriginalContent: z.object({
+    uploadLabel: z.string(),
+    agreeText: z.string(),
+    termsLink: z.string(),
+    uploadContentButton: z.string()
+  }),
+  uploadOriginalContentTerms: z.object({
+    Title: z.string(),
+    firstParagraph: z.string(),
+    secondParagraph: z.string(),
+    contactInfo: z.string()
   })
 })

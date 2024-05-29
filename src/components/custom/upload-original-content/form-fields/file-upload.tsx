@@ -1,5 +1,6 @@
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { useTranslations } from "next-intl"
 import { Control, FieldValues, Path } from "react-hook-form"
 
 interface FileUploadFieldProps<T extends FieldValues> {
@@ -11,13 +12,15 @@ export default function FileUploadField<T extends FieldValues>({
   control,
   name
 }: FileUploadFieldProps<T>) {
+  const t = useTranslations("uploadOriginalContent")
+
   return (
     <FormField
       control={control}
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>Upload content</FormLabel>
+          <FormLabel>{t("uploadLabel")}</FormLabel>
           <FormControl>
             <Input
               type="file"
