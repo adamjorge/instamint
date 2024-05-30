@@ -59,7 +59,7 @@
     "authorizeSearchByEmail": "Permitir que os utilizadores me encontrem utilizando o meu endereço de correio eletrónico"
   },
   "profileChanges": {
-    "error":"Ocorreu um erro, por favor, tente novamente mais tarde.",
+    "error": "Ocorreu um erro, por favor, tente novamente mais tarde.",
     "changeMyPassword": "Mudar minha senha",
     "changeProfile": "Editar perfil",
     "bio": "Biografia",
