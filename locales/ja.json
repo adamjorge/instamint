@@ -59,13 +59,18 @@
     "authorizeSearchByEmail": "ユーザーが私の電子メールで私を見つけることを許可する"
   },
   "profileChanges": {
+    "error": "エラーが発生しました。後でもう一度お試しください。",
     "changeMyPassword": "パスワードをかえる",
     "changeProfile": "プロフィールの編集",
     "bio": "バイオ",
     "bioWIP": "この機能はまだ開発中です。",
     "deleteAccount": "アカウントの削除",
     "deleteAccountConfirmation": "本当にアカウントを削除しますか？",
-    "deleteAccountDescription": "この操作は取り消せません。すべてのデータが削除されますので、慎重にお願いします。"
+    "deleteAccountDescription": "この操作は取り消せません。すべてのデータが削除されますので、慎重にお願いします。",
+    "profilePicture": "プロフィール写真",
+    "uploadProfilePicture": "プロフィール写真をアップロード",
+    "uploadError": "画像のアップロード中にエラーが発生しました。",
+    "uploadSuccess": "画像が正常にアップロードされました。"
   },
   "profilePrivacyPolicy": {
     "title": "インスタミントのプライバシーポリシー",

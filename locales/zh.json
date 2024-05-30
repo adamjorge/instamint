@@ -57,13 +57,18 @@
     "authorizeSearchByEmail": "允许用户使用我的电子邮件地址找到我"
   },
   "profileChanges": {
+    "error": "发生错误，请稍后再试。",
     "changeMyPassword": "更改我的密码",
     "changeProfile": "编辑资料",
     "bio": "简介",
     "bioWIP": "此功能仍在开发中。",
     "deleteAccount": "删除您的账号",
     "deleteAccountConfirmation": "您确定要删除您的账号吗？",
-    "deleteAccountDescription": "此操作是不可逆的，将删除所有您的数据。请在继续之前确认。"
+    "deleteAccountDescription": "此操作是不可逆的，将删除所有您的数据。请在继续之前确认。",
+    "profilePicture": "个人资料图片",
+    "uploadProfilePicture": "上传个人资料图片",
+    "uploadError": "上传错误",
+    "uploadSuccess": "上传成功"
   },
   "profilePrivacyPolicy": {
     "title": "Instamint 隐私政策",

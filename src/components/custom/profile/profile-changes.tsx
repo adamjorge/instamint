@@ -9,7 +9,7 @@ import { useLocale, useTranslations } from "next-intl"
 import { useCallback } from "react"
 import { toast } from "sonner"
 
-export default function ProfileChanges({ userId, email }: ChangesProps) {
+export default function ProfileChanges({ userId, minterId, email }: ChangesProps) {
   const locale = useLocale()
   const t = useTranslations("global")
   const deleteMutation = useMutation({
@@ -33,6 +33,7 @@ export default function ProfileChanges({ userId, email }: ChangesProps) {
   }, [changeMutation, t])
   const profileChangesProps = {
     email,
+    minterId,
     handleClickOnDelete,
     handleClickOnChange
   }
@@ -42,5 +43,6 @@ export default function ProfileChanges({ userId, email }: ChangesProps) {
 
 type ChangesProps = {
   userId: string
+  minterId: number
   email: string
 }
