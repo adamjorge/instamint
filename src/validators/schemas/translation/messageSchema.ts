@@ -62,6 +62,7 @@ export const MessageSchema = z.object({
     authorizeSearchByEmail: z.string()
   }),
   profileChanges: z.object({
+    error: z.string(),
     changeMyPassword: z.string(),
     changeProfile: z.string(),
     bio: z.string(),

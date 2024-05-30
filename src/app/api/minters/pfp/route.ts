@@ -4,7 +4,10 @@ import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function POST(req: Request) {
   if (!process.env.AWS_S3_BUCKET_URL) {
-    return Response.json({ error: "AWS S3 bucket URL is missing." }, { status: 400 })
+    return Response.json({
+      error: "AWS S3 bucket URL is missing.",
+      status: StatusCodes.BAD_REQUEST
+    })
   }
 
   try {
@@ -14,7 +17,7 @@ export async function POST(req: Request) {
     const encodedFileName = crypto.randomUUID()
 
     if (file.size === 0) {
-      return Response.json({ error: "File is required." }, { status: 400 })
+      return Response.json({ error: "File is required." }, { status: StatusCodes.BAD_REQUEST })
     }
 
     const buffer = Buffer.from(await file.arrayBuffer())

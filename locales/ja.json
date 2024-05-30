@@ -59,6 +59,7 @@
     "authorizeSearchByEmail": "ユーザーが私の電子メールで私を見つけることを許可する"
   },
   "profileChanges": {
+    "error": "エラーが発生しました。後でもう一度お試しください。",
     "changeMyPassword": "パスワードをかえる",
     "changeProfile": "プロフィールの編集",
     "bio": "バイオ",

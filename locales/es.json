@@ -59,6 +59,7 @@
     "authorizeSearchByEmail": "Autorizar a los usuarios a encontrarme con mi correo electrónico"
   },
   "profileChanges": {
+    "error": "Error al guardar los cambios",
     "changeMyPassword": "Cambiar mi contraseña",
     "changeProfile": "Editar perfil",
     "bio": "Biografía",

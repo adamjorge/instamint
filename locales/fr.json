@@ -59,6 +59,7 @@
     "authorizeSearchByEmail": "Autoriser les utilisateurs à me trouver avec mon email"
   },
   "profileChanges": {
+    "error": "Une erreur s'est produite, veuillez réessayer plus tard.",
     "changeMyPassword": "Changer mon mot de passe",
     "changeProfile": "Modifier le profil",
     "bio": "Bio",
