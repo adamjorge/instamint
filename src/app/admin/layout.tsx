@@ -1,5 +1,3 @@
-"use client"
-
 import MenubarLayout from "@/components/custom/admin/menubar-layout"
 import Providers from "@/providers/adminProviders"
 import "@/styles/globals.css"
