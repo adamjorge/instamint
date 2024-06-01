@@ -20,7 +20,7 @@
           "username": "oneEleven",
           "language": "fr",
           "profileUrl": "",
-          "avatarUrl": "",
+          "avatarKey": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
@@ -28,7 +28,18 @@
           "isFollowed": true
         }
       },
-      "hashtags": []
+      "hashtags": [],
+      "likedBy": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ],
+      "_count": {
+        "likedBy": 2
+      }
     },
     {
       "id": 2,
@@ -50,7 +61,7 @@
           "username": "twoEleven",
           "language": "fr",
           "profileUrl": "",
-          "avatarUrl": "",
+          "avatarKey": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
@@ -58,7 +69,18 @@
           "isFollowed": true
         }
       },
-      "hashtags": []
+      "hashtags": [],
+      "likedBy": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ],
+      "_count": {
+        "likedBy": 2
+      }
     },
     {
       "id": 4,
@@ -80,7 +102,7 @@
           "username": "fourEleven",
           "language": "fr",
           "profileUrl": "",
-          "avatarUrl": "",
+          "avatarKey": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
@@ -88,7 +110,18 @@
           "isFollowed": true
         }
       },
-      "hashtags": []
+      "hashtags": [],
+      "likedBy": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ],
+      "_count": {
+        "likedBy": 2
+      }
     },
     {
       "id": 9,
@@ -110,7 +143,7 @@
           "username": "nineEleven",
           "language": "fr",
           "profileUrl": "",
-          "avatarUrl": "",
+          "avatarKey": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
@@ -118,7 +151,18 @@
           "isFollowed": true
         }
       },
-      "hashtags": []
+      "hashtags": [],
+      "likedBy": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ],
+      "_count": {
+        "likedBy": 2
+      }
     }
   ],
   "minters": [
@@ -128,7 +172,7 @@
       "language": "fr",
       "profileUrl": "",
       "location": "Paris",
-      "avatarUrl": "https://loremflickr.com/320/240?lock=1&random=1",
+      "avatarKey": "https://loremflickr.com/320/240?lock=1&random=1",
       "bio": "first bio",
       "authorName": null,
       "isVisible": true,
@@ -141,7 +185,7 @@
       "language": "fr",
       "profileUrl": "",
       "location": "Paris",
-      "avatarUrl": "https://loremflickr.com/320/240?lock=2&random=2",
+      "avatarKey": "https://loremflickr.com/320/240?lock=2&random=2",
       "bio": "second bio",
       "authorName": null,
       "isVisible": true,
@@ -154,7 +198,7 @@
       "language": "fr",
       "profileUrl": "",
       "location": "Paris",
-      "avatarUrl": "https://loremflickr.com/320/240?lock=4&random=4",
+      "avatarKey": "https://loremflickr.com/320/240?lock=4&random=4",
       "bio": "third bio",
       "authorName": null,
       "isVisible": true,
@@ -167,7 +211,7 @@
       "language": "fr",
       "profileUrl": "",
       "location": "Paris",
-      "avatarUrl": "https://loremflickr.com/320/240?lock=5&random=5",
+      "avatarKey": "https://loremflickr.com/320/240?lock=5&random=5",
       "bio": "fourth bio",
       "authorName": null,
       "isVisible": true,
