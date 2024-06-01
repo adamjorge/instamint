@@ -103,7 +103,7 @@ model User {
 model Minter {
   id                  Int               @id @default(autoincrement())
   username            String            @unique
-  defaultLanguage     String            @default("fr")
+  language            String            @default("fr")
   profileUrl          String
   avatarKey           String
   bio                 String
