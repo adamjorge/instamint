@@ -23,7 +23,17 @@ const nftSearchSelect: NftSelect = {
       }
     }
   },
-  hashtags: true
+  hashtags: true,
+  likedBy: {
+    select: {
+      id: true
+    }
+  },
+  _count: {
+    select: {
+      likedBy: true
+    }
+  }
 }
 
 export async function searchNfts(params: Params) {
