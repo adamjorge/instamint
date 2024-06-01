@@ -144,7 +144,7 @@ model Nft {
 
 model OriginalContent {
   id        Int       @id @default(autoincrement())
-  imageUrl  String
+  imageUrl  String    @unique
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
   nft       Nft?
