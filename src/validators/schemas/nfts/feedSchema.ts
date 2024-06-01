@@ -15,7 +15,11 @@ export const nftFeedSchema = z.object({
   imageUrl: z.string(),
   location: z.string().nullable(),
   price: z.number(),
-  originalContent: originalContentFeedSchema
+  originalContent: originalContentFeedSchema,
+  likedBy: z.array(z.object({ id: z.number() })),
+  _count: z.object({
+    likedBy: z.number()
+  })
 })
 
 export type NftFeedType = z.infer<typeof nftFeedSchema>

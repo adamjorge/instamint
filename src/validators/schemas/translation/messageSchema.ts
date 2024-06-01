@@ -147,5 +147,9 @@ export const MessageSchema = z.object({
     firstParagraph: z.string(),
     secondParagraph: z.string(),
     contactInfo: z.string()
+  }),
+  like: z.object({
+    likeError: z.string(),
+    dislikeError: z.string()
   })
 })

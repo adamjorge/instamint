@@ -38,7 +38,8 @@ export default function Feed({ minterId }: { minterId: number }) {
     fyp,
     data,
     iconSize,
-    handleClickOnFypButton
+    handleClickOnFypButton,
+    minterId
   }
 
   return (

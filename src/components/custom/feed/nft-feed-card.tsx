@@ -1,14 +1,21 @@
+import LikeHeart from "@/components/custom/like/like-heart"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import LinkButton from "@/components/ui/custom/link-button"
 import type { NftFeedType } from "@/validators/schemas/nfts/feedSchema"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
+import { useCallback } from "react"
 import { FaRegComment } from "react-icons/fa6"
-import { LuHeart, LuSend } from "react-icons/lu"
+import { LuSend } from "react-icons/lu"
+import { toast } from "sonner"
 
 export default function NftFeedCard(props: NftFeedCardProps) {
-  const { nft, iconSize, handleClickOnWIP } = props
+  const { nft, iconSize, minterId } = props
   const t = useTranslations("global")
+  const handleClickOnWIP = useCallback(() => {
+    toast.error("This feature is a work in progress.")
+  }, [])
+  const isLiked = () => nft.likedBy.some((minter) => minter.id === minterId)
 
   return (
     <Card key={nft.id} className="border-x-0">
@@ -22,7 +29,7 @@ export default function NftFeedCard(props: NftFeedCardProps) {
       <CardFooter>
         <div className="flex justify-evenly w-full">
           <div className="flex space-x-3">
-            <LuHeart size={iconSize} onClick={handleClickOnWIP} aria-label="like" />
+            <LikeHeart isLiked={isLiked()} iconSize={iconSize} nft={nft} minterId={minterId} />
             <FaRegComment size={iconSize} onClick={handleClickOnWIP} aria-label="comment" />
             <LuSend size={iconSize} onClick={handleClickOnWIP} aria-label="share" />
           </div>
@@ -39,5 +46,5 @@ export default function NftFeedCard(props: NftFeedCardProps) {
 type NftFeedCardProps = {
   nft: NftFeedType
   iconSize: number
-  handleClickOnWIP: () => void
+  minterId: number
 }
