@@ -143,7 +143,7 @@ export const MessageSchema = z.object({
     uploadContentButton: z.string()
   }),
   uploadOriginalContentTerms: z.object({
-    Title: z.string(),
+    title: z.string(),
     firstParagraph: z.string(),
     secondParagraph: z.string(),
     contactInfo: z.string()

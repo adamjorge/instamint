@@ -5,7 +5,7 @@ export default function ProfilePrivacyPolicy() {
 
   return (
     <div className="w-full ml-12 space-y-5">
-      <h3 className="text-lg font-bold">{t("Title")}</h3>
+      <h3 className="text-lg font-bold">{t("title")}</h3>
       <p>{t("firstParagraph")}</p>
       <p>{t("secondParagraph")}</p>
       <p>

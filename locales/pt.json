@@ -227,7 +227,7 @@
     "uploadContentButton": "Enviar conteúdo original"
   },
   "uploadOriginalContentTerms": {
-    "Title": "Termos de envio de conteúdo original",
+    "title": "Termos de envio de conteúdo original",
     "firstParagraph": "Instamint armazenará o conteúdo dos arquivos que você carregar com o propósito de criar NFTs. Ao carregar arquivos, você concorda que tem o direito de usar e distribuir esses arquivos. Instamint não usará seus arquivos para nenhum outro propósito que não seja a criação de NFTs sem seu consentimento explícito.",
     "secondParagraph": "Instamint reserva-se o direito de remover qualquer conteúdo que viole nossos Termos de Serviço ou infrinja os direitos de terceiros. Certifique-se de que seus arquivos estejam de acordo com nossas diretrizes de conteúdo antes de carregá-los.",
     "contactInfo": "Se você tiver alguma dúvida sobre como o conteúdo de seus arquivos será usado, consulte nossa Política de Privacidade ou entre em contato conosco em"

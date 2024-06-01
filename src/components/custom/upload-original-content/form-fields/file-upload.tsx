@@ -1,7 +1,8 @@
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { useTranslations } from "next-intl"
-import { Control, FieldValues, Path } from "react-hook-form"
+import React from "react"
+import { Control, ControllerRenderProps, FieldValues, Path } from "react-hook-form"
 
 interface FileUploadFieldProps<T extends FieldValues> {
   control: Control<T>
@@ -13,6 +14,12 @@ export default function FileUploadField<T extends FieldValues>({
   name
 }: FileUploadFieldProps<T>) {
   const t = useTranslations("uploadOriginalContent")
+  const handleChange =
+    (field: ControllerRenderProps<T, Path<T>>) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (e.target.files && e.target.files.length > 0) {
+        field.onChange(e.target.files[0])
+      }
+    }
 
   return (
     <FormField
@@ -25,11 +32,7 @@ export default function FileUploadField<T extends FieldValues>({
             <Input
               type="file"
               accept="image/png, image/webp, audio/ogg, audio/flac"
-              onChange={(e) => {
-                if (e.target.files) {
-                  field.onChange(e.target.files[0])
-                }
-              }}
+              onChange={handleChange(field)}
               onBlur={field.onBlur}
               ref={field.ref}
             />

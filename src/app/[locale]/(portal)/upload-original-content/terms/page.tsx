@@ -2,7 +2,7 @@ import UploadTerms from "@/components/custom/upload-original-content/terms/terms
 import { auth } from "@/lib/auth"
 import { redirect } from "next/navigation"
 
-export default async function Terms() {
+export default async function TermsPage() {
   const session = await auth()
 
   if (!session) {

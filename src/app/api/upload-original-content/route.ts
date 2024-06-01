@@ -1,3 +1,4 @@
+import { MAX_FILE_SIZE } from "@/constants/maxFileSize"
 import { uploadFileToS3 } from "@/lib/aws/upload-original-content/uploadFileToS3"
 import prisma from "@/lib/db"
 import { saveOriginalContent } from "@/lib/query/minters/original-content/save-content"
@@ -14,10 +15,10 @@ export async function POST(req: Request) {
       return Response.json({ error: "File is required." }, { status: StatusCodes.BAD_REQUEST })
     }
 
-    if (file.size > 1 * 1024 * 1024 * 1024) {
+    if (file.size > MAX_FILE_SIZE) {
       return Response.json(
         { error: "File size must be between 0B and 1GB." },
-        { status: StatusCodes.LENGTH_REQUIRED }
+        { status: StatusCodes.BAD_REQUEST }
       )
     }
 

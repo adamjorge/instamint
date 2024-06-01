@@ -17,8 +17,7 @@ type ImageUploadFormProps = {
 }
 
 export default function ImageUploadForm(props: ImageUploadFormProps) {
-  const g = useTranslations("global")
-  const t = useTranslations("uploadOriginalContent")
+  const t = useTranslations()
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     mode: "onBlur",
@@ -31,13 +30,13 @@ export default function ImageUploadForm(props: ImageUploadFormProps) {
       const response = await uploadContent(values.file, props.minterId)
 
       if (response.status === 200) {
-        toast.success(g("successFileUpload"))
+        toast.success(t("global.successFileUpload"))
         form.reset()
       } else {
-        toast.error(g("failedFileUpload"))
+        toast.error(t("global.failedFileUpload"))
       }
     } catch (error) {
-      toast.error(g("errorFileUpload"))
+      toast.error(t("global.errorFileUpload"))
     }
   }
 
@@ -50,7 +49,7 @@ export default function ImageUploadForm(props: ImageUploadFormProps) {
         >
           <FileUploadField control={form.control} name="file" />
           <AgreeToTermsField control={form.control} name="agreeToTerms" />
-          <Button type="submit">{t("uploadContentButton")}</Button>
+          <Button type="submit">{t("uploadOriginalContent.uploadContentButton")}</Button>
         </form>
       </Form>
     </div>

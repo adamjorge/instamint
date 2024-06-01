@@ -222,7 +222,7 @@
     "uploadContentButton": "上传原创内容"
   },
   "uploadOriginalContentTerms": {
-    "Title": "上传原创内容条款",
+    "title": "上传原创内容条款",
     "firstParagraph": "Instamint将存储您上传的原始文件内容，用于创建NFT。通过上传文件，您同意您有权使用和分发这些文件。Instamint不会在未经您明确同意的情况下将您的文件用于除NFT创建外的任何其他目的。",
     "secondParagraph": "Instamint保留删除任何违反我们服务条款或侵犯他人权利的内容的权利。请在上传前确保您的文件符合我们的内容准则。",
     "contactInfo": "如果您对您的文件内容如何使用有任何疑问，请查阅我们的隐私政策或联系我们"

@@ -3,7 +3,7 @@ import { auth } from "@/lib/auth"
 import { getMinterByUserId } from "@/lib/query/minters/getMinterByUserId"
 import { redirect } from "next/navigation"
 
-export default async function UploadOriginalContent() {
+export default async function UploadOriginalContentPage() {
   const session = await auth()
 
   if (!session?.user.id || !session.user.email) {

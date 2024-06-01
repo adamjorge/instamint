@@ -222,7 +222,7 @@
     "uploadContentButton": "Télécharger un contenu original"
   },
   "uploadOriginalContentTerms": {
-    "Title": "Conditions de téléchargement de contenu original",
+    "title": "Conditions de téléchargement de contenu original",
     "firstParagraph": "Instamint stockera le contenu des fichiers que vous téléchargez dans le but de créer des NFTs. En téléchargeant des fichiers, vous acceptez d'avoir le droit d'utiliser et de distribuer ces fichiers. Instamint n'utilisera pas vos fichiers à d'autres fins que la création de NFTs sans votre consentement explicite.",
     "secondParagraph": "Instamint se réserve le droit de supprimer tout contenu qui enfreint nos Conditions d'utilisation ou les droits d'autrui. Assurez-vous que vos fichiers respectent nos directives de contenu avant de les télécharger.",
     "contactInfo": "Si vous avez des questions sur l'utilisation du contenu de vos fichiers, veuillez consulter notre Politique de confidentialité ou nous contacter à"
