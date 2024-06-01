@@ -226,5 +226,9 @@
     "firstParagraph": "Instamint almacenará el contenido de los archivos que subas con el propósito de crear NFTs. Al subir archivos, aceptas que tienes derecho a utilizar y distribuir estos archivos. Instamint no utilizará tus archivos para ningún otro propósito que no sea la creación de NFTs sin tu consentimiento explícito.",
     "secondParagraph": "Instamint se reserva el derecho de eliminar cualquier contenido que viole nuestros Términos de Servicio o infrinja los derechos de terceros. Asegúrate de que tus archivos cumplan con nuestras directrices de contenido antes de subirlos.",
     "contactInfo": "Si tienes alguna pregunta sobre cómo se utilizará el contenido de tus archivos, revisa nuestra Política de Privacidad o contáctanos en"
+  },
+  "like": {
+    "likeError": "Ocurrió un error al dar me gusta al NFT.",
+    "dislikeError": "Ocurrió un error al quitar el me gusta del NFT."
   }
 }
