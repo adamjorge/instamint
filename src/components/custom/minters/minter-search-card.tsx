@@ -15,7 +15,7 @@ export default function MinterSearchCard({ ...props }: MinterCardProps) {
       <CardHeader className="flex flex-col space-y-5">
         <Image
           className="self-center"
-          src={minter.avatarUrl}
+          src={minter.avatarKey}
           alt={`Minter ${minter.id.toString()}`}
           width={400}
           height={400}
