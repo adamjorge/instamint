@@ -4,19 +4,24 @@
     "loading": "加载中...",
     "noResults": "未找到结果。",
     "resultsFor": "搜索结果：",
-    "noResultsFor": "未找到相关结果：",
-    "noResultsSentence": "未找到搜索词的结果。",
+    "noResultsFor": "未找到以下搜索结果：",
+    "noResultsSentence": "未找到与搜索条件匹配的结果。",
     "error": "发生错误，请稍后再试。",
-    "searchWelcome": "欢迎来到您的搜索页面。您可以在这里搜索NFT或铸币者。",
+    "searchWelcome": "欢迎来到您的搜索页面。这里可以搜索NFT或创建者。",
     "nftPrice": "价格：${price}",
     "signOut": "登出",
     "moreDetails": "更多详情",
-    "forYouFeed": "为你",
+    "forYouFeed": "为您推荐",
     "followedFeed": "已关注",
-    "invalidCredentials": "凭证无效",
-    "deletedAccount": "您的账户删除请求已成功接收。再见！",
-    "changePasswordMail": "您将收到一封电子邮件来更改您的密码。",
-    "successChangePassword": "密码修改成功"
+    "invalidCredentials": "无效凭证",
+    "deletedAccount": "已成功收到您的删除账户请求。再见！",
+    "appDescription": "Instamint，您的NFT创建社交网络",
+    "greeting": "此致敬礼",
+    "changePasswordMail": "您将收到一封更改密码的电子邮件。",
+    "successChangePassword": "密码已成功更改",
+    "successFileUpload": "文件上传成功",
+    "failedFileUpload": "文件上传失败",
+    "errorFileUpload": "文件上传过程中发生错误"
   },
   "search": {
     "cancel": "取消",
@@ -209,5 +214,17 @@
     "backToHome": "回到家",
     "appDescription": "Instamint是您的铸造NFT的社交网络",
     "changePasswordInstructions": "点击下面的链接更改您的密码："
+  },
+  "uploadOriginalContent": {
+    "uploadLabel": "上传内容",
+    "agreeText": "我同意",
+    "termsLink": "条款",
+    "uploadContentButton": "上传原创内容"
+  },
+  "uploadOriginalContentTerms": {
+    "title": "上传原创内容条款",
+    "firstParagraph": "Instamint将存储您上传的原始文件内容，用于创建NFT。通过上传文件，您同意您有权使用和分发这些文件。Instamint不会在未经您明确同意的情况下将您的文件用于除NFT创建外的任何其他目的。",
+    "secondParagraph": "Instamint保留删除任何违反我们服务条款或侵犯他人权利的内容的权利。请在上传前确保您的文件符合我们的内容准则。",
+    "contactInfo": "如果您对您的文件内容如何使用有任何疑问，请查阅我们的隐私政策或联系我们"
   }
 }
