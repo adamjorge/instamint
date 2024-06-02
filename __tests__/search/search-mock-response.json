@@ -18,7 +18,7 @@
         "minter": {
           "id": 5,
           "username": "oneEleven",
-          "defaultLanguage": "fr",
+          "language": "fr",
           "profileUrl": "",
           "avatarUrl": "",
           "bio": "",
@@ -48,7 +48,7 @@
         "minter": {
           "id": 5,
           "username": "twoEleven",
-          "defaultLanguage": "fr",
+          "language": "fr",
           "profileUrl": "",
           "avatarUrl": "",
           "bio": "",
@@ -78,7 +78,7 @@
         "minter": {
           "id": 5,
           "username": "fourEleven",
-          "defaultLanguage": "fr",
+          "language": "fr",
           "profileUrl": "",
           "avatarUrl": "",
           "bio": "",
@@ -108,7 +108,7 @@
         "minter": {
           "id": 5,
           "username": "nineEleven",
-          "defaultLanguage": "fr",
+          "language": "fr",
           "profileUrl": "",
           "avatarUrl": "",
           "bio": "",
@@ -125,7 +125,7 @@
     {
       "id": 1,
       "username": "oneEleven",
-      "defaultLanguage": "fr",
+      "language": "fr",
       "profileUrl": "",
       "location": "Paris",
       "avatarUrl": "https://loremflickr.com/320/240?lock=1&random=1",
@@ -138,7 +138,7 @@
     {
       "id": 2,
       "username": "twoEleven",
-      "defaultLanguage": "fr",
+      "language": "fr",
       "profileUrl": "",
       "location": "Paris",
       "avatarUrl": "https://loremflickr.com/320/240?lock=2&random=2",
@@ -151,7 +151,7 @@
     {
       "id": 4,
       "username": "fourEleven",
-      "defaultLanguage": "fr",
+      "language": "fr",
       "profileUrl": "",
       "location": "Paris",
       "avatarUrl": "https://loremflickr.com/320/240?lock=4&random=4",
@@ -164,7 +164,7 @@
     {
       "id": 5,
       "username": "nineEleven",
-      "defaultLanguage": "fr",
+      "language": "fr",
       "profileUrl": "",
       "location": "Paris",
       "avatarUrl": "https://loremflickr.com/320/240?lock=5&random=5",
