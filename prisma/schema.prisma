@@ -115,6 +115,7 @@ model Minter {
   originalContents    OriginalContent[]
   reports             Report[]
   users               User[]
+  notifications       Notification[]
   followers           Follow[]          @relation("follower")
   following           Follow[]          @relation("following")
   likes               Nft[]             @relation("likes")
@@ -174,4 +175,22 @@ model TeaBag {
   createdAt  DateTime  @default(now())
   updatedAt  DateTime? @updatedAt
   reports    Report[]
+}
+
+model NotificationType {
+  id            String         @id @default(cuid())
+  name          String
+  notifications Notification[]
+}
+
+model Notification {
+  id String @id @default(cuid())
+
+  read             Boolean          @default(false)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  minterId         Int
+  type             String
+  minter           Minter           @relation(fields: [minterId], references: [id])
+  notificationType NotificationType @relation(fields: [type], references: [id])
 }
