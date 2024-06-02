@@ -18,7 +18,7 @@ const availableLocations = [
   "Rome, Italy"
 ]
 
-export async function createNfts(prisma: PrismaClient) {
+export async function seedNfts(prisma: PrismaClient) {
   const originalContents = await prisma.originalContent.findMany()
   const rawData = originalContents.map((originalContent) => ({
     originalContentId: originalContent.id,

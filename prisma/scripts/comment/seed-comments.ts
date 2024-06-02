@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client"
 
 import rawData from "./data.json"
 
-export function createComments(prisma: PrismaClient) {
+export function seedComments(prisma: PrismaClient) {
   const data: Comment[] = rawData.map((comment: Comment) => ({
     id: comment.id,
     content: comment.content,
