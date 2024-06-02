@@ -1,15 +1,15 @@
-export * from "./comment/create-comments"
+export * from "./comment/seed-comments"
 
-export * from "./hashtag/create-hashtags"
+export * from "./hashtag/seed-hashtags"
 
-export * from "./minter/create-minters"
+export * from "./minter/seed-minters"
 
-export * from "./user/create-users"
+export * from "./user/seed-users"
 
-export * from "./teabag/create-teabag"
+export * from "./teabag/seed-teabags"
 
-export * from "./nft/create-nfts"
+export * from "./nft/seed-nfts"
 
-export * from "./original-content/create-original-contents"
+export * from "./original-content/seed-original-contents"
 
-export * from "./report/create-report"
+export * from "./report/seed-reports"

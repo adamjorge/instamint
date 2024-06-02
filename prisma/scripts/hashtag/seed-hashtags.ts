@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client"
 
 import rawData from "./data.json"
 
-export function createHashtags(prisma: PrismaClient) {
+export function seedHashtags(prisma: PrismaClient) {
   const data: Hashtag[] = rawData.map((hashtag: Hashtag) => ({
     id: hashtag.id,
     name: hashtag.name
