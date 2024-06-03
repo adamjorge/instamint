@@ -5,6 +5,7 @@ import {
   seedHashtags,
   seedMinters,
   seedNfts,
+  seedNotificationTypes,
   seedOriginalContents,
   seedReports,
   seedTeaBags,
@@ -22,6 +23,7 @@ async function main() {
   await seedComments(prisma)
   await seedTeaBags(prisma)
   await seedReports(prisma)
+  await seedNotificationTypes(prisma)
 }
 
 main()

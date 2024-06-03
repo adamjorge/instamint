@@ -178,19 +178,28 @@ model TeaBag {
 }
 
 model NotificationType {
-  id            String         @id @default(cuid())
-  name          String
+  name          NotificationTypeEnum @id
   notifications Notification[]
 }
 
 model Notification {
-  id String @id @default(cuid())
-
-  read             Boolean          @default(false)
-  createdAt        DateTime         @default(now())
-  updatedAt        DateTime         @updatedAt
+  read             Boolean              @default(false)
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
   minterId         Int
-  type             String
-  minter           Minter           @relation(fields: [minterId], references: [id])
-  notificationType NotificationType @relation(fields: [type], references: [id])
+  type             NotificationTypeEnum
+  minter           Minter               @relation(fields: [minterId], references: [id])
+  notificationType NotificationType     @relation(fields: [type], references: [name])
+
+  @@id(name: "notificationId", [minterId, type])
+}
+
+enum NotificationTypeEnum {
+  COMMENT_REPLY
+  COMMENT_ON_POST
+  MENTION_IN_COMMENT
+  LIKE
+  NEW_FOLLOWER
+  FOLLOW_REQUEST
+  FOLLOW_REQUEST_ACCEPTED
 }
