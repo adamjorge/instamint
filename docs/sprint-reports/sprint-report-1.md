@@ -50,13 +50,13 @@ None.
 - Idea 2
   - Description: `Using a cache system to improve the performance of the app`
   - Commitment:
-    - Who: `MARTTIN Jimmy`
+    - Who: `MARTIN Jimmy`
     - What: `Using Redis to cache data`
     - When: `2024-09-01`
 
 ### Summary
 
-We overestimated the number of ticket (User Story) we could complete during this sprint. We had to postpone some of them to the next sprint. We had some issues uderstanding if a User Story could be count as the 3 User Story each member had to complete (we understood that maybe simple User Story could not be counted as 1 User Story).
+We overestimated the number of ticket (User Story) we could complete during this sprint. We had to postpone some of them to the next sprint. We had some issues understanding if a User Story could be count as the 3 User Story each member had to complete (we understood that maybe simple User Story could not be counted as 1 User Story).
 We were still able to complete some features.
 
 ### Participants
