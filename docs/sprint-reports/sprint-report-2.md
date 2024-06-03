@@ -1,4 +1,4 @@
-## Sprint: `2024-05-04 to 2024-06-01`
+## Sprint: `2024-05-05 to 2024-05-31`
 
 - Password management
 - Profile management
