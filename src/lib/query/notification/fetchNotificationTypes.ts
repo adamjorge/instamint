@@ -2,7 +2,7 @@ import { notificationTypesSchema } from "@/validators/schemas/notificationTypesS
 import axios from "axios"
 
 export async function fetchNotificationTypes() {
-  const response = await axios.get("/api/notifications/notificationTypes")
+  const response = await axios.get("/api/notifications/constants")
   const types = notificationTypesSchema.parse(response.data)
 
   return types

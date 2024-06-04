@@ -1,0 +1,37 @@
+[
+  {
+    "minterId": 1,
+    "type": "COMMENT_REPLY",
+    "isEnabled": true
+  },
+  {
+    "minterId": 1,
+    "type": "COMMENT_ON_POST",
+    "isEnabled": true
+  },
+  {
+    "minterId": 1,
+    "type": "MENTION_IN_COMMENT",
+    "isEnabled": true
+  },
+  {
+    "minterId": 1,
+    "type": "LIKE",
+    "isEnabled": true
+  },
+  {
+    "minterId": 1,
+    "type": "NEW_FOLLOWER",
+    "isEnabled": false
+  },
+  {
+    "minterId": 1,
+    "type": "FOLLOW_REQUEST",
+    "isEnabled": false
+  },
+  {
+    "minterId": 1,
+    "type": "FOLLOW_REQUEST_ACCEPTED",
+    "isEnabled": true
+  }
+]

@@ -101,16 +101,16 @@ model User {
 }
 
 model Minter {
-  id                  Int               @id @default(autoincrement())
-  username            String            @unique
-  language            String            @default("fr")
+  id                  Int                      @id @default(autoincrement())
+  username            String                   @unique
+  defaultLanguage     String                   @default("fr")
   profileUrl          String
   avatarKey           String
   bio                 String
   location            String?
   authorName          String?
-  isVisible           Boolean           @default(true)
-  isSearchableByEmail Boolean           @default(true)
+  isVisible           Boolean                  @default(true)
+  isSearchableByEmail Boolean                  @default(true)
   comments            Comment[]
   originalContents    OriginalContent[]
   reports             Report[]
@@ -119,6 +119,8 @@ model Minter {
   followers           Follow[]          @relation("follower")
   following           Follow[]          @relation("following")
   likes               Nft[]             @relation("likes")
+  notificationPref    NotificationPreference[]
+
 }
 
 model Follow {
@@ -183,15 +185,24 @@ model NotificationType {
 }
 
 model Notification {
+  id               String               @id @default(cuid())
   read             Boolean              @default(false)
   createdAt        DateTime             @default(now())
   updatedAt        DateTime             @updatedAt
+  description      String
   minterId         Int
   type             NotificationTypeEnum
   minter           Minter               @relation(fields: [minterId], references: [id])
   notificationType NotificationType     @relation(fields: [type], references: [name])
+}
 
-  @@id(name: "notificationId", [minterId, type])
+model NotificationPreference {
+  minterId  Int
+  type      NotificationTypeEnum
+  isEnabled Boolean              @default(true)
+  minter    Minter               @relation(fields: [minterId], references: [id])
+
+  @@id(name: "notificationPreferenceId", [minterId, type])
 }
 
 enum NotificationTypeEnum {

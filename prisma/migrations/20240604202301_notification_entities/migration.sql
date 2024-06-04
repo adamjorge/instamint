@@ -10,13 +10,24 @@ CREATE TABLE "NotificationType" (
 
 -- CreateTable
 CREATE TABLE "Notification" (
+    "id" TEXT NOT NULL,
     "read" BOOLEAN NOT NULL DEFAULT false,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
+    "description" TEXT NOT NULL,
     "minterId" INTEGER NOT NULL,
     "type" "NotificationTypeEnum" NOT NULL,
 
-    CONSTRAINT "Notification_pkey" PRIMARY KEY ("minterId","type")
+    CONSTRAINT "Notification_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "NotificationPreference" (
+    "minterId" INTEGER NOT NULL,
+    "type" "NotificationTypeEnum" NOT NULL,
+    "isEnabled" BOOLEAN NOT NULL DEFAULT true,
+
+    CONSTRAINT "NotificationPreference_pkey" PRIMARY KEY ("minterId","type")
 );
 
 -- AddForeignKey
@@ -24,3 +35,6 @@ ALTER TABLE "Notification" ADD CONSTRAINT "Notification_minterId_fkey" FOREIGN K
 
 -- AddForeignKey
 ALTER TABLE "Notification" ADD CONSTRAINT "Notification_type_fkey" FOREIGN KEY ("type") REFERENCES "NotificationType"("name") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "NotificationPreference" ADD CONSTRAINT "NotificationPreference_minterId_fkey" FOREIGN KEY ("minterId") REFERENCES "Minter"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

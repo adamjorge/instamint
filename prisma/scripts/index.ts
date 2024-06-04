@@ -15,3 +15,5 @@ export * from "./original-content/seed-original-contents"
 export * from "./report/seed-reports"
 
 export * from "./notification-type/seed-notification-type"
+
+export * from "./notification-preferences/seed-notification-preferences"
