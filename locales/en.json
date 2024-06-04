@@ -230,5 +230,14 @@
   "like": {
     "likeError": "An error occurred while liking the NFT.",
     "dislikeError": "An error occurred while disliking the NFT."
+  },
+  "notifications": {
+    "COMMENT_REPLY": "A user replied to your comment",
+    "COMMENT_ON_POST": "A user commented on your post",
+    "MENTION_IN_COMMENT": "A user mentioned you in a comment",
+    "LIKE": "A user liked your post",
+    "NEW_FOLLOWER": "A user followed you",
+    "FOLLOW_REQUEST": "A user requested to follow you",
+    "FOLLOW_REQUEST_ACCEPTED": "A user accepted your follow request"
   }
 }
