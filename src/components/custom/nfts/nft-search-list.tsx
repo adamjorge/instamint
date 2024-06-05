@@ -3,7 +3,7 @@ import { Link } from "@/config/i18n/locales"
 import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { useTranslations } from "next-intl"
 
-export default function NftSearchList({ nfts }: NftListProps) {
+export default function NftSearchList({ nfts, minterId }: NftListProps) {
   const t = useTranslations("search")
 
   return (
@@ -15,7 +15,7 @@ export default function NftSearchList({ nfts }: NftListProps) {
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-8">
           {nfts.map((nft) => (
             <Link href={`/nfts/${nft.id.toString()}`} key={nft.id}>
-              <NftCard key={nft.id} {...nft} />
+              <NftCard key={nft.id} nft={nft} minterId={minterId} />
             </Link>
           ))}
         </div>
@@ -26,4 +26,5 @@ export default function NftSearchList({ nfts }: NftListProps) {
 
 type NftListProps = {
   nfts: NftSearchNftsSchemaType
+  minterId: string
 }

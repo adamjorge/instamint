@@ -6,7 +6,7 @@ export default function CommentAvatar({ author }: { author: MinterType }) {
 
   return (
     <Avatar className="mr-3">
-      <AvatarImage alt={author.username} src={author.avatarUrl} />
+      <AvatarImage alt={author.username} src={author.avatarKey} />
       <AvatarFallback>{authorAbbr}</AvatarFallback>
     </Avatar>
   )

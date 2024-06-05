@@ -3,27 +3,17 @@ import { Button } from "@/components/ui/button"
 import type { NftFeedType } from "@/validators/schemas/nfts/feedSchema"
 import type { InfiniteData } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
-import { useCallback } from "react"
 import { FaExchangeAlt } from "react-icons/fa"
-import { toast } from "sonner"
 
 export default function FeedList(props: FeedListProps) {
-  const { fyp, data, iconSize, handleClickOnFypButton } = props
+  const { fyp, data, iconSize, handleClickOnFypButton, minterId } = props
   const t = useTranslations("global")
-  const handleClickOnWIP = useCallback(() => {
-    toast.error("This feature is a work in progress.")
-  }, [])
 
   return (
     <div className="flex flex-col w-full space-y-16 items-center mt-10 pb-32">
       {data.pages.flatMap((page) =>
         page.map((nft) => (
-          <NftFeedCard
-            key={nft.id}
-            nft={nft}
-            iconSize={iconSize}
-            handleClickOnWIP={handleClickOnWIP}
-          />
+          <NftFeedCard key={nft.id} nft={nft} iconSize={iconSize} minterId={minterId} />
         ))
       )}
       <Button
@@ -41,4 +31,5 @@ type FeedListProps = {
   data: InfiniteData<Array<NftFeedType>>
   iconSize: number
   handleClickOnFypButton: () => void
+  minterId: number
 }

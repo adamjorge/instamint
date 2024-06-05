@@ -46,7 +46,8 @@ export default function SearchView({ session }: { session: Session }) {
   const resultProps = {
     search,
     results: data,
-    session
+    session,
+    minterId: currentUserId
   }
 
   return (

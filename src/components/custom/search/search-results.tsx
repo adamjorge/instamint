@@ -7,13 +7,13 @@ import { SearchSchemaType } from "@/validators/schemas/search/searchSchema"
 import type { Session } from "next-auth"
 import { useTranslations } from "next-intl"
 
-export default function SearchResults({ search, results, session }: SearchResultsProps) {
+export default function SearchResults({ search, results, session, minterId }: SearchResultsProps) {
   const t = useTranslations("global")
 
   return (
     <div className="my-4 flex flex-col space-y-10">
       <p className="text-center">{`${t("resultsFor")} ${search}`}</p>
-      <SearchSearchNftList nfts={results.nfts} />
+      <SearchSearchNftList nfts={results.nfts} minterId={minterId} />
       <MinterSearchList minters={results.minters} session={session} />
       <TeaBagSearchList teabags={results.teabags} />
     </div>
@@ -24,4 +24,5 @@ type SearchResultsProps = {
   search: string
   results: SearchSchemaType
   session: Session
+  minterId: string
 }

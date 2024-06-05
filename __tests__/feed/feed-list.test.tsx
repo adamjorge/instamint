@@ -1,7 +1,7 @@
 import FeedList from "@/components/custom/feed/feed-list"
 import { NftFeedType } from "@/validators/schemas/nfts/feedSchema"
 import { describe, expect, it } from "@jest/globals"
-import type { InfiniteData } from "@tanstack/react-query"
+import { InfiniteData, QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { render } from "@testing-library/react"
 import { IntlProvider } from "next-intl"
 
@@ -18,16 +18,20 @@ describe("feed list displays expected content", () => {
       pages: [data],
       pageParams: []
     }
+    const queryClient = new QueryClient()
     const feedListProps = {
       hasNextPage: fakeHasNextPage,
       fyp: fakeFyp,
       data: infiniteData,
       iconSize: fakeIconSize,
-      handleClickOnFypButton: () => null
+      handleClickOnFypButton: () => null,
+      minterId: 1
     }
     const { getByText, getByLabelText } = render(
       <IntlProvider messages={language} locale="en">
-        <FeedList {...feedListProps} />
+        <QueryClientProvider client={queryClient}>
+          <FeedList {...feedListProps} />
+        </QueryClientProvider>
       </IntlProvider>
     )
 

@@ -10,7 +10,11 @@ export const nftSearchNftSchema = z.object({
   location: z.string().nullable(),
   createdAt: z.string(),
   originalContent: nftSearchOriginalContentSchema,
-  hashtags: nftsSearchHashtagsSchema
+  hashtags: nftsSearchHashtagsSchema,
+  likedBy: z.array(z.object({ id: z.number() })),
+  _count: z.object({
+    likedBy: z.number()
+  })
 })
 
 export type NftSearchNftSchemaType = z.infer<typeof nftSearchNftSchema>
