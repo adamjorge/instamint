@@ -117,6 +117,7 @@ model Minter {
   users               User[]
   followers           Follow[]          @relation("follower")
   following           Follow[]          @relation("following")
+  likes               Nft[]             @relation("likes")
 }
 
 model Follow {
@@ -140,6 +141,7 @@ model Nft {
   originalContentId Int             @unique
   comments          Comment[]
   hashtags          Hashtag[]
+  likedBy           Minter[]        @relation("likes")
 }
 
 model OriginalContent {

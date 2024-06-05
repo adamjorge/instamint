@@ -3,7 +3,7 @@ import { z } from "zod"
 const minterSchema = z.object({
   id: z.number(),
   username: z.string(),
-  avatarUrl: z.string()
+  avatarKey: z.string()
 })
 
 export type MinterType = z.infer<typeof minterSchema>

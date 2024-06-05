@@ -5,9 +5,14 @@ import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minter
 import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
 import { describe, expect, it } from "@jest/globals"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { render, waitFor } from "@testing-library/react"
+import { IntlProvider } from "next-intl"
 
+import language from "../../locales/en.json"
 import mockedSearchResult from "./search-mock-response.json"
+
+const queryClient = new QueryClient()
 
 describe("Search", () => {
   it("should render nft cards", async () => {
@@ -35,7 +40,13 @@ describe("Search", () => {
 })
 
 async function testNftRender(nft: NftSearchNftSchemaType) {
-  const { getByText, getByAltText } = render(<NftSearchCard {...nft} />)
+  const { getByText, getByAltText } = render(
+    <IntlProvider messages={language} locale="en">
+      <QueryClientProvider client={queryClient}>
+        <NftSearchCard nft={nft} minterId={"1"} />
+      </QueryClientProvider>
+    </IntlProvider>
+  )
 
   expect(getByText(`@${nft.originalContent.minter.username}`)).toBeDefined()
   expect(getByText(nft.description)).toBeDefined()
@@ -65,6 +76,6 @@ async function testMinterRender(minter: MinterSearchMinterSchemaType) {
   await waitFor(() => {
     const image = getByAltText(`Minter ${minter.id.toString()}`) as HTMLImageElement
     expect(image).toBeDefined()
-    expect(image.src).toContain(encodeURIComponent(minter.avatarUrl))
+    expect(image.src).toContain(encodeURIComponent(minter.avatarKey))
   })
 }

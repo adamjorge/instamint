@@ -21,6 +21,16 @@ export async function nftsFeed(cursor: number, minterId?: string) {
             }
           }
         }
+      },
+      likedBy: {
+        select: {
+          id: true
+        }
+      },
+      _count: {
+        select: {
+          likedBy: true
+        }
       }
     },
     skip: cursor * 5,

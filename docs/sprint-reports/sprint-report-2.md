@@ -7,12 +7,14 @@
 ### Positive reviews
 
 - Review 1
+
   - Description: `Development was more fluid in my opinion without the whole setup`
   - Commitment: `MEHDAOUI Adam`
     - What: `Changing profile picture as a Minter`
     - When: `2024-05-31`
 
 - Review 2
+
   - Description: `Great to have feedback on our development to improve on a non-familiar tech (Next.js) but also global development skills`
   - Commitment:
     - Who: `MARTIN Jimmy`
@@ -20,6 +22,7 @@
     - When: `2024-05-24`
 
 - Review 3
+
   - Description: `Great to design a solution to make a proper like/dislike system and UI`
   - Commitment:
     - Who: `MARTIN Jimmy`
