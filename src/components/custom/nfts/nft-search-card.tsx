@@ -6,7 +6,7 @@ import Image from "next/image"
 export default function NftSearchCard(props: NftSearchCardProps) {
   const { nft, minterId } = props
   const currentMinterId = parseInt(minterId, 10)
-  const isLiked = () => nft.likedBy.some((minter) => minter.id === currentMinterId)
+  const isLiked = nft.likedBy.some((minter) => minter.id === currentMinterId)
 
   return (
     <Card className="bg-muted ml-2 mr-5 md:mr-2 xl:mr-3">
@@ -31,7 +31,7 @@ export default function NftSearchCard(props: NftSearchCardProps) {
               Price: <span className="font-bold text-lg">${nft.price.toString()}</span>
             </p>
           </div>
-          <LikeHeart isLiked={isLiked()} iconSize={25} minterId={currentMinterId} nft={nft} />
+          <LikeHeart isLiked={isLiked} iconSize={25} minterId={currentMinterId} nft={nft} />
         </div>
       </CardContent>
     </Card>

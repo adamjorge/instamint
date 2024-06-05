@@ -3,7 +3,7 @@ import handleNftLikeAction from "@/lib/handlers/nfts/handleNftLikeAction"
 import { NftLikeActionType } from "@/validators/types/nftLikeActionType"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
-export async function PATCH(
+export async function POST(
   req: Request,
   { params }: { params: { id: string; action: NftLikeActionType } }
 ) {
