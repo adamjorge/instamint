@@ -235,5 +235,19 @@
   "like": {
     "likeError": "Ocorreu um erro ao curtir o NFT.",
     "dislikeError": "Ocorreu um erro ao descurtir o NFT."
+  },
+  "notifications": {
+    "COMMENT_REPLY": "Um usuário respondeu ao seu comentário",
+    "COMMENT_ON_POST": "Um usuário comentou na sua publicação",
+    "MENTION_IN_COMMENT": "Um usuário mencionou você em um comentário",
+    "LIKE": "Um usuário curtiu sua publicação",
+    "NEW_FOLLOWER": "Um usuário seguiu você",
+    "FOLLOW_REQUEST": "Um usuário solicitou seguir você",
+    "FOLLOW_REQUEST_ACCEPTED": "Um usuário aceitou sua solicitação de seguimento"
+  },
+  "notificationPreferences": {
+    "notification": "Notificação",
+    "changeSuccess": "Preferências de notificação atualizadas com sucesso",
+    "changeError": "Ocorreu um erro ao atualizar suas preferências de notificação"
   }
 }

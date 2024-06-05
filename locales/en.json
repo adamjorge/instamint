@@ -239,5 +239,10 @@
     "NEW_FOLLOWER": "A user followed you",
     "FOLLOW_REQUEST": "A user requested to follow you",
     "FOLLOW_REQUEST_ACCEPTED": "A user accepted your follow request"
+  },
+  "notificationPreferences": {
+    "notification": "Notification",
+    "changeSuccess": "Notification preferences updated successfully",
+    "changeError": "An error occurred while updating your notification preferences"
   }
 }

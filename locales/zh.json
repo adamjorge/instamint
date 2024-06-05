@@ -230,5 +230,19 @@
   "like": {
     "likeError": "喜欢NFT时发生错误。",
     "dislikeError": "不喜欢NFT时发生错误。"
+  },
+  "notifications": {
+    "COMMENT_REPLY": "有用户回复了你的评论",
+    "COMMENT_ON_POST": "有用户评论了你的帖子",
+    "MENTION_IN_COMMENT": "有用户在评论中提到了你",
+    "LIKE": "有用户点赞了你的帖子",
+    "NEW_FOLLOWER": "有用户关注了你",
+    "FOLLOW_REQUEST": "有用户请求关注你",
+    "FOLLOW_REQUEST_ACCEPTED": "有用户接受了你的关注请求"
+  },
+  "notificationPreferences": {
+    "notification": "通知",
+    "changeSuccess": "通知偏好设置更新成功",
+    "changeError": "更新通知偏好设置时发生错误"
   }
 }

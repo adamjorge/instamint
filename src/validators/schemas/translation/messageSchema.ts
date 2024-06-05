@@ -53,5 +53,10 @@ export const MessageSchema = z.object({
     likeError: z.string(),
     dislikeError: z.string()
   }),
-  notifications: notificationSchema
+  notifications: notificationSchema,
+  notificationPreferences: z.object({
+    notification: z.string(),
+    changeSuccess: z.string(),
+    changeError: z.string()
+  })
 })

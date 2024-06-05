@@ -11,6 +11,7 @@ export async function changePreference(minterId: string, type: NotificationTypeE
       }
     },
     select: {
+      type: true,
       isEnabled: true
     }
   })
@@ -25,7 +26,7 @@ export async function changePreference(minterId: string, type: NotificationTypeE
     })
   }
 
-  return await prisma.notificationPreference.update({
+  await prisma.notificationPreference.update({
     where: {
       notificationPreferenceId: {
         minterId: minterIdNumber,
@@ -36,4 +37,6 @@ export async function changePreference(minterId: string, type: NotificationTypeE
       isEnabled: !currentPreference.isEnabled
     }
   })
+
+  return currentPreference
 }
