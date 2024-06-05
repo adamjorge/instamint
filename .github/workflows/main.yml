@@ -64,6 +64,7 @@ jobs:
           echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> .env
           echo "NOTADMIN_EMAIL=${{ secrets.NOTADMIN_EMAIL }}" >> .env
           echo "NOTADMIN_PASSWORD=${{ secrets.NOTADMIN_PASSWORD }}" >> .env
+          make db-reset
           npm run test:e2e
       - uses: actions/upload-artifact@v4
         if: always()
