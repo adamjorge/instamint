@@ -23,7 +23,7 @@ export default function ProfileMenu() {
       </div>
 
       <div
-        className={clsx("space-y-5 border-r h-screen ml-3 pr-3 transition-all duration-500", {
+        className={clsx("space-y-5 border-r h-screen ml-3 pr-3 transition-all duration-1000", {
           "opacity-100": isOpen,
           "w-0 opacity-0": !isOpen
         })}

@@ -24,7 +24,7 @@ export default function NotificationPreferences(props: notificationPreferencesPr
   }
 
   return (
-    <div className="-mt-80 w-full flex flex-col justify-center items-center space-y-5">
+    <div className="-mt-96 w-full flex flex-col justify-center items-center space-y-8">
       <h2 className="font-bold text-xl">{t("notification")}</h2>
       <div className="space-y-3 w-2/3">
         {data.map((preference, index) => {
