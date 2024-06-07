@@ -10,6 +10,6 @@ describe("menubar display expected links", () => {
     expect(menuItems).toHaveLength(3)
 
     expect(screen.getByRole("menuitem", { name: "Reports" })).toBeDefined()
-    expect(screen.getByRole("menuitem", { name: "Application activity" })).toBeDefined()
+    expect(screen.getByRole("menuitem", { name: "Overview" })).toBeDefined()
   })
 })
