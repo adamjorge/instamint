@@ -103,7 +103,7 @@ model User {
 model Minter {
   id                  Int                      @id @default(autoincrement())
   username            String                   @unique
-  defaultLanguage     String                   @default("fr")
+  language            String                   @default("fr")
   profileUrl          String
   avatarKey           String
   bio                 String
@@ -116,11 +116,10 @@ model Minter {
   reports             Report[]
   users               User[]
   notifications       Notification[]
-  followers           Follow[]          @relation("follower")
-  following           Follow[]          @relation("following")
-  likes               Nft[]             @relation("likes")
+  followers           Follow[]                 @relation("follower")
+  following           Follow[]                 @relation("following")
+  likes               Nft[]                    @relation("likes")
   notificationPref    NotificationPreference[]
-
 }
 
 model Follow {

@@ -16,16 +16,16 @@ import {
 const prisma = new PrismaClient()
 
 async function main() {
-  await seedMinters(prisma)
-  await seedUsers(prisma)
-  await seedHashtags(prisma)
-  await seedOriginalContents(prisma)
-  await seedNfts(prisma)
-  await seedComments(prisma)
-  await seedTeaBags(prisma)
-  await seedReports(prisma)
-  await seedNotificationTypes(prisma)
-  await seedNotificationPreferences(prisma)
+  // await seedMinters(prisma)
+  // await seedUsers(prisma)
+  // await seedHashtags(prisma)
+  // await seedOriginalContents(prisma)
+  // await seedNfts(prisma)
+  // await seedComments(prisma)
+  // await seedTeaBags(prisma)
+  // await seedReports(prisma)
+  // await seedNotificationTypes(prisma)
+  // await seedNotificationPreferences(prisma)
 }
 
 main()
