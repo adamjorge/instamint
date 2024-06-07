@@ -7,6 +7,7 @@ import { fetchBlockchainData } from "@/lib/query/crypto/fetchBlockchainData"
 import { useQuery } from "@tanstack/react-query"
 import { clsx } from "clsx"
 import Image from "next/image"
+import { FaArrowTrendDown, FaArrowTrendUp } from "react-icons/fa6"
 
 export default function Header() {
   const { data, error, isPending } = useQuery({
@@ -34,11 +35,25 @@ export default function Header() {
               blockchain.data[blockchainSymbolsIndex[index]][0].quote.USD.percent_change_24h
 
             return (
-              <div key={blockchainSymbolsIndex[index]} className="space-x-2">
+              <div key={blockchainSymbolsIndex[index]} className="flex space-x-2">
                 <span className="text-lg">{blockchainSymbolsIndex[index]}</span>
-                <span className={clsx("text-green-500", { "text-red-500": percentChange < 0 })}>
-                  {percentChange}
-                </span>
+                <div className="flex space-x-1">
+                  <span
+                    className={clsx({
+                      "text-red-500": percentChange < 0,
+                      "text-green-500": percentChange > 0
+                    })}
+                  >
+                    {percentChange}
+                  </span>
+                  <div className="mt-1">
+                    {percentChange < 0 ? (
+                      <FaArrowTrendDown className="text-red-500" />
+                    ) : (
+                      <FaArrowTrendUp className="text-green-500" />
+                    )}
+                  </div>
+                </div>
               </div>
             )
           })}
