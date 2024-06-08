@@ -232,13 +232,13 @@
     "dislikeError": "Ocurrió un error al quitar el me gusta del NFT."
   },
   "notifications": {
-    "COMMENT_REPLY": "Un usuario respondió a tu comentario",
-    "COMMENT_ON_POST": "Un usuario comentó en tu publicación",
-    "MENTION_IN_COMMENT": "Un usuario te mencionó en un comentario",
-    "LIKE": "A un usuario le gustó tu publicación",
-    "NEW_FOLLOWER": "Un usuario te siguió",
-    "FOLLOW_REQUEST": "Un usuario solicitó seguirte",
-    "FOLLOW_REQUEST_ACCEPTED": "Un usuario aceptó tu solicitud de seguimiento"
+    "comment_reply": "Un usuario respondió a tu comentario",
+    "comment_on_post": "Un usuario comentó en tu publicación",
+    "mention_in_comment": "Un usuario te mencionó en un comentario",
+    "like": "A un usuario le gustó tu publicación",
+    "new_follower": "Un usuario te siguió",
+    "follow_request": "Un usuario solicitó seguirte",
+    "follow_request_accepted": "Un usuario aceptó tu solicitud de seguimiento"
   },
   "notificationPreferences": {
     "notification": "Notificación",

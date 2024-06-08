@@ -7,17 +7,16 @@ import { useState } from "react"
 import { toast } from "sonner"
 
 export default function Notification(props: NotificationProps) {
-  const t = useTranslations("notifications")
-  const p = useTranslations("notificationPreferences")
+  const t = useTranslations()
   const { name, isEnabled, minterId } = props
   const [isChecked, setIsChecked] = useState(isEnabled)
   const mutation = useMutation({
     mutationFn: () => changePreferenceAction(minterId, name),
     onSuccess: () => {
-      toast.success(p("changeSuccess"))
+      toast.success(t("notificationPreferences.changeSuccess"))
     },
     onError: () => {
-      toast.error(p("changeError"))
+      toast.error(t("notificationPreferences.changeError"))
     }
   })
   const handleClickOnSwitch = () => {
@@ -27,7 +26,7 @@ export default function Notification(props: NotificationProps) {
 
   return (
     <div className="flex justify-between">
-      <Label>{t(name)}</Label>
+      <Label>{t(`notifications.${name.toLocaleLowerCase()}`)}</Label>
       <Switch checked={isChecked} onClick={handleClickOnSwitch} />
     </div>
   )

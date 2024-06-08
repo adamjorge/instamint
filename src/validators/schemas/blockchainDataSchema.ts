@@ -1,7 +1,6 @@
 import { z } from "zod"
 
 /* eslint-disable camelcase */
-/* eslint-disable camelcase */
 const quoteSchema = z.object({
   USD: z.object({
     price: z.number(),
@@ -29,5 +28,4 @@ export const blockchainDataSchema = z.object({
   status: statusSchema,
   data: dataSchema
 })
-
 /* eslint-enable camelcase */

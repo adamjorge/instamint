@@ -232,13 +232,13 @@
     "dislikeError": "NFTをお気に入りから削除する際にエラーが発生しました。"
   },
   "notifications": {
-    "COMMENT_REPLY": "ユーザーがあなたのコメントに返信しました",
-    "COMMENT_ON_POST": "ユーザーがあなたの投稿にコメントしました",
-    "MENTION_IN_COMMENT": "ユーザーがコメントであなたに言及しました",
-    "LIKE": "ユーザーがあなたの投稿に「いいね」しました",
-    "NEW_FOLLOWER": "ユーザーがあなたをフォローしました",
-    "FOLLOW_REQUEST": "ユーザーがあなたにフォローリクエストを送りました",
-    "FOLLOW_REQUEST_ACCEPTED": "ユーザーがあなたのフォローリクエストを承認しました"
+    "comment_reply": "ユーザーがあなたのコメントに返信しました",
+    "comment_on_post": "ユーザーがあなたの投稿にコメントしました",
+    "mention_in_comment": "ユーザーがコメントであなたに言及しました",
+    "like": "ユーザーがあなたの投稿に「いいね」しました",
+    "new_follower": "ユーザーがあなたをフォローしました",
+    "follow_request": "ユーザーがあなたにフォローリクエストを送りました",
+    "follow_request_accepted": "ユーザーがあなたのフォローリクエストを承認しました"
   },
   "notificationPreferences": {
     "notification": "通知",

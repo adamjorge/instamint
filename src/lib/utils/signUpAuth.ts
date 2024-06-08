@@ -4,6 +4,7 @@ import { redirect } from "@/config/i18n/locales"
 import prisma from "@/lib/db"
 import { findUserByEmail, generatePasswordHash } from "@/lib/utils/db"
 import { generateEmailVerificationToken, sendVerificationEmail } from "@/lib/utils/email"
+import { initNotificationPreferences } from "@/lib/utils/initNotificationPreferences"
 import { faker } from "@faker-js/faker"
 import { z } from "zod"
 
@@ -59,6 +60,7 @@ export async function signUp(formData: SignUpFormData): Promise<SignUpFormState>
         bio: faker.lorem.paragraph()
       }
     })
+    await initNotificationPreferences(minter.id)
     await prisma.user.create({
       data: {
         name: formData.name,

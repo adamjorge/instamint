@@ -12,7 +12,7 @@ import { FaArrowTrendDown, FaArrowTrendUp } from "react-icons/fa6"
 export default function Header() {
   const { data, error, isPending } = useQuery({
     queryKey: ["blockchain-data"],
-    queryFn: () => fetchBlockchainData(["BTC", "ETH", "XRP"])
+    queryFn: () => fetchBlockchainData(blockchainSymbolsIndex)
   })
 
   return (
@@ -37,7 +37,7 @@ export default function Header() {
             return (
               <div key={blockchainSymbolsIndex[index]} className="flex space-x-2">
                 <span className="text-lg">{blockchainSymbolsIndex[index]}</span>
-                <div className="flex space-x-1">
+                <div className="flex space-x-1 mt-0.5">
                   <span
                     className={clsx({
                       "text-red-500": percentChange < 0,

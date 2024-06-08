@@ -232,13 +232,13 @@
     "dislikeError": "Une erreur s'est produite lors du dislike du NFT."
   },
   "notifications": {
-    "COMMENT_REPLY": "Un utilisateur a répondu à votre commentaire",
-    "COMMENT_ON_POST": "Un utilisateur a commenté votre publication",
-    "MENTION_IN_COMMENT": "Un utilisateur vous a mentionné dans un commentaire",
-    "LIKE": "Un utilisateur a aimé votre publication",
-    "NEW_FOLLOWER": "Un utilisateur vous a suivi",
-    "FOLLOW_REQUEST": "Un utilisateur a demandé à vous suivre",
-    "FOLLOW_REQUEST_ACCEPTED": "Un utilisateur a accepté votre demande de suivi"
+    "comment_reply": "Un utilisateur a répondu à votre commentaire",
+    "comment_on_post": "Un utilisateur a commenté votre publication",
+    "mention_in_comment": "Un utilisateur vous a mentionné dans un commentaire",
+    "like": "Un utilisateur a aimé votre publication",
+    "new_follower": "Un utilisateur vous a suivi",
+    "follow_request": "Un utilisateur a demandé à vous suivre",
+    "follow_request_accepted": "Un utilisateur a accepté votre demande de suivi"
   },
   "notificationPreferences": {
     "notification": "Notification",

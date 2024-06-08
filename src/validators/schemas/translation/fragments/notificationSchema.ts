@@ -1,11 +1,13 @@
 import { z } from "zod"
 
+/* eslint-disable camelcase */
 export const notificationSchema = z.object({
-  COMMENT_REPLY: z.string(),
-  COMMENT_ON_POST: z.string(),
-  MENTION_IN_COMMENT: z.string(),
-  LIKE: z.string(),
-  NEW_FOLLOWER: z.string(),
-  FOLLOW_REQUEST: z.string(),
-  FOLLOW_REQUEST_ACCEPTED: z.string()
+  comment_reply: z.string(),
+  comment_on_post: z.string(),
+  mention_in_comment: z.string(),
+  like: z.string(),
+  new_follower: z.string(),
+  follow_request: z.string(),
+  follow_request_accepted: z.string()
 })
+/* eslint-enable camelcase */
