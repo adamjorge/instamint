@@ -15,7 +15,7 @@ interface DataTableProps<TData, TValue> {
   data: TData[]
 }
 
-export function CommentsTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
+export function AdminTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
     data,
     columns,
