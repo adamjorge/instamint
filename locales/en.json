@@ -234,7 +234,7 @@
   "notifications": {
     "comment_reply": "A user replied to your comment",
     "comment_on_post": "A user commented on your post",
-    "mention_on_comment": "A user mentioned you in a comment",
+    "mention_in_comment": "A user mentioned you in a comment",
     "like": "A user liked your post",
     "new_follower": "A user followed you",
     "follow_request": "A user requested to follow you",
