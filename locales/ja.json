@@ -230,5 +230,19 @@
   "like": {
     "likeError": "NFTをお気に入りに追加する際にエラーが発生しました。",
     "dislikeError": "NFTをお気に入りから削除する際にエラーが発生しました。"
+  },
+  "notifications": {
+    "comment_reply": "ユーザーがあなたのコメントに返信しました",
+    "comment_on_post": "ユーザーがあなたの投稿にコメントしました",
+    "mention_in_comment": "ユーザーがコメントであなたに言及しました",
+    "like": "ユーザーがあなたの投稿に「いいね」しました",
+    "new_follower": "ユーザーがあなたをフォローしました",
+    "follow_request": "ユーザーがあなたにフォローリクエストを送りました",
+    "follow_request_accepted": "ユーザーがあなたのフォローリクエストを承認しました"
+  },
+  "notificationPreferences": {
+    "notification": "通知",
+    "changeSuccess": "通知設定が正常に更新されました",
+    "changeError": "通知設定の更新中にエラーが発生しました"
   }
 }

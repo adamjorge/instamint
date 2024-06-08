@@ -43,11 +43,11 @@ export default function Feed({ minterId }: { minterId: number }) {
   }
 
   return (
-    <>
+    <div>
       <FeedList {...feedListProps} />
       <div ref={ref} className="pb-80">
         {isFetchingNextPage && <Spinner />}
       </div>
-    </>
+    </div>
   )
 }

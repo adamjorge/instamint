@@ -101,23 +101,25 @@ model User {
 }
 
 model Minter {
-  id                  Int               @id @default(autoincrement())
-  username            String            @unique
-  language            String            @default("fr")
+  id                  Int                      @id @default(autoincrement())
+  username            String                   @unique
+  language            String                   @default("fr")
   profileUrl          String
   avatarKey           String
   bio                 String
   location            String?
   authorName          String?
-  isVisible           Boolean           @default(true)
-  isSearchableByEmail Boolean           @default(true)
+  isVisible           Boolean                  @default(true)
+  isSearchableByEmail Boolean                  @default(true)
   comments            Comment[]
   originalContents    OriginalContent[]
   reports             Report[]
   users               User[]
-  followers           Follow[]          @relation("follower")
-  following           Follow[]          @relation("following")
-  likes               Nft[]             @relation("likes")
+  notifications       Notification[]
+  followers           Follow[]                 @relation("follower")
+  following           Follow[]                 @relation("following")
+  likes               Nft[]                    @relation("likes")
+  notificationPref    NotificationPreference[]
 }
 
 model Follow {
@@ -174,4 +176,40 @@ model TeaBag {
   createdAt  DateTime  @default(now())
   updatedAt  DateTime? @updatedAt
   reports    Report[]
+}
+
+model NotificationType {
+  name          NotificationTypeEnum @id
+  notifications Notification[]
+}
+
+model Notification {
+  id               String               @id @default(cuid())
+  read             Boolean              @default(false)
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+  description      String
+  minterId         Int
+  type             NotificationTypeEnum
+  minter           Minter               @relation(fields: [minterId], references: [id])
+  notificationType NotificationType     @relation(fields: [type], references: [name])
+}
+
+model NotificationPreference {
+  minterId  Int
+  type      NotificationTypeEnum
+  isEnabled Boolean              @default(true)
+  minter    Minter               @relation(fields: [minterId], references: [id])
+
+  @@id(name: "notificationPreferenceId", [minterId, type])
+}
+
+enum NotificationTypeEnum {
+  COMMENT_REPLY
+  COMMENT_ON_POST
+  MENTION_IN_COMMENT
+  LIKE
+  NEW_FOLLOWER
+  FOLLOW_REQUEST
+  FOLLOW_REQUEST_ACCEPTED
 }

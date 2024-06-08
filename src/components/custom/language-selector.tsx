@@ -26,7 +26,7 @@ export default function LanguageSelector() {
   )
 
   return (
-    <div>
+    <div className="text-dark">
       <Select
         defaultValue={locale}
         onValueChange={(value) => {

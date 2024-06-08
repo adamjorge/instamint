@@ -9,5 +9,5 @@ export async function seedOriginalContents(prisma: PrismaClient) {
     imageUrl: originalContent
   }))
 
-  return prisma.originalContent.createMany({ data: originalContentData })
+  return await prisma.originalContent.createMany({ data: originalContentData })
 }

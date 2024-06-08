@@ -1,16 +1,10 @@
-import { Button } from "@/components/ui/button"
 import LinkButton from "@/components/ui/custom/link-button"
 import { useTranslations } from "next-intl"
-import { useCallback } from "react"
 import { BsFillFileEarmarkPersonFill } from "react-icons/bs"
 import { MdNotificationsActive } from "react-icons/md"
-import { toast } from "sonner"
 
 export default function HowToMenu() {
   const t = useTranslations("howToMenu")
-  const handleClickOnWIP = useCallback(() => {
-    toast.error("This feature is still a work in progress.")
-  }, [])
 
   return (
     <div className="w-full flex flex-col items-center">
@@ -27,14 +21,15 @@ export default function HowToMenu() {
           <BsFillFileEarmarkPersonFill size={20} />
           <span className="ml-3">{t("changeProfile")}</span>
         </LinkButton>
-        <Button
+        <LinkButton
+          href="/profile/notifications"
+          withLocale
           className="bg-white text-black hover:bg-light w-full flex justify-start"
-          onClick={handleClickOnWIP}
           aria-label="notifications"
         >
           <MdNotificationsActive size={20} />
           <span className="ml-3">{t("notifications")}</span>
-        </Button>
+        </LinkButton>
       </div>
     </div>
   )
