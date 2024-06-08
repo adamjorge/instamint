@@ -1,22 +1,21 @@
 "use client"
 
+import { columns } from "@/components/custom/admin/minters/columns"
 import { AdminTable } from "@/components/custom/admin/table/admin-table"
 import { AdminTablePagination } from "@/components/custom/admin/table/admin-table-pagination"
-import { columns } from "@/components/custom/comments/columns"
 import Spinner from "@/components/custom/spinner"
 import ErrorMessage from "@/components/ui/custom/error-message"
-import { fetchComments } from "@/lib/query/comments/fetchComments"
-import type { Comments } from "@/validators/schemas/commentSchema"
+import fetchMinters, { MinterWithCount } from "@/lib/query/minters/fetchMinters"
 import { PaginationProps } from "@/validators/types/paginationProps"
 import { useQuery } from "@tanstack/react-query"
-import type { ColumnDef } from "@tanstack/react-table"
+import { ColumnDef } from "@tanstack/react-table"
 import { useState } from "react"
 
-export default function Comments() {
+export default function Minters() {
   const [page, setPage] = useState(1)
   const { isPending, error, data } = useQuery({
-    queryKey: ["comments", page],
-    queryFn: () => fetchComments(page)
+    queryKey: ["minters", page],
+    queryFn: () => fetchMinters(page)
   })
 
   if (isPending) {
@@ -27,7 +26,7 @@ export default function Comments() {
     return <ErrorMessage message={error.message} />
   }
 
-  const tableProps: TableProps = { columns, data: data.comments }
+  const tableProps: TableProps = { columns, data: data.minters }
   const paginationProps: PaginationProps = {
     currentPage: page,
     totalPages: data.totalPages,
@@ -43,13 +42,6 @@ export default function Comments() {
 }
 
 type TableProps = {
-  columns: ColumnDef<{
-    id: number
-    content: string
-    createdAt: string
-    updatedAt: string | null
-    nftId: number
-    authorId: number | null
-  }>[]
-  data: Comments
+  columns: ColumnDef<MinterWithCount>[]
+  data: MinterWithCount[]
 }
