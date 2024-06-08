@@ -1,6 +1,7 @@
 import { ChangePasswordSchema } from "@/validators/schemas/translation/fragments/changePasswordSchema"
 import { GlobalSchema } from "@/validators/schemas/translation/fragments/globalSchema"
 import { LoginSchema } from "@/validators/schemas/translation/fragments/loginSchema"
+import { notificationSchema } from "@/validators/schemas/translation/fragments/notificationSchema"
 import { ProfileChangesSchema } from "@/validators/schemas/translation/fragments/profileChangesSchema"
 import { ProfilePrivacyPolicySchema } from "@/validators/schemas/translation/fragments/profilePrivacyPolicySchema"
 import { ResetPasswordSchema } from "@/validators/schemas/translation/fragments/resetPasswordSchema"
@@ -51,5 +52,11 @@ export const MessageSchema = z.object({
   like: z.object({
     likeError: z.string(),
     dislikeError: z.string()
+  }),
+  notifications: notificationSchema,
+  notificationPreferences: z.object({
+    notification: z.string(),
+    changeSuccess: z.string(),
+    changeError: z.string()
   })
 })

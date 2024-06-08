@@ -1,4 +1,3 @@
-import LanguageSelector from "@/components/custom/language-selector"
 import Providers from "@/providers/portalProviders"
 import "@/styles/globals.css"
 import { useLocale, useMessages, useTimeZone } from "next-intl"
@@ -31,12 +30,7 @@ export default function PortalLayout({
       <body className={roboto.className}>
         <main className="min-h-screen">
           <Providers {...i18nProps}>
-            <div className="flex flex-col w-full mt-5">
-              <div className="ml-5">
-                <LanguageSelector />
-              </div>
-              {children}
-            </div>
+            <div className="flex flex-col w-full">{children}</div>
           </Providers>
           <Toaster position="bottom-right" richColors closeButton />
         </main>
