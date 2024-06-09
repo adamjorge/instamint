@@ -1,7 +1,8 @@
 import prisma from "@/lib/db"
+import { dateQuery } from "@/lib/utils/metrics/dateQuery"
 import type { TimePeriod } from "@/validators/types/timePeriod"
 
-export async function countNfts(period: TimePeriod) {
+export async function countMints(period: TimePeriod) {
   const date = dateQuery(period)
 
   if (period !== "diff") {
@@ -36,23 +37,4 @@ export async function countNfts(period: TimePeriod) {
   })
 
   return Math.abs(countCurrentMonth - countLastMonth)
-}
-
-function dateQuery(period: TimePeriod): Date {
-  const date = new Date()
-
-  switch (period) {
-    case "daily":
-      date.setHours(0, 0, 0, 0)
-
-      return date
-
-    case "monthly":
-      date.setDate(1)
-
-      return date
-
-    default:
-      return date
-  }
 }
