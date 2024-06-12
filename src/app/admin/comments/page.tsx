@@ -1,10 +1,13 @@
 "use client"
 
+import { AdminTable } from "@/components/custom/admin/table/admin-table"
+import { AdminTablePagination } from "@/components/custom/admin/table/admin-table-pagination"
 import { columns } from "@/components/custom/comments/columns"
-import { CommentsTable } from "@/components/custom/comments/comments-table"
-import { CommentsPagination } from "@/components/custom/comments/pagination/comments-pagination"
+import Spinner from "@/components/custom/spinner"
+import ErrorMessage from "@/components/ui/custom/error-message"
 import { fetchComments } from "@/lib/query/comments/fetchComments"
 import type { Comments } from "@/validators/schemas/commentSchema"
+import { PaginationProps } from "@/validators/types/paginationProps"
 import { useQuery } from "@tanstack/react-query"
 import type { ColumnDef } from "@tanstack/react-table"
 import { useState } from "react"
@@ -17,11 +20,11 @@ export default function Comments() {
   })
 
   if (isPending) {
-    return <div>Loading...</div>
+    return <Spinner />
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <ErrorMessage message={error.message} />
   }
 
   const tableProps: TableProps = { columns, data: data.comments }
@@ -33,8 +36,8 @@ export default function Comments() {
 
   return (
     <div className="container mx-auto mt-16 pb-5">
-      <CommentsTable {...tableProps} />
-      <CommentsPagination {...paginationProps} />
+      <AdminTable {...tableProps} />
+      <AdminTablePagination {...paginationProps} />
     </div>
   )
 }
@@ -49,10 +52,4 @@ type TableProps = {
     authorId: number | null
   }>[]
   data: Comments
-}
-
-type PaginationProps = {
-  currentPage: number
-  totalPages: number
-  setPage: (page: number) => void
 }

@@ -1,27 +1,31 @@
 import { PrismaClient } from "@prisma/client"
 
 import {
-  createComments,
-  createHashtags,
-  createMinters,
-  createNfts,
-  createOriginalContents,
-  createReports,
-  createTeaBags,
-  createUsers
+  seedComments,
+  seedHashtags,
+  seedMinters,
+  seedNfts,
+  seedNotificationPreferences,
+  seedNotificationTypes,
+  seedOriginalContents,
+  seedReports,
+  seedTeaBags,
+  seedUsers
 } from "./scripts"
 
 const prisma = new PrismaClient()
 
 async function main() {
-  await createMinters(prisma)
-  await createUsers(prisma)
-  await createHashtags(prisma)
-  await createOriginalContents(prisma)
-  await createNfts(prisma)
-  await createComments(prisma)
-  await createTeaBags(prisma)
-  await createReports(prisma)
+  await seedMinters(prisma)
+  await seedUsers(prisma)
+  await seedHashtags(prisma)
+  await seedOriginalContents(prisma)
+  await seedNfts(prisma)
+  await seedComments(prisma)
+  await seedTeaBags(prisma)
+  await seedReports(prisma)
+  await seedNotificationTypes(prisma)
+  await seedNotificationPreferences(prisma)
 }
 
 main()

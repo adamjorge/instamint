@@ -21,13 +21,9 @@ test("connection and deconnection works as expected", async ({ browser }) => {
   await page.fill("input[name=email]", userAdmin.email)
   await page.fill("input[name=password]", userAdmin.password)
 
-  await page.click("button[type=submit]")
+  await page.getByLabel("sign in").click()
 
-  await page.waitForURL("http://localhost:3000/en")
-
-  await expect(page.getByText("Sign out")).toBeVisible()
-
-  await page.click("button[type=button]")
+  await page.getByLabel("sign out").click()
 
   await expect(page).toHaveTitle(/Instamint/u)
 })

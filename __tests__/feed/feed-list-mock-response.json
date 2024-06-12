@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "createdAt": "2021-09-01T00:00:00.000Z",
+      "description": "This is a description",
+      "imageUrl": "https://www.google.com",
+      "location": "New York",
+      "price": 100,
+      "originalContent": {
+        "minter": {
+          "id": 1,
+          "username": "user1"
+        }
+      },
+      "likedBy": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ],
+      "_count": {
+        "likedBy": 2
+      }
+    }
+  ]
+}

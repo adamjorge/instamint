@@ -2,10 +2,13 @@
 
 import { findUserByEmail } from "@/lib/utils/db"
 import { verifyEmail } from "@/lib/utils/email"
+import { useTranslations } from "next-intl"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
 export default function useEmailVerification() {
+  const t = useTranslations("signUp")
+  const g = useTranslations("global")
   const searchParams = useSearchParams()
   const userEmail = searchParams.get("email")
   const token = searchParams.get("token")
@@ -14,37 +17,43 @@ export default function useEmailVerification() {
   const [errorMessage, setErrorMessage] = useState("")
 
   useEffect(() => {
-    const emailVerification = async (email: string): Promise<void> => {
+    const emailVerification = async (email: string) => {
       if (!email || !token) {
-        throw new Error("Missing required fields")
+        setErrorMessage("Missing required fields")
+
+        return
       }
 
-      const user = await findUserByEmail(email)
+      try {
+        const user = await findUserByEmail(email)
 
-      if (!user) {
-        throw new Error("Invalid verification token")
+        if (!user || token !== user.emailVerifyToken) {
+          setErrorMessage("Invalid verification token")
+
+          return
+        }
+
+        await verifyEmail(email)
+        setResult(t("successVerification"))
+      } catch (error) {
+        setErrorMessage(g("error"))
+      } finally {
+        setIsLoading(false)
       }
-
-      if (token !== user.emailVerifyToken) {
-        throw new Error("Invalid verification token")
+    }
+    const verify = async () => {
+      if (userEmail && token) {
+        await emailVerification(userEmail)
+      } else {
+        setIsLoading(false)
       }
-
-      await verifyEmail(email)
     }
 
-    if (userEmail && token) {
-      emailVerification(userEmail)
-        .then(() => {
-          setResult("Email verified successfully. Please login.")
-        })
-        .catch(() => {
-          setErrorMessage("Error occured")
-        })
-        .finally(() => {
-          setIsLoading(false)
-        })
-    }
-  }, [userEmail, token])
+    verify().catch(() => {
+      setErrorMessage(g("error"))
+      setIsLoading(false)
+    })
+  }, [userEmail, token, t, g])
 
   return { isLoading, result, errorMessage }
 }

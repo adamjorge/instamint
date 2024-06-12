@@ -2,7 +2,7 @@ name: Main workflow with Vercel deployment
 
 on:
   push:
-    branches: ["main", "develop", "feature/*", "hotfix/*"]
+    branches: ["main", "develop", "feature/*", "hotfix/*", "refactor/*"]
   pull_request:
     branches: ["main"]
 
@@ -24,6 +24,11 @@ jobs:
         run: |
           touch .env
           echo "AUTH_SECRET=${{ secrets.AUTH_SECRET }}" > .env
+          echo "AWS_S3_REGION=${{ secrets.AWS_S3_REGION }}" >> .env
+          echo "AWS_S3_ACCESS_KEY_ID=${{ secrets.AWS_S3_ACCESS_KEY_ID }}" >> .env
+          echo "AWS_S3_SECRET_ACCESS_KEY=${{ secrets.AWS_S3_SECRET_ACCESS_KEY }}" >> .env
+          echo "AWS_S3_BUCKET_NAME=${{ secrets.AWS_S3_BUCKET_NAME }}" >> .env
+          echo "AWS_S3_BUCKET_URL=${{ secrets.AWS_S3_BUCKET_URL }}" >> .env
           npm run build
 
   unit-tests:
@@ -59,6 +64,7 @@ jobs:
           echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> .env
           echo "NOTADMIN_EMAIL=${{ secrets.NOTADMIN_EMAIL }}" >> .env
           echo "NOTADMIN_PASSWORD=${{ secrets.NOTADMIN_PASSWORD }}" >> .env
+          make db-reset
           npm run test:e2e
       - uses: actions/upload-artifact@v4
         if: always()

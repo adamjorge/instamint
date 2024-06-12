@@ -1,0 +1,79 @@
+"use client"
+
+import AvatarUploadFrom from "@/components/custom/profile/change-avatar/avatar-upload-form-wrapper"
+import Spinner from "@/components/custom/spinner"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
+import ErrorMessage from "@/components/ui/custom/error-message"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from "@/components/ui/dialog"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { getAvatarUrl } from "@/lib/query/minters/getAvatarUrl"
+import { useQuery } from "@tanstack/react-query"
+import { useTranslations } from "next-intl"
+
+export default function ProfileChangesCard(props: ProfileChangesProps) {
+  const { email, minterId, handleClickOnDelete, handleClickOnChange } = props
+  const t = useTranslations("profileChanges")
+  const { data, error, isPending } = useQuery({
+    queryKey: ["avatar"],
+    queryFn: () => getAvatarUrl(props.minterId.toString())
+  })
+
+  if (isPending) {
+    return <Spinner />
+  }
+
+  if (error) {
+    return <ErrorMessage message={t("error")} />
+  }
+
+  return (
+    <div className="flex flex-col items-center ml-5 mr-5 mt-10 space-y-5 w-full">
+      <h2 className="font-bold text-xl">{t("changeProfile")}</h2>
+      <Avatar>
+        <AvatarImage src={data.signedUrl} alt="avatar" />
+        <AvatarFallback>IN</AvatarFallback>
+      </Avatar>
+      <p>{email}</p>
+      <AvatarUploadFrom minterId={minterId} />
+      <div className="self-stretch mr-3">
+        <Label htmlFor="bio" className="font-bold text-lg">
+          {t("bio")}
+        </Label>
+        <Textarea className="mt-3" placeholder={t("bioWIP")} disabled />
+      </div>
+      <Dialog>
+        <DialogTrigger className="bg-red-500 text-white hover:bg-dark p-2 rounded-lg border">
+          {t("deleteAccount")}
+        </DialogTrigger>
+        <DialogContent className="rounded-lg">
+          <DialogHeader>
+            <DialogTitle>{t("deleteAccountConfirmation")}</DialogTitle>
+            <DialogDescription>{t("deleteAccountDescription")}</DialogDescription>
+          </DialogHeader>
+          <Button className="bg-red-500 text-white hover:bg-medium" onClick={handleClickOnDelete}>
+            {t("deleteAccount")}
+          </Button>
+        </DialogContent>
+      </Dialog>
+      <Button className="bg-sea text-white hover:bg-spruce text-md" onClick={handleClickOnChange}>
+        {t("changeMyPassword")}
+      </Button>
+    </div>
+  )
+}
+
+type ProfileChangesProps = {
+  email: string
+  minterId: number
+  handleClickOnDelete: () => void
+  handleClickOnChange: () => void
+}

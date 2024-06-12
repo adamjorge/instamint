@@ -26,12 +26,13 @@ export default function LanguageSelector() {
   )
 
   return (
-    <div>
+    <div className="text-dark">
       <Select
         defaultValue={locale}
         onValueChange={(value) => {
           handleLocaleChange(value)
         }}
+        aria-label="Language Selector"
       >
         <SelectTrigger className="w-32">
           <SelectValue placeholder="Language" />

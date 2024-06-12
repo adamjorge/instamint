@@ -1,6 +1,8 @@
 "use client"
 
 import NftDetails from "@/components/custom/nfts/nft-details"
+import Spinner from "@/components/custom/spinner"
+import ErrorMessage from "@/components/ui/custom/error-message"
 import fetchNft from "@/lib/query/nfts/fetchNft"
 import { useQuery } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
@@ -14,11 +16,11 @@ export default function NftPage({ params }: { params: { id: number } }) {
   })
 
   if (isPending) {
-    return <div className="text-center">{t("loading")}</div>
+    return <Spinner />
   }
 
   if (error) {
-    return <div className="text-center">{t("error")}</div>
+    return <ErrorMessage message={t("error")} />
   }
 
   return (

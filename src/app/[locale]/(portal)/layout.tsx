@@ -1,7 +1,5 @@
 import Footer from "@/components/custom/footer"
-import { Button } from "@/components/ui/button"
-import { signOut } from "@/lib/auth"
-import { useTranslations } from "next-intl"
+import Header from "@/components/custom/header"
 import React from "react"
 
 export default function PortalLayout({
@@ -9,22 +7,11 @@ export default function PortalLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const t = useTranslations("global")
-
   return (
-    <div>
-      <form
-        action={async () => {
-          "use server"
-          await signOut()
-        }}
-      >
-        <Button type="submit" className="bg-red-500">
-          {t("signOut")}
-        </Button>
-      </form>
+    <>
+      <Header />
       <div>{children}</div>
       <Footer />
-    </div>
+    </>
   )
 }

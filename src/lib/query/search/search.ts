@@ -7,9 +7,15 @@ import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSea
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
 import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
 import { SearchType } from "@/validators/types/searchType"
-import axios, { isAxiosError } from "axios"
+import axios from "axios"
 
-export async function fetchSearch(searchTerm: string, minPrice: string, maxPrice: string) {
+export async function fetchSearch(searchParameters: SearchParameters) {
+  const { searchTerm, minPrice, maxPrice, currentUserId } = searchParameters
+
+  if (!currentUserId) {
+    throw new Error("Missing currentUserId parameter")
+  }
+
   if (searchTerm === "") {
     return { nfts: [], minters: [], teabags: [] }
   }
@@ -22,6 +28,7 @@ export async function fetchSearch(searchTerm: string, minPrice: string, maxPrice
       .setBaseUrl("/api/search/minters")
       .setMinPrice("")
       .setMaxPrice("")
+      .setCurrentUserId(currentUserId.toString())
     const minters = await axios.get<MinterSearchMintersSchemaType>(minterUrlBuilder.build())
     const teabagUrlBuilder = builder
       .setBaseUrl("/api/search/teabags")
@@ -35,23 +42,23 @@ export async function fetchSearch(searchTerm: string, minPrice: string, maxPrice
       teabags: teabags.data
     })
   } catch (err) {
-    if (isAxiosError(err)) {
-      throw new Error(err.message)
-    }
-
     throw new Error(err as string)
   }
 }
 
 export async function searchByType(options: SearchOptions) {
-  const { type, searchTerm, minPrice, maxPrice } = options
+  const { type, searchTerm, minPrice, maxPrice, currentUserId } = options
 
   switch (type) {
     case "nfts":
       return await searchNfts({ search: searchTerm, minPrice, maxPrice })
 
     case "minters":
-      return await searchMinters(searchTerm)
+      if (!currentUserId) {
+        throw new Error("Missing currentUserId parameter")
+      }
+
+      return await searchMinters(searchTerm, currentUserId)
 
     case "teabags":
       return await searchTeaBags(searchTerm)
@@ -61,9 +68,13 @@ export async function searchByType(options: SearchOptions) {
   }
 }
 
-type SearchOptions = {
-  type: SearchType
+type SearchParameters = {
   searchTerm: string
   minPrice: string
   maxPrice: string
+  currentUserId: string | undefined
+}
+
+type SearchOptions = SearchParameters & {
+  type: SearchType
 }

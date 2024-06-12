@@ -1,5 +1,3 @@
-"use client"
-
 import ProfileMenu from "@/components/custom/profile/profile-menu/full-profile-menu"
 import React from "react"
 

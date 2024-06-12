@@ -12,14 +12,15 @@ describe("profile menu displays expected content", () => {
         <ProfileMenu />
       </IntlProvider>
     )
-    expect(screen.getByText(/How to use Instamint/u)).toBeDefined()
-    expect(screen.getByText(/Edit profile/u)).toBeDefined()
-    expect(screen.getByText(/Notifications/u)).toBeDefined()
+    expect(screen.getByLabelText("how to use instamint")).toBeDefined()
+    expect(screen.getByLabelText(/edit profile/u)).toBeDefined()
+    expect(screen.getByLabelText(/notifications/u)).toBeDefined()
 
-    expect(screen.getByText(/Who can see my profile?/u)).toBeDefined()
-    expect(screen.getByText(/Privacy/u)).toBeDefined()
+    expect(screen.getByLabelText(/who can see my profile/u)).toBeDefined()
+    expect(screen.getByLabelText(/privacy details/u)).toBeDefined()
 
-    expect(screen.getByText(/Your application/u)).toBeDefined()
-    expect(screen.getByText(/Language/u)).toBeDefined()
+    expect(screen.getByLabelText(/your application/u)).toBeDefined()
+    expect(screen.getByLabelText(/language/u)).toBeDefined()
+    expect(screen.getByLabelText(/privacy policy/u)).toBeDefined()
   })
 })

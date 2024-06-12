@@ -68,40 +68,67 @@ model Hashtag {
   nfts      Nft[]
 }
 
+model ChangePassword {
+  id        String    @id @default(cuid())
+  createdAt DateTime  @default(now())
+  expires   DateTime
+  token     String    @unique @db.Text
+  usedAt    DateTime?
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+}
+
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  phoneNumber   String?
-  password      String?
-  emailVerifyToken String?   @db.VarChar(255)
-  is2FAEnabled  Boolean   @default(false)
-  isAdmin       Boolean   @default(false)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  deletedAt     DateTime?
-  accounts      Account[]
-  sessions      Session[]
-  minterId      Int
-  minter        Minter    @relation(fields: [minterId], references: [id], onDelete: Cascade)
+  id                        String           @id @default(cuid())
+  name                      String?
+  email                     String?          @unique
+  emailVerified             DateTime?
+  phoneNumber               String?
+  password                  String?
+  emailVerifyToken          String?          @db.Text
+  passwordResetToken        String?          @db.Text
+  passwordResetTokenExpires DateTime?
+  is2FAEnabled              Boolean          @default(false)
+  isAdmin                   Boolean          @default(false)
+  createdAt                 DateTime         @default(now())
+  updatedAt                 DateTime         @updatedAt
+  deletedAt                 DateTime?
+  accounts                  Account[]
+  sessions                  Session[]
+  passwordChanges           ChangePassword[]
+  minterId                  Int
+  minter                    Minter           @relation(fields: [minterId], references: [id], onDelete: Cascade)
 }
 
 model Minter {
-  id                  Int               @id @default(autoincrement())
-  username            String            @unique
-  defaultLanguage     String            @default("fr")
+  id                  Int                      @id @default(autoincrement())
+  username            String                   @unique
+  language            String                   @default("fr")
   profileUrl          String
-  avatarUrl           String
+  avatarKey           String
   bio                 String
   location            String?
   authorName          String?
-  isVisible           Boolean           @default(true)
-  isSearchableByEmail Boolean           @default(true)
+  isVisible           Boolean                  @default(true)
+  isSearchableByEmail Boolean                  @default(true)
   comments            Comment[]
   originalContents    OriginalContent[]
   reports             Report[]
   users               User[]
+  notifications       Notification[]
+  followers           Follow[]                 @relation("follower")
+  following           Follow[]                 @relation("following")
+  likes               Nft[]                    @relation("likes")
+  notificationPref    NotificationPreference[]
+}
+
+model Follow {
+  followerId  Int
+  follower    Minter @relation("follower", fields: [followerId], references: [id])
+  followingId Int
+  following   Minter @relation("following", fields: [followingId], references: [id])
+
+  @@id(name: "followId", [followerId, followingId])
 }
 
 model Nft {
@@ -116,11 +143,12 @@ model Nft {
   originalContentId Int             @unique
   comments          Comment[]
   hashtags          Hashtag[]
+  likedBy           Minter[]        @relation("likes")
 }
 
 model OriginalContent {
   id        Int       @id @default(autoincrement())
-  imageUrl  String
+  imageUrl  String    @unique
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
   nft       Nft?
@@ -148,4 +176,40 @@ model TeaBag {
   createdAt  DateTime  @default(now())
   updatedAt  DateTime? @updatedAt
   reports    Report[]
+}
+
+model NotificationType {
+  name          NotificationTypeEnum @id
+  notifications Notification[]
+}
+
+model Notification {
+  id               String               @id @default(cuid())
+  read             Boolean              @default(false)
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+  description      String
+  minterId         Int
+  type             NotificationTypeEnum
+  minter           Minter               @relation(fields: [minterId], references: [id])
+  notificationType NotificationType     @relation(fields: [type], references: [name])
+}
+
+model NotificationPreference {
+  minterId  Int
+  type      NotificationTypeEnum
+  isEnabled Boolean              @default(true)
+  minter    Minter               @relation(fields: [minterId], references: [id])
+
+  @@id(name: "notificationPreferenceId", [minterId, type])
+}
+
+enum NotificationTypeEnum {
+  COMMENT_REPLY
+  COMMENT_ON_POST
+  MENTION_IN_COMMENT
+  LIKE
+  NEW_FOLLOWER
+  FOLLOW_REQUEST
+  FOLLOW_REQUEST_ACCEPTED
 }

@@ -1,38 +1,19 @@
+import { ChangePasswordSchema } from "@/validators/schemas/translation/fragments/changePasswordSchema"
+import { GlobalSchema } from "@/validators/schemas/translation/fragments/globalSchema"
+import { LoginSchema } from "@/validators/schemas/translation/fragments/loginSchema"
+import { notificationSchema } from "@/validators/schemas/translation/fragments/notificationSchema"
+import { ProfileChangesSchema } from "@/validators/schemas/translation/fragments/profileChangesSchema"
+import { ProfilePrivacyPolicySchema } from "@/validators/schemas/translation/fragments/profilePrivacyPolicySchema"
+import { ResetPasswordSchema } from "@/validators/schemas/translation/fragments/resetPasswordSchema"
+import { SearchSchema } from "@/validators/schemas/translation/fragments/searchSchema"
+import { SignUpSchema } from "@/validators/schemas/translation/fragments/signUpSchema"
+import { UpdatePasswordSchema } from "@/validators/schemas/translation/fragments/updatePasswordSchema"
 import { z } from "zod"
 
 export const MessageSchema = z.object({
-  global: z.object({
-    check: z.string(),
-    loading: z.string(),
-    noResults: z.string(),
-    resultsFor: z.string(),
-    noResultsFor: z.string(),
-    noResultsSentence: z.string(),
-    error: z.string(),
-    searchWelcome: z.string(),
-    nftPrice: z.string(),
-    signOut: z.string()
-  }),
-  search: z.object({
-    cancel: z.string(),
-    minPrice: z.string(),
-    maxPrice: z.string(),
-    noSearchResultsFor: z.string(),
-    search: z.string(),
-    searchSentence: z.string(),
-    searchPlaceholder: z.string(),
-    submit: z.string()
-  }),
-  login: z.object({
-    mail: z.string(),
-    connectionInfo: z.string(),
-    password: z.string(),
-    submit: z.string(),
-    login: z.string(),
-    accountQuestion: z.string(),
-    signUp: z.string(),
-    rights: z.string()
-  }),
+  global: GlobalSchema,
+  search: SearchSchema,
+  login: LoginSchema,
   howToMenu: z.object({
     howTo: z.string(),
     changeProfile: z.string(),
@@ -44,14 +25,38 @@ export const MessageSchema = z.object({
   }),
   applicationMenu: z.object({
     yourApplication: z.string(),
-    language: z.string()
+    language: z.string(),
+    privacyPolicy: z.string()
   }),
-  profileChanges: z.object({
-    changeProfile: z.string(),
-    bio: z.string(),
-    bioWIP: z.string(),
-    deleteAccount: z.string(),
-    deleteAccountConfirmation: z.string(),
-    deleteAccountDescription: z.string()
+  privacy: z.object({
+    authorizeSearchByEmail: z.string()
+  }),
+  profileChanges: ProfileChangesSchema,
+  profilePrivacyPolicy: ProfilePrivacyPolicySchema,
+  signUp: SignUpSchema,
+  resetPassword: ResetPasswordSchema,
+  updatePassword: UpdatePasswordSchema,
+  changePassword: ChangePasswordSchema,
+  uploadOriginalContent: z.object({
+    uploadLabel: z.string(),
+    agreeText: z.string(),
+    termsLink: z.string(),
+    uploadContentButton: z.string()
+  }),
+  uploadOriginalContentTerms: z.object({
+    title: z.string(),
+    firstParagraph: z.string(),
+    secondParagraph: z.string(),
+    contactInfo: z.string()
+  }),
+  like: z.object({
+    likeError: z.string(),
+    dislikeError: z.string()
+  }),
+  notifications: notificationSchema,
+  notificationPreferences: z.object({
+    notification: z.string(),
+    changeSuccess: z.string(),
+    changeError: z.string()
   })
 })

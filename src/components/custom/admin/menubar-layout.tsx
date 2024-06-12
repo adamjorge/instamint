@@ -21,6 +21,17 @@ export default function MenubarLayout() {
       </MenubarMenu>
       <MenubarSeparator />
       <MenubarMenu>
+        <MenubarTrigger>Overview</MenubarTrigger>
+        <MenubarContent>
+          <Link href="/admin/minters">
+            <MenubarItem>Minters</MenubarItem>
+          </Link>
+          <Link href="/admin/comments">
+            <MenubarItem>Comments</MenubarItem>
+          </Link>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
         <MenubarTrigger>Reports</MenubarTrigger>
         <MenubarContent className="bg-white">
           <Link href="/admin/reports/minters">
@@ -30,15 +41,6 @@ export default function MenubarLayout() {
             <MenubarItem>Tea-bags</MenubarItem>
           </Link>
           <Link href="/admin/reports/comments">
-            <MenubarItem>Comments</MenubarItem>
-          </Link>
-        </MenubarContent>
-      </MenubarMenu>
-      <MenubarSeparator />
-      <MenubarMenu>
-        <MenubarTrigger>Application activity</MenubarTrigger>
-        <MenubarContent>
-          <Link href="/admin/comments">
             <MenubarItem>Comments</MenubarItem>
           </Link>
         </MenubarContent>

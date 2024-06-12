@@ -1,51 +1,14 @@
-import LanguageSelector from "@/components/custom/language-selector"
-import { APP_DEFAULT_TITLE, APP_DESCRIPTION, APP_NAME, APP_TITLE_TEMPLATE } from "@/config/appInfo"
 import Providers from "@/providers/portalProviders"
 import "@/styles/globals.css"
-import type { Metadata } from "next"
 import { useLocale, useMessages, useTimeZone } from "next-intl"
-import { Inter } from "next/font/google"
+import { Roboto } from "next/font/google"
 import React from "react"
 import { Toaster } from "sonner"
 
-export const metadata: Metadata = {
-  applicationName: APP_NAME,
-  title: {
-    default: APP_DEFAULT_TITLE,
-    template: APP_TITLE_TEMPLATE
-  },
-  description: APP_DESCRIPTION,
-  manifest: "/manifest.json",
-  appleWebApp: {
-    title: `Apple ${APP_DEFAULT_TITLE}`,
-    capable: true,
-    statusBarStyle: "black-translucent",
-    startupImage: "/splash_screens/main_splash_screen.png"
-  },
-  formatDetection: {
-    telephone: false
-  },
-  openGraph: {
-    type: "website",
-    siteName: APP_NAME,
-    title: {
-      default: APP_DEFAULT_TITLE,
-      template: APP_TITLE_TEMPLATE
-    },
-    description: APP_DESCRIPTION
-  },
-  twitter: {
-    card: "summary",
-    title: {
-      default: APP_DEFAULT_TITLE,
-      template: APP_TITLE_TEMPLATE
-    },
-    description: APP_DESCRIPTION
-  }
-}
+export { metadata } from "@/config/metadata"
 
 // eslint-disable-next-line new-cap
-const inter = Inter({ subsets: ["latin"] })
+const roboto = Roboto({ subsets: ["latin"], weight: "500" })
 
 export default function PortalLayout({
   children
@@ -64,13 +27,10 @@ export default function PortalLayout({
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <main className="min-h-screen">
           <Providers {...i18nProps}>
-            <div className="flex flex-col w-full">
-              <LanguageSelector />
-              {children}
-            </div>
+            <div className="flex flex-col w-full">{children}</div>
           </Providers>
           <Toaster position="bottom-right" richColors closeButton />
         </main>

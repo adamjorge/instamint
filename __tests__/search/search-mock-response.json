@@ -18,16 +18,28 @@
         "minter": {
           "id": 5,
           "username": "oneEleven",
-          "defaultLanguage": "fr",
+          "language": "fr",
           "profileUrl": "",
-          "avatarUrl": "",
+          "avatarKey": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true
+          "isSearchableByEmail": true,
+          "isFollowed": true
         }
       },
-      "hashtags": []
+      "hashtags": [],
+      "likedBy": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ],
+      "_count": {
+        "likedBy": 2
+      }
     },
     {
       "id": 2,
@@ -47,16 +59,28 @@
         "minter": {
           "id": 5,
           "username": "twoEleven",
-          "defaultLanguage": "fr",
+          "language": "fr",
           "profileUrl": "",
-          "avatarUrl": "",
+          "avatarKey": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true
+          "isSearchableByEmail": true,
+          "isFollowed": true
         }
       },
-      "hashtags": []
+      "hashtags": [],
+      "likedBy": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ],
+      "_count": {
+        "likedBy": 2
+      }
     },
     {
       "id": 4,
@@ -76,16 +100,28 @@
         "minter": {
           "id": 5,
           "username": "fourEleven",
-          "defaultLanguage": "fr",
+          "language": "fr",
           "profileUrl": "",
-          "avatarUrl": "",
+          "avatarKey": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true
+          "isSearchableByEmail": true,
+          "isFollowed": true
         }
       },
-      "hashtags": []
+      "hashtags": [],
+      "likedBy": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ],
+      "_count": {
+        "likedBy": 2
+      }
     },
     {
       "id": 9,
@@ -105,66 +141,82 @@
         "minter": {
           "id": 5,
           "username": "nineEleven",
-          "defaultLanguage": "fr",
+          "language": "fr",
           "profileUrl": "",
-          "avatarUrl": "",
+          "avatarKey": "",
           "bio": "",
           "authorName": null,
           "isVisible": true,
-          "isSearchableByEmail": true
+          "isSearchableByEmail": true,
+          "isFollowed": true
         }
       },
-      "hashtags": []
+      "hashtags": [],
+      "likedBy": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ],
+      "_count": {
+        "likedBy": 2
+      }
     }
   ],
   "minters": [
     {
       "id": 1,
       "username": "oneEleven",
-      "defaultLanguage": "fr",
+      "language": "fr",
       "profileUrl": "",
       "location": "Paris",
-      "avatarUrl": "https://loremflickr.com/320/240?lock=1&random=1",
+      "avatarKey": "https://loremflickr.com/320/240?lock=1&random=1",
       "bio": "first bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true
+      "isSearchableByEmail": true,
+      "isFollowed": true
     },
     {
       "id": 2,
       "username": "twoEleven",
-      "defaultLanguage": "fr",
+      "language": "fr",
       "profileUrl": "",
       "location": "Paris",
-      "avatarUrl": "https://loremflickr.com/320/240?lock=2&random=2",
+      "avatarKey": "https://loremflickr.com/320/240?lock=2&random=2",
       "bio": "second bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true
+      "isSearchableByEmail": true,
+      "isFollowed": true
     },
     {
       "id": 4,
       "username": "fourEleven",
-      "defaultLanguage": "fr",
+      "language": "fr",
       "profileUrl": "",
       "location": "Paris",
-      "avatarUrl": "https://loremflickr.com/320/240?lock=4&random=4",
+      "avatarKey": "https://loremflickr.com/320/240?lock=4&random=4",
       "bio": "third bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true
+      "isSearchableByEmail": true,
+      "isFollowed": true
     },
     {
       "id": 5,
       "username": "nineEleven",
-      "defaultLanguage": "fr",
+      "language": "fr",
       "profileUrl": "",
       "location": "Paris",
-      "avatarUrl": "https://loremflickr.com/320/240?lock=5&random=5",
+      "avatarKey": "https://loremflickr.com/320/240?lock=5&random=5",
       "bio": "fourth bio",
       "authorName": null,
       "isVisible": true,
-      "isSearchableByEmail": true
+      "isSearchableByEmail": true,
+      "isFollowed": false
     }
   ],
   "teabags": [

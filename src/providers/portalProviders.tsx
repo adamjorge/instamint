@@ -2,6 +2,7 @@
 
 import { Locale } from "@/config/i18n/locales"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { type AbstractIntlMessages, NextIntlClientProvider } from "next-intl"
 import React, { useState } from "react"
 
@@ -25,7 +26,10 @@ export default function Providers({
 
   return (
     <NextIntlClientProvider {...i18nProps}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        {children}
+        <ReactQueryDevtools initialIsOpen={false} buttonPosition="top-right" position="top" />
+      </QueryClientProvider>
     </NextIntlClientProvider>
   )
 }
