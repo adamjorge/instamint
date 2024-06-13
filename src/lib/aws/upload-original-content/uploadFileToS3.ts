@@ -1,6 +1,8 @@
 import s3Client from "@/lib/s3"
 import { PutObjectCommand } from "@aws-sdk/client-s3"
 
+import { createPresignedUrl } from "./createPresignedUrl"
+
 export async function uploadFileToS3(file: Buffer, fileName: string): Promise<string> {
   const bucketName = process.env.AWS_S3_BUCKET_NAME
   const region = process.env.AWS_S3_REGION
@@ -15,10 +17,12 @@ export async function uploadFileToS3(file: Buffer, fileName: string): Promise<st
     Body: file,
     ContentType: getFileContentType(fileName)
   }
-  const command = new PutObjectCommand(params)
-  await s3Client.send(command)
 
-  return `https://${bucketName}.s3.${region}.amazonaws.com/${fileName}`
+  await s3Client.send(new PutObjectCommand(params))
+
+  const signedUrl = await createPresignedUrl(fileName)
+
+  return signedUrl
 }
 
 function getFileContentType(fileName: string): string {
