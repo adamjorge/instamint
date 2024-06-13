@@ -221,6 +221,16 @@
     "termsLink": "termes",
     "uploadContentButton": "Télécharger un contenu original"
   },
+  "deleteOriginalContent": {
+    "Title": "Mes Contenus Originaux",
+    "errorFetchOc": "Une erreur s'est produite lors du chargement des contenus originaux.",
+    "noContentTitle": "Vous n'avez pas encore de contenu original. Tous vos contenus originaux seront répertoriés ici.",
+    "imageCreatedTitle": "Créé",
+    "successDeleteMessage": "Contenu original supprimé avec succès.",
+    "failedDeleteMessage": "Échec de la suppression du contenu original.",
+    "deleteButtonText": "Supprimer",
+    "inProcessdeleteButtonText": "Suppression en cours..."
+  },
   "uploadOriginalContentTerms": {
     "title": "Conditions de téléchargement de contenu original",
     "firstParagraph": "Instamint stockera le contenu des fichiers que vous téléchargez dans le but de créer des NFTs. En téléchargeant des fichiers, vous acceptez d'avoir le droit d'utiliser et de distribuer ces fichiers. Instamint n'utilisera pas vos fichiers à d'autres fins que la création de NFTs sans votre consentement explicite.",

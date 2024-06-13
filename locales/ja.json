@@ -221,6 +221,17 @@
     "termsLink": "利用規約",
     "uploadContentButton": "オリジナルコンテンツをアップロード"
   },
+  "deleteOriginalContent": {
+    "Title": "私のオリジナルコンテンツ",
+    "errorFetchOc": "オリジナルコンテンツの取得中にエラーが発生しました。",
+    "noContentTitle": "まだオリジナルコンテンツがありません。すべてのオリジナルコンテンツはここにリストされます。",
+    "imageCreatedTitle": "作成日",
+    "successDeleteMessage": "オリジナルコンテンツを正常に削除しました。",
+    "failedDeleteMessage": "オリジナルコンテンツの削除に失敗しました。",
+    "deleteButtonText": "削除",
+    "inProcessdeleteButtonText": "削除中...",
+    "createdAgoMessage": "Created {date}"
+  },
   "uploadOriginalContentTerms": {
     "title": "オリジナルコンテンツアップロードの利用規約",
     "firstParagraph": "Instamintは、NFTを作成するために、あなたがアップロードしたオリジナルファイルの内容を保存します。ファイルをアップロードすることで、これらのファイルを使用および配布する権利を持っていることに同意します。Instamintは、あなたの明示的な同意なしに、NFT作成以外の目的であなたのファイルを使用しません。",

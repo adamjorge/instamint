@@ -221,6 +221,16 @@
     "termsLink": "条款",
     "uploadContentButton": "上传原创内容"
   },
+  "deleteOriginalContent": {
+    "Title": "我的原始内容",
+    "errorFetchOc": "获取原始内容时出现问题。",
+    "noContentTitle": "您还没有任何原始内容。您的所有原始内容将在此处列出。",
+    "imageCreatedTitle": "创建时间",
+    "successDeleteMessage": "成功删除原始内容。",
+    "failedDeleteMessage": "删除原始内容失败。",
+    "deleteButtonText": "删除",
+    "inProcessdeleteButtonText": "正在删除..."
+  },
   "uploadOriginalContentTerms": {
     "title": "上传原创内容条款",
     "firstParagraph": "Instamint将存储您上传的原始文件内容，用于创建NFT。通过上传文件，您同意您有权使用和分发这些文件。Instamint不会在未经您明确同意的情况下将您的文件用于除NFT创建外的任何其他目的。",

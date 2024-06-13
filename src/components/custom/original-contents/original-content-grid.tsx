@@ -2,6 +2,7 @@ import DeleteOriginalContentButton from "@/components/custom/original-contents/h
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { OriginalContentSchemaType } from "@/validators/schemas/original-contents/fetchOriginalContents"
 import { formatDistanceToNow } from "date-fns"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 
 interface OriginalContentGridProps {
@@ -10,6 +11,8 @@ interface OriginalContentGridProps {
 }
 
 export default function OriginalContentGrid({ contents, onDelete }: OriginalContentGridProps) {
+  const t = useTranslations("deleteOriginalContent")
+
   return (
     <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 mt-8 mb-20">
       {contents.map((oc) => (
@@ -26,7 +29,8 @@ export default function OriginalContentGrid({ contents, onDelete }: OriginalCont
             </div>
             <CardTitle className="text-xl">ID: {oc.id}</CardTitle>
             <CardDescription className="text-sm text-gray-500">
-              Created {formatDistanceToNow(new Date(oc.createdAt), { addSuffix: true })}
+              {t("imageCreatedTitle")}{" "}
+              {formatDistanceToNow(new Date(oc.createdAt), { addSuffix: true })}
             </CardDescription>
           </CardHeader>
           <CardContent className="w-full">

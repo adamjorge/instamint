@@ -5,6 +5,7 @@ import OriginalContentGrid from "@/components/custom/original-contents/original-
 import Spinner from "@/components/custom/spinner"
 import fetchOriginalContent from "@/lib/query/minters/original-contents/getAllOriginalContents"
 import { OriginalContentSchemaType } from "@/validators/schemas/original-contents/fetchOriginalContents"
+import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
@@ -13,6 +14,7 @@ interface OriginalContentsProps {
 }
 
 export default function OriginalContents({ minterId }: OriginalContentsProps) {
+  const t = useTranslations("deleteOriginalContent")
   const [contents, setContents] = useState<OriginalContentSchemaType[]>([])
   const [isPending, setIsPending] = useState(true)
 
@@ -23,14 +25,14 @@ export default function OriginalContents({ minterId }: OriginalContentsProps) {
         const data = await fetchOriginalContent(minterId)
         setContents(data)
       } catch (error) {
-        toast.error("Something went wrong while fetching original contents.")
+        toast.error(t("errorFetchOc"))
       } finally {
         setIsPending(false)
       }
     }
 
     void fetchData()
-  }, [minterId])
+  }, [minterId, t])
 
   const handleContentDelete = (contentId: number) => {
     setContents((prevContents) => prevContents.filter((oc) => oc.id !== contentId))
@@ -52,7 +54,7 @@ export default function OriginalContents({ minterId }: OriginalContentsProps) {
   return (
     <div className="m-1">
       <div className="my-5">
-        <h3 className="text-center text-4xl mt-3 font-bold">My Original Contents</h3>
+        <h3 className="text-center text-4xl mt-3 font-bold">{t("Title")}</h3>
       </div>
       {content}
     </div>
