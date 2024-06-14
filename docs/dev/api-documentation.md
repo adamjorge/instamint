@@ -38,6 +38,7 @@ All the endpoints is defined in route.ts files in each folder.
 - **Base Path**: `/blockchain-data`
 
   - **Route**: `/`
+
     - **Description**: Endpoint to retrieve cryptocurrency market values.
 
 ---
@@ -53,6 +54,7 @@ All the endpoints is defined in route.ts files in each folder.
       - `page`: The page number to retrieve.
 
   - **Route**: `/:id`
+
     - **Description**: Endpoint to manage comments by ID.
 
 ---
@@ -80,6 +82,7 @@ All the endpoints is defined in route.ts files in each folder.
     - **Description**: Endpoint to follow a minter.
 
   - **Route**: `/pfp/:id`
+
     - **Description**: Endpoint to change pfp of a minter by id.
 
 ---
@@ -101,6 +104,7 @@ All the endpoints is defined in route.ts files in each folder.
     - **Description**: Endpoint to manage comments on NFTs by ID.
 
   - **Route**: `/feed`
+
     - **Description**: Endpoint to retrieve the feed of ntfs from minters.
       **Query Params**:
       - `cursor`: The cursor to retrieve the next page of results.
@@ -120,6 +124,7 @@ All the endpoints is defined in route.ts files in each folder.
     - **Description**: Endpoint to manage notification constants.
 
   - **Route**: `/preferences/:minterId`
+
     - **Description**: Endpoint to manage notification preferences by minter ID.
 
 ---
@@ -127,7 +132,9 @@ All the endpoints is defined in route.ts files in each folder.
 ### Reports
 
 - **Base Path**: `/reports`
+
   - **Route**: `/:type`
+
     - **Description**: Endpoint to generate reports by type.
 
 ---
@@ -137,6 +144,7 @@ All the endpoints is defined in route.ts files in each folder.
 - **Base Path**: `/search`
 
   - **Route**: `/:type`
+
     - **Description**: Endpoint to search within the platform by type.
     - **Query Params**:
       - `search`: The search query.
@@ -151,6 +159,7 @@ All the endpoints is defined in route.ts files in each folder.
 - **Base Path**: `/upload-original-content`
 
   - **Route**: `/`
+
     - **Description**: Endpoint to upload original content.
 
 ---
@@ -164,4 +173,5 @@ All the endpoints is defined in route.ts files in each folder.
     - **Description**: Base route for user-related operations by user ID.
 
   - **Route**: `/cron`
+
     - **Description**: Endpoint to handle user deletion in compliance with GDPR (batch triggered every 24 hours).
