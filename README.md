@@ -1,11 +1,16 @@
 # INSTAMINT
 
+This project is currently deployed on this [link](https://instamint-pr.vercel.app/)
+and in dev mode on this [link](https://instamint-dev.vercel.app/)
+
 ## TEAM MEMBERS
 
 - Adam MEHDAOUI ([adammehdaoui](https://github.com/adammehdaoui)) <adam.mehdaouijorge@gmail.com>
 - Jimmy MARTIN ([jimmy-martin](https://github.com/jimmy-martin)) <jimmy.martin952@gmail.com>
 - Mathieu MORGAT ([V4nkor](https://github.com/V4nkor)) <mmorgat@gmail.com>
 - Prajay CHAUDHARY ([Prajay-Chaudhary](https://github.com/Prajay-Chaudhary)) <prajaychaudhary5678@gmail.com>
+
+![Instamint cover](Instamint.png)
 
 ## PROJECT CONTEXT
 
@@ -17,7 +22,7 @@ _Instamint_ is seeking a development team to build the first version of their pr
 
 ## GREEN IT
 
-Find the Green IT document in [docs/green-it/README.md](https://github.com/adammehdaoui/instamint/blob/develop/docs/docs/green-it/README.md)
+Find the Green IT document in [docs/green-it/README.md](https://github.com/adammehdaoui/instamint/blob/develop/docs/green-it/README.md)
 
 ## GPDR POLICY
 
@@ -25,7 +30,7 @@ Find the GDPR Policy document in [docs/policy/instamint-private-policy.md](https
 
 ## GANTT CHART
 
-Find the Gantt chart in [docs/gantt-chart/instamint-gantt-chart.png](https://github.com/adammehdaoui/instamint/blob/develop/docs/docs/gantt-chart/instamint-gantt-chart.png)
+Find the Gantt chart in [docs/gantt-chart/instamint-gantt-chart.png](https://github.com/adammehdaoui/instamint/blob/develop/docs/gantt-chart/instamint-gantt-chart.png)
 
 ## PREVISIONAL PLANNING
 
