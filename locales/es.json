@@ -222,7 +222,7 @@
     "uploadContentButton": "Subir contenido original"
   },
   "deleteOriginalContent": {
-    "Title": "Mis Contenidos Originales",
+    "title": "Mis Contenidos Originales",
     "errorFetchOc": "Se produjo un error al obtener los contenidos originales.",
     "noContentTitle": "Todavía no tienes ningún contenido original. Todos tus contenidos originales se listarán aquí.",
     "imageCreatedTitle": "Creado",

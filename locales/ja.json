@@ -222,7 +222,7 @@
     "uploadContentButton": "オリジナルコンテンツをアップロード"
   },
   "deleteOriginalContent": {
-    "Title": "私のオリジナルコンテンツ",
+    "title": "私のオリジナルコンテンツ",
     "errorFetchOc": "オリジナルコンテンツの取得中にエラーが発生しました。",
     "noContentTitle": "まだオリジナルコンテンツがありません。すべてのオリジナルコンテンツはここにリストされます。",
     "imageCreatedTitle": "作成日",

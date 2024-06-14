@@ -1,11 +1,11 @@
 import DeleteOriginalContentButton from "@/components/custom/original-contents/handle-delete-content"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { RelativeTimeFormatter } from "@/components/ui/custom/relative-time-formatter"
 import { OriginalContentSchemaType } from "@/validators/schemas/original-contents/fetchOriginalContents"
-import { formatDistanceToNow } from "date-fns"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 
-interface OriginalContentGridProps {
+type OriginalContentGridProps = {
   contents: OriginalContentSchemaType[]
   onDelete: (contentId: number) => void
 }
@@ -29,8 +29,7 @@ export default function OriginalContentGrid({ contents, onDelete }: OriginalCont
             </div>
             <CardTitle className="text-xl">ID: {oc.id}</CardTitle>
             <CardDescription className="text-sm text-gray-500">
-              {t("imageCreatedTitle")}{" "}
-              {formatDistanceToNow(new Date(oc.createdAt), { addSuffix: true })}
+              {t("imageCreatedTitle")} <RelativeTimeFormatter createdAt={oc.createdAt} />
             </CardDescription>
           </CardHeader>
           <CardContent className="w-full">

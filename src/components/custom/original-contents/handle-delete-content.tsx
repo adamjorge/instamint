@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
-interface DeleteButtonProps {
+type DeleteButtonProps = {
   contentId: number
   onDelete: (contentId: number) => void
 }

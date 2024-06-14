@@ -228,7 +228,7 @@
     "contactInfo": "If you have any questions about how your files content will be used, please review our Privacy Policy or contact us at"
   },
   "deleteOriginalContent": {
-    "Title": "My Original Contents",
+    "title": "My Original Contents",
     "errorFetchOc": "Something went wrong while fetching original contents.",
     "noContentTitle": "You don't have any original content yet. All your original contents will be listed here.",
     "imageCreatedTitle": "Created",

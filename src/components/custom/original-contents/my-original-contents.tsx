@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
-interface OriginalContentsProps {
+type OriginalContentsProps = {
   minterId: number
 }
 
@@ -37,26 +37,28 @@ export default function OriginalContents({ minterId }: OriginalContentsProps) {
   const handleContentDelete = (contentId: number) => {
     setContents((prevContents) => prevContents.filter((oc) => oc.id !== contentId))
   }
-  let content = null
+  const renderContent = () => {
+    if (isPending) {
+      return (
+        <div className="flex justify-center items-center h-10">
+          <Spinner />
+        </div>
+      )
+    }
 
-  if (isPending) {
-    content = (
-      <div className="flex justify-center items-center h-10">
-        <Spinner />
-      </div>
-    )
-  } else if (contents.length === 0) {
-    content = <EmptyStateMessage />
-  } else {
-    content = <OriginalContentGrid contents={contents} onDelete={handleContentDelete} />
+    if (contents.length === 0) {
+      return <EmptyStateMessage />
+    }
+
+    return <OriginalContentGrid contents={contents} onDelete={handleContentDelete} />
   }
 
   return (
     <div className="m-1">
       <div className="my-5">
-        <h3 className="text-center text-4xl mt-3 font-bold">{t("Title")}</h3>
+        <h3 className="text-center text-4xl mt-3 font-bold">{t("title")}</h3>
       </div>
-      {content}
+      {renderContent()}
     </div>
   )
 }

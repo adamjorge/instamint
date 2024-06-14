@@ -222,7 +222,7 @@
     "uploadContentButton": "上传原创内容"
   },
   "deleteOriginalContent": {
-    "Title": "我的原始内容",
+    "title": "我的原始内容",
     "errorFetchOc": "获取原始内容时出现问题。",
     "noContentTitle": "您还没有任何原始内容。您的所有原始内容将在此处列出。",
     "imageCreatedTitle": "创建时间",

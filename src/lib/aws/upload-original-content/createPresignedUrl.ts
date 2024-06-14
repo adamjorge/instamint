@@ -8,7 +8,7 @@ export async function createPresignedUrl(fileName: string): Promise<string> {
     Key: fileName
   }
   const command = new GetObjectCommand(params)
-  const signedUrl = await getSignedUrl(s3Client, command)
+  const signedUrl = await getSignedUrl(s3Client, command, { expiresIn: 604800 })
 
   return signedUrl
 }

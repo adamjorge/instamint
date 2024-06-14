@@ -1,7 +1,7 @@
 import { z } from "zod"
 
 export const DeleteOriginalContentSchema = z.object({
-  Title: z.string(),
+  title: z.string(),
   errorFetchOc: z.string(),
   noContentTitle: z.string(),
   imageCreatedTitle: z.string(),

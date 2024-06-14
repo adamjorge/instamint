@@ -222,7 +222,7 @@
     "uploadContentButton": "Télécharger un contenu original"
   },
   "deleteOriginalContent": {
-    "Title": "Mes Contenus Originaux",
+    "title": "Mes Contenus Originaux",
     "errorFetchOc": "Une erreur s'est produite lors du chargement des contenus originaux.",
     "noContentTitle": "Vous n'avez pas encore de contenu original. Tous vos contenus originaux seront répertoriés ici.",
     "imageCreatedTitle": "Créé",
