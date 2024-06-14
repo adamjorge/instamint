@@ -8,6 +8,8 @@ This document provides an overview and description of the various endpoints avai
 
 `/api`
 
+All the endpoints is defined in route.ts files in each folder.
+
 ---
 
 ## Endpoints
@@ -23,21 +25,20 @@ This document provides an overview and description of the various endpoints avai
   - **Route**: `/change-password`
 
     - **Description**: Endpoint for changing the user's password.
-    - **File**: `route.ts`
 
   - **Route**: `/update-password`
 
     - **Description**: Endpoint for updating the user's password.
-    - **File**: `route.ts`
-
-  - **Route**: `/blockchain-data`
-
-    - **Description**: Endpoint to retrieve cryptocurrency market values.
-    - **File**: `route.ts`
 
   - **Route**: `[...nextauth]`
     - **Description**: Endpoint to handle login and logout functionalities.
-    - **File**: `route.ts`
+
+### Blockchain Data
+
+- **Base Path**: `/blockchain-data`
+
+  - **Route**: `/`
+    - **Description**: Endpoint to retrieve cryptocurrency market values.
 
 ---
 
@@ -45,9 +46,14 @@ This document provides an overview and description of the various endpoints avai
 
 - **Base Path**: `/comments`
 
+  - **Route**: `/`
+
+    - **Description**: Base route for comments (paginated).
+      \_ **Query Params**:
+      - `page`: The page number to retrieve.
+
   - **Route**: `/:id`
     - **Description**: Endpoint to manage comments by ID.
-    - **File**: `route.ts`
 
 ---
 
@@ -55,29 +61,26 @@ This document provides an overview and description of the various endpoints avai
 
 - **Base Path**: `/minters`
 
+  - **Route**: `/`
+
+    - **Description**: Base route for minters (paginated).
+      \_ **Query Params**:
+      - `page`: The page number to retrieve.
+
   - **Route**: `/:id`
 
     - **Description**: Endpoint to manage minters by ID.
-    - **File**: `route.ts`
 
   - **Route**: `/toggle-searchability`
 
-    - **Description**: Endpoint to toggle the searchability of a minter.
-    - **File**: `route.ts`
+    - **Description**: Endpoint to toggle the searchability (by email) of a minter.
 
   - **Route**: `/follow`
+
     - **Description**: Endpoint to follow a minter.
-    - **File**: `route.ts`
 
----
-
-### PFP (Profile Pictures)
-
-- **Base Path**: `/pfp`
-
-  - **Route**: `/:minterId`
-    - **Description**: Endpoint to manage profile pictures by minter ID.
-    - **File**: `route.ts`
+  - **Route**: `/pfp/:id`
+    - **Description**: Endpoint to change pfp of a minter by id.
 
 ---
 
@@ -88,21 +91,19 @@ This document provides an overview and description of the various endpoints avai
   - **Route**: `/:id`
 
     - **Description**: Endpoint to manage NFTs by ID.
-    - **File**: `route.ts`
 
   - **Route**: `/:id/:action`
 
     - **Description**: Endpoint to perform actions on NFTs by ID.
-    - **File**: `route.ts`
 
   - **Route**: `/:id/comments`
 
     - **Description**: Endpoint to manage comments on NFTs by ID.
-    - **File**: `route.ts`
 
   - **Route**: `/feed`
-    - **Description**: Endpoint to retrieve the feed of connected minters.
-    - **File**: `route.ts`
+    - **Description**: Endpoint to retrieve the feed of ntfs from minters.
+      **Query Params**:
+      - `cursor`: The cursor to retrieve the next page of results.
 
 ---
 
@@ -113,26 +114,21 @@ This document provides an overview and description of the various endpoints avai
   - **Route**: `/:minterId`
 
     - **Description**: Endpoint to manage notifications by minter ID.
-    - **File**: `route.ts`
 
   - **Route**: `/constants`
 
     - **Description**: Endpoint to manage notification constants.
-    - **File**: `route.ts`
 
   - **Route**: `/preferences/:minterId`
     - **Description**: Endpoint to manage notification preferences by minter ID.
-    - **File**: `route.ts`
 
 ---
 
 ### Reports
 
 - **Base Path**: `/reports`
-
   - **Route**: `/:type`
     - **Description**: Endpoint to generate reports by type.
-    - **File**: `route.ts`
 
 ---
 
@@ -142,7 +138,11 @@ This document provides an overview and description of the various endpoints avai
 
   - **Route**: `/:type`
     - **Description**: Endpoint to search within the platform by type.
-    - **File**: `route.ts`
+    - **Query Params**:
+      - `search`: The search query.
+      - `userId`: The user ID to search for.
+      - `min`: The minimum price of the NFT to search.
+      - `max`: The maximum price of the NFT to search.
 
 ---
 
@@ -152,7 +152,6 @@ This document provides an overview and description of the various endpoints avai
 
   - **Route**: `/`
     - **Description**: Endpoint to upload original content.
-    - **File**: `route.ts`
 
 ---
 
@@ -160,11 +159,9 @@ This document provides an overview and description of the various endpoints avai
 
 - **Base Path**: `/users`
 
-  - **Route**: `/`
+  - **Route**: `/:id`
 
-    - **Description**: Base route for user-related operations.
-    - **File**: `route.ts`
+    - **Description**: Base route for user-related operations by user ID.
 
   - **Route**: `/cron`
-    - **Description**: Endpoint to handle user deletion in compliance with GDPR.
-    - **File**: `route.ts`
+    - **Description**: Endpoint to handle user deletion in compliance with GDPR (batch triggered every 24 hours).
