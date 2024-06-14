@@ -1,29 +1,18 @@
 import { Metrics } from "@/constants/metrics"
+import { countActiveMinters } from "@/lib/query/metrics/countActiveMinters"
 import { countCommentsByNfts } from "@/lib/query/metrics/countCommentsByNfts"
-import { countMints } from "@/lib/query/metrics/countMints"
 import type { Metric } from "@/validators/types/metric"
 import type { TimePeriod } from "@/validators/types/timePeriod"
 
-export function calculateMetric(period: TimePeriod, metric: Metric) {
+export async function calculateMetric(period: TimePeriod, metric: Metric) {
   switch (metric) {
-    case Metrics.Mints:
-      return countMints(period)
-
     case Metrics.CommentsByNfts:
-      return countCommentsByNfts(period)
-
-    case Metrics.MintsPlusCommentsByNfts:
-      break
+      return await countCommentsByNfts(period)
 
     case Metrics.ActiveMinters:
-      break
+      return await countActiveMinters(period)
 
-    case Metrics.NftViewedByMinter:
-      break
-
-    case Metrics.ProfileViewedByMinter:
-      break
+    default:
+      throw new Error("Invalid metric")
   }
-
-  return 0
 }

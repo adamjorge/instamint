@@ -1,1 +1,1 @@
-export type TimePeriod = "daily" | "monthly" | "diff" | null | undefined
+export type TimePeriod = "daily" | "monthly" | "diff"

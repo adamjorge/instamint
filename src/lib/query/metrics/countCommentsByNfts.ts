@@ -62,5 +62,7 @@ export async function countCommentsByNfts(period: TimePeriod) {
     }
   })
 
+  console.log(commentsCurrentMonth, nftsCurrentMonth, commentsLastMonth, nftsLastMonth)
+
   return Math.abs(commentsCurrentMonth / nftsCurrentMonth - commentsLastMonth / nftsLastMonth)
 }
