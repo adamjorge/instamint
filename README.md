@@ -15,7 +15,27 @@ Founded by Richard Lenoir, Rackham Lerouge, and René Leblanc, who share a commo
 
 _Instamint_ is seeking a development team to build the first version of their product, referred to as the `alpha` in this document. While the main focus of this call for tenders is to provide a detailed offer for the `alpha`, we are also open to receiving offers that include the next version, referred to as `beta`.
 
-## DOCUMENTATION
+## GREEN IT
+
+Find the Green IT document in [docs/green-it/README.md](https://github.com/adammehdaoui/instamint/blob/develop/docs/docs/green-it/README.md)
+
+## GPDR POLICY
+
+Find the GDPR Policy document in [docs/policy/instamint-private-policy.md](https://github.com/adammehdaoui/instamint/blob/develop/docs/policy/instamint-private-policy.md)
+
+## GANTT CHART
+
+Find the Gantt chart in [docs/gantt-chart/instamint-gantt-chart.png](https://github.com/adammehdaoui/instamint/blob/develop/docs/docs/gantt-chart/instamint-gantt-chart.png)
+
+## PREVISIONAL PLANNING
+
+Find the previsional planning in [docs/previsional-planning/annual-forecasted-planning.md](https://github.com/adammehdaoui/instamint/blob/develop/docs/previsional-planning/annual-forecasted-planning.md)
+
+## FINAL REPORT (MIDDLE OF SPRINT 3)
+
+Find the final report in [docs/final-report/instamint-report.pdf](https://github.com/adammehdaoui/instamint/blob/develop/docs/final-report/instamint-report.pdf)
+
+## PROJECT DOCUMENTATION
 
 ### Install the project locally
 
@@ -24,7 +44,7 @@ Documentation to install the project locally is available in [docs/local-install
 ### API Documentation
 
 This document provides an overview and description of the various endpoints available in the API.
-Documentation is available in [docs/api/api-documentation.md](https://github.com/adammehdaoui/instamint/blob/develop/docs/api/api-documentation.md)
+Documentation is available in [docs/dev/api-documentation.md](https://github.com/adammehdaoui/instamint/blob/develop/docs/dev/api-documentation.md)
 
 ### Database Diagram (Physical Database Model)
 
