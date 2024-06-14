@@ -19,7 +19,7 @@ _Instamint_ is seeking a development team to build the first version of their pr
 
 ### Install the project locally
 
-Documentation to install the project locally is available in [docs/local-installation.md](https://github.com/adammehdaoui/instamint/blob/develop/docs/local-installation/local-installation.md)
+Documentation to install the project locally is available in [docs/local-installation.md](https://github.com/adammehdaoui/instamint/blob/develop/docs/dev/local-installation.md)
 
 ### API Documentation
 
@@ -29,3 +29,7 @@ Documentation is available in [docs/api/api-documentation.md](https://github.com
 ### Database Diagram (Physical Database Model)
 
 Documentation on the physical database model is available in [docs/dev/relational_database_diagram.jpg](https://github.com/adammehdaoui/instamint/blob/develop/docs/dev/relational_database_diagram.jpg)
+
+### Deployement process
+
+Documentation on the deployment process is available in [docs/dev/deployment-process.jpeg](https://github.com/adammehdaoui/instamint/blob/develop/docs/dev/deployment-process.jpeg)
