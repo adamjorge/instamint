@@ -30,6 +30,6 @@ Documentation is available in [docs/api/api-documentation.md](https://github.com
 
 Documentation on the physical database model is available in [docs/dev/relational_database_diagram.jpg](https://github.com/adammehdaoui/instamint/blob/develop/docs/dev/relational_database_diagram.jpg)
 
-### Deployement process
+### Deployment process
 
 Documentation on the deployment process is available in [docs/dev/deployment-process.jpeg](https://github.com/adammehdaoui/instamint/blob/develop/docs/dev/deployment-process.jpeg)
