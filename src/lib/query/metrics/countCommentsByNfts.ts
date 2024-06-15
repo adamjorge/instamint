@@ -23,7 +23,9 @@ export async function countCommentsByNfts(period: TimePeriod) {
       }
     })
 
-    return comments / nfts
+    const metric = comments / nfts
+
+    return !metric ? 0 : metric
   }
 
   const lastMonth = new Date()
@@ -62,7 +64,9 @@ export async function countCommentsByNfts(period: TimePeriod) {
     }
   })
 
-  console.log(commentsCurrentMonth, nftsCurrentMonth, commentsLastMonth, nftsLastMonth)
+  const metric = Math.abs(
+    commentsCurrentMonth / nftsCurrentMonth - commentsLastMonth / nftsLastMonth
+  )
 
-  return Math.abs(commentsCurrentMonth / nftsCurrentMonth - commentsLastMonth / nftsLastMonth)
+  return !metric ? 0 : metric
 }
