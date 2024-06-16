@@ -9,10 +9,6 @@ import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
-type OriginalContentsProps = {
-  minterId: number
-}
-
 export default function OriginalContents({ minterId }: OriginalContentsProps) {
   const t = useTranslations("deleteOriginalContent")
   const [contents, setContents] = useState<OriginalContentSchemaType[]>([])
@@ -61,4 +57,8 @@ export default function OriginalContents({ minterId }: OriginalContentsProps) {
       {renderContent()}
     </div>
   )
+}
+
+type OriginalContentsProps = {
+  minterId: number
 }

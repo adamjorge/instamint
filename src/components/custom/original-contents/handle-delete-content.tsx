@@ -6,11 +6,6 @@ import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"
 
-type DeleteButtonProps = {
-  contentId: number
-  onDelete: (contentId: number) => void
-}
-
 export default function DeleteOriginalContentButton({ contentId, onDelete }: DeleteButtonProps) {
   const t = useTranslations("deleteOriginalContent")
   const [isDeleting, setIsDeleting] = useState(false)
@@ -37,4 +32,9 @@ export default function DeleteOriginalContentButton({ contentId, onDelete }: Del
       {isDeleting ? t("inProcessdeleteButtonText") : t("deleteButtonText")}
     </Button>
   )
+}
+
+type DeleteButtonProps = {
+  contentId: number
+  onDelete: (contentId: number) => void
 }
