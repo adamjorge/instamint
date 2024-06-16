@@ -4,7 +4,7 @@ import { StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   const { id } = params
-  const minter = await getMinterById(Number(id))
+  const minter = await getMinterById(parseInt(id, 10))
 
   return Response.json(minter)
 }

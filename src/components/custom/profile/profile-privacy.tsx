@@ -15,7 +15,7 @@ export default function ProfilePrivacy({ userId }: { userId: string }) {
   const { isPending } = useQuery({
     queryKey: ["searchability", userId],
     queryFn: async () => {
-      const { data } = await fetchMinter(Number(userId))
+      const { data } = await fetchMinter(parseInt(userId, 10))
       setIsChecked(data.isSearchableByEmail)
 
       return data
@@ -23,7 +23,7 @@ export default function ProfilePrivacy({ userId }: { userId: string }) {
   })
   const t = useTranslations()
   const mutation = useMutation({
-    mutationFn: () => fetchToggleSearchability(Number(userId)),
+    mutationFn: () => fetchToggleSearchability(parseInt(userId, 10)),
     onError: () => {
       toast.error(t("global.error"))
     }

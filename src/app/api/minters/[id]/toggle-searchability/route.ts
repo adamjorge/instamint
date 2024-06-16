@@ -9,7 +9,7 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
   }
 
   try {
-    const { isSearchableByEmail } = await toggleSearchability(Number(id))
+    const { isSearchableByEmail } = await toggleSearchability(parseInt(id, 10))
 
     return Response.json(isSearchableByEmail)
   } catch (error) {
