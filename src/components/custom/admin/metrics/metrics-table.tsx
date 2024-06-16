@@ -1,7 +1,3 @@
-"use client"
-
-import Spinner from "@/components/custom/spinner"
-import ErrorMessage from "@/components/ui/custom/error-message"
 import {
   Table,
   TableBody,
@@ -11,26 +7,12 @@ import {
   TableHeader,
   TableRow
 } from "@/components/ui/table"
-import { fetchMetrics } from "@/lib/query/metrics/fetchMetrics"
-import { useQuery } from "@tanstack/react-query"
 
-export default function MetricsTable() {
-  const { data, error, isPending } = useQuery({
-    queryKey: ["metrics"],
-    queryFn: fetchMetrics,
-    retry: 0
-  })
-
-  if (isPending) {
-    return <Spinner />
-  }
-
-  if (error) {
-    return <ErrorMessage message={error.message} />
-  }
+export default function MetricsTable(props: MetricsTableProps) {
+  const { daily, monthly, diff } = props
 
   return (
-    <Table className="self-center">
+    <Table>
       <TableCaption>Main metrics from Instamint</TableCaption>
       <TableHeader>
         <TableRow>
@@ -43,17 +25,23 @@ export default function MetricsTable() {
       <TableBody>
         <TableRow>
           <TableCell className="font-semibold">Active minters</TableCell>
-          <TableCell>{data.daily[0]}</TableCell>
-          <TableCell>{data.monthly[0]}</TableCell>
-          <TableCell>{data.diff[0]}</TableCell>
+          <TableCell>{daily[0]}</TableCell>
+          <TableCell>{monthly[0]}</TableCell>
+          <TableCell>{diff[0]}</TableCell>
         </TableRow>
         <TableRow>
           <TableCell className="font-semibold">Comments by NFTs</TableCell>
-          <TableCell>{data.daily[1]}</TableCell>
-          <TableCell>{data.monthly[0]}</TableCell>
-          <TableCell>{data.diff[0]}</TableCell>
+          <TableCell>{daily[1]}</TableCell>
+          <TableCell>{monthly[1]}</TableCell>
+          <TableCell>{diff[1]}</TableCell>
         </TableRow>
       </TableBody>
     </Table>
   )
+}
+
+type MetricsTableProps = {
+  daily: number[]
+  monthly: number[]
+  diff: number[]
 }
