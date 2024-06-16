@@ -1,4 +1,5 @@
 export const Metrics = {
+  Comments: "comments",
   CommentsByNfts: "commentsByNfts",
   ActiveMinters: "activeMinters"
 } as const

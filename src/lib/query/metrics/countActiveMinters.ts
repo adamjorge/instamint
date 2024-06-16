@@ -1,8 +1,7 @@
 import prisma from "@/lib/db"
 import { dateQuery } from "@/lib/utils/metrics/dateQuery"
+import { months } from "@/lib/utils/metrics/months"
 import type { TimePeriod } from "@/validators/types/timePeriod"
-
-/* eslint-disable */
 
 export async function countActiveMinters(period: TimePeriod) {
   const date = dateQuery(period)
@@ -34,21 +33,28 @@ export async function countActiveMinters(period: TimePeriod) {
     })
   }
 
-  const lastMonth = new Date()
-  lastMonth.setMonth(lastMonth.getMonth() - 1)
-  const currentMonth = new Date()
+  const { lastMonth, currentMonth } = months()
 
-  currentMonth.setDate(1)
+  return await calculateDiff(currentMonth, lastMonth)
+}
 
-  const mintersLastMonth = await prisma.minter.count({
+async function calculateDiff(currentMonth: Date, lastMonth: Date) {
+  const mintersLastMonth = await calculateForLastMonth(lastMonth)
+  const mintersCurrentMonth = await calculateForCurrentMonth(currentMonth)
+  const metric = Math.abs(mintersCurrentMonth - mintersLastMonth)
+
+  return metric
+}
+
+async function calculateForLastMonth(lastMonth: Date) {
+  return await prisma.minter.count({
     where: {
       OR: [
         {
           originalContents: {
             some: {
               createdAt: {
-                gte: lastMonth,
-                lt: currentMonth
+                gte: lastMonth
               }
             }
           }
@@ -57,8 +63,7 @@ export async function countActiveMinters(period: TimePeriod) {
           comments: {
             some: {
               createdAt: {
-                gte: lastMonth,
-                lt: currentMonth
+                gte: lastMonth
               }
             }
           }
@@ -66,7 +71,10 @@ export async function countActiveMinters(period: TimePeriod) {
       ]
     }
   })
-  const mintersCurrentMonth = await prisma.minter.count({
+}
+
+async function calculateForCurrentMonth(currentMonth: Date) {
+  return await prisma.minter.count({
     where: {
       OR: [
         {
@@ -90,6 +98,4 @@ export async function countActiveMinters(period: TimePeriod) {
       ]
     }
   })
-
-  return Math.abs(mintersCurrentMonth - mintersLastMonth)
 }

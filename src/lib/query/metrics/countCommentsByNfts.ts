@@ -1,8 +1,7 @@
 import prisma from "@/lib/db"
 import { dateQuery } from "@/lib/utils/metrics/dateQuery"
+import { months } from "@/lib/utils/metrics/months"
 import type { TimePeriod } from "@/validators/types/timePeriod"
-
-/* eslint-disable */
 
 export async function countCommentsByNfts(period: TimePeriod) {
   const date = dateQuery(period)
@@ -23,16 +22,19 @@ export async function countCommentsByNfts(period: TimePeriod) {
       }
     })
 
-    if (nfts === 0) return 0
+    if (nfts === 0) {
+      return 0
+    }
 
     return comments / nfts
   }
 
-  const lastMonth = new Date()
-  lastMonth.setMonth(lastMonth.getMonth() - 1)
-  const currentMonth = new Date()
-  currentMonth.setDate(1)
+  const { lastMonth, currentMonth } = months()
 
+  return await calculateDiff(currentMonth, lastMonth)
+}
+
+async function calculateDiff(currentMonth: Date, lastMonth: Date) {
   const commentsLastMonth = await prisma.comment.count({
     where: {
       createdAt: {
@@ -63,10 +65,8 @@ export async function countCommentsByNfts(period: TimePeriod) {
       }
     }
   })
-
   const currentMonthMetrics = nftsCurrentMonth === 0 ? 0 : commentsCurrentMonth / nftsCurrentMonth
   const lastMonthMetrics = nftsLastMonth === 0 ? 0 : commentsLastMonth / nftsLastMonth
-
   const metric = Math.abs(currentMonthMetrics - lastMonthMetrics)
 
   return metric

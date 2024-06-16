@@ -7,6 +7,7 @@ import {
   TableHeader,
   TableRow
 } from "@/components/ui/table"
+import { metricsArray } from "@/constants/metrics"
 
 export default function MetricsTable(props: MetricsTableProps) {
   const { daily, monthly, diff } = props
@@ -23,18 +24,14 @@ export default function MetricsTable(props: MetricsTableProps) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow>
-          <TableCell className="font-semibold">Active minters</TableCell>
-          <TableCell>{daily[0]}</TableCell>
-          <TableCell>{monthly[0]}</TableCell>
-          <TableCell>{diff[0]}</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell className="font-semibold">Comments by NFTs</TableCell>
-          <TableCell>{daily[1]}</TableCell>
-          <TableCell>{monthly[1]}</TableCell>
-          <TableCell>{diff[1]}</TableCell>
-        </TableRow>
+        {metricsArray.map((metric, index) => (
+          <TableRow key={`${index.toString()}-${metric}`}>
+            <TableCell className="font-semibold">{metric}</TableCell>
+            <TableCell>{daily[index]}</TableCell>
+            <TableCell>{monthly[index]}</TableCell>
+            <TableCell>{diff[index]}</TableCell>
+          </TableRow>
+        ))}
       </TableBody>
     </Table>
   )
