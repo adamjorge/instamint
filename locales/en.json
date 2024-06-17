@@ -227,6 +227,16 @@
     "secondParagraph": "Instamint reserves the right to remove any content that violates our Terms of Service or infringes on the rights of others. Please ensure your files meet our content guidelines before uploading.",
     "contactInfo": "If you have any questions about how your files content will be used, please review our Privacy Policy or contact us at"
   },
+  "deleteOriginalContent": {
+    "title": "My Original Contents",
+    "errorFetchOc": "Something went wrong while fetching original contents.",
+    "noContentTitle": "You don't have any original content yet. All your original contents will be listed here.",
+    "imageCreatedTitle": "Created",
+    "successDeleteMessage": "Original content deleted successfully.",
+    "failedDeleteMessage": "Failed to delete original content.",
+    "deleteButtonText": "Delete",
+    "inProcessdeleteButtonText": "Deleting..."
+  },
   "like": {
     "likeError": "An error occurred while liking the NFT.",
     "dislikeError": "An error occurred while disliking the NFT."
