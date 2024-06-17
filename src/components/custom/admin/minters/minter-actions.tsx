@@ -4,36 +4,13 @@ import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown/drop
 import { DropdownMenuContent } from "@/components/ui/dropdown/dropdown-menu-content"
 import { DropdownMenuItem } from "@/components/ui/dropdown/dropdown-menu-item"
 import { DropdownMenuLabel } from "@/components/ui/dropdown/dropdown-menu-label"
-import fetchDeleteMinter from "@/lib/query/minters/fetchDeleteMinter"
-import fetchDisableMinter from "@/lib/query/minters/fetchDisableMinter"
+import useMinterActions from "@/hooks/useMinterActions"
 import { MinterWithCount } from "@/lib/query/minters/fetchMinters"
-import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { Row } from "@tanstack/react-table"
 import { MoreHorizontal } from "lucide-react"
-import { toast } from "sonner"
 
 export function MinterActions({ row }: { row: Row<MinterWithCount> }) {
-  const queryClient = useQueryClient()
-  const deleteMutation = useMutation({
-    mutationFn: (minterId: string) => fetchDeleteMinter(minterId),
-    onSuccess: async () => {
-      await queryClient.invalidateQueries({ queryKey: ["minters"] })
-      toast.success("Minter deleted successfully")
-    },
-    onError: () => {
-      toast.error("Error deleting minter")
-    }
-  })
-  const disableMutation = useMutation({
-    mutationFn: (minterId: string) => fetchDisableMinter(minterId),
-    onSuccess: async () => {
-      await queryClient.invalidateQueries({ queryKey: ["minters"] })
-      toast.success("Minter disabled successfully")
-    },
-    onError: () => {
-      toast.error("Error disabling minter")
-    }
-  })
+  const { disableMutation, deleteMutation } = useMinterActions()
 
   return (
     <DropdownMenu>
