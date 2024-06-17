@@ -1,3 +1,4 @@
+import { createPresignedUrl } from "@/lib/aws/upload-original-content/createPresignedUrl"
 import s3Client from "@/lib/s3"
 import { PutObjectCommand } from "@aws-sdk/client-s3"
 
@@ -15,10 +16,12 @@ export async function uploadFileToS3(file: Buffer, fileName: string): Promise<st
     Body: file,
     ContentType: getFileContentType(fileName)
   }
-  const command = new PutObjectCommand(params)
-  await s3Client.send(command)
 
-  return `https://${bucketName}.s3.${region}.amazonaws.com/${fileName}`
+  await s3Client.send(new PutObjectCommand(params))
+
+  const signedUrl = await createPresignedUrl(fileName)
+
+  return signedUrl
 }
 
 function getFileContentType(fileName: string): string {

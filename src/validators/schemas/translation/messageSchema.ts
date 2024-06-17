@@ -2,6 +2,7 @@ import { ChangePasswordSchema } from "@/validators/schemas/translation/fragments
 import { GlobalSchema } from "@/validators/schemas/translation/fragments/globalSchema"
 import { LoginSchema } from "@/validators/schemas/translation/fragments/loginSchema"
 import { notificationSchema } from "@/validators/schemas/translation/fragments/notificationSchema"
+import { DeleteOriginalContentSchema } from "@/validators/schemas/translation/fragments/original-contents/deleteOriginalContentSchema"
 import { ProfileChangesSchema } from "@/validators/schemas/translation/fragments/profileChangesSchema"
 import { ProfilePrivacyPolicySchema } from "@/validators/schemas/translation/fragments/profilePrivacyPolicySchema"
 import { ResetPasswordSchema } from "@/validators/schemas/translation/fragments/resetPasswordSchema"
@@ -49,6 +50,7 @@ export const MessageSchema = z.object({
     secondParagraph: z.string(),
     contactInfo: z.string()
   }),
+  deleteOriginalContent: DeleteOriginalContentSchema,
   like: z.object({
     likeError: z.string(),
     dislikeError: z.string()
