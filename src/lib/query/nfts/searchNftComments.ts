@@ -45,7 +45,7 @@ export default async function searchNftComments(nftId: string) {
         }
       }
     },
-    where: { nftId: Number(nftId), parentId: null },
+    where: { nftId: parseInt(nftId, 10), parentId: null },
     orderBy: { createdAt: "desc" }
   })
 

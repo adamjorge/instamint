@@ -29,11 +29,16 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
 
 export async function POST(req: Request, { params }: { params: { id: string } }) {
   const { id } = params
-  const session = await auth()
-  const authorId = Number(session?.user.id)
 
   if (!id) {
     return Response.json({ message: "Invalid/missing NFT ID" }, { status: StatusCodes.BAD_REQUEST })
+  }
+
+  const session = await auth()
+  const authorId = session?.user.id
+
+  if (!authorId) {
+    return Response.json({ message: "Unauthorized" }, { status: StatusCodes.UNAUTHORIZED })
   }
 
   try {
@@ -45,7 +50,7 @@ export async function POST(req: Request, { params }: { params: { id: string } })
     }
 
     data.content = moderation.clean(data.content)
-    const comment = await createNftComment(authorId, data)
+    const comment = await createNftComment(parseInt(authorId, 10), data)
 
     return Response.json(comment)
   } catch (error) {
