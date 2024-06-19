@@ -1,32 +1,30 @@
 import { defaultLocale, locales } from "@/config/i18n/locales"
 import { auth } from "@/lib/auth"
 import createMiddleware from "next-intl/middleware"
-import { NextRequest, NextResponse } from "next/server"
+import { NextResponse } from "next/server"
 
-export default async function middleware(request: NextRequest) {
-  const session = await auth()
-
-  if (!request.nextUrl.pathname.startsWith("/admin")) {
+export default auth((req) => {
+  if (!req.nextUrl.pathname.startsWith("/admin")) {
     const handleI18nRouting = createMiddleware({
       locales,
       defaultLocale
     })
-    const res = handleI18nRouting(request)
-    const languageFromCookies = request.cookies.get("NEXT_LOCALE")?.value || defaultLocale
+    const res = handleI18nRouting(req)
+    const languageFromCookies = req.cookies.get("NEXT_LOCALE")?.value || defaultLocale
 
-    if (!session?.user && !isRedirecting(request.url)) {
-      return NextResponse.redirect(new URL(`/${languageFromCookies}/login`, request.url))
+    if (!req.auth?.user && !isRedirecting(req.url)) {
+      return NextResponse.redirect(new URL(`/${languageFromCookies}/login`, req.url))
     }
 
     return res
   }
 
-  if (!session?.user.isAdmin) {
-    return NextResponse.redirect(new URL("/", request.url))
+  if (!req.auth?.user.isAdmin) {
+    return NextResponse.redirect(new URL("/", req.url))
   }
 
-  return null
-}
+  return NextResponse.next()
+})
 
 export const config = {
   matcher: ["/", "/(en|es|fr|ja|pt|zh)/:path*", "/login", "/admin/:path*"]
