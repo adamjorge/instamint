@@ -1,3 +1,5 @@
+"use client"
+
 import { Menubar, MenubarMenu } from "@/components/ui/menubar/menubar"
 import { MenubarContent } from "@/components/ui/menubar/menubar-content"
 import { MenubarItem } from "@/components/ui/menubar/menubar-item"
