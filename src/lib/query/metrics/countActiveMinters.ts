@@ -7,35 +7,39 @@ export async function countActiveMinters(period: TimePeriod) {
   const date = dateQuery(period)
 
   if (period !== "diff") {
-    return await prisma.minter.count({
-      where: {
-        OR: [
-          {
-            originalContents: {
-              some: {
-                createdAt: {
-                  gte: date
-                }
-              }
-            }
-          },
-          {
-            comments: {
-              some: {
-                createdAt: {
-                  gte: date
-                }
-              }
-            }
-          }
-        ]
-      }
-    })
+    return await calculateSince(date)
   }
 
   const { lastMonth, currentMonth } = months()
 
   return await calculateDiff(currentMonth, lastMonth)
+}
+
+async function calculateSince(date: Date) {
+  return await prisma.minter.count({
+    where: {
+      OR: [
+        {
+          originalContents: {
+            some: {
+              createdAt: {
+                gte: date
+              }
+            }
+          }
+        },
+        {
+          comments: {
+            some: {
+              createdAt: {
+                gte: date
+              }
+            }
+          }
+        }
+      ]
+    }
+  })
 }
 
 async function calculateDiff(currentMonth: Date, lastMonth: Date) {
