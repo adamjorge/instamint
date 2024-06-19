@@ -21,7 +21,8 @@
     "successChangePassword": "Senha alterada com sucesso",
     "successFileUpload": "Arquivo enviado com sucesso",
     "failedFileUpload": "Falha ao enviar o arquivo",
-    "errorFileUpload": "Ocorreu um erro durante o envio do arquivo"
+    "errorFileUpload": "Ocorreu um erro durante o envio do arquivo",
+    "userNotActivated": "O utilizador não foi ativado. Para mais informações, contactar o administrador em instamint.deva@gmail.com."
   },
   "search": {
     "cancel": "Cancelar",

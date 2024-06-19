@@ -23,7 +23,7 @@ export default function SignInWrapper() {
     // Don't remove the setTimeout, it's a way to display toast on page load after the first render https://sonner.emilkowal.ski/toast#render-toast-on-page-load
     setTimeout(() => {
       if (code === USER_NOT_ACTIVATED) {
-        toast.error("User is not activated")
+        toast.error(t("userNotActivated"))
 
         return
       }

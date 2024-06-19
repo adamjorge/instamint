@@ -21,7 +21,8 @@
     "successChangePassword": "Password changed successfully",
     "successFileUpload": "File uploaded successfully",
     "failedFileUpload": "File upload failed",
-    "errorFileUpload": "An error occurred during file upload"
+    "errorFileUpload": "An error occurred during file upload",
+    "userNotActivated": "User not activated. Contact the administrators for more information's at instamint.deva@gmail.com."
   },
   "search": {
     "cancel": "Cancel",
