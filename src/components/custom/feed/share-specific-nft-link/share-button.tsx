@@ -1,19 +1,20 @@
-import { useLocale } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { LuSend } from "react-icons/lu"
 import { RWebShare } from "react-web-share"
 import { toast } from "sonner"
 
 export default function ShareButton({ title, text, url, iconSize = 24 }: ShareButtonProps) {
+  const t = useTranslations("shareNftLink")
   const locale = useLocale()
   const origin = typeof window !== "undefined" ? window.location.origin : ""
   const localizedUrl = locale ? `${origin}/${locale}${url}` : `${origin}${url}`
   const handleShareClick = () => {
     navigator.clipboard.writeText(localizedUrl).then(
       () => {
-        toast.success("URL copied to clipboard!")
+        toast.success(t("successUrlLink"))
       },
       () => {
-        toast.error("Failed to copy URL.")
+        toast.success(t("errorCopyMessage"))
       }
     )
   }
