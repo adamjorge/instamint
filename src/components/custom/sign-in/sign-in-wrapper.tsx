@@ -1,7 +1,7 @@
 "use client"
 
 import SignInForm from "@/components/custom/sign-in/sign-in-form"
-import { USER_NOT_ACTIVATED } from "@/constants/userNotActivated"
+import { SIGN_IN_ERRORS } from "@/constants/signInErrors"
 import { connectionSchema } from "@/validators/schemas/connectionSchema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { signIn } from "next-auth/react"
@@ -22,13 +22,13 @@ export default function SignInWrapper() {
   useEffect(() => {
     // Don't remove the setTimeout, it's a way to display toast on page load after the first render https://sonner.emilkowal.ski/toast#render-toast-on-page-load
     setTimeout(() => {
-      if (code === USER_NOT_ACTIVATED) {
+      if (code === SIGN_IN_ERRORS.USER_NOT_ACTIVATED) {
         toast.error(t("userNotActivated"))
 
         return
       }
 
-      if (error) {
+      if (code === SIGN_IN_ERRORS.INVALID_CREDENTIALS) {
         toast.error(t("invalidCredentials"))
 
         return

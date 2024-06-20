@@ -1,4 +1,4 @@
-import { USER_NOT_ACTIVATED } from "@/constants/userNotActivated"
+import { SIGN_IN_ERRORS } from "@/constants/signInErrors"
 import prisma from "@/lib/db"
 import Credentials from "@auth/core/providers/credentials"
 import { PrismaAdapter } from "@auth/prisma-adapter"
@@ -32,7 +32,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         if (!user.isActivated) {
           const error = new CredentialsSignin("User is not activated")
-          error.code = USER_NOT_ACTIVATED
+          error.code = SIGN_IN_ERRORS.USER_NOT_ACTIVATED
 
           throw error
         }

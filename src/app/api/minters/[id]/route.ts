@@ -3,7 +3,7 @@ import getMinterById from "@/lib/query/minters/getMinterById"
 import isAdmin from "@/lib/utils/auth/isAdmin"
 import isAuthenticated from "@/lib/utils/auth/isAuthenticated"
 import isCurrentUser from "@/lib/utils/auth/isCurrentUser"
-import { StatusCodes } from "http-status-codes"
+import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   const { id } = params
@@ -16,13 +16,16 @@ export async function DELETE(req: Request, { params }: { params: { id: string } 
   const session = await isAuthenticated()
 
   if (!session) {
-    return new Response(null, { status: StatusCodes.UNAUTHORIZED })
+    return Response.json(
+      { message: ReasonPhrases.UNAUTHORIZED },
+      { status: StatusCodes.UNAUTHORIZED }
+    )
   }
 
   const { id } = params
 
   if (!isCurrentUser(id, session) && !isAdmin(session)) {
-    return new Response(null, { status: StatusCodes.FORBIDDEN })
+    return Response.json({ message: ReasonPhrases.FORBIDDEN }, { status: StatusCodes.FORBIDDEN })
   }
 
   await deleteMinter(id)
