@@ -10,20 +10,14 @@ export default function LinkButton({
   withLocale,
   ...props
 }: LinkButtonProps) {
-  const button = (
-    <Button className={className} {...props}>
-      {children}
-    </Button>
-  )
+  const LinkComponent = withLocale ? LocaleLink : DefaultLink
 
-  return withLocale ? (
-    <LocaleLink href={href} passHref>
-      {button}
-    </LocaleLink>
-  ) : (
-    <DefaultLink href={href} passHref>
-      {button}
-    </DefaultLink>
+  return (
+    <LinkComponent href={href} passHref>
+      <Button className={className} {...props}>
+        {children}
+      </Button>
+    </LinkComponent>
   )
 }
 
