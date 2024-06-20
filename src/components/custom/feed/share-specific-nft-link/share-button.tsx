@@ -1,4 +1,5 @@
 import { useLocale, useTranslations } from "next-intl"
+import { useCallback } from "react"
 import { LuSend } from "react-icons/lu"
 import { RWebShare } from "react-web-share"
 import { toast } from "sonner"
@@ -8,16 +9,16 @@ export default function ShareButton({ title, text, url, iconSize = 24 }: ShareBu
   const locale = useLocale()
   const origin = typeof window !== "undefined" ? window.location.origin : ""
   const localizedUrl = locale ? `${origin}/${locale}${url}` : `${origin}${url}`
-  const handleShareClick = () => {
+  const handleShareClick = useCallback(() => {
     navigator.clipboard.writeText(localizedUrl).then(
       () => {
         toast.success(t("successUrlLink"))
       },
       () => {
-        toast.success(t("errorCopyMessage"))
+        toast.error(t("errorCopyMessage"))
       }
     )
-  }
+  }, [localizedUrl, t])
 
   return (
     <div onClick={handleShareClick}>

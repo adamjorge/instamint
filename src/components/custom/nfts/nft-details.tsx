@@ -1,4 +1,5 @@
 import CommentSection from "@/components/custom/comment-section/comment-section"
+import ShareButton from "@/components/custom/feed/share-specific-nft-link/share-button"
 import AddCommentSection from "@/components/custom/nfts/add-comment-section"
 import { Badge } from "@/components/ui/badge"
 import { Link } from "@/config/i18n/locales"
@@ -27,6 +28,11 @@ export default function NftDetails({ nft }: NftDetailsProps) {
             </Badge>
           </Link>
         ))}
+        <ShareButton
+          title={nft.originalContent.minter.username}
+          text={nft.description}
+          url={`/nfts/${nft.id.toString()}`}
+        />
       </div>
       <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
         <CommentSection nftId={nft.id} />
