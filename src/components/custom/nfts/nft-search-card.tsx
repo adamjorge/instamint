@@ -1,3 +1,4 @@
+import ShareButton from "@/components/custom/feed/share-specific-nft-link/share-button"
 import LikeHeart from "@/components/custom/like/like-heart"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
@@ -31,6 +32,11 @@ export default function NftSearchCard(props: NftSearchCardProps) {
               Price: <span className="font-bold text-lg">${nft.price.toString()}</span>
             </p>
           </div>
+          <ShareButton
+            title={nft.originalContent.minter.username}
+            text={nft.description}
+            url={`/nfts/${nft.id.toString()}`}
+          />
           <LikeHeart isLiked={isLiked} iconSize={25} minterId={currentMinterId} nft={nft} />
         </div>
       </CardContent>

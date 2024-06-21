@@ -7,6 +7,7 @@ import { ProfileChangesSchema } from "@/validators/schemas/translation/fragments
 import { ProfilePrivacyPolicySchema } from "@/validators/schemas/translation/fragments/profilePrivacyPolicySchema"
 import { ResetPasswordSchema } from "@/validators/schemas/translation/fragments/resetPasswordSchema"
 import { SearchSchema } from "@/validators/schemas/translation/fragments/searchSchema"
+import { ShareSpecificNftLinkSchema } from "@/validators/schemas/translation/fragments/shareSpecificNftLinkSchema"
 import { SignUpSchema } from "@/validators/schemas/translation/fragments/signUpSchema"
 import { UpdatePasswordSchema } from "@/validators/schemas/translation/fragments/updatePasswordSchema"
 import { z } from "zod"
@@ -60,5 +61,6 @@ export const MessageSchema = z.object({
     notification: z.string(),
     changeSuccess: z.string(),
     changeError: z.string()
-  })
+  }),
+  shareNftLink: ShareSpecificNftLinkSchema
 })

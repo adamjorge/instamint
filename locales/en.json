@@ -254,5 +254,9 @@
     "notification": "Notification",
     "changeSuccess": "Notification preferences updated successfully",
     "changeError": "An error occurred while updating your notification preferences"
+  },
+  "shareNftLink": {
+    "successUrlLink": "URL copied to clipboard!",
+    "errorCopyMessage": "Failed to copy URL."
   }
 }

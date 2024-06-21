@@ -254,5 +254,9 @@
     "notification": "Notification",
     "changeSuccess": "Préférences de notification mises à jour avec succès",
     "changeError": "Une erreur s'est produite lors de la mise à jour de vos préférences de notification"
+  },
+  "shareNftLink": {
+    "successUrlLink": "URL copiée dans le presse-papiers !",
+    "errorCopyMessage": "Échec de la copie de l'URL."
   }
 }

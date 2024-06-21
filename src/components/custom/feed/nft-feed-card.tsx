@@ -1,3 +1,4 @@
+import ShareButton from "@/components/custom/feed/share-specific-nft-link/share-button"
 import LikeHeart from "@/components/custom/like/like-heart"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import LinkButton from "@/components/ui/custom/link-button"
@@ -6,7 +7,6 @@ import { useTranslations } from "next-intl"
 import Image from "next/image"
 import { useCallback } from "react"
 import { FaRegComment } from "react-icons/fa6"
-import { LuSend } from "react-icons/lu"
 import { toast } from "sonner"
 
 export default function NftFeedCard(props: NftFeedCardProps) {
@@ -31,7 +31,11 @@ export default function NftFeedCard(props: NftFeedCardProps) {
           <div className="flex space-x-3">
             <LikeHeart isLiked={isLiked()} iconSize={iconSize} nft={nft} minterId={minterId} />
             <FaRegComment size={iconSize} onClick={handleClickOnWIP} aria-label="comment" />
-            <LuSend size={iconSize} onClick={handleClickOnWIP} aria-label="share" />
+            <ShareButton
+              title={nft.originalContent.minter.username}
+              text={nft.description}
+              url={`/nfts/${nft.id.toString()}`}
+            />
           </div>
           <h3 className="text-sm text-medium mt-1">{nft.createdAt.slice(0, 10)}</h3>
           <LinkButton href={`/nfts/${nft.id.toString()}`} className="-mt-2" withLocale>
