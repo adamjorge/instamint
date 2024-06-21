@@ -254,5 +254,9 @@
     "notification": "通知",
     "changeSuccess": "通知偏好设置更新成功",
     "changeError": "更新通知偏好设置时发生错误"
+  },
+  "shareNftLink": {
+    "successUrlLink": "已复制网址到剪贴板！",
+    "errorCopyMessage": "复制网址失败。"
   }
 }
