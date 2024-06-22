@@ -1,5 +1,5 @@
-import { countComments } from "@/lib/query/comments/countComments"
-import { getComments } from "@/lib/query/comments/getComments"
+import { countComments } from "@/lib/query/server/comments/countComments"
+import { getComments } from "@/lib/query/server/comments/getComments"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request) {

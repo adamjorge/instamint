@@ -1,5 +1,9 @@
-import { changePassword, changePasswordQuery, isLegit } from "@/lib/query/users/changePassword"
-import { findChangePasswordQuery } from "@/lib/query/users/findChangePasswordQuery"
+import {
+  changePassword,
+  changePasswordQuery,
+  isLegit
+} from "@/lib/query/server/users/changePassword"
+import { findChangePasswordQuery } from "@/lib/query/server/users/findChangePasswordQuery"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request) {

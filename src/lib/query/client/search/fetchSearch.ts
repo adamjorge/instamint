@@ -1,12 +1,12 @@
-import { searchMinters } from "@/lib/query/minters/search"
-import { searchNfts } from "@/lib/query/nfts/search"
-import SearchUrlBuilder from "@/lib/query/search/search-url-builder"
-import { searchTeaBags } from "@/lib/query/teabags/search"
+import { searchMinters } from "@/lib/query/server/minters/search"
+import { searchNfts } from "@/lib/query/server/nfts/search"
+import { searchTeaBags } from "@/lib/query/server/teabags/search"
+import SearchUrlBuilder from "@/lib/utils/searchUrlBuilder"
 import { MinterSearchMintersSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
 import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
 import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
-import { SearchType } from "@/validators/types/searchType"
+import type { SearchOptions, SearchParameters } from "@/validators/types/search"
 import axios from "axios"
 
 export async function fetchSearch(searchParameters: SearchParameters) {
@@ -66,15 +66,4 @@ export async function searchByType(options: SearchOptions) {
     default:
       throw new Error("Invalid type")
   }
-}
-
-type SearchParameters = {
-  searchTerm: string
-  minPrice: string
-  maxPrice: string
-  currentUserId: string | undefined
-}
-
-type SearchOptions = SearchParameters & {
-  type: SearchType
 }

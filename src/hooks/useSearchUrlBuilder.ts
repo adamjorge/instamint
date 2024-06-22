@@ -1,4 +1,4 @@
-import SearchUrlBuilder from "@/lib/query/search/search-url-builder"
+import SearchUrlBuilder from "@/lib/utils/searchUrlBuilder"
 import { useCallback, useState } from "react"
 
 export default function useSearchUrlBuilder(baseUrl: string) {

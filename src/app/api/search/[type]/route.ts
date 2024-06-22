@@ -1,4 +1,4 @@
-import { searchByType } from "@/lib/query/search/search"
+import { searchByType } from "@/lib/query/server/search/searchByType"
 import { checkSearchParams } from "@/lib/utils/checkSearchParams"
 import { SearchType } from "@/validators/types/searchType"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"

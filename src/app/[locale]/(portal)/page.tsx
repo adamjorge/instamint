@@ -1,6 +1,6 @@
 import Feed from "@/components/custom/feed/feed"
 import { auth } from "@/lib/auth"
-import { getMinterByUserId } from "@/lib/query/minters/getMinterByUserId"
+import { getMinterByUserId } from "@/lib/query/server/minters/getMinterByUserId"
 import { redirect } from "next/navigation"
 
 export default async function HomePage() {

@@ -1,7 +1,7 @@
 import { MAX_FILE_SIZE } from "@/constants/maxFileSize"
 import { uploadFileToS3 } from "@/lib/aws/upload-original-content/uploadFileToS3"
 import prisma from "@/lib/db"
-import { saveOriginalContent } from "@/lib/query/minters/original-contents/upload-original-content/saveContent"
+import { saveOriginalContent } from "@/lib/query/server/minters/saveContent"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function POST(req: Request) {

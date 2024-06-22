@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { getAvatarUrl } from "@/lib/query/minters/getAvatarUrl"
+import { getAvatarUrl } from "@/lib/query/client/minters/getAvatarUrl"
 import { useQuery } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
 

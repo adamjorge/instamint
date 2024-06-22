@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { signOutAction } from "@/lib/query/users/signOut"
+import { signOutAction } from "@/lib/utils/signOut"
 import { useTranslations } from "next-intl"
 
 export default function DeconnectionButton() {

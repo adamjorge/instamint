@@ -3,7 +3,7 @@
 import DeconnectionButton from "@/components/custom/deconnection-button"
 import LanguageSelector from "@/components/custom/language-selector"
 import { blockchainSymbolsIndex } from "@/constants/blockchainSymbolsIndex"
-import { fetchBlockchainData } from "@/lib/query/crypto/fetchBlockchainData"
+import { fetchBlockchainData } from "@/lib/query/client/crypto/fetchBlockchainData"
 import { useQuery } from "@tanstack/react-query"
 import { clsx } from "clsx"
 import Image from "next/image"

@@ -3,7 +3,7 @@
 import EmptyStateMessage from "@/components/custom/original-contents/empty-state-message"
 import OriginalContentGrid from "@/components/custom/original-contents/original-content-grid"
 import Spinner from "@/components/custom/spinner"
-import fetchOriginalContent from "@/lib/query/minters/original-contents/getAllOriginalContents"
+import fetchOriginalContent from "@/lib/query/client/minters/getAllOriginalContents"
 import { OriginalContentSchemaType } from "@/validators/schemas/original-contents/fetchOriginalContents"
 import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"

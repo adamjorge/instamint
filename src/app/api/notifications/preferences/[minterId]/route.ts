@@ -1,5 +1,5 @@
-import { changePreference } from "@/lib/query/notification/changePreference"
-import { getMinterPreferences } from "@/lib/query/notification/getMinterPreferences"
+import { changePreference } from "@/lib/query/server/notifications/changePreference"
+import { getMinterPreferences } from "@/lib/query/server/notifications/getMinterPreferences"
 import type { NotificationTypeEnum } from "@prisma/client"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 

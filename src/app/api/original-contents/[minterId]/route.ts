@@ -1,4 +1,4 @@
-import { getOriginalContentsByMinterId } from "@/lib/query/minters/original-contents/upload-original-content/getOriginalContentsByMinterId"
+import { getOriginalContentsByMinterId } from "@/lib/query/server/minters/getOriginalContentsByMinterId"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request, { params }: { params: { minterId: string } }) {

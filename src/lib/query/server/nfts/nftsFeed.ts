@@ -1,5 +1,5 @@
 import prisma from "@/lib/db"
-import { followNftsFeed } from "@/lib/query/nfts/followNftsFeed"
+import { followNftsFeed } from "@/lib/query/server/nfts/followNftsFeed"
 import type { NftsFeedQuery } from "@/validators/types/nftFeedQueryType"
 
 export async function nftsFeed(cursor: number, minterId?: string) {

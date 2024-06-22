@@ -1,7 +1,7 @@
 "use client"
 
-import fetchDislikeNft from "@/lib/query/nfts/fetchDislikeNft"
-import fetchLikeNft from "@/lib/query/nfts/fetchLikeNft"
+import fetchDislikeNft from "@/lib/query/client/nfts/fetchDislikeNft"
+import fetchLikeNft from "@/lib/query/client/nfts/fetchLikeNft"
 import type { NftFeedType } from "@/validators/schemas/nfts/feedSchema"
 import { useMutation } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"

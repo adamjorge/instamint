@@ -1,5 +1,5 @@
 import { uploadFileToS3 } from "@/lib/aws/uploadFileToS3"
-import { updateAvatarUrl } from "@/lib/query/minters/updateAvatarUrl"
+import { updateAvatarUrl } from "@/lib/query/server/minters/updateAvatarUrl"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function POST(req: Request) {

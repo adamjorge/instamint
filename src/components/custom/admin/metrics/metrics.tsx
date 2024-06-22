@@ -5,7 +5,7 @@ import MetricsTable from "@/components/custom/admin/metrics/metrics-table"
 import Spinner from "@/components/custom/spinner"
 import ErrorMessage from "@/components/ui/custom/error-message"
 import { metricsArray } from "@/constants/metrics"
-import { fetchMetrics } from "@/lib/query/metrics/fetchMetrics"
+import { fetchMetrics } from "@/lib/query/client/metrics/fetchMetrics"
 import { useQuery } from "@tanstack/react-query"
 
 export default function Metrics() {

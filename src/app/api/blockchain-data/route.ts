@@ -1,4 +1,4 @@
-import { getDataByBlockchain } from "@/lib/query/crypto/getDataByBlockchain"
+import { getDataByBlockchain } from "@/lib/query/server/crypto/getDataByBlockchain"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request) {

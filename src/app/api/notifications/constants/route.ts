@@ -1,4 +1,4 @@
-import { getNotificationTypes } from "@/lib/query/notification/getNotificationTypes"
+import { getNotificationTypes } from "@/lib/query/server/notifications/getNotificationTypes"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET() {

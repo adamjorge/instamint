@@ -4,7 +4,7 @@ import AgreeToTermsField from "@/components/custom/upload-original-content/form-
 import FileUploadField from "@/components/custom/upload-original-content/form-fields/file-upload"
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
-import { uploadContent } from "@/lib/query/minters/original-contents/uploadContent"
+import { uploadContent } from "@/lib/query/client/minters/uploadContent"
 import { formSchema } from "@/validators/schemas/upload-original-content/upload-content"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useTranslations } from "next-intl"

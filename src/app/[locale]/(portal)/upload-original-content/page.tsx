@@ -1,6 +1,6 @@
 import ImageUploadForm from "@/components/custom/upload-original-content/upload-form"
 import { auth } from "@/lib/auth"
-import { getMinterByUserId } from "@/lib/query/minters/getMinterByUserId"
+import { getMinterByUserId } from "@/lib/query/server/minters/getMinterByUserId"
 import { redirect } from "next/navigation"
 
 export default async function UploadOriginalContentPage() {

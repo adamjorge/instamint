@@ -1,5 +1,5 @@
-import { followMinter } from "@/lib/query/minters/follow"
-import { unfollowMinter } from "@/lib/query/minters/unfollow"
+import { followMinter } from "@/lib/query/server/minters/follow"
+import { unfollowMinter } from "@/lib/query/server/minters/unfollow"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function POST(req: Request) {

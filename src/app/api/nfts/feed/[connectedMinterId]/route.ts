@@ -1,4 +1,4 @@
-import { nftsFeed } from "@/lib/query/nfts/nftsFeed"
+import { nftsFeed } from "@/lib/query/server/nfts/nftsFeed"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request, { params }: { params: { connectedMinterId: string } }) {

@@ -1,4 +1,4 @@
-import { getNotificationsByMinterId } from "@/lib/query/notification/getNotificationsByMinterId"
+import { getNotificationsByMinterId } from "@/lib/query/server/notifications/getNotificationsByMinterId"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request, { params }: { params: { minterId: string } }) {

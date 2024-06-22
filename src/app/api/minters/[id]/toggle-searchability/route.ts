@@ -1,4 +1,4 @@
-import toggleSearchability from "@/lib/query/minters/toggleSearchability"
+import toggleSearchability from "@/lib/query/server/minters/toggleSearchability"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function PATCH(req: Request, { params }: { params: { id: string } }) {

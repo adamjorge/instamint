@@ -1,4 +1,4 @@
-import { deleteUser } from "@/lib/query/users/deleteUser"
+import { deleteUser } from "@/lib/query/server/users/deleteUser"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function DELETE(req: Request, { params }: { params: { id: string } }) {

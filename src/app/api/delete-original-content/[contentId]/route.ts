@@ -1,4 +1,4 @@
-import { deleteOriginalContentById } from "@/lib/query/minters/original-contents/delete-original-content/deleteOriginalContentById"
+import { deleteOriginalContentById } from "@/lib/query/server/minters/deleteOriginalContentById"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function DELETE(req: Request, { params }: { params: { contentId: string } }) {

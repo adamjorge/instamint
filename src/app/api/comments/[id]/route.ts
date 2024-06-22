@@ -1,4 +1,4 @@
-import { deleteComment } from "@/lib/query/comments/deleteComment"
+import { deleteComment } from "@/lib/query/server/comments/deleteComment"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function DELETE(req: Request, { params }: { params: { id: string } }) {

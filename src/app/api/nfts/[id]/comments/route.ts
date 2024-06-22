@@ -1,6 +1,6 @@
 import { auth } from "@/lib/auth"
-import createNftComment from "@/lib/query/nfts/createNftComment"
-import searchNftComments from "@/lib/query/nfts/searchNftComments"
+import createNftComment from "@/lib/query/server/nfts/createNftComment"
+import searchNftComments from "@/lib/query/server/nfts/searchNftComments"
 import moderation from "@/lib/utils/moderation/moderate"
 import {
   CreateNftCommentType,

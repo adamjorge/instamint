@@ -1,6 +1,6 @@
 "use client"
 
-import VerifyEmail from "@/components/custom/email/verify/verify-email"
+import VerifyEmail from "@/components/custom/email/verify-email"
 
 export default function VerifyPage() {
   return (

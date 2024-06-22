@@ -1,4 +1,4 @@
-import getMinters, { getMintersTotalPages } from "@/lib/query/minters/getMinters"
+import getMinters, { getMintersTotalPages } from "@/lib/query/server/minters/getMinters"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request) {

@@ -1,5 +1,5 @@
 import { auth } from "@/lib/auth"
-import handleNftLikeAction from "@/lib/handlers/nfts/handleNftLikeAction"
+import handleNftLikeAction from "@/lib/handlers/handleNftLikeAction"
 import { NftLikeActionType } from "@/validators/types/nftLikeActionType"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 

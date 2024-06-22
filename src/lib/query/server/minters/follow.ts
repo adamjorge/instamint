@@ -1,5 +1,5 @@
 import prisma from "@/lib/db"
-import { getMinterByUserId } from "@/lib/query/minters/getMinterByUserId"
+import { getMinterByUserId } from "@/lib/query/server/minters/getMinterByUserId"
 
 export async function followMinter(followerId: string, followingId: number) {
   const user = await getMinterByUserId(followerId)

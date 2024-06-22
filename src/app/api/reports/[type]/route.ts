@@ -1,4 +1,4 @@
-import { getReports } from "@/lib/query/reports/getReports"
+import { getReports } from "@/lib/query/server/reports/getReports"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request, { params }: { params: { type: string } }) {

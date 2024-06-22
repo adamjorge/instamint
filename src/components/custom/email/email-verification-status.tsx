@@ -1,7 +1,6 @@
-import Form from "@/components/custom/email/verify/form"
+import Form from "@/components/custom/email/form"
 import ErrorMessage from "@/components/ui/custom/error-message"
 import SuccessMessage from "@/components/ui/custom/success-message"
-import React from "react"
 
 interface EmailVerificationStatusProps {
   isLoading: boolean

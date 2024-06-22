@@ -1,5 +1,5 @@
-import deleteMinter from "@/lib/query/minters/deleteMinter"
-import getMinterById from "@/lib/query/minters/getMinterById"
+import deleteMinter from "@/lib/query/server/minters/deleteMinter"
+import getMinterById from "@/lib/query/server/minters/getMinterById"
 import isAdmin from "@/lib/utils/auth/isAdmin"
 import isAuthenticated from "@/lib/utils/auth/isAuthenticated"
 import isCurrentUser from "@/lib/utils/auth/isCurrentUser"

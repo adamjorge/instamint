@@ -1,10 +1,9 @@
 "use client"
 
-import { EmailVerificationStatus } from "@/components/custom/email/verify/email-verification-status"
-import useEmailVerification from "@/components/custom/email/verify/use-email-verification"
+import { EmailVerificationStatus } from "@/components/custom/email/email-verification-status"
 import LinkButton from "@/components/ui/custom/link-button"
+import useEmailVerification from "@/hooks/useEmailVerification"
 import { useTranslations } from "next-intl"
-import React from "react"
 
 export default function VerifyEmail() {
   const t = useTranslations("signUp")

@@ -1,5 +1,5 @@
 import { getImage } from "@/lib/aws/getImage"
-import { getAvatarKey } from "@/lib/query/minters/getAvatarKey"
+import { getAvatarKey } from "@/lib/query/server/minters/getAvatarKey"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
 export async function GET(req: Request, { params }: { params: { minterId: string } }) {
