@@ -21,7 +21,8 @@
     "successChangePassword": "パスワードが正常に変更されました",
     "successFileUpload": "ファイルのアップロードに成功しました",
     "failedFileUpload": "ファイルのアップロードに失敗しました",
-    "errorFileUpload": "ファイルのアップロード中にエラーが発生しました"
+    "errorFileUpload": "ファイルのアップロード中にエラーが発生しました",
+    "userNotActivated": "ユーザーが有効化されていません。詳細は管理者（instamint.deva@gmail.com）までお問い合わせください。"
   },
   "search": {
     "cancel": "キャンセル",

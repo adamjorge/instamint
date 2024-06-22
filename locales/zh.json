@@ -21,7 +21,8 @@
     "successChangePassword": "密码已成功更改",
     "successFileUpload": "文件上传成功",
     "failedFileUpload": "文件上传失败",
-    "errorFileUpload": "文件上传过程中发生错误"
+    "errorFileUpload": "文件上传过程中发生错误",
+    "userNotActivated": "用户未激活。如需更多信息，请联系管理员 instamint.deva@gmail.com。"
   },
   "search": {
     "cancel": "取消",

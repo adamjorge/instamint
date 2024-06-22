@@ -22,5 +22,6 @@ export const GlobalSchema = z.object({
   successChangePassword: z.string(),
   successFileUpload: z.string(),
   failedFileUpload: z.string(),
-  errorFileUpload: z.string()
+  errorFileUpload: z.string(),
+  userNotActivated: z.string()
 })

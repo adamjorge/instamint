@@ -88,6 +88,7 @@ model User {
   emailVerifyToken          String?          @db.Text
   passwordResetToken        String?          @db.Text
   passwordResetTokenExpires DateTime?
+  isActivated               Boolean          @default(true)
   is2FAEnabled              Boolean          @default(false)
   isAdmin                   Boolean          @default(false)
   createdAt                 DateTime         @default(now())

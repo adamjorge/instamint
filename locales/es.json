@@ -21,7 +21,8 @@
     "successChangePassword": "Contraseña cambiada con éxito",
     "successFileUpload": "Archivo subido correctamente",
     "failedFileUpload": "Error al subir el archivo",
-    "errorFileUpload": "Se produjo un error durante la carga del archivo"
+    "errorFileUpload": "Se produjo un error durante la carga del archivo",
+    "userNotActivated": "Usuario no activado. Póngase en contacto con los administradores para obtener más información en instamint.deva@gmail.com."
   },
   "search": {
     "cancel": "Cancelar",
