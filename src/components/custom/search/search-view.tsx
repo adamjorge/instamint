@@ -51,7 +51,7 @@ export default function SearchView({ session }: { session: Session }) {
   }
 
   return (
-    <div className="mb-24">
+    <div className="mt-4 mb-24">
       <SearchResults {...resultProps} />
     </div>
   )

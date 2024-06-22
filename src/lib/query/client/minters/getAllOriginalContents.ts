@@ -1,9 +1,9 @@
+import axiosClient from "@/lib/client"
 import { originalContentsResponseSchema } from "@/validators/schemas/original-contents/fetchOriginalContents"
-import axios from "axios"
 
 export default async function fetchOriginalContent(minterId: number) {
   try {
-    const response = await axios.get(`/api/original-contents/${minterId.toString()}`)
+    const response = await axiosClient.get(`/original-contents/${minterId.toString()}`)
     const originalContents = originalContentsResponseSchema.parse(response.data)
 
     return originalContents

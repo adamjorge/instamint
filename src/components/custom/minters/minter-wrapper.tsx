@@ -31,9 +31,11 @@ export default function MinterWrapper({
   const handleClickOnFollowButton = useCallback(() => {
     if (isFollowed) {
       unfollowMutation.mutate()
-    } else {
-      followMutation.mutate()
+
+      return
     }
+
+    followMutation.mutate()
   }, [followMutation, unfollowMutation, isFollowed])
   const cardProps = {
     minter,

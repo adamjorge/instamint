@@ -1,3 +1,4 @@
+import axiosClient from "@/lib/client"
 import { searchMinters } from "@/lib/query/server/minters/search"
 import { searchNfts } from "@/lib/query/server/nfts/search"
 import { searchTeaBags } from "@/lib/query/server/teabags/search"
@@ -7,7 +8,6 @@ import { NftSearchNftsSchemaType } from "@/validators/schemas/search/nfts/nftSea
 import { searchSchema } from "@/validators/schemas/search/searchSchema"
 import { TeabagsSearchTeabagsSchemaType } from "@/validators/schemas/search/teabags/teabagSearchTeabagSchema"
 import type { SearchOptions, SearchParameters } from "@/validators/types/search"
-import axios from "axios"
 
 export async function fetchSearch(searchParameters: SearchParameters) {
   const { searchTerm, minPrice, maxPrice, currentUserId } = searchParameters
@@ -21,20 +21,17 @@ export async function fetchSearch(searchParameters: SearchParameters) {
   }
 
   try {
-    const builder = new SearchUrlBuilder("/api/search/nfts").setSearchTerm(searchTerm)
+    const builder = new SearchUrlBuilder("/search/nfts").setSearchTerm(searchTerm)
     const nftUrlBuilder = builder.setMaxPrice(maxPrice).setMinPrice(minPrice)
-    const nfts = await axios.get<NftSearchNftsSchemaType>(nftUrlBuilder.build())
+    const nfts = await axiosClient.get<NftSearchNftsSchemaType>(nftUrlBuilder.build())
     const minterUrlBuilder = builder
-      .setBaseUrl("/api/search/minters")
+      .setBaseUrl("/search/minters")
       .setMinPrice("")
       .setMaxPrice("")
       .setCurrentUserId(currentUserId.toString())
-    const minters = await axios.get<MinterSearchMintersSchemaType>(minterUrlBuilder.build())
-    const teabagUrlBuilder = builder
-      .setBaseUrl("/api/search/teabags")
-      .setMinPrice("")
-      .setMaxPrice("")
-    const teabags = await axios.get<TeabagsSearchTeabagsSchemaType>(teabagUrlBuilder.build())
+    const minters = await axiosClient.get<MinterSearchMintersSchemaType>(minterUrlBuilder.build())
+    const teabagUrlBuilder = builder.setBaseUrl("/search/teabags").setMinPrice("").setMaxPrice("")
+    const teabags = await axiosClient.get<TeabagsSearchTeabagsSchemaType>(teabagUrlBuilder.build())
 
     return searchSchema.parse({
       nfts: nfts.data,

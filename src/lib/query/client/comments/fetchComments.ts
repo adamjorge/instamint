@@ -1,9 +1,9 @@
+import axiosClient from "@/lib/client"
 import { PaginatedCommentsValidationSchema } from "@/validators/schemas/commentSchema"
-import axios from "axios"
 
 export const fetchComments = (page: number) =>
-  axios
-    .get(`/api/comments?page=${page.toString()}`)
+  axiosClient
+    .get(`/comments?page=${page.toString()}`)
     .then((res) => {
       const data = PaginatedCommentsValidationSchema.parse(res.data)
 

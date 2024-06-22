@@ -1,8 +1,8 @@
+import axiosClient from "@/lib/client"
 import {
   CreateNftCommentType,
   createNftCommentSchema
 } from "@/validators/schemas/nfts/comments/create/createCommentSchema"
-import axios from "axios"
 
 export default async function postNftComment(data: CreateNftCommentType) {
   const { content, nftId } = data
@@ -12,7 +12,7 @@ export default async function postNftComment(data: CreateNftCommentType) {
   }
 
   try {
-    const response = await axios.post(`/api/nfts/${nftId.toString()}/comments`, data)
+    const response = await axiosClient.post(`/nfts/${nftId.toString()}/comments`, data)
     const comment = createNftCommentSchema.parse(response.data)
 
     return comment

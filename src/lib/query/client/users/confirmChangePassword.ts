@@ -1,4 +1,4 @@
-import axios from "axios"
+import axiosClient from "@/lib/client"
 
 export async function confirmChangePassword(
   token: string,
@@ -11,5 +11,5 @@ export async function confirmChangePassword(
     newPassword
   }
 
-  await axios.patch(`/api/auth/change-password`, data)
+  await axiosClient.patch(`/auth/change-password`, data)
 }

@@ -1,11 +1,11 @@
 import { Metrics } from "@/constants/metrics"
+import axiosClient from "@/lib/client"
 import { metricsSchema } from "@/validators/schemas/metricsSchema"
 import type { Metric } from "@/validators/types/metric"
 import type { TimePeriod } from "@/validators/types/timePeriod"
-import axios from "axios"
 
 async function fetchMetric(period: TimePeriod, metric: Metric) {
-  const response = await axios.get(`/api/metrics?period=${period}&metric=${metric}`)
+  const response = await axiosClient.get(`/metrics?period=${period}&metric=${metric}`)
 
   return metricsSchema.parse(response.data)
 }

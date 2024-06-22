@@ -1,8 +1,8 @@
-import axios from "axios"
+import axiosClient from "@/lib/client"
 
 export async function unfollow(followerId: string, followingId: string) {
   try {
-    const response = await axios.delete("/api/minters/follow", {
+    const response = await axiosClient.delete("/minters/follow", {
       data: {
         followerId,
         followingId

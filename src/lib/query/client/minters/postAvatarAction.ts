@@ -1,11 +1,12 @@
-import axios, { isAxiosError } from "axios"
+import axiosClient from "@/lib/client"
+import { isAxiosError } from "axios"
 
 export async function postAvatar(file: File, minterId: string) {
   try {
     const formData = new FormData()
     formData.append("file", file)
     formData.append("minterId", minterId)
-    const response = await axios.post("/api/minters/pfp", formData, {
+    const response = await axiosClient.post("/minters/pfp", formData, {
       headers: {
         "Content-Type": "multipart/form-data"
       }

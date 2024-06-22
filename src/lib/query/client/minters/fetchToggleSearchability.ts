@@ -1,8 +1,8 @@
-import axios from "axios"
+import axiosClient from "@/lib/client"
 
 export default async function fetchToggleSearchability(userId: number) {
   try {
-    const response = await axios.patch(`/api/minters/${userId.toString()}/toggle-searchability`)
+    const response = await axiosClient.patch(`/minters/${userId.toString()}/toggle-searchability`)
 
     return response
   } catch (error) {

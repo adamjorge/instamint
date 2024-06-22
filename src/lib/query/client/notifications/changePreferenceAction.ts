@@ -1,8 +1,8 @@
+import axiosClient from "@/lib/client"
 import { notificationPreferenceChangeSchema } from "@/validators/schemas/notificationPreferencesSchema"
-import axios from "axios"
 
 export async function changePreferenceAction(minterId: number, type: string) {
-  const response = await axios.put(`/api/notifications/preferences/${minterId.toString()}`, {
+  const response = await axiosClient.put(`/notifications/preferences/${minterId.toString()}`, {
     type
   })
   const changeResponse = notificationPreferenceChangeSchema.parse(response.data)

@@ -1,8 +1,8 @@
-import axios from "axios"
+import axiosClient from "@/lib/client"
 
 export async function follow(followerId: string, followingId: string) {
   try {
-    const response = await axios.post("/api/minters/follow", {
+    const response = await axiosClient.post("/minters/follow", {
       followerId,
       followingId
     })

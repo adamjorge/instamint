@@ -1,4 +1,5 @@
-import axios, { isAxiosError } from "axios"
+import axiosClient from "@/lib/client"
+import { isAxiosError } from "axios"
 
 export async function uploadContent(file: File, minterId: string) {
   try {
@@ -6,7 +7,7 @@ export async function uploadContent(file: File, minterId: string) {
     formData.append("file", file)
     formData.append("minterId", minterId)
 
-    const response = await axios.post("/api/upload-original-content", formData, {
+    const response = await axiosClient.post("/upload-original-content", formData, {
       headers: {
         "Content-Type": "multipart/form-data"
       }

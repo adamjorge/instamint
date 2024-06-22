@@ -1,8 +1,8 @@
-import axios from "axios"
+import axiosClient from "@/lib/client"
 
 export default async function findChangeToken(token: string) {
   try {
-    await axios.get(`/api/auth/change-password?token=${token}`)
+    await axiosClient.get(`/auth/change-password?token=${token}`)
 
     return { tokenVerified: true }
   } catch (error) {

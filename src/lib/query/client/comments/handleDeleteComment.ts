@@ -1,8 +1,8 @@
-import axios from "axios"
+import axiosClient from "@/lib/client"
 
 export async function handleDeleteComment(commentId: string) {
-  await axios
-    .delete(`/api/comments/${commentId}`)
+  await axiosClient
+    .delete(`/comments/${commentId}`)
     .then((res) => res)
     .catch((err: unknown) => {
       throw new Error(err as string)

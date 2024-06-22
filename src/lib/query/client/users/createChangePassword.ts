@@ -1,4 +1,4 @@
-import axios from "axios"
+import axiosClient from "@/lib/client"
 
 export async function createChangePassword(email: string, locale: string) {
   const data = {
@@ -7,7 +7,7 @@ export async function createChangePassword(email: string, locale: string) {
   }
 
   try {
-    const response = await axios.post(`/api/auth/change-password`, data)
+    const response = await axiosClient.post(`/auth/change-password`, data)
 
     return response
   } catch (error) {

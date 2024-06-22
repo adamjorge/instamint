@@ -1,9 +1,10 @@
+import axiosClient from "@/lib/client"
 import { signedUrlSchema } from "@/validators/schemas/signedUrlSchema"
-import axios, { isAxiosError } from "axios"
+import { isAxiosError } from "axios"
 
 export async function getAvatarUrl(minterId: string) {
   try {
-    const response = await axios.get(`/api/minters/pfp/${minterId}`)
+    const response = await axiosClient.get(`/minters/pfp/${minterId}`)
     const data = signedUrlSchema.parse(response.data)
 
     return data

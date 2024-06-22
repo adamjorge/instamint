@@ -1,5 +1,5 @@
-import axios from "axios"
+import axiosClient from "@/lib/client"
 
 export default async function fetchDeleteMinter(minterId: string) {
-  return await axios.delete(`/api/minters/${minterId}`)
+  return await axiosClient.delete(`/minters/${minterId}`)
 }

@@ -1,9 +1,9 @@
+import axiosClient from "@/lib/client"
 import { Minter } from "@prisma/client"
-import axios from "axios"
 
 export default async function fetchMinter(userId: number) {
   try {
-    const response = await axios.get<Minter>(`/api/minters/${userId.toString()}`)
+    const response = await axiosClient.get<Minter>(`/minters/${userId.toString()}`)
 
     return response
   } catch (error) {
