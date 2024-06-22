@@ -21,7 +21,8 @@
     "successChangePassword": "Mot de passe changé avec succès",
     "successFileUpload": "Fichier téléchargé avec succès",
     "failedFileUpload": "Échec du téléchargement du fichier",
-    "errorFileUpload": "Une erreur s'est produite lors du téléchargement du fichier"
+    "errorFileUpload": "Une erreur s'est produite lors du téléchargement du fichier",
+    "userNotActivated": "Utilisateur non activé. Veuillez contacter les administrateurs pour plus d'informations à l'adresse suivante instamint.deva@gmail.com."
   },
   "search": {
     "cancel": "Annuler",
