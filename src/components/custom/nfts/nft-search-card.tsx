@@ -1,4 +1,4 @@
-import ShareButton from "@/components/custom/feed/share-specific-nft-link/share-button"
+import ShareButton from "@/components/custom/feed/share-button"
 import LikeHeart from "@/components/custom/like-heart"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"

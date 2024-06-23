@@ -1,4 +1,4 @@
-import Form from "@/components/custom/email/form"
+import Form from "@/components/custom/verify-email/form"
 import ErrorMessage from "@/components/ui/custom/error-message"
 import SuccessMessage from "@/components/ui/custom/success-message"
 

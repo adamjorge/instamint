@@ -1,6 +1,6 @@
 "use client"
 
-import { EmailVerificationStatus } from "@/components/custom/email/email-verification-status"
+import { EmailVerificationStatus } from "@/components/custom/verify-email/email-verification-status"
 import LinkButton from "@/components/ui/custom/link-button"
 import useEmailVerification from "@/hooks/useEmailVerification"
 import { useTranslations } from "next-intl"
