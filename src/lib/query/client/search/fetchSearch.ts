@@ -20,27 +20,23 @@ export async function fetchSearch(searchParameters: SearchParameters) {
     return { nfts: [], minters: [], teabags: [] }
   }
 
-  try {
-    const builder = new SearchUrlBuilder("/search/nfts").setSearchTerm(searchTerm)
-    const nftUrlBuilder = builder.setMaxPrice(maxPrice).setMinPrice(minPrice)
-    const nfts = await axiosClient.get<NftSearchNftsSchemaType>(nftUrlBuilder.build())
-    const minterUrlBuilder = builder
-      .setBaseUrl("/search/minters")
-      .setMinPrice("")
-      .setMaxPrice("")
-      .setCurrentUserId(currentUserId.toString())
-    const minters = await axiosClient.get<MinterSearchMintersSchemaType>(minterUrlBuilder.build())
-    const teabagUrlBuilder = builder.setBaseUrl("/search/teabags").setMinPrice("").setMaxPrice("")
-    const teabags = await axiosClient.get<TeabagsSearchTeabagsSchemaType>(teabagUrlBuilder.build())
+  const builder = new SearchUrlBuilder("/search/nfts").setSearchTerm(searchTerm)
+  const nftUrlBuilder = builder.setMaxPrice(maxPrice).setMinPrice(minPrice)
+  const nfts = await axiosClient.get<NftSearchNftsSchemaType>(nftUrlBuilder.build())
+  const minterUrlBuilder = builder
+    .setBaseUrl("/search/minters")
+    .setMinPrice("")
+    .setMaxPrice("")
+    .setCurrentUserId(currentUserId.toString())
+  const minters = await axiosClient.get<MinterSearchMintersSchemaType>(minterUrlBuilder.build())
+  const teabagUrlBuilder = builder.setBaseUrl("/search/teabags").setMinPrice("").setMaxPrice("")
+  const teabags = await axiosClient.get<TeabagsSearchTeabagsSchemaType>(teabagUrlBuilder.build())
 
-    return searchSchema.parse({
-      nfts: nfts.data,
-      minters: minters.data,
-      teabags: teabags.data
-    })
-  } catch (err) {
-    throw new Error(err as string)
-  }
+  return searchSchema.parse({
+    nfts: nfts.data,
+    minters: minters.data,
+    teabags: teabags.data
+  })
 }
 
 export async function searchByType(options: SearchOptions) {

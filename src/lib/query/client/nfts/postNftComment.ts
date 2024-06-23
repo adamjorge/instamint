@@ -11,12 +11,7 @@ export default async function postNftComment(data: CreateNftCommentType) {
     throw new Error("Comment is too long")
   }
 
-  try {
-    const response = await axiosClient.post(`/nfts/${nftId.toString()}/comments`, data)
-    const comment = createNftCommentSchema.parse(response.data)
+  const response = await axiosClient.post(`/nfts/${nftId.toString()}/comments`, data)
 
-    return comment
-  } catch (error) {
-    throw new Error(error as string)
-  }
+  return createNftCommentSchema.parse(response.data)
 }

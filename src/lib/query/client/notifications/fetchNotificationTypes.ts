@@ -3,7 +3,6 @@ import { notificationTypesSchema } from "@/validators/schemas/notificationTypesS
 
 export async function fetchNotificationTypes() {
   const response = await axiosClient.get("/notifications/constants")
-  const types = notificationTypesSchema.parse(response.data)
 
-  return types
+  return notificationTypesSchema.parse(response.data)
 }

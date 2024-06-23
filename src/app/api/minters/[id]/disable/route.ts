@@ -1,4 +1,4 @@
-import disableMinter from "@/lib/query/minters/disableMinter"
+import disableMinter from "@/lib/query/server/minters/disableMinter"
 import { StatusCodes } from "http-status-codes"
 
 export async function PATCH(req: Request, { params }: { params: { id: string } }) {

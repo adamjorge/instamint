@@ -1,5 +1,5 @@
-import fetchDeleteMinter from "@/lib/query/minters/fetchDeleteMinter"
-import fetchDisableMinter from "@/lib/query/minters/fetchDisableMinter"
+import fetchDeleteMinter from "@/lib/query/client/minters/fetchDeleteMinter"
+import fetchDisableMinter from "@/lib/query/client/minters/fetchDisableMinter"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { toast } from "sonner"
 

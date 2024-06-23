@@ -11,5 +11,5 @@ export async function confirmChangePassword(
     newPassword
   }
 
-  await axiosClient.patch(`/auth/change-password`, data)
+  return await axiosClient.patch(`/auth/change-password`, data)
 }

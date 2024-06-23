@@ -3,7 +3,6 @@ import { notificationPreferencesSchema } from "@/validators/schemas/notification
 
 export async function fetchMinterPreferences(minterId: number) {
   const response = await axiosClient.get(`/notifications/preferences/${minterId.toString()}`)
-  const preferences = notificationPreferencesSchema.parse(response.data)
 
-  return preferences
+  return notificationPreferencesSchema.parse(response.data)
 }

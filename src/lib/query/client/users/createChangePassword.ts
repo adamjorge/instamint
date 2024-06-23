@@ -6,11 +6,5 @@ export async function createChangePassword(email: string, locale: string) {
     locale
   }
 
-  try {
-    const response = await axiosClient.post(`/auth/change-password`, data)
-
-    return response
-  } catch (error) {
-    throw new Error(error as string)
-  }
+  return await axiosClient.post(`/auth/change-password`, data)
 }
