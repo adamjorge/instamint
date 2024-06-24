@@ -9,15 +9,13 @@ export default function ShareButton({ title, text, url, iconSize = 24 }: ShareBu
   const locale = useLocale()
   const origin = typeof window !== "undefined" ? window.location.origin : ""
   const localizedUrl = locale ? `${origin}/${locale}${url}` : `${origin}${url}`
-  const handleShareClick = useCallback(() => {
-    navigator.clipboard.writeText(localizedUrl).then(
-      () => {
-        toast.success(t("successUrlLink"))
-      },
-      () => {
-        toast.error(t("errorCopyMessage"))
-      }
-    )
+  const handleShareClick = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(localizedUrl)
+      toast.success(t("successUrlLink"))
+    } catch (error) {
+      toast.error(t("errorCopyMessage"))
+    }
   }, [localizedUrl, t])
 
   return (
