@@ -1,14 +1,9 @@
-import { updatePassword } from "@/services/users/updatePassword"
-import {
+import { updatePassword } from "@/lib/query/server/users/updatePassword"
+import type {
   UpdatePasswordFormData,
   UpdatePasswordFormState
-} from "@/validators/schemas/update-password/passwordValidator"
+} from "@/validators/schemas/update-password/passwordSchema"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
-
-interface RequestBody {
-  token: string
-  formData: UpdatePasswordFormData
-}
 
 export async function POST(req: Request) {
   try {
@@ -26,4 +21,9 @@ export async function POST(req: Request) {
       { status: StatusCodes.INTERNAL_SERVER_ERROR }
     )
   }
+}
+
+type RequestBody = {
+  token: string
+  formData: UpdatePasswordFormData
 }

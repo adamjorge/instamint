@@ -18,7 +18,7 @@ export function EmailVerificationStatus({
   return <SuccessMessage message={result} />
 }
 
-interface EmailVerificationStatusProps {
+type EmailVerificationStatusProps = {
   isLoading: boolean
   result: string
   errorMessage: string | null

@@ -1,11 +1,7 @@
+import type { UpdatePasswordFormData } from "@/validators/schemas/update-password/passwordSchema"
 import axios from "axios"
 import { useTranslations } from "next-intl"
 import { toast } from "sonner"
-
-export interface UpdatePasswordFormData {
-  newPassword: string
-  confirmPassword: string
-}
 
 export function useUpdatePassword() {
   const t = useTranslations("updatePassword")

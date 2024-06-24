@@ -5,7 +5,7 @@ import FileUploadField from "@/components/custom/upload-original-content/form-fi
 import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
 import { uploadContent } from "@/lib/query/client/minters/uploadContent"
-import { formSchema } from "@/validators/schemas/upload-original-content/upload-content"
+import { formSchema } from "@/validators/schemas/upload-original-content/uploadContentSchema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useTranslations } from "next-intl"
 import { useForm } from "react-hook-form"

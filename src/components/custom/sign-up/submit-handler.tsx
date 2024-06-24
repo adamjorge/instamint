@@ -2,12 +2,6 @@ import { findUserByEmail } from "@/lib/utils/db"
 import { signUp } from "@/lib/utils/signUpAuth"
 import { toast } from "sonner"
 
-export interface SignUpFormData {
-  email: string
-  password: string
-  name: string
-}
-
 export async function handleSubmit(values: SignUpFormData) {
   try {
     const isEmailExists = await findUserByEmail(values.email)
@@ -22,4 +16,10 @@ export async function handleSubmit(values: SignUpFormData) {
   } catch (e) {
     toast.error("Oops! something went wrong")
   }
+}
+
+type SignUpFormData = {
+  email: string
+  password: string
+  name: string
 }

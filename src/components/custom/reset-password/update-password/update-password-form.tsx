@@ -3,18 +3,15 @@
 import ConfirmPasswordField from "@/components/custom/reset-password/update-password/form-fields/confirm-password"
 import NewPasswordField from "@/components/custom/reset-password/update-password/form-fields/new-password"
 import { formSchema } from "@/components/custom/reset-password/update-password/form-schema"
-import {
-  UpdatePasswordFormData,
-  useUpdatePassword
-} from "@/components/custom/reset-password/update-password/handle-submit"
+import { useUpdatePassword } from "@/components/custom/reset-password/update-password/handle-submit"
 import { Button } from "@/components/ui/button"
+import type { UpdatePasswordFormData } from "@/validators/schemas/update-password/passwordSchema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useTranslations } from "next-intl"
 import { useRouter } from "next/navigation"
-import React from "react"
 import { FormProvider, useForm } from "react-hook-form"
 
-const UpdatePasswordForm: React.FC = () => {
+export default function UpdatePasswordForm() {
   const t = useTranslations("updatePassword")
   const form = useForm<UpdatePasswordFormData>({
     resolver: zodResolver(formSchema),
@@ -51,5 +48,3 @@ const UpdatePasswordForm: React.FC = () => {
     </div>
   )
 }
-
-export default UpdatePasswordForm

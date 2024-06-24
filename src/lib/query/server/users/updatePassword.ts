@@ -1,11 +1,11 @@
+import { findUserByToken } from "@/lib/query/server/users/findUserByToken"
+import { updateUserPassword } from "@/lib/query/server/users/updateUserPassword"
 import { generatePasswordHash } from "@/lib/utils/db"
-import { findUserByToken } from "@/services/users/findUserByToken"
-import { updateUserPassword } from "@/services/users/updateUserPassword"
+import { validateFormData } from "@/lib/utils/update-password/validateFormData"
 import {
   UpdatePasswordFormData,
-  UpdatePasswordFormState,
-  validateFormData
-} from "@/validators/schemas/update-password/passwordValidator"
+  UpdatePasswordFormState
+} from "@/validators/schemas/update-password/passwordSchema"
 
 export async function updatePassword(
   token: string,

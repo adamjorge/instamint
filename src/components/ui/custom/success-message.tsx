@@ -1,11 +1,7 @@
-import React from "react"
-
-interface SuccessMessageProps {
-  message: string
+export default function SuccessMessage({ message }: SuccessMessageProps) {
+  return <div className="text-green-500">{message}</div>
 }
 
-const SuccessMessage: React.FC<SuccessMessageProps> = ({ message }) => (
-  <div className="text-green-500">{message}</div>
-)
-
-export default SuccessMessage
+type SuccessMessageProps = {
+  message: string
+}

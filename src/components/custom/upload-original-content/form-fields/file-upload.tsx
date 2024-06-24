@@ -4,11 +4,6 @@ import { useTranslations } from "next-intl"
 import React, { useCallback } from "react"
 import { Control, ControllerRenderProps, FieldValues, Path } from "react-hook-form"
 
-interface FileUploadFieldProps<T extends FieldValues> {
-  control: Control<T>
-  name: Path<T>
-}
-
 export default function FileUploadField<T extends FieldValues>({
   control,
   name
@@ -44,4 +39,9 @@ export default function FileUploadField<T extends FieldValues>({
       )}
     />
   )
+}
+
+type FileUploadFieldProps<T extends FieldValues> = {
+  control: Control<T>
+  name: Path<T>
 }

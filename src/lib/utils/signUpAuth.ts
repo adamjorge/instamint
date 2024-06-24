@@ -66,7 +66,7 @@ export async function signUp(formData: SignUpFormData): Promise<SignUpFormState>
   return { errors: {} }
 }
 
-interface SignUpFormState {
+type SignUpFormState = {
   errors: {
     name?: string[]
     email?: string[]
@@ -75,7 +75,7 @@ interface SignUpFormState {
   }
 }
 
-interface SignUpFormData {
+type SignUpFormData = {
   email: string
   password: string
   name: string

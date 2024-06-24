@@ -12,22 +12,10 @@ export const updatePasswordSchema = z
 
 export type UpdatePasswordFormData = z.infer<typeof updatePasswordSchema>
 
-export interface UpdatePasswordFormState {
+export type UpdatePasswordFormState = {
   errors: {
     newPassword?: string[]
     confirmPassword?: string[]
     _form?: string[]
   }
-}
-
-export function validateFormData(formData: UpdatePasswordFormData): UpdatePasswordFormState {
-  const result = updatePasswordSchema.safeParse(formData)
-
-  if (!result.success) {
-    return {
-      errors: result.error.flatten().fieldErrors
-    }
-  }
-
-  return { errors: {} }
 }

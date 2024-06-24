@@ -3,11 +3,6 @@ import { FormControl, FormField, FormItem, FormMessage } from "@/components/ui/f
 import { useTranslations } from "next-intl"
 import { Control, FieldValues, Path } from "react-hook-form"
 
-interface AgreeToTermsFieldProps<T extends FieldValues> {
-  control: Control<T>
-  name: Path<T>
-}
-
 export default function AgreeToTermsField<T extends FieldValues>({
   control,
   name
@@ -43,4 +38,9 @@ export default function AgreeToTermsField<T extends FieldValues>({
       )}
     />
   )
+}
+
+type AgreeToTermsFieldProps<T extends FieldValues> = {
+  control: Control<T>
+  name: Path<T>
 }

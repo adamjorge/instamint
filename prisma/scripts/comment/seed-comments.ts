@@ -19,7 +19,7 @@ function getRandomDate(start: Date, end: Date) {
   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
 }
 
-interface Comment {
+type Comment = {
   id: number
   content: string
   authorId: number

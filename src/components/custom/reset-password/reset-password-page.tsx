@@ -69,6 +69,6 @@ export default function ResetPasswordForm() {
   )
 }
 
-interface ResetFormData {
+type ResetFormData = {
   email: string
 }
