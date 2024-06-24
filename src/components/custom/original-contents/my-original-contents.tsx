@@ -35,11 +35,7 @@ export default function OriginalContents({ minterId }: OriginalContentsProps) {
   }
   const renderContent = () => {
     if (isPending) {
-      return (
-        <div className="flex justify-center items-center h-10">
-          <Spinner />
-        </div>
-      )
+      return <Spinner />
     }
 
     if (contents.length === 0) {
@@ -51,8 +47,8 @@ export default function OriginalContents({ minterId }: OriginalContentsProps) {
 
   return (
     <div className="m-1">
-      <div className="my-5">
-        <h3 className="text-center text-4xl mt-3 font-bold">{t("title")}</h3>
+      <div className="pt-5">
+        <h3 className="text-center text-lg mt-3 font-bold">{t("title")}</h3>
       </div>
       {renderContent()}
     </div>

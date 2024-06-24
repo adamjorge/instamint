@@ -8,16 +8,12 @@ export default async function OriginalContentsPage() {
 
   if (!session?.user.id || !session.user.email) {
     redirect("/login")
-
-    return null
   }
 
   const currentUser = await getMinterByUserId(session.user.id)
 
   if (!currentUser?.minterId) {
     redirect("/")
-
-    return null
   }
 
   return <OriginalContents minterId={currentUser.minterId} />
