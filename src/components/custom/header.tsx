@@ -16,7 +16,7 @@ export default function Header() {
   })
 
   return (
-    <header className="flex w-full justify-between items-center bg-gray-800 pb-8 text-white">
+    <header className="flex w-full justify-between items-center bg-gray-800 pb-6 text-white">
       <div className="flex space-x-8">
         <div className="space-y-3 mt-5 ml-5">
           <LanguageSelector />

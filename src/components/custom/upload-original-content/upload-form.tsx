@@ -12,10 +12,6 @@ import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { z } from "zod"
 
-type ImageUploadFormProps = {
-  minterId: string
-}
-
 export default function ImageUploadForm(props: ImageUploadFormProps) {
   const t = useTranslations()
   const form = useForm<z.infer<typeof formSchema>>({
@@ -54,4 +50,8 @@ export default function ImageUploadForm(props: ImageUploadFormProps) {
       </Form>
     </div>
   )
+}
+
+type ImageUploadFormProps = {
+  minterId: string
 }

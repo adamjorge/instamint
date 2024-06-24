@@ -8,16 +8,12 @@ export default async function UploadOriginalContentPage() {
 
   if (!session?.user.id || !session.user.email) {
     redirect("/")
-
-    return null
   }
 
   const currentUser = await getMinterByUserId(session.user.id)
 
   if (!currentUser?.minterId) {
     redirect("/")
-
-    return null
   }
 
   return <ImageUploadForm minterId={currentUser.minterId.toString()} />

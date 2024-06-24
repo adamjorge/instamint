@@ -30,7 +30,7 @@ export default function PortalLayout({
       <body className={roboto.className}>
         <main className="min-h-screen">
           <Providers {...i18nProps}>
-            <div className="flex flex-col w-full pt-5">{children}</div>
+            <div className="flex flex-col w-full">{children}</div>
           </Providers>
           <Toaster position="bottom-right" richColors closeButton />
         </main>
