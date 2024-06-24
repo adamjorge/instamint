@@ -184,7 +184,7 @@
   },
   "resetPassword": {
     "mail": "Correo",
-    "emailPlaceholder": "Por favor, ingrese una nueva contraseña",
+    "emailPlaceholder": "Por favor ingrese su correo electrónico",
     "connectionInfo": "Este es el correo electrónico que utilizó para registrarse.",
     "resetButton": "Restablecer contraseña",
     "successEmailMessage": "Se ha enviado un enlace de verificación a su correo electrónico.",

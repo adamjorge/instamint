@@ -14,9 +14,11 @@ export async function handleSubmit(values: SignUpFormData) {
 
     if (isEmailExists) {
       toast.error("Oops! email already exist")
-    } else {
-      await signUp(values)
+
+      return
     }
+
+    await signUp(values)
   } catch (e) {
     toast.error("Oops! something went wrong")
   }

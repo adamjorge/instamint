@@ -2,12 +2,6 @@ import Form from "@/components/custom/verify-email/form"
 import ErrorMessage from "@/components/ui/custom/error-message"
 import SuccessMessage from "@/components/ui/custom/success-message"
 
-interface EmailVerificationStatusProps {
-  isLoading: boolean
-  result: string
-  errorMessage: string | null
-}
-
 export function EmailVerificationStatus({
   isLoading,
   result,
@@ -22,4 +16,10 @@ export function EmailVerificationStatus({
   }
 
   return <SuccessMessage message={result} />
+}
+
+interface EmailVerificationStatusProps {
+  isLoading: boolean
+  result: string
+  errorMessage: string | null
 }

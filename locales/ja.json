@@ -184,7 +184,7 @@
   },
   "resetPassword": {
     "mail": "メール",
-    "emailPlaceholder": "新しいパスワードを入力してください",
+    "emailPlaceholder": "メールアドレスを入力してください",
     "connectionInfo": "これは、登録時に使用したメールアドレスです。",
     "resetButton": "パスワードをリセット",
     "successEmailMessage": "確認リンクがメールに送信されました。",

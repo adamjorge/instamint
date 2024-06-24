@@ -184,7 +184,7 @@
   },
   "resetPassword": {
     "mail": "Mail",
-    "emailPlaceholder": "Please enter new password",
+    "emailPlaceholder": "Please enter your email",
     "connectionInfo": "This is the email you used to register.",
     "resetButton": "Reset password",
     "successEmailMessage": "A verification link has been sent to your email.",

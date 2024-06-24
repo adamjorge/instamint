@@ -28,11 +28,11 @@ export default function SignUpForm() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-24">
+    <div className="flex min-h-screen flex-col items-center justify-between p-4 md:p-24">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(submitData)}
-          className="max-w-md w-full flex flex-col gap-4"
+          className="max-w-md w-full flex flex-col gap-5"
         >
           <EmailField control={form.control} />
           <PasswordField control={form.control} />
@@ -40,14 +40,14 @@ export default function SignUpForm() {
           <Button type="submit" className="w-full">
             {t("signUpButton")}
           </Button>
-          <div className="mt-4 text-center">
-            <span style={{ marginRight: "0.5em" }}>{t("loginQuestion")}</span>
+          <div className="flex flex-col space-y-3 text-center">
+            <span>{t("loginQuestion")}</span>
             <LinkButton withLocale href="/login">
               {t("loginButton")}
             </LinkButton>
           </div>
         </form>
       </Form>
-    </main>
+    </div>
   )
 }

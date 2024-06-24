@@ -184,7 +184,7 @@
   },
   "resetPassword": {
     "mail": "邮件",
-    "emailPlaceholder": "请输入新密码",
+    "emailPlaceholder": "请输入您的电子邮件",
     "connectionInfo": "这是您注册时使用的电子邮件。",
     "resetButton": "重置密码",
     "successEmailMessage": "验证链接已发送到您的电子邮件。",

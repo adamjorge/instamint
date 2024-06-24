@@ -184,7 +184,7 @@
   },
   "resetPassword": {
     "mail": "Courriel",
-    "emailPlaceholder": "Veuillez entrer un nouveau mot de passe",
+    "emailPlaceholder": "Veuillez entrer votre email",
     "connectionInfo": "C'est le courriel que vous avez utilisé pour vous inscrire.",
     "resetButton": "Réinitialiser le mot de passe",
     "successEmailMessage": "Un lien de vérification a été envoyé à votre courriel.",
