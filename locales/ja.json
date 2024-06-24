@@ -173,7 +173,7 @@
     "invalidEmail": "無効なメールアドレス",
     "minimumEmailError": "メールアドレスは少なくとも3文字必要です",
     "minimumPasswordError": "パスワードは少なくとも6文字必要です",
-    "minimumnameError": "名前は少なくとも3文字必要です",
+    "minimumNameError": "名前は少なくとも6文字必要です",
     "backToLoginButton": "ログイン画面に戻る",
     "emailVerificationText": "確認リンクがメールアドレスに送信されました。",
     "conformEmailInstruction": "以下のリンクをクリックしてアカウントを確認してください：",

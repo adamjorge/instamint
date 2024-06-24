@@ -43,7 +43,7 @@ export const sendVerificationEmail = async (email: string, token: string) => {
     subject: t("signUp.signupSubjectTitle"),
     html: `
       <p>${t("signUp.signupInstruction")}</p>
-      <a href="${url}/${locale}/email/verify?email=${email}&token=${token}">${t("signUp.signupVerifyTitle")}</a>
+      <a href="${url}/${locale}/email?email=${email}&token=${token}">${t("signUp.signupVerifyTitle")}</a>
       <p>${t("global.greeting")},</p>
       <p>Instamint</p>
     `

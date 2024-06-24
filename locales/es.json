@@ -173,7 +173,7 @@
     "invalidEmail": "Dirección de correo electrónico no válida",
     "minimumEmailError": "El correo electrónico debe tener al menos 3 caracteres",
     "minimumPasswordError": "La contraseña debe tener al menos 6 caracteres",
-    "minimumnameError": "El nombre debe tener al menos 3 caracteres",
+    "minimumNameError": "El nombre debe tener al menos 6 caracteres",
     "backToLoginButton": "Volver al inicio de sesion",
     "emailVerificationText": "Se ha enviado un enlace de verificación a su correo electrónico.",
     "conformEmailInstruction": "Haga clic en el enlace a continuación para confirmar su cuenta:",

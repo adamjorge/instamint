@@ -41,7 +41,7 @@
     "submit": "Submit",
     "login": "Login",
     "accountQuestion": "Don't have an account?",
-    "forgetPassword": "forget password？",
+    "forgetPassword": "Forget password？",
     "signUp": "Sign up",
     "rights": "© 2024 Instamint. All rights reserved."
   },
@@ -173,7 +173,7 @@
     "invalidEmail": "Invalid email address",
     "minimumEmailError": "Email must be at least 3 characters",
     "minimumPasswordError": "Password must be at least 6 characters",
-    "minimumnameError": "Password must be at least 6 characters",
+    "minimumNameError": "Password must be at least 6 characters",
     "backToLoginButton": "Back to Login",
     "emailVerificationText": "A verification link has been sent to your email.",
     "conformEmailInstruction": "Click the link below to conform your account:",

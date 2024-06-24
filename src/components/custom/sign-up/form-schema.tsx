@@ -9,5 +9,5 @@ export const formSchema = (t: TranslationFunction) =>
       .email({ message: t("invalidEmail") })
       .min(3, { message: t("minimumEmailError") }),
     password: z.string().min(6, { message: t("minimumPasswordError") }),
-    name: z.string().min(6, { message: t("minimumnameError") })
+    name: z.string().min(6, { message: t("minimumNameError") })
   })

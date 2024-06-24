@@ -173,7 +173,7 @@
     "invalidEmail": "Endereço de email inválido",
     "minimumEmailError": "O email deve ter pelo menos 3 caracteres",
     "minimumPasswordError": "A senha deve ter pelo menos 6 caracteres",
-    "minimumnameError": "O nome deve ter pelo menos 3 caracteres",
+    "minimumNameError": "O nome deve ter pelo menos 6 caracteres",
     "backToLoginButton": "Voltar para o login",
     "emailVerificationText": "Um link de verificação foi enviado para o seu email.",
     "conformEmailInstruction": "Clique no link abaixo para confirmar sua conta:",

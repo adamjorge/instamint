@@ -1,8 +1,14 @@
+import { ApplicationMenuSchema } from "@/validators/schemas/translation/fragments/applicationMenuSchema"
 import { ChangePasswordSchema } from "@/validators/schemas/translation/fragments/changePasswordSchema"
+import { DeleteOriginalContentSchema } from "@/validators/schemas/translation/fragments/deleteOriginalContentSchema"
 import { GlobalSchema } from "@/validators/schemas/translation/fragments/globalSchema"
+import { HowToMenuSchema } from "@/validators/schemas/translation/fragments/howToMenuSchema"
+import { LikeSchema } from "@/validators/schemas/translation/fragments/likeSchema"
 import { LoginSchema } from "@/validators/schemas/translation/fragments/loginSchema"
-import { notificationSchema } from "@/validators/schemas/translation/fragments/notificationSchema"
-import { DeleteOriginalContentSchema } from "@/validators/schemas/translation/fragments/original-contents/deleteOriginalContentSchema"
+import { NotificationPreferencesSchema } from "@/validators/schemas/translation/fragments/notificationPreferencesSchema"
+import { NotificationSchema } from "@/validators/schemas/translation/fragments/notificationSchema"
+import { PrivacyMenuSchema } from "@/validators/schemas/translation/fragments/privacyMenuSchema"
+import { PrivacySchema } from "@/validators/schemas/translation/fragments/privacySchema"
 import { ProfileChangesSchema } from "@/validators/schemas/translation/fragments/profileChangesSchema"
 import { ProfilePrivacyPolicySchema } from "@/validators/schemas/translation/fragments/profilePrivacyPolicySchema"
 import { ResetPasswordSchema } from "@/validators/schemas/translation/fragments/resetPasswordSchema"
@@ -10,57 +16,29 @@ import { SearchSchema } from "@/validators/schemas/translation/fragments/searchS
 import { ShareSpecificNftLinkSchema } from "@/validators/schemas/translation/fragments/shareSpecificNftLinkSchema"
 import { SignUpSchema } from "@/validators/schemas/translation/fragments/signUpSchema"
 import { UpdatePasswordSchema } from "@/validators/schemas/translation/fragments/updatePasswordSchema"
+import { UploadOriginalContentSchema } from "@/validators/schemas/translation/fragments/uploadOriginalContent"
+import { UploadOrginalContentTerms } from "@/validators/schemas/translation/fragments/uploadOriginalContentTerms"
 import { z } from "zod"
 
 export const MessageSchema = z.object({
   global: GlobalSchema,
   search: SearchSchema,
   login: LoginSchema,
-  howToMenu: z.object({
-    howTo: z.string(),
-    changeProfile: z.string(),
-    notifications: z.string()
-  }),
-  privacyMenu: z.object({
-    whoCanSee: z.string(),
-    privacy: z.string()
-  }),
-  applicationMenu: z.object({
-    yourApplication: z.string(),
-    language: z.string(),
-    privacyPolicy: z.string()
-  }),
-  privacy: z.object({
-    authorizeSearchByEmail: z.string()
-  }),
+  howToMenu: HowToMenuSchema,
+  privacyMenu: PrivacyMenuSchema,
+  applicationMenu: ApplicationMenuSchema,
+  privacy: PrivacySchema,
   profileChanges: ProfileChangesSchema,
   profilePrivacyPolicy: ProfilePrivacyPolicySchema,
   signUp: SignUpSchema,
   resetPassword: ResetPasswordSchema,
   updatePassword: UpdatePasswordSchema,
   changePassword: ChangePasswordSchema,
-  uploadOriginalContent: z.object({
-    uploadLabel: z.string(),
-    agreeText: z.string(),
-    termsLink: z.string(),
-    uploadContentButton: z.string()
-  }),
-  uploadOriginalContentTerms: z.object({
-    title: z.string(),
-    firstParagraph: z.string(),
-    secondParagraph: z.string(),
-    contactInfo: z.string()
-  }),
+  uploadOriginalContent: UploadOriginalContentSchema,
+  uploadOriginalContentTerms: UploadOrginalContentTerms,
   deleteOriginalContent: DeleteOriginalContentSchema,
-  like: z.object({
-    likeError: z.string(),
-    dislikeError: z.string()
-  }),
-  notifications: notificationSchema,
-  notificationPreferences: z.object({
-    notification: z.string(),
-    changeSuccess: z.string(),
-    changeError: z.string()
-  }),
+  like: LikeSchema,
+  notifications: NotificationSchema,
+  notificationPreferences: NotificationPreferencesSchema,
   shareNftLink: ShareSpecificNftLinkSchema
 })

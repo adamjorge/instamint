@@ -173,7 +173,7 @@
     "invalidEmail": "无效的电子邮件地址",
     "minimumEmailError": "电子邮件必须至少为3个字符",
     "minimumPasswordError": "密码必须至少为6个字符",
-    "minimumnameError": "姓名必须至少为3个字符",
+    "minimumNameError": "姓名必须至少为6个字符",
     "backToLoginButton": "返回登录",
     "emailVerificationText": "已向您的电子邮件发送了验证链接。",
     "conformEmailInstruction": "点击下面的链接确认您的账号：",

@@ -1,3 +1,5 @@
+"use client"
+
 import { formSchema } from "@/components/custom/sign-up/form-schema"
 import EmailField from "@/components/custom/sign-up/formFields/email-field"
 import NameField from "@/components/custom/sign-up/formFields/name-field"
