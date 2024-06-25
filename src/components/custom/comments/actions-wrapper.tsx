@@ -1,5 +1,5 @@
 import Actions from "@/components/custom/comments/actions"
-import { handleDeleteComment } from "@/lib/query/comments/handleDeleteComment"
+import { handleDeleteComment } from "@/lib/query/client/comments/handleDeleteComment"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import type { Row } from "@tanstack/react-table"
 import { useCallback } from "react"

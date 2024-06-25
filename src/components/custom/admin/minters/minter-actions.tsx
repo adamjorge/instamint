@@ -5,7 +5,7 @@ import { DropdownMenuContent } from "@/components/ui/dropdown/dropdown-menu-cont
 import { DropdownMenuItem } from "@/components/ui/dropdown/dropdown-menu-item"
 import { DropdownMenuLabel } from "@/components/ui/dropdown/dropdown-menu-label"
 import useMinterActions from "@/hooks/useMinterActions"
-import { MinterWithCount } from "@/lib/query/minters/fetchMinters"
+import { MinterWithCount } from "@/lib/query/client/minters/fetchMinters"
 import { Row } from "@tanstack/react-table"
 import { MoreHorizontal } from "lucide-react"
 

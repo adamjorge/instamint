@@ -17,10 +17,6 @@ import { useTranslations } from "next-intl"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 
-export interface ResetFormData {
-  email: string
-}
-
 export default function ResetPasswordForm() {
   const t = useTranslations("resetPassword")
   const g = useTranslations("global")
@@ -71,4 +67,8 @@ export default function ResetPasswordForm() {
       </Form>
     </div>
   )
+}
+
+type ResetFormData = {
+  email: string
 }

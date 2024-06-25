@@ -24,28 +24,6 @@ model Account {
   @@unique([providerId, providerAccountId])
 }
 
-model Session {
-  id           String   @id @default(cuid())
-  userId       String
-  expires      DateTime
-  sessionToken String   @unique
-  accessToken  String   @unique
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-  user         User     @relation(fields: [userId], references: [id])
-}
-
-model VerificationRequest {
-  id         String   @id @default(cuid())
-  identifier String
-  token      String   @unique
-  expires    DateTime
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-
-  @@unique([identifier, token])
-}
-
 model Comment {
   id        Int       @id @default(autoincrement())
   content   String
@@ -95,7 +73,6 @@ model User {
   updatedAt                 DateTime         @updatedAt
   deletedAt                 DateTime?
   accounts                  Account[]
-  sessions                  Session[]
   passwordChanges           ChangePassword[]
   minterId                  Int
   minter                    Minter           @relation(fields: [minterId], references: [id], onDelete: Cascade)
@@ -125,9 +102,10 @@ model Minter {
 
 model Follow {
   followerId  Int
-  follower    Minter @relation("follower", fields: [followerId], references: [id])
+  follower    Minter   @relation("follower", fields: [followerId], references: [id])
   followingId Int
-  following   Minter @relation("following", fields: [followingId], references: [id])
+  following   Minter   @relation("following", fields: [followingId], references: [id])
+  createdAt   DateTime @default(now())
 
   @@id(name: "followId", [followerId, followingId])
 }

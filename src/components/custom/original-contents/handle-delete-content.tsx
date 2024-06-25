@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { deleteOriginalContent } from "@/lib/query/minters/original-contents/delete-original-content/deleteOriginalContent"
+import { deleteOriginalContent } from "@/lib/query/client/minters/deleteOriginalContent"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { toast } from "sonner"

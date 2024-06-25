@@ -1,8 +1,8 @@
 "use client"
 
 import ProfileChangesCard from "@/components/custom/profile/profile-changes-card"
-import { createChangePassword } from "@/lib/query/users/createChangePassword"
-import { handleDeleteUser } from "@/lib/query/users/handleDeleteUser"
+import { createChangePassword } from "@/lib/query/client/users/createChangePassword"
+import { handleDeleteUser } from "@/lib/query/client/users/handleDeleteUser"
 import { useMutation } from "@tanstack/react-query"
 import { signOut } from "next-auth/react"
 import { useLocale, useTranslations } from "next-intl"

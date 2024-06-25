@@ -7,7 +7,7 @@ export default function MinterSearchList({ minters, session }: MinterListProps) 
   const t = useTranslations("search")
 
   return (
-    <div className="my-1">
+    <div className="mb-1">
       <h3 className="text-center text-2xl">Minters</h3>
       {minters.length === 0 ? (
         <p className="text-center">{t("noSearchResultsFor", { type: "Minters" })}</p>

@@ -14,7 +14,7 @@ export const SignUpSchema = z.object({
   invalidEmail: z.string(),
   minimumEmailError: z.string(),
   minimumPasswordError: z.string(),
-  minimumnameError: z.string(),
+  minimumNameError: z.string(),
   backToLoginButton: z.string(),
   emailVerificationText: z.string(),
   conformEmailInstruction: z.string(),

@@ -3,7 +3,7 @@
 import EmptyStateMessage from "@/components/custom/original-contents/empty-state-message"
 import OriginalContentGrid from "@/components/custom/original-contents/original-content-grid"
 import Spinner from "@/components/custom/spinner"
-import fetchOriginalContent from "@/lib/query/minters/original-contents/getAllOriginalContents"
+import fetchOriginalContent from "@/lib/query/client/minters/getAllOriginalContents"
 import { OriginalContentSchemaType } from "@/validators/schemas/original-contents/fetchOriginalContents"
 import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
@@ -35,11 +35,7 @@ export default function OriginalContents({ minterId }: OriginalContentsProps) {
   }
   const renderContent = () => {
     if (isPending) {
-      return (
-        <div className="flex justify-center items-center h-10">
-          <Spinner />
-        </div>
-      )
+      return <Spinner />
     }
 
     if (contents.length === 0) {
@@ -51,8 +47,8 @@ export default function OriginalContents({ minterId }: OriginalContentsProps) {
 
   return (
     <div className="m-1">
-      <div className="my-5">
-        <h3 className="text-center text-4xl mt-3 font-bold">{t("title")}</h3>
+      <div className="pt-5">
+        <h3 className="text-center text-lg mt-3 font-bold">{t("title")}</h3>
       </div>
       {renderContent()}
     </div>

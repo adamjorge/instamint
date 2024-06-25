@@ -3,7 +3,7 @@
 import SearchResults from "@/components/custom/search/search-results"
 import Spinner from "@/components/custom/spinner"
 import ErrorMessage from "@/components/ui/custom/error-message"
-import { fetchSearch } from "@/lib/query/search/search"
+import { fetchSearch } from "@/lib/query/client/search/fetchSearch"
 import { useQuery } from "@tanstack/react-query"
 import type { Session } from "next-auth"
 import { useTranslations } from "next-intl"
@@ -51,7 +51,7 @@ export default function SearchView({ session }: { session: Session }) {
   }
 
   return (
-    <div className="mb-24">
+    <div className="mt-4 mb-24">
       <SearchResults {...resultProps} />
     </div>
   )
