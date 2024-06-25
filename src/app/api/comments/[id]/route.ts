@@ -1,21 +1,17 @@
+import { withErrorHandling } from "@/lib/helpers/apiWrapper"
 import { deleteComment } from "@/lib/query/server/comments/deleteComment"
-import { ReasonPhrases, StatusCodes } from "http-status-codes"
+import { StatusCodes } from "http-status-codes"
 
-export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+export const DELETE = withErrorHandling(handleDelete)
+
+async function handleDelete(req: Request, { params }: { params: { id: string } }) {
   const { id } = params
 
   if (!id) {
     return Response.json({ message: "Invalid comment ID" }, { status: StatusCodes.BAD_REQUEST })
   }
 
-  try {
-    await deleteComment(id)
+  await deleteComment(id)
 
-    return Response.json({ message: `Comment ${id} deleted` })
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    )
-  }
+  return Response.json({ message: `Comment ${id} deleted` })
 }

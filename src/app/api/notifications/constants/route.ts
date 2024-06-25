@@ -1,15 +1,10 @@
+import { withErrorHandling } from "@/lib/helpers/apiWrapper"
 import { getNotificationTypes } from "@/lib/query/server/notifications/getNotificationTypes"
-import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
-export async function GET() {
-  try {
-    const notificationsTypes = await getNotificationTypes()
+export const GET = withErrorHandling(handleGet)
 
-    return Response.json(notificationsTypes)
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    )
-  }
+async function handleGet() {
+  const notificationsTypes = await getNotificationTypes()
+
+  return Response.json(notificationsTypes)
 }

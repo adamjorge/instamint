@@ -1,7 +1,10 @@
+import { withErrorHandling } from "@/lib/helpers/apiWrapper"
 import { getReports } from "@/lib/query/server/reports/getReports"
-import { ReasonPhrases, StatusCodes } from "http-status-codes"
+import { StatusCodes } from "http-status-codes"
 
-export async function GET(req: Request, { params }: { params: { type: string } }) {
+export const GET = withErrorHandling(handleGet)
+
+async function handleGet(req: Request, { params }: { params: { type: string } }) {
   const { type } = params
 
   if (type !== "minters" && type !== "comments" && type !== "teabags") {
@@ -11,14 +14,7 @@ export async function GET(req: Request, { params }: { params: { type: string } }
     )
   }
 
-  try {
-    const reports = await getReports(type)
+  const reports = await getReports(type)
 
-    return Response.json(reports)
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    )
-  }
+  return Response.json(reports)
 }

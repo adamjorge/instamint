@@ -1,9 +1,12 @@
+import { withErrorHandling } from "@/lib/helpers/apiWrapper"
 import { calculateMetric } from "@/lib/utils/metrics/calculateMetric"
 import { isValidMetric } from "@/lib/utils/metrics/isValidMetric"
 import type { TimePeriod } from "@/validators/types/timePeriod"
-import { ReasonPhrases, StatusCodes } from "http-status-codes"
+import { StatusCodes } from "http-status-codes"
 
-export async function GET(req: Request) {
+export const GET = withErrorHandling(handleGet)
+
+async function handleGet(req: Request) {
   const { searchParams } = new URL(req.url)
   const period = searchParams.get("period") as TimePeriod
   const metric = searchParams.get("metric")
@@ -18,14 +21,7 @@ export async function GET(req: Request) {
     return Response.json({ message: "Invalid metric" }, { status: StatusCodes.BAD_REQUEST })
   }
 
-  try {
-    const data = await calculateMetric(period, metric)
+  const data = await calculateMetric(period, metric)
 
-    return Response.json(data)
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    )
-  }
+  return Response.json(data)
 }

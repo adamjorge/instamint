@@ -1,15 +1,10 @@
+import { withErrorHandling } from "@/lib/helpers/apiWrapper"
 import { cleanMinters } from "@/lib/query/server/minters/clean"
-import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
-export async function DELETE() {
-  try {
-    await cleanMinters()
+export const DELETE = withErrorHandling(handleDelete)
 
-    return Response.json("Cleaned up minters")
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    )
-  }
+async function handleDelete() {
+  await cleanMinters()
+
+  return Response.json("Cleaned up minters")
 }

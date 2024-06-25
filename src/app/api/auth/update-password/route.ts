@@ -1,3 +1,4 @@
+import { withErrorHandling } from "@/lib/helpers/apiWrapper"
 import { updatePassword } from "@/lib/query/server/users/updatePassword"
 import type {
   UpdatePasswordFormData,
@@ -5,7 +6,9 @@ import type {
 } from "@/validators/schemas/update-password/passwordSchema"
 import { ReasonPhrases, StatusCodes } from "http-status-codes"
 
-export async function POST(req: Request) {
+export const POST = withErrorHandling(handlePost)
+
+async function handlePost(req: Request) {
   try {
     const { token, formData } = (await req.json()) as RequestBody
     const response: UpdatePasswordFormState = await updatePassword(token, formData)
