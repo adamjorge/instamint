@@ -5,8 +5,13 @@ import { DropdownMenuItem } from "@/components/ui/dropdown/dropdown-menu-item"
 import { DropdownMenuLabel } from "@/components/ui/dropdown/dropdown-menu-label"
 import type { Row } from "@tanstack/react-table"
 import { MoreHorizontal } from "lucide-react"
+import { useCallback } from "react"
 
 export default function Actions({ handleClickOnDelete, handleClickOnWIP, row }: ActionsProps) {
+  const onDelete = useCallback(() => {
+    handleClickOnDelete(row.getValue("id"))
+  }, [handleClickOnDelete, row])
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -19,12 +24,7 @@ export default function Actions({ handleClickOnDelete, handleClickOnWIP, row }: 
         <DropdownMenuLabel>Actions</DropdownMenuLabel>
         <DropdownMenuItem onClick={handleClickOnWIP}>View comment</DropdownMenuItem>
         <DropdownMenuItem>
-          <Button
-            className="bg-red-600"
-            onClick={() => {
-              handleClickOnDelete(row.getValue("id"))
-            }}
-          >
+          <Button className="bg-red-600" onClick={onDelete}>
             Delete comment
           </Button>
         </DropdownMenuItem>

@@ -1,7 +1,7 @@
 import { z } from "zod"
 
 /* eslint-disable camelcase */
-export const notificationSchema = z.object({
+export const NotificationSchema = z.object({
   comment_reply: z.string(),
   comment_on_post: z.string(),
   mention_in_comment: z.string(),

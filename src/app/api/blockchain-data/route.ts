@@ -1,7 +1,10 @@
-import { getDataByBlockchain } from "@/lib/query/crypto/getDataByBlockchain"
-import { ReasonPhrases, StatusCodes } from "http-status-codes"
+import { withErrorHandling } from "@/lib/helpers/apiWrapper"
+import { getDataByBlockchain } from "@/lib/query/server/crypto/getDataByBlockchain"
+import { StatusCodes } from "http-status-codes"
 
-export async function GET(req: Request) {
+export const GET = withErrorHandling(handleGet)
+
+async function handleGet(req: Request) {
   const { searchParams } = new URL(req.url)
   const blockchain = searchParams.get("symbol")
 
@@ -12,14 +15,7 @@ export async function GET(req: Request) {
     )
   }
 
-  try {
-    const blockchainData = await getDataByBlockchain(blockchain)
+  const blockchainData = await getDataByBlockchain(blockchain)
 
-    return Response.json(blockchainData)
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    )
-  }
+  return Response.json(blockchainData)
 }

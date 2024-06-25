@@ -1,7 +1,7 @@
 import { Metrics } from "@/constants/metrics"
-import { countActiveMinters } from "@/lib/query/metrics/countActiveMinters"
-import { countComments } from "@/lib/query/metrics/countComments"
-import { countCommentsByNfts } from "@/lib/query/metrics/countCommentsByNfts"
+import { countActiveMinters } from "@/lib/query/server/metrics/countActiveMinters"
+import { countComments } from "@/lib/query/server/metrics/countComments"
+import { countCommentsByNfts } from "@/lib/query/server/metrics/countCommentsByNfts"
 import type { Metric } from "@/validators/types/metric"
 import type { TimePeriod } from "@/validators/types/timePeriod"
 

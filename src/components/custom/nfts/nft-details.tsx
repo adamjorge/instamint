@@ -1,5 +1,5 @@
 import CommentSection from "@/components/custom/comment-section/comment-section"
-import ShareButton from "@/components/custom/feed/share-specific-nft-link/share-button"
+import ShareButton from "@/components/custom/feed/share-button"
 import AddCommentSection from "@/components/custom/nfts/add-comment-section"
 import { Badge } from "@/components/ui/badge"
 import { Link } from "@/config/i18n/locales"

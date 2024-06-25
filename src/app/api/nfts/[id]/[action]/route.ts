@@ -1,9 +1,12 @@
 import { auth } from "@/lib/auth"
-import handleNftLikeAction from "@/lib/handlers/nfts/handleNftLikeAction"
+import handleNftLikeAction from "@/lib/handlers/handleNftLikeAction"
+import { withErrorHandling } from "@/lib/helpers/apiWrapper"
 import { NftLikeActionType } from "@/validators/types/nftLikeActionType"
-import { ReasonPhrases, StatusCodes } from "http-status-codes"
+import { StatusCodes } from "http-status-codes"
 
-export async function POST(
+export const POST = withErrorHandling(handlePost)
+
+async function handlePost(
   req: Request,
   { params }: { params: { id: string; action: NftLikeActionType } }
 ) {
@@ -24,18 +27,7 @@ export async function POST(
     return Response.json({ message: "Invalid action" }, { status: StatusCodes.BAD_REQUEST })
   }
 
-  try {
-    const isLiked = await handleNftLikeAction(
-      parseInt(id, 10),
-      parseInt(session.user.id, 10),
-      action
-    )
+  const isLiked = await handleNftLikeAction(parseInt(id, 10), parseInt(session.user.id, 10), action)
 
-    return Response.json(isLiked)
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.BAD_REQUEST }
-    )
-  }
+  return Response.json(isLiked)
 }

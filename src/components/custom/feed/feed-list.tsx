@@ -1,5 +1,6 @@
 import NftFeedCard from "@/components/custom/feed/nft-feed-card"
 import { Button } from "@/components/ui/button"
+import ErrorMessage from "@/components/ui/custom/error-message"
 import type { NftFeedType } from "@/validators/schemas/nfts/feedSchema"
 import type { InfiniteData } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
@@ -8,6 +9,10 @@ import { FaExchangeAlt } from "react-icons/fa"
 export default function FeedList(props: FeedListProps) {
   const { fyp, data, iconSize, handleClickOnFypButton, minterId } = props
   const t = useTranslations("global")
+
+  if (data.pages[0].length === 0) {
+    return <ErrorMessage message={t("feedError")} />
+  }
 
   return (
     <div className="flex flex-col w-full space-y-16 items-center mt-10 pb-32">

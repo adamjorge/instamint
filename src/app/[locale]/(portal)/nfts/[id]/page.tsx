@@ -3,7 +3,7 @@
 import NftDetails from "@/components/custom/nfts/nft-details"
 import Spinner from "@/components/custom/spinner"
 import ErrorMessage from "@/components/ui/custom/error-message"
-import fetchNft from "@/lib/query/nfts/fetchNft"
+import fetchNft from "@/lib/query/client/nfts/fetchNft"
 import { useQuery } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
 

@@ -1,4 +1,4 @@
-import postNftComment from "@/lib/query/nfts/postNftComment"
+import postNftComment from "@/lib/query/client/nfts/postNftComment"
 import { CreateNftCommentType } from "@/validators/schemas/nfts/comments/create/createCommentSchema"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { ChangeEvent, useCallback, useState } from "react"

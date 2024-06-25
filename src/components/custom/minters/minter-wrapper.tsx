@@ -1,8 +1,8 @@
 "use client"
 
 import MinterSearchCard from "@/components/custom/minters/minter-search-card"
-import { follow } from "@/lib/query/minters/followAction"
-import { unfollow } from "@/lib/query/minters/unfollowAction"
+import { follow } from "@/lib/query/client/minters/followAction"
+import { unfollow } from "@/lib/query/client/minters/unfollowAction"
 import { MinterSearchMinterSchemaType } from "@/validators/schemas/search/minters/minterSearchMinterSchema"
 import { useMutation } from "@tanstack/react-query"
 import type { Session } from "next-auth"
@@ -31,9 +31,11 @@ export default function MinterWrapper({
   const handleClickOnFollowButton = useCallback(() => {
     if (isFollowed) {
       unfollowMutation.mutate()
-    } else {
-      followMutation.mutate()
+
+      return
     }
+
+    followMutation.mutate()
   }, [followMutation, unfollowMutation, isFollowed])
   const cardProps = {
     minter,

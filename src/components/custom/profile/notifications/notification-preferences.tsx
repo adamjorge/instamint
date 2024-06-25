@@ -3,7 +3,7 @@
 import Notification from "@/components/custom/profile/notifications/notification"
 import Spinner from "@/components/custom/spinner"
 import ErrorMessage from "@/components/ui/custom/error-message"
-import { fetchMinterPreferences } from "@/lib/query/notification/fetchMinterPreferences"
+import { fetchMinterPreferences } from "@/lib/query/client/notifications/fetchMinterPreferences"
 import { useQuery } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
 

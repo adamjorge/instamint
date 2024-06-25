@@ -1,4 +1,4 @@
-import { fetchNftsFeed } from "@/lib/query/nfts/fetchNftsFeed"
+import { fetchNftsFeed } from "@/lib/query/client/nfts/fetchNftsFeed"
 import { useInfiniteQuery } from "@tanstack/react-query"
 
 export function useInfiniteScroll(fyp: boolean, minterId?: number) {
