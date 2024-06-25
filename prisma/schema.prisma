@@ -102,9 +102,9 @@ model Minter {
 
 model Follow {
   followerId  Int
-  follower    Minter @relation("follower", fields: [followerId], references: [id])
+  follower    Minter   @relation("follower", fields: [followerId], references: [id])
   followingId Int
-  following   Minter @relation("following", fields: [followingId], references: [id])
+  following   Minter   @relation("following", fields: [followingId], references: [id])
   createdAt   DateTime @default(now())
 
   @@id(name: "followId", [followerId, followingId])
