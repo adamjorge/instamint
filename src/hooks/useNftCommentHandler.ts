@@ -4,7 +4,11 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { ChangeEvent, useCallback, useState } from "react"
 import { toast } from "sonner"
 
-export default function useNftCommentHandler(nftId: number, parentId: number | null) {
+export default function useNftCommentHandler(
+  nftId: number,
+  authorId: number,
+  parentId: number | null
+) {
   const queryClient = useQueryClient()
   const [reply, setReply] = useState("")
   const [replyCount, setReplyCount] = useState(0)
@@ -33,10 +37,11 @@ export default function useNftCommentHandler(nftId: number, parentId: number | n
     const commentData: CreateNftCommentType = {
       content: reply.trim(),
       nftId,
-      parentId
+      parentId,
+      authorId
     }
     createNftCommentMutation.mutate(commentData)
-  }, [createNftCommentMutation, nftId, parentId, reply])
+  }, [createNftCommentMutation, nftId, parentId, authorId, reply])
 
   return {
     reply,

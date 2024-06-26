@@ -6,7 +6,7 @@ export default function ErrorMessage({ message }: ErrorMessageProps) {
   const t = useTranslations("global")
 
   return (
-    <div className="flex w-full justify-center pt-10">
+    <div className="flex w-full justify-center py-16">
       <Alert variant="destructive" className="w-fit">
         <AlertCircle className="h-4 w-4" />
         <AlertTitle>{t("error")}</AlertTitle>

@@ -8,7 +8,8 @@ import getNftCommentsCount from "@/lib/utils/getNftCommentsCount"
 import { useQuery } from "@tanstack/react-query"
 import { useCallback, useEffect, useState } from "react"
 
-export default function CommentSection({ nftId }: { nftId: number }) {
+export default function CommentSection(props: CommentSectionProps) {
+  const { nftId, minterId } = props
   const [showAllComments, setShowAllComments] = useState(false)
   const [numDisplayedComments, setNumDisplayedComments] = useState(0)
   const { data, error, isPending } = useQuery({
@@ -45,7 +46,7 @@ export default function CommentSection({ nftId }: { nftId: number }) {
             <Collapsible className="space-y-4">
               <CollapsibleContent className="space-y-4">
                 {visibleComments.map((comment) => (
-                  <Comment key={comment.id} nftId={nftId} comment={comment} />
+                  <Comment key={comment.id} nftId={nftId} minterId={minterId} comment={comment} />
                 ))}
               </CollapsibleContent>
               <CollapsibleTrigger asChild>
@@ -59,4 +60,9 @@ export default function CommentSection({ nftId }: { nftId: number }) {
       </div>
     </div>
   )
+}
+
+type CommentSectionProps = {
+  nftId: number
+  minterId: number
 }

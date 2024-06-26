@@ -1,7 +1,5 @@
-import { auth } from "@/lib/auth"
 import { withErrorHandling } from "@/lib/helpers/apiWrapper"
 import createNftComment from "@/lib/query/server/nfts/createNftComment"
-import searchNftComments from "@/lib/query/server/nfts/searchNftComments"
 import moderation from "@/lib/utils/moderation/moderate"
 import {
   CreateNftCommentType,
@@ -9,34 +7,23 @@ import {
 } from "@/validators/schemas/nfts/comments/create/createCommentSchema"
 import { StatusCodes } from "http-status-codes"
 
-export const GET = withErrorHandling(handleGet)
-
 export const POST = withErrorHandling(handlePost)
 
-async function handleGet(req: Request, { params }: { params: { id: string } }) {
-  const { id } = params
+async function handlePost(
+  req: Request,
+  { params }: { params: { nftId: string; minterId: string } }
+) {
+  const { nftId, minterId } = params
 
-  if (!id) {
+  if (!nftId) {
     return Response.json({ message: "Invalid/missing NFT ID" }, { status: StatusCodes.BAD_REQUEST })
   }
 
-  const comments = await searchNftComments(id)
-
-  return Response.json(comments)
-}
-
-async function handlePost(req: Request, { params }: { params: { id: string } }) {
-  const { id } = params
-
-  if (!id) {
-    return Response.json({ message: "Invalid/missing NFT ID" }, { status: StatusCodes.BAD_REQUEST })
-  }
-
-  const session = await auth()
-  const authorId = session?.user.id
-
-  if (!authorId) {
-    return Response.json({ message: "Unauthorized" }, { status: StatusCodes.UNAUTHORIZED })
+  if (!minterId) {
+    return Response.json(
+      { message: "Invalid/missing minter ID" },
+      { status: StatusCodes.BAD_REQUEST }
+    )
   }
 
   const json = (await req.json()) as CreateNftCommentType
@@ -47,7 +34,7 @@ async function handlePost(req: Request, { params }: { params: { id: string } }) 
   }
 
   data.content = moderation.clean(data.content)
-  const comment = await createNftComment(parseInt(authorId, 10), data)
+  const comment = await createNftComment(parseInt(minterId, 10), data)
 
   return Response.json(comment)
 }
