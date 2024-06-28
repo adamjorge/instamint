@@ -1,17 +1,17 @@
 import prisma from "@/lib/db"
-import { getMinterByUserId } from "@/lib/query/server/minters/getMinterByUserId"
+import getMinterById from "@/lib/query/server/minters/getMinterById"
 
-export async function unfollowMinter(followerId: string, followingId: number) {
-  const user = await getMinterByUserId(followerId)
+export async function unfollowMinter(followerId: number, followingId: number) {
+  const user = await getMinterById(followerId)
 
-  if (!user?.minterId) {
+  if (!user.id) {
     throw new Error("Minter not found")
   }
 
   return await prisma.follow.delete({
     where: {
       followId: {
-        followerId: user.minterId,
+        followerId,
         followingId
       }
     }

@@ -11,12 +11,12 @@ import { toast } from "sonner"
 
 export default function LikeHeart(props: LikeHeartProps) {
   const t = useTranslations("like")
-  const { nft, isLiked, iconSize } = props
+  const { nft, isLiked, iconSize, minterId } = props
   const [liked, setLiked] = useState(isLiked)
   // eslint-disable-next-line no-underscore-dangle
   const [nbLikes, setNbLikes] = useState(nft._count.likedBy)
   const likeMutation = useMutation({
-    mutationFn: () => fetchLikeNft(nft.id),
+    mutationFn: () => fetchLikeNft(nft.id, minterId),
     onError: () => {
       toast.error(t("likeError"))
     }

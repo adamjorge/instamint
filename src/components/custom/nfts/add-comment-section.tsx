@@ -2,8 +2,13 @@ import AddCommentTextarea from "@/components/custom/nfts/add-comment-textarea"
 import { Button } from "@/components/ui/button"
 import useNftCommentHandler from "@/hooks/useNftCommentHandler"
 
-export default function AddCommentSection({ nftId }: { nftId: number }) {
-  const { handleReplyChange, reply, replyCount, submitComment } = useNftCommentHandler(nftId, null)
+export default function AddCommentSection(props: AddCommentSectionProps) {
+  const { nftId, minterId } = props
+  const { handleReplyChange, reply, replyCount, submitComment } = useNftCommentHandler(
+    nftId,
+    minterId,
+    null
+  )
 
   return (
     <div>
@@ -19,4 +24,9 @@ export default function AddCommentSection({ nftId }: { nftId: number }) {
       </div>
     </div>
   )
+}
+
+type AddCommentSectionProps = {
+  nftId: number
+  minterId: number
 }

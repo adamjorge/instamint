@@ -6,7 +6,7 @@ export default function SuccessMessage({ message }: SuccessMessageProps) {
   const t = useTranslations("global")
 
   return (
-    <div className="flex w-full justify-center pt-10">
+    <div className="flex w-full justify-center py-16">
       <Alert className="w-fit text-verdant border-verdant">
         <LuInfo className="h-4 w-4 text-verdant" color="#55ff99" />
         <AlertTitle>{t("success")}</AlertTitle>

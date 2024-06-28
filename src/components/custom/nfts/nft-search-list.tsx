@@ -26,5 +26,5 @@ export default function NftSearchList({ nfts, minterId }: NftListProps) {
 
 type NftListProps = {
   nfts: NftSearchNftsSchemaType
-  minterId: string
+  minterId: number
 }
