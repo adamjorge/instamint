@@ -8,16 +8,18 @@ export const DELETE = withErrorHandling(handleDelete)
 
 async function handlePost(req: Request) {
   const { followerId, followingId } = (await req.json()) as Payload
+  const followerIdNumber = parseInt(followerId, 10)
   const followingIdNumber = parseInt(followingId, 10)
-  const followResponse = await followMinter(followerId, followingIdNumber)
+  const followResponse = await followMinter(followerIdNumber, followingIdNumber)
 
   return Response.json(followResponse)
 }
 
 async function handleDelete(req: Request) {
   const { followerId, followingId } = (await req.json()) as Payload
+  const followerIdNumber = parseInt(followerId, 10)
   const followingIdNumber = parseInt(followingId, 10)
-  const unfollowResponse = await unfollowMinter(followerId, followingIdNumber)
+  const unfollowResponse = await unfollowMinter(followerIdNumber, followingIdNumber)
 
   return Response.json(unfollowResponse)
 }

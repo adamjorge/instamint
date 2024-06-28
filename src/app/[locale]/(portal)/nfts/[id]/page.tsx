@@ -1,31 +1,27 @@
-"use client"
+import { NftWrapper } from "@/components/custom/nfts/nft-wrapper"
+import { auth } from "@/lib/auth"
+import { getMinterByUserId } from "@/lib/query/server/minters/getMinterByUserId"
+import { redirect } from "next/navigation"
 
-import NftDetails from "@/components/custom/nfts/nft-details"
-import Spinner from "@/components/custom/spinner"
-import ErrorMessage from "@/components/ui/custom/error-message"
-import fetchNft from "@/lib/query/client/nfts/fetchNft"
-import { useQuery } from "@tanstack/react-query"
-import { useTranslations } from "next-intl"
-
-export default function NftPage({ params }: { params: { id: number } }) {
-  const t = useTranslations("global")
+export default async function NftPage({ params }: { params: { id: string } }) {
   const { id } = params
-  const { data, error, isPending } = useQuery({
-    queryKey: ["nfts", id],
-    queryFn: () => fetchNft(id)
-  })
+  const idNumber = parseInt(id, 10)
+  const session = await auth()
 
-  if (isPending) {
-    return <Spinner />
+  if (!session) {
+    redirect("/login")
   }
 
-  if (error) {
-    return <ErrorMessage message={t("error")} />
+  const currentUser = await getMinterByUserId(session.user.id)
+
+  if (!currentUser?.minterId) {
+    redirect("/")
   }
 
-  return (
-    <div className="m-8 mb-24">
-      <NftDetails nft={data} />
-    </div>
-  )
+  const nftProps = {
+    nftId: idNumber,
+    minterId: currentUser.minterId
+  }
+
+  return <NftWrapper {...nftProps} />
 }
