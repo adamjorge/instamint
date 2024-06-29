@@ -21,17 +21,17 @@ export default function LikeHeart(props: LikeHeartProps) {
       toast.error(t("likeError"))
     }
   })
+  const dislikeMutation = useMutation({
+    mutationFn: () => fetchDislikeNft(nft.id, minterId),
+    onError: () => {
+      toast.error(t("dislikeError"))
+    }
+  })
   const handleClickOnLike = useCallback(() => {
     setNbLikes(nbLikes + 1)
     setLiked(true)
     likeMutation.mutate()
   }, [likeMutation, nbLikes])
-  const dislikeMutation = useMutation({
-    mutationFn: () => fetchDislikeNft(nft.id),
-    onError: () => {
-      toast.error(t("dislikeError"))
-    }
-  })
   const handleClickOnDislike = useCallback(() => {
     if (nbLikes > 0) {
       setNbLikes(nbLikes - 1)
