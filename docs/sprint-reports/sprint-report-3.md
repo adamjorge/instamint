@@ -13,7 +13,6 @@
 - Review 1
 - Description: `The development went well.`
 - Commitment:
-
   - Who: `MARTIN Jimmy`
   - What: `Delete MINTER account (backoffice)`
   - When: `2024-06-22`
@@ -39,6 +38,8 @@
 None.
 
 ### Ideas
+
+None.
 
 ### Summary
 
