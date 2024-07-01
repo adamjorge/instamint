@@ -7,12 +7,14 @@
     "noResultsFor": "未找到以下搜索结果：",
     "noResultsSentence": "未找到与搜索条件匹配的结果。",
     "error": "发生错误，请稍后再试。",
+    "success": "成功",
     "searchWelcome": "欢迎来到您的搜索页面。这里可以搜索NFT或创建者。",
     "nftPrice": "价格：${price}",
     "signOut": "登出",
     "moreDetails": "更多详情",
     "forYouFeed": "为您推荐",
     "followedFeed": "已关注",
+    "feedError": "获取信息源时发生错误。也许你还没有关注任何人？",
     "invalidCredentials": "无效凭证",
     "deletedAccount": "已成功收到您的删除账户请求。再见！",
     "appDescription": "Instamint，您的NFT创建社交网络",
@@ -21,7 +23,8 @@
     "successChangePassword": "密码已成功更改",
     "successFileUpload": "文件上传成功",
     "failedFileUpload": "文件上传失败",
-    "errorFileUpload": "文件上传过程中发生错误"
+    "errorFileUpload": "文件上传过程中发生错误",
+    "userNotActivated": "用户未激活。如需更多信息，请联系管理员 instamint.deva@gmail.com。"
   },
   "search": {
     "cancel": "取消",
@@ -172,7 +175,7 @@
     "invalidEmail": "无效的电子邮件地址",
     "minimumEmailError": "电子邮件必须至少为3个字符",
     "minimumPasswordError": "密码必须至少为6个字符",
-    "minimumnameError": "姓名必须至少为3个字符",
+    "minimumNameError": "姓名必须至少为6个字符",
     "backToLoginButton": "返回登录",
     "emailVerificationText": "已向您的电子邮件发送了验证链接。",
     "conformEmailInstruction": "点击下面的链接确认您的账号：",
@@ -183,7 +186,7 @@
   },
   "resetPassword": {
     "mail": "邮件",
-    "emailPlaceholder": "请输入新密码",
+    "emailPlaceholder": "请输入您的电子邮件",
     "connectionInfo": "这是您注册时使用的电子邮件。",
     "resetButton": "重置密码",
     "successEmailMessage": "验证链接已发送到您的电子邮件。",
@@ -221,6 +224,16 @@
     "termsLink": "条款",
     "uploadContentButton": "上传原创内容"
   },
+  "deleteOriginalContent": {
+    "title": "我的原始内容",
+    "errorFetchOc": "获取原始内容时出现问题。",
+    "noContentTitle": "您还没有任何原始内容。您的所有原始内容将在此处列出。",
+    "imageCreatedTitle": "创建时间",
+    "successDeleteMessage": "成功删除原始内容。",
+    "failedDeleteMessage": "删除原始内容失败。",
+    "deleteButtonText": "删除",
+    "inProcessdeleteButtonText": "正在删除..."
+  },
   "uploadOriginalContentTerms": {
     "title": "上传原创内容条款",
     "firstParagraph": "Instamint将存储您上传的原始文件内容，用于创建NFT。通过上传文件，您同意您有权使用和分发这些文件。Instamint不会在未经您明确同意的情况下将您的文件用于除NFT创建外的任何其他目的。",
@@ -244,5 +257,9 @@
     "notification": "通知",
     "changeSuccess": "通知偏好设置更新成功",
     "changeError": "更新通知偏好设置时发生错误"
+  },
+  "shareNftLink": {
+    "successUrlLink": "已复制网址到剪贴板！",
+    "errorCopyMessage": "复制网址失败。"
   }
 }

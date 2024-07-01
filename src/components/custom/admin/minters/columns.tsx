@@ -1,5 +1,5 @@
 import { MinterActions } from "@/components/custom/admin/minters/minter-actions"
-import { MinterWithCount } from "@/lib/query/minters/fetchMinters"
+import { MinterWithCount } from "@/lib/query/client/minters/fetchMinters"
 import { ColumnDef } from "@tanstack/react-table"
 
 export const columns: ColumnDef<MinterWithCount>[] = [

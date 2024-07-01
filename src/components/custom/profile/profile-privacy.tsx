@@ -3,8 +3,8 @@
 import Spinner from "@/components/custom/spinner"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
-import fetchMinter from "@/lib/query/minters/fetchMinter"
-import fetchToggleSearchability from "@/lib/query/minters/fetchToggleSearchability"
+import fetchMinter from "@/lib/query/client/minters/fetchMinter"
+import fetchToggleSearchability from "@/lib/query/client/minters/fetchToggleSearchability"
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
 import { useCallback, useState } from "react"
@@ -15,7 +15,7 @@ export default function ProfilePrivacy({ userId }: { userId: string }) {
   const { isPending } = useQuery({
     queryKey: ["searchability", userId],
     queryFn: async () => {
-      const { data } = await fetchMinter(Number(userId))
+      const { data } = await fetchMinter(parseInt(userId, 10))
       setIsChecked(data.isSearchableByEmail)
 
       return data
@@ -23,7 +23,7 @@ export default function ProfilePrivacy({ userId }: { userId: string }) {
   })
   const t = useTranslations()
   const mutation = useMutation({
-    mutationFn: () => fetchToggleSearchability(Number(userId)),
+    mutationFn: () => fetchToggleSearchability(parseInt(userId, 10)),
     onError: () => {
       toast.error(t("global.error"))
     }

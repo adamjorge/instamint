@@ -1,7 +1,9 @@
+import Metrics from "@/components/custom/admin/metrics/metrics"
+
 export default function Home() {
   return (
-    <p className="text-center">
-      Welcome to your backoffice. This is a protected area of your application reserved for admins.
-    </p>
+    <div className="flex justify-center w-full">
+      <Metrics />
+    </div>
   )
 }

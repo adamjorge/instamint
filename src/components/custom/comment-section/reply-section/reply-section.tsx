@@ -3,9 +3,10 @@ import AddCommentTextarea from "@/components/custom/nfts/add-comment-textarea"
 import { Button } from "@/components/ui/button"
 import useNftCommentHandler from "@/hooks/useNftCommentHandler"
 
-export default function ReplySection({ nftId, parentId }: ReplySectionProps) {
+export default function ReplySection(props: ReplySectionProps) {
+  const { nftId, minterId, parentId } = props
   const { isReplying, handleReplyChange, reply, replyCount, submitComment, toggleReply } =
-    useNftCommentHandler(nftId, parentId)
+    useNftCommentHandler(nftId, minterId, parentId)
 
   return (
     <div>
@@ -29,5 +30,6 @@ export default function ReplySection({ nftId, parentId }: ReplySectionProps) {
 
 type ReplySectionProps = {
   nftId: number
+  minterId: number
   parentId: number
 }

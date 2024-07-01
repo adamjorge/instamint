@@ -1,12 +1,12 @@
-import LikeHeart from "@/components/custom/like/like-heart"
+import ShareButton from "@/components/custom/feed/share-button"
+import LikeHeart from "@/components/custom/like-heart"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { NftSearchNftSchemaType } from "@/validators/schemas/search/nfts/nftSearchNftSchema"
 import Image from "next/image"
 
 export default function NftSearchCard(props: NftSearchCardProps) {
   const { nft, minterId } = props
-  const currentMinterId = parseInt(minterId, 10)
-  const isLiked = nft.likedBy.some((minter) => minter.id === currentMinterId)
+  const isLiked = nft.likedBy.some((minter) => minter.id === minterId)
 
   return (
     <Card className="bg-muted ml-2 mr-5 md:mr-2 xl:mr-3">
@@ -31,7 +31,12 @@ export default function NftSearchCard(props: NftSearchCardProps) {
               Price: <span className="font-bold text-lg">${nft.price.toString()}</span>
             </p>
           </div>
-          <LikeHeart isLiked={isLiked} iconSize={25} minterId={currentMinterId} nft={nft} />
+          <ShareButton
+            title={nft.originalContent.minter.username}
+            text={nft.description}
+            url={`/nfts/${nft.id.toString()}`}
+          />
+          <LikeHeart isLiked={isLiked} iconSize={25} minterId={minterId} nft={nft} />
         </div>
       </CardContent>
     </Card>
@@ -40,5 +45,5 @@ export default function NftSearchCard(props: NftSearchCardProps) {
 
 type NftSearchCardProps = {
   nft: NftSearchNftSchemaType
-  minterId: string
+  minterId: number
 }

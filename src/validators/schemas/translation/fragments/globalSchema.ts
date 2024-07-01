@@ -8,12 +8,14 @@ export const GlobalSchema = z.object({
   noResultsFor: z.string(),
   noResultsSentence: z.string(),
   error: z.string(),
+  success: z.string(),
   searchWelcome: z.string(),
   nftPrice: z.string(),
   signOut: z.string(),
   moreDetails: z.string(),
   forYouFeed: z.string(),
   followedFeed: z.string(),
+  feedError: z.string(),
   invalidCredentials: z.string(),
   deletedAccount: z.string(),
   appDescription: z.string(),
@@ -22,5 +24,6 @@ export const GlobalSchema = z.object({
   successChangePassword: z.string(),
   successFileUpload: z.string(),
   failedFileUpload: z.string(),
-  errorFileUpload: z.string()
+  errorFileUpload: z.string(),
+  userNotActivated: z.string()
 })

@@ -5,29 +5,8 @@ import prisma from "@/lib/db"
 import { findUserByEmail, generatePasswordHash } from "@/lib/utils/db"
 import { generateEmailVerificationToken, sendVerificationEmail } from "@/lib/utils/email"
 import { initNotificationPreferences } from "@/lib/utils/initNotificationPreferences"
+import { signUpSchema } from "@/validators/schemas/signUpSchema"
 import { faker } from "@faker-js/faker"
-import { z } from "zod"
-
-const signUpSchema = z.object({
-  name: z.string().min(3).max(255),
-  email: z.string().email(),
-  password: z.string().min(3).max(255)
-})
-
-interface SignUpFormState {
-  errors: {
-    name?: string[]
-    email?: string[]
-    password?: string[]
-    _form?: string[]
-  }
-}
-
-interface SignUpFormData {
-  email: string
-  password: string
-  name: string
-}
 
 export async function signUp(formData: SignUpFormData): Promise<SignUpFormState> {
   const result = signUpSchema.safeParse(formData)
@@ -82,7 +61,22 @@ export async function signUp(formData: SignUpFormData): Promise<SignUpFormState>
 
   await sendVerificationEmail(formData.email, verificationToken)
 
-  redirect(`/email/verify?email=${formData.email}&verification_sent=true`)
+  redirect(`/email?email=${formData.email}&verification_sent=true`)
 
   return { errors: {} }
+}
+
+type SignUpFormState = {
+  errors: {
+    name?: string[]
+    email?: string[]
+    password?: string[]
+    _form?: string[]
+  }
+}
+
+type SignUpFormData = {
+  email: string
+  password: string
+  name: string
 }

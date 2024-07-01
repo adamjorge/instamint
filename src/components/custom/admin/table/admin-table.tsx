@@ -10,11 +10,6 @@ import {
 } from "@/components/ui/table"
 import { ColumnDef, flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table"
 
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[]
-  data: TData[]
-}
-
 export function AdminTable<TData, TValue>({ columns, data }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
     data,
@@ -60,4 +55,9 @@ export function AdminTable<TData, TValue>({ columns, data }: DataTableProps<TDat
       </Table>
     </div>
   )
+}
+
+type DataTableProps<TData, TValue> = {
+  columns: ColumnDef<TData, TValue>[]
+  data: TData[]
 }

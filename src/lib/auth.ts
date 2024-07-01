@@ -1,8 +1,9 @@
+import { SIGN_IN_ERRORS } from "@/constants/signInErrors"
 import prisma from "@/lib/db"
 import Credentials from "@auth/core/providers/credentials"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import bcryptjs from "bcryptjs"
-import NextAuth, { User } from "next-auth"
+import NextAuth, { CredentialsSignin, User } from "next-auth"
 
 // eslint-disable-next-line new-cap
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -27,6 +28,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         if (!user || user.deletedAt !== null) {
           return null
+        }
+
+        if (!user.isActivated) {
+          const error = new CredentialsSignin("User is not activated")
+          error.code = SIGN_IN_ERRORS.USER_NOT_ACTIVATED
+
+          throw error
         }
 
         const passwordMatch = await bcryptjs.compare(c.password as string, user.password || "")

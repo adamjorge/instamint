@@ -1,11 +1,21 @@
-import React from "react"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { AlertCircle } from "lucide-react"
+import { useTranslations } from "next-intl"
 
-interface ErrorMessageProps {
-  message: string
+export default function ErrorMessage({ message }: ErrorMessageProps) {
+  const t = useTranslations("global")
+
+  return (
+    <div className="flex w-full justify-center py-16">
+      <Alert variant="destructive" className="w-fit">
+        <AlertCircle className="h-4 w-4" />
+        <AlertTitle>{t("error")}</AlertTitle>
+        <AlertDescription>{message}</AlertDescription>
+      </Alert>
+    </div>
+  )
 }
 
-const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => (
-  <div className="text-red-500 text-center">{message}</div>
-)
-
-export default ErrorMessage
+type ErrorMessageProps = {
+  message: string
+}

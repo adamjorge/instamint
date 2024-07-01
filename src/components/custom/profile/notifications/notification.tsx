@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
-import { changePreferenceAction } from "@/lib/query/notification/changePreferenceAction"
+import { changePreferenceAction } from "@/lib/query/client/notifications/changePreferenceAction"
 import { useMutation } from "@tanstack/react-query"
 import { useTranslations } from "next-intl"
 import { useState } from "react"

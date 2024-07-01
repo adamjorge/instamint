@@ -7,12 +7,14 @@
     "noResultsFor": "No results found for:",
     "noResultsSentence": "No results found for the search term.",
     "error": "An error occurred, please try again later.",
+    "success": "Success",
     "searchWelcome": "Welcome to your search page. This is where you can search for NFTs or minters.",
     "nftPrice": "Price: ${price}",
     "signOut": "Sign out",
     "moreDetails": "More details",
     "forYouFeed": "For you",
     "followedFeed": "Followed",
+    "feedError": "An error occurred while fetching the feed. Maybe you're not following anyone yet?",
     "invalidCredentials": "Invalid credentials",
     "deletedAccount": "Your request to delete your account has been successfully received. See you soon!",
     "appDescription": "Instamint, your social network for minting NFTs",
@@ -21,7 +23,8 @@
     "successChangePassword": "Password changed successfully",
     "successFileUpload": "File uploaded successfully",
     "failedFileUpload": "File upload failed",
-    "errorFileUpload": "An error occurred during file upload"
+    "errorFileUpload": "An error occurred during file upload",
+    "userNotActivated": "User not activated. Contact the administrators for more information's at instamint.deva@gmail.com."
   },
   "search": {
     "cancel": "Cancel",
@@ -40,7 +43,7 @@
     "submit": "Submit",
     "login": "Login",
     "accountQuestion": "Don't have an account?",
-    "forgetPassword": "forget password？",
+    "forgetPassword": "Forget password？",
     "signUp": "Sign up",
     "rights": "© 2024 Instamint. All rights reserved."
   },
@@ -172,7 +175,7 @@
     "invalidEmail": "Invalid email address",
     "minimumEmailError": "Email must be at least 3 characters",
     "minimumPasswordError": "Password must be at least 6 characters",
-    "minimumnameError": "Password must be at least 6 characters",
+    "minimumNameError": "Name must be at least 6 characters",
     "backToLoginButton": "Back to Login",
     "emailVerificationText": "A verification link has been sent to your email.",
     "conformEmailInstruction": "Click the link below to conform your account:",
@@ -183,7 +186,7 @@
   },
   "resetPassword": {
     "mail": "Mail",
-    "emailPlaceholder": "Please enter new password",
+    "emailPlaceholder": "Please enter your email",
     "connectionInfo": "This is the email you used to register.",
     "resetButton": "Reset password",
     "successEmailMessage": "A verification link has been sent to your email.",
@@ -222,10 +225,20 @@
     "uploadContentButton": "Upload original content"
   },
   "uploadOriginalContentTerms": {
-    "title": "Terms of Original content Upload",
+    "title": "Terms of original content upload",
     "firstParagraph": "Instamint will store your original uploaded files content for the purpose of creating NFTs. By uploading files, you agree that you have the right to use and distribute these files. Instamint will not use your files for any purpose other than NFT creation without your explicit consent.",
     "secondParagraph": "Instamint reserves the right to remove any content that violates our Terms of Service or infringes on the rights of others. Please ensure your files meet our content guidelines before uploading.",
     "contactInfo": "If you have any questions about how your files content will be used, please review our Privacy Policy or contact us at"
+  },
+  "deleteOriginalContent": {
+    "title": "My original contents",
+    "errorFetchOc": "Something went wrong while fetching original contents.",
+    "noContentTitle": "You don't have any original content yet. All your original contents will be listed here.",
+    "imageCreatedTitle": "Created",
+    "successDeleteMessage": "Original content deleted successfully.",
+    "failedDeleteMessage": "Failed to delete original content.",
+    "deleteButtonText": "Delete",
+    "inProcessdeleteButtonText": "Deleting..."
   },
   "like": {
     "likeError": "An error occurred while liking the NFT.",
@@ -244,5 +257,9 @@
     "notification": "Notification",
     "changeSuccess": "Notification preferences updated successfully",
     "changeError": "An error occurred while updating your notification preferences"
+  },
+  "shareNftLink": {
+    "successUrlLink": "URL copied to clipboard!",
+    "errorCopyMessage": "Failed to copy URL."
   }
 }

@@ -1,4 +1,5 @@
 import CommentSection from "@/components/custom/comment-section/comment-section"
+import ShareButton from "@/components/custom/feed/share-button"
 import AddCommentSection from "@/components/custom/nfts/add-comment-section"
 import { Badge } from "@/components/ui/badge"
 import { Link } from "@/config/i18n/locales"
@@ -6,12 +7,13 @@ import useRelativeTime from "@/hooks/useRelativeTime"
 import { NftType } from "@/validators/schemas/nfts/nftSchema"
 import Image from "next/image"
 
-export default function NftDetails({ nft }: NftDetailsProps) {
+export default function NftDetails(props: NftDetailsProps) {
+  const { nft, minterId } = props
   const relativeTime = useRelativeTime(nft.createdAt)
 
   return (
     <div>
-      <h1 className="text-center">NFT ID {nft.id}</h1>
+      <h1 className="text-center mb-5 text-lg font-bold">NFT ID {nft.id}</h1>
       <Image src={nft.imageUrl} alt={nft.id.toString()} width={400} height={400} />
       <div className="my-4 space-y-4">
         <p>{nft.description}</p>
@@ -27,12 +29,17 @@ export default function NftDetails({ nft }: NftDetailsProps) {
             </Badge>
           </Link>
         ))}
+        <ShareButton
+          title={nft.originalContent.minter.username}
+          text={nft.description}
+          url={`/nfts/${nft.id.toString()}`}
+        />
       </div>
       <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
-        <CommentSection nftId={nft.id} />
+        <CommentSection nftId={nft.id} minterId={minterId} />
       </div>
       <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
-        <AddCommentSection nftId={nft.id} />
+        <AddCommentSection nftId={nft.id} minterId={minterId} />
       </div>
     </div>
   )
@@ -40,4 +47,5 @@ export default function NftDetails({ nft }: NftDetailsProps) {
 
 type NftDetailsProps = {
   nft: NftType
+  minterId: number
 }

@@ -11,7 +11,7 @@ export function seedHashtags(prisma: PrismaClient) {
   return prisma.hashtag.createMany({ data })
 }
 
-interface Hashtag {
+type Hashtag = {
   id: number
   name: string
 }

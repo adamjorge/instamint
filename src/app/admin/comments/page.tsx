@@ -5,7 +5,7 @@ import { AdminTablePagination } from "@/components/custom/admin/table/admin-tabl
 import { columns } from "@/components/custom/comments/columns"
 import Spinner from "@/components/custom/spinner"
 import ErrorMessage from "@/components/ui/custom/error-message"
-import { fetchComments } from "@/lib/query/comments/fetchComments"
+import { fetchComments } from "@/lib/query/client/comments/fetchComments"
 import type { Comments } from "@/validators/schemas/commentSchema"
 import { PaginationProps } from "@/validators/types/paginationProps"
 import { useQuery } from "@tanstack/react-query"

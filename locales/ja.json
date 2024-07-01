@@ -7,12 +7,14 @@
     "noResultsFor": "検索結果が見つかりませんでした:",
     "noResultsSentence": "検索語句に一致する結果が見つかりませんでした。",
     "error": "エラーが発生しました。後でもう一度お試しください。",
+    "success": "成功",
     "searchWelcome": "検索ページへようこそ。ここではNFTやMinterを検索できます。",
     "nftPrice": "価格: ${price}",
     "signOut": "サインアウト",
     "moreDetails": "詳細",
     "forYouFeed": "あなたにとって",
     "followedFeed": "フォロー中",
+    "feedError": "フィードの取得中にエラーが発生しました。まだ誰もフォローしていないのかもしれませんね？",
     "invalidCredentials": "無効な認証情報",
     "deletedAccount": "アカウント削除のリクエストを正常に受け付けました。またのご利用をお待ちしております。",
     "appDescription": "Instamint、あなたのNFT作成用ソーシャルネットワーク",
@@ -21,7 +23,8 @@
     "successChangePassword": "パスワードが正常に変更されました",
     "successFileUpload": "ファイルのアップロードに成功しました",
     "failedFileUpload": "ファイルのアップロードに失敗しました",
-    "errorFileUpload": "ファイルのアップロード中にエラーが発生しました"
+    "errorFileUpload": "ファイルのアップロード中にエラーが発生しました",
+    "userNotActivated": "ユーザーが有効化されていません。詳細は管理者（instamint.deva@gmail.com）までお問い合わせください。"
   },
   "search": {
     "cancel": "キャンセル",
@@ -172,7 +175,7 @@
     "invalidEmail": "無効なメールアドレス",
     "minimumEmailError": "メールアドレスは少なくとも3文字必要です",
     "minimumPasswordError": "パスワードは少なくとも6文字必要です",
-    "minimumnameError": "名前は少なくとも3文字必要です",
+    "minimumNameError": "名前は少なくとも6文字必要です",
     "backToLoginButton": "ログイン画面に戻る",
     "emailVerificationText": "確認リンクがメールアドレスに送信されました。",
     "conformEmailInstruction": "以下のリンクをクリックしてアカウントを確認してください：",
@@ -183,7 +186,7 @@
   },
   "resetPassword": {
     "mail": "メール",
-    "emailPlaceholder": "新しいパスワードを入力してください",
+    "emailPlaceholder": "メールアドレスを入力してください",
     "connectionInfo": "これは、登録時に使用したメールアドレスです。",
     "resetButton": "パスワードをリセット",
     "successEmailMessage": "確認リンクがメールに送信されました。",
@@ -221,6 +224,17 @@
     "termsLink": "利用規約",
     "uploadContentButton": "オリジナルコンテンツをアップロード"
   },
+  "deleteOriginalContent": {
+    "title": "私のオリジナルコンテンツ",
+    "errorFetchOc": "オリジナルコンテンツの取得中にエラーが発生しました。",
+    "noContentTitle": "まだオリジナルコンテンツがありません。すべてのオリジナルコンテンツはここにリストされます。",
+    "imageCreatedTitle": "作成日",
+    "successDeleteMessage": "オリジナルコンテンツを正常に削除しました。",
+    "failedDeleteMessage": "オリジナルコンテンツの削除に失敗しました。",
+    "deleteButtonText": "削除",
+    "inProcessdeleteButtonText": "削除中...",
+    "createdAgoMessage": "Created {date}"
+  },
   "uploadOriginalContentTerms": {
     "title": "オリジナルコンテンツアップロードの利用規約",
     "firstParagraph": "Instamintは、NFTを作成するために、あなたがアップロードしたオリジナルファイルの内容を保存します。ファイルをアップロードすることで、これらのファイルを使用および配布する権利を持っていることに同意します。Instamintは、あなたの明示的な同意なしに、NFT作成以外の目的であなたのファイルを使用しません。",
@@ -244,5 +258,9 @@
     "notification": "通知",
     "changeSuccess": "通知設定が正常に更新されました",
     "changeError": "通知設定の更新中にエラーが発生しました"
+  },
+  "shareNftLink": {
+    "successUrlLink": "URLをクリップボードにコピーしました！",
+    "errorCopyMessage": "URLのコピーに失敗しました。"
   }
 }

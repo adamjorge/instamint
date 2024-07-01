@@ -1,22 +1,16 @@
-import { countComments } from "@/lib/query/comments/countComments"
-import { getComments } from "@/lib/query/comments/getComments"
-import { ReasonPhrases, StatusCodes } from "http-status-codes"
+import { withErrorHandling } from "@/lib/helpers/apiWrapper"
+import { countComments } from "@/lib/query/server/comments/countComments"
+import { getComments } from "@/lib/query/server/comments/getComments"
 
-export async function GET(req: Request) {
+export const GET = withErrorHandling(handleGet)
+
+async function handleGet(req: Request) {
   const { searchParams } = new URL(req.url)
   const page = searchParams.get("page")
   const pageValue = page || "1"
+  const comments = await getComments(pageValue)
+  const count = await countComments()
+  const totalPages = Math.ceil(count / 15)
 
-  try {
-    const comments = await getComments(pageValue)
-    const count = await countComments()
-    const totalPages = Math.ceil(count / 15)
-
-    return Response.json({ comments, totalPages })
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    )
-  }
+  return Response.json({ comments, totalPages })
 }

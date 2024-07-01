@@ -7,12 +7,14 @@
     "noResultsFor": "No se encontraron resultados para:",
     "noResultsSentence": "No se encontraron resultados para el término de búsqueda.",
     "error": "Se produjo un error. Por favor, inténtelo de nuevo más tarde.",
+    "success": "Éxito",
     "searchWelcome": "Bienvenido a tu página de búsqueda. Aquí puedes buscar NFTs o minters.",
     "nftPrice": "Precio: ${price}",
     "signOut": "Cerrar sesión",
     "moreDetails": "Más detalles",
     "forYouFeed": "Para ti",
     "followedFeed": "Seguidos",
+    "feedError": "Ocurrió un error al obtener el feed. ¿Tal vez aún no sigues a nadie?",
     "invalidCredentials": "Credenciales inválidas",
     "deletedAccount": "Se ha recibido correctamente tu solicitud para eliminar tu cuenta. ¡Hasta pronto!",
     "appDescription": "Instamint, tu red social para la creación de NFTs",
@@ -21,7 +23,8 @@
     "successChangePassword": "Contraseña cambiada con éxito",
     "successFileUpload": "Archivo subido correctamente",
     "failedFileUpload": "Error al subir el archivo",
-    "errorFileUpload": "Se produjo un error durante la carga del archivo"
+    "errorFileUpload": "Se produjo un error durante la carga del archivo",
+    "userNotActivated": "Usuario no activado. Póngase en contacto con los administradores para obtener más información en instamint.deva@gmail.com."
   },
   "search": {
     "cancel": "Cancelar",
@@ -172,7 +175,7 @@
     "invalidEmail": "Dirección de correo electrónico no válida",
     "minimumEmailError": "El correo electrónico debe tener al menos 3 caracteres",
     "minimumPasswordError": "La contraseña debe tener al menos 6 caracteres",
-    "minimumnameError": "El nombre debe tener al menos 3 caracteres",
+    "minimumNameError": "El nombre debe tener al menos 6 caracteres",
     "backToLoginButton": "Volver al inicio de sesion",
     "emailVerificationText": "Se ha enviado un enlace de verificación a su correo electrónico.",
     "conformEmailInstruction": "Haga clic en el enlace a continuación para confirmar su cuenta:",
@@ -183,7 +186,7 @@
   },
   "resetPassword": {
     "mail": "Correo",
-    "emailPlaceholder": "Por favor, ingrese una nueva contraseña",
+    "emailPlaceholder": "Por favor ingrese su correo electrónico",
     "connectionInfo": "Este es el correo electrónico que utilizó para registrarse.",
     "resetButton": "Restablecer contraseña",
     "successEmailMessage": "Se ha enviado un enlace de verificación a su correo electrónico.",
@@ -221,6 +224,16 @@
     "termsLink": "términos",
     "uploadContentButton": "Subir contenido original"
   },
+  "deleteOriginalContent": {
+    "title": "Mis contenidos originales",
+    "errorFetchOc": "Se produjo un error al obtener los contenidos originales.",
+    "noContentTitle": "Todavía no tienes ningún contenido original. Todos tus contenidos originales se listarán aquí.",
+    "imageCreatedTitle": "Creado",
+    "successDeleteMessage": "Contenido original eliminado correctamente.",
+    "failedDeleteMessage": "No se pudo eliminar el contenido original.",
+    "deleteButtonText": "Eliminar",
+    "inProcessdeleteButtonText": "Eliminando..."
+  },
   "uploadOriginalContentTerms": {
     "title": "Términos de carga de contenido original",
     "firstParagraph": "Instamint almacenará el contenido de los archivos que subas con el propósito de crear NFTs. Al subir archivos, aceptas que tienes derecho a utilizar y distribuir estos archivos. Instamint no utilizará tus archivos para ningún otro propósito que no sea la creación de NFTs sin tu consentimiento explícito.",
@@ -244,5 +257,9 @@
     "notification": "Notificación",
     "changeSuccess": "Preferencias de notificaciones actualizadas con éxito",
     "changeError": "Ocurrió un error al actualizar tus preferencias de notificaciones"
+  },
+  "shareNftLink": {
+    "successUrlLink": "¡URL copiada al portapapeles!",
+    "errorCopyMessage": "Error al copiar la URL."
   }
 }

@@ -1,8 +1,19 @@
-import { changePassword, changePasswordQuery, isLegit } from "@/lib/query/users/changePassword"
-import { findChangePasswordQuery } from "@/lib/query/users/findChangePasswordQuery"
-import { ReasonPhrases, StatusCodes } from "http-status-codes"
+import { withErrorHandling } from "@/lib/helpers/apiWrapper"
+import {
+  changePassword,
+  changePasswordQuery,
+  isLegit
+} from "@/lib/query/server/users/changePassword"
+import { findChangePasswordQuery } from "@/lib/query/server/users/findChangePasswordQuery"
+import { StatusCodes } from "http-status-codes"
 
-export async function GET(req: Request) {
+export const GET = withErrorHandling(handleGet)
+
+export const POST = withErrorHandling(handlePost)
+
+export const PATCH = withErrorHandling(handlePatch)
+
+async function handleGet(req: Request) {
   const { searchParams } = new URL(req.url)
   const token = searchParams.get("token")
 
@@ -10,23 +21,16 @@ export async function GET(req: Request) {
     return Response.json({ message: "Missing token" }, { status: StatusCodes.BAD_REQUEST })
   }
 
-  try {
-    const resetQuery = await findChangePasswordQuery(token)
+  const resetQuery = await findChangePasswordQuery(token)
 
-    if (!resetQuery) {
-      return Response.json({ message: "Invalid token" }, { status: StatusCodes.NOT_FOUND })
-    }
-
-    return Response.json({ message: "Valid token" }, { status: StatusCodes.OK })
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    )
+  if (!resetQuery) {
+    return Response.json({ message: "Invalid token" }, { status: StatusCodes.NOT_FOUND })
   }
+
+  return Response.json({ message: "Valid token" }, { status: StatusCodes.OK })
 }
 
-export async function POST(req: Request) {
+async function handlePost(req: Request) {
   const { email, locale } = (await req.json()) as PostPayload
 
   if (!email || !locale) {
@@ -36,19 +40,12 @@ export async function POST(req: Request) {
     )
   }
 
-  try {
-    await changePasswordQuery(email, locale)
+  await changePasswordQuery(email, locale)
 
-    return Response.json({ message: "Reset password email sent" }, { status: StatusCodes.CREATED })
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    )
-  }
+  return Response.json({ message: "Reset password email sent" }, { status: StatusCodes.CREATED })
 }
 
-export async function PATCH(req: Request) {
+async function handlePatch(req: Request) {
   const { token, currentPassword, newPassword } = (await req.json()) as PatchPayload
 
   if (!token || !currentPassword || !newPassword) {
@@ -60,18 +57,11 @@ export async function PATCH(req: Request) {
     )
   }
 
-  try {
-    const userId = await isLegit(token, currentPassword)
+  const userId = await isLegit(token, currentPassword)
 
-    await changePassword(token, userId, newPassword)
+  await changePassword(token, userId, newPassword)
 
-    return Response.json({ message: "Password changed" }, { status: StatusCodes.OK })
-  } catch (error) {
-    return Response.json(
-      { message: ReasonPhrases.INTERNAL_SERVER_ERROR },
-      { status: StatusCodes.INTERNAL_SERVER_ERROR }
-    )
-  }
+  return Response.json({ message: "Password changed" }, { status: StatusCodes.OK })
 }
 
 type PostPayload = {

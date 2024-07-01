@@ -1,7 +1,7 @@
 "use client"
 
 import AvatarUploadForm from "@/components/custom/profile/change-avatar/avatar-upload-form"
-import { postAvatar } from "@/lib/query/minters/postAvatarAction"
+import { postAvatar } from "@/lib/query/client/minters/postAvatarAction"
 import { changeAvatarSchema } from "@/validators/schemas/changeAvatarSchema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
